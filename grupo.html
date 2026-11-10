@@ -55,6 +55,7 @@ body{background:#f3f6fb}main{max-width:1180px;margin:0 auto;background:white}
  <h2 id="innova-title">Innová en tu hoja de planificación</h2>
  <p class="innovation-subtitle">Elegí una categoría para sumar ideas y propuestas de tu grupo.</p>
  <div class="innovation-grid">
+  <a class="innovation-link" data-topic="racional" href="racional.html">Racional <span aria-hidden="true">→</span></a>
   <a class="innovation-link" data-topic="tema" href="planificacion.html?seccion=tema">Tema <span aria-hidden="true">→</span></a>
   <a class="innovation-link" data-topic="hilo" href="planificacion.html?seccion=hilo">Hilo <span aria-hidden="true">→</span></a>
   <a class="innovation-link" data-topic="juegos" href="planificacion.html?seccion=juegos">Juegos <span aria-hidden="true">→</span></a>
@@ -74,7 +75,7 @@ else{
   document.getElementById('group-name').textContent=group;
   document.documentElement.dataset.grupo=group.toLowerCase();
   document.title=group+' · Tojnit Majané Kaitz 2026';
-  document.querySelectorAll('.innovation-link[data-topic]').forEach(link=>{link.href='planificacion.html?grupo='+encodeURIComponent(group.toLowerCase())+'&seccion='+encodeURIComponent(link.dataset.topic);});
+  document.querySelectorAll('.innovation-link[data-topic]').forEach(link=>{link.href=link.dataset.topic==='racional'?'racional.html?grupo='+encodeURIComponent(group.toLowerCase()):'planificacion.html?grupo='+encodeURIComponent(group.toLowerCase())+'&seccion='+encodeURIComponent(link.dataset.topic);});
   const colors=groupColors[group.toLowerCase()];
   document.documentElement.style.setProperty('--group-hero','linear-gradient(115deg,'+colors.map((c,i)=>c+' '+Math.round(i*100/(colors.length-1))+'%').join(',')+')');
 }
