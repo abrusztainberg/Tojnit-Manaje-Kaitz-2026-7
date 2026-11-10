@@ -20,14 +20,14 @@ header{padding:24px clamp(20px,6vw,78px);display:flex;justify-content:space-betw
 .brand{font-family:Fredoka,sans-serif;font-size:20px;font-weight:700;text-decoration:none;color:var(--blue)}
 .back{padding:12px 19px;border:2px solid #dbe6f9;border-radius:30px;text-decoration:none;font-weight:800;font-size:13px;background:white}
 .back:hover{border-color:var(--purple)}
-.hero{position:relative;background:var(--soft);padding:93px 24px 85px;text-align:center;overflow:hidden}
-.hero:before,.hero:after{content:"✡";position:absolute;color:#d9e9ff;font-size:240px;top:-90px}
+.hero{position:relative;background:var(--group-hero,var(--soft));padding:93px 24px 85px;text-align:center;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;background:var(--accent);opacity:.16;width:280px;height:280px;border-radius:50%;top:-90px}
 .hero:before{left:-65px;transform:rotate(-20deg)}.hero:after{right:-48px;transform:rotate(25deg)}
 .kicker{color:var(--sky);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:13px}
-.hero h1{font-family:Fredoka,sans-serif;color:var(--blue);font-size:clamp(62px,11vw,120px);line-height:1;margin:18px 0 15px;text-shadow:5px 6px 0 #bed5ee}
+.hero h1{font-family:Fredoka,sans-serif;color:var(--group-text,var(--blue));font-size:clamp(62px,11vw,120px);line-height:1;margin:18px 0 15px;text-shadow:5px 6px 0 #bed5ee}
 .hero h1 span{display:block;font-size:clamp(19px,3vw,30px);text-shadow:none;letter-spacing:.09em;margin-bottom:8px}
 .subtitle{font-size:17px;line-height:1.6;max-width:640px;margin:0 auto}
-.pill{border:2px solid var(--purple);display:inline-block;border-radius:99px;color:var(--blue);padding:8px 20px;font-weight:800;margin-top:26px;background:#fff}
+.pill{border:2px solid var(--accent,var(--purple));display:inline-block;border-radius:99px;color:var(--blue);padding:8px 20px;font-weight:800;margin-top:26px;background:#fff}
 .nav-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
 .nav-pills a{text-decoration:none;background:#fff;border:1.5px solid #ccdafa;border-radius:100px;padding:11px 18px;font-weight:800;font-size:13px;color:var(--blue)}
 .nav-pills a:hover{background:var(--blue);color:#fff}
@@ -65,22 +65,22 @@ footer strong{font-family:Fredoka,sans-serif;color:var(--blue);font-size:18px}
 <div class="kicker">Nuestra tojnit · 2026</div>
 <h1><span>GRUPO</span><b id="group-name">Grupo</b></h1>
 <p class="subtitle">¡Bienvenidos al espacio de nuestro grupo! Acá vamos a reunir todas las peulot, actividades y el cronograma del Majané Kaitz.</p>
-<div class="pill">💙 MAJANÉ KAITZ 2026</div>
+<div class="pill">MAJANÉ KAITZ 2026</div>
 <nav class="nav-pills" aria-label="Secciones del grupo"><a href="#peulot">Peulot</a><a href="#actividades">Actividades</a><a href="#cronograma">Cronograma</a></nav>
 </div>
 </section>
 <section class="panel" id="peulot">
-<div class="headrow"><div><div class="kicker">Planificación</div><h2>🎨 Peulot</h2></div><span class="notice">Por completar</span></div>
+<div class="headrow"><div><div class="kicker">Planificación</div><h2>Peulot</h2></div><span class="notice">Por completar</span></div>
 <p class="description">Este espacio va a tener las peulot del grupo, con sus objetivos, materiales y desarrollo.</p>
-<div class="cards"><article class="empty-card"><div class="art">💡</div><h3>Peulot del grupo</h3><p>Todavía no se cargaron propuestas. Cuando estén definidas, van a aparecer acá.</p></article><article class="empty-card"><div class="art">🧰</div><h3>Materiales y preparación</h3><p>Un lugar para dejar todo listo antes de cada peulá.</p></article></div>
+<div class="cards"><article class="empty-card"><h3>Peulot del grupo</h3><p>Todavía no se cargaron propuestas. Cuando estén definidas, van a aparecer acá.</p></article><article class="empty-card"><h3>Materiales y preparación</h3><p>Un lugar para dejar todo listo antes de cada peulá.</p></article></div>
 </section>
 <section class="panel" id="actividades">
-<div class="headrow"><div><div class="kicker">Momentos para compartir</div><h2>🎉 Actividades</h2></div><span class="notice">Por completar</span></div>
+<div class="headrow"><div><div class="kicker">Momentos para compartir</div><h2>Actividades</h2></div><span class="notice">Por completar</span></div>
 <p class="description">Próximamente vamos a sumar las actividades, juegos y momentos especiales de este grupo.</p>
-<div class="cards"><article class="empty-card"><div class="art">🎲</div><h3>Juegos y dinámicas</h3><p>Espacio reservado para las actividades del grupo.</p></article><article class="empty-card"><div class="art">🌟</div><h3>Actividades especiales</h3><p>Espacio para las propuestas extraordinarias del majané.</p></article></div>
+<div class="cards"><article class="empty-card"><h3>Juegos y dinámicas</h3><p>Espacio reservado para las actividades del grupo.</p></article><article class="empty-card"><h3>Actividades especiales</h3><p>Espacio para las propuestas extraordinarias del majané.</p></article></div>
 </section>
 <section class="panel" id="cronograma">
-<div class="headrow"><div><div class="kicker">Organización</div><h2>📅 Cronograma</h2></div><span class="notice">Por completar</span></div>
+<div class="headrow"><div><div class="kicker">Organización</div><h2>Cronograma</h2></div><span class="notice">Por completar</span></div>
 <p class="description">El cronograma se va a actualizar cuando se confirmen los días y horarios.</p>
 <div class="schedule"><div class="schedule-head">Planificación del grupo</div><div class="schedule-item"><strong>Fechas</strong><span>A confirmar</span></div><div class="schedule-item"><strong>Horarios</strong><span>A confirmar</span></div><div class="schedule-item"><strong>Actividades</strong><span>A definir</span></div></div>
 </section>
@@ -89,11 +89,17 @@ footer strong{font-family:Fredoka,sans-serif;color:var(--blue);font-size:18px}
 </div>
 <script>
 const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','Lojamuza'];
+const groupColors={"jaza":["#F49AC2","#61B779"],"mega":["#FF9C4A","#80D8F2"],"nifla":["#F69BC9","#FFE56A"],"leitza":["#4AAD65","#F05252"],"mabri":["#8BD9F0","#AD86DF"],"kasu":["#E64B53","#2859B4"],"mebu":["#6BC680","#94DDF4"],"shingsha":["#FFFFFF","#151515"],"jamu":["#AE83DD","#FF9C42"],"shoja":["#F7A44C","#62BE78"],"metu":["#3977C9","#8C69CD"],"shalu":["#8CDEF6","#F7A9CB"],"netza":["#205C45","#8252AC","#181818"],"ofna":["#3573C4","#5BC182"],"lojamuza":["#316BC3","#F39AC6","#181818"]};
 const requested=new URLSearchParams(location.search).get('grupo')||'';
 const group=groups.find(g=>g.toLowerCase()===requested.toLowerCase());
 if(!group){location.replace('index.html#grupos')}else{
 document.getElementById('group-name').textContent=group;
 document.title=group+' · Tojnit Majané Kaitz 2026';
+const shades=groupColors[group.toLowerCase()];
+const stops=shades.length===2?shades[0]+' 0%,'+shades[0]+' 50%,'+shades[1]+' 50%,'+shades[1]+' 100%':shades[0]+' 0%,'+shades[0]+' 34%,'+shades[1]+' 34%,'+shades[1]+' 67%,'+shades[2]+' 67%,'+shades[2]+' 100%';
+document.documentElement.style.setProperty('--group-hero','linear-gradient(115deg,'+stops+')');
+document.documentElement.style.setProperty('--accent',shades[1]);
+document.documentElement.style.setProperty('--group-text',shades.includes('#181818')||group==='Shingsha'?'#ffffff':'#173563');
 }
 const confetti=document.getElementById('confetti');
 const colors=['#214995','#29a6c3','#8b3fff','#d3d5d8'];
