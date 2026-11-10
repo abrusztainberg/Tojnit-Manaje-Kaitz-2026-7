@@ -65,7 +65,7 @@ body{background:#f3f6fb}main{max-width:1180px;margin:0 auto;background:white}
 </section>
 </main>
 <script>
-const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','Lojamuza'];
+const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
 const groupColors={"jaza":["#F49AC2","#61B779"],"mega":["#FF9C4A","#80D8F2"],"nifla":["#F69BC9","#FFE56A"],"leitza":["#4AAD65","#F05252"],"mabri":["#8BD9F0","#AD86DF"],"kasu":["#E64B53","#2859B4"],"mebu":["#6BC680","#94DDF4"],"shingsha":["#FFFFFF","#151515"],"jamu":["#AE83DD","#FF9C42"],"shoja":["#F7A44C","#62BE78"],"metu":["#3977C9","#8C69CD"],"shalu":["#8CDEF6","#F7A9CB"],"netza":["#205C45","#8252AC","#181818"],"ofna":["#3573C4","#5BC182"],"lojamuza":["#316BC3","#F39AC6","#181818"]};
 const requested=new URLSearchParams(location.search).get('grupo')||'';
 const group=groups.find(g=>g.toLowerCase()===requested.toLowerCase());
