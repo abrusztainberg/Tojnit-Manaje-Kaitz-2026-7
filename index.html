@@ -87,7 +87,7 @@
 <body>
   <div class="page" id="inicio">
     <header class="nav">
-      <a href="#inicio" class="brand" aria-label="Inicio"><img class="logo-img" src="assets/logo-or-jadash.png" alt="Or Jadash Juventud"></a>
+      <a href="#inicio" class="brand" aria-label="Inicio"><img class="logo-img" data-zip-path="assets/logo-or-jadash.png" alt="Or Jadash Juventud"></a>
       <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
       <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a><a href="grupos.html">Grupos</a><a href="#propuesta">La propuesta</a><a href="#cronograma">Cronograma</a><a href="#contacto">Info</a>
@@ -106,7 +106,7 @@
         <div class="brush">¡Toda la magia del majané en un solo lugar!</div>
         <a class="button" href="grupos.html">Conocer los grupos <span aria-hidden="true">↓</span></a>
       </section>
-      <section class="photo-section"><img src="assets/foto-majane.jpg" alt="Foto grupal del Majané Kaitz de Or Jadash" loading="lazy"><p>Compartimos momentos que quedan para siempre.</p></section><div class="wave" aria-hidden="true"></div>
+      <section class="photo-section"><img data-zip-path="assets/foto-majane.jpg" alt="Foto grupal del Majané Kaitz de Or Jadash" loading="lazy"><p>Compartimos momentos que quedan para siempre.</p></section><div class="wave" aria-hidden="true"></div>
       <section class="content groups-section" id="grupos" aria-labelledby="grupos-titulo">
         <div class="section-kicker">Nuestros grupos</div>
         <h2 id="grupos-titulo">¡Todos los grupos! 💙</h2>
@@ -186,5 +186,5 @@
       links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menú');
     }));
   </script>
-</body>
+<script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script><script defer src="imagenes.js"></script></body>
 </html>
