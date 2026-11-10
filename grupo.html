@@ -60,6 +60,12 @@ footer strong{font-family:Montserrat,sans-serif;color:var(--blue);font-size:18px
 .hero.has-group-photo .pill{background:rgba(255,255,255,.95);color:#173c91;border-color:white}
 .hero.has-group-photo .nav-pills a{background:rgba(255,255,255,.96);color:#214995}
 .hero.has-group-photo:before,.hero.has-group-photo:after{display:none}
+/* Ajustes permanentes de encuadre en la URL original de cada grupo. */
+:root[data-grupo="leitza"] .hero.has-group-photo,
+:root[data-grupo="mabri"] .hero.has-group-photo,
+:root[data-grupo="netza"] .hero.has-group-photo{
+  background-position:center 78% !important;
+}
 </style>
 </head>
 <body>
@@ -101,6 +107,7 @@ const requested=new URLSearchParams(location.search).get('grupo')||'';
 const group=groups.find(g=>g.toLowerCase()===requested.toLowerCase());
 if(!group){location.replace('index.html#grupos')}else{
 document.getElementById('group-name').textContent=group;
+document.documentElement.dataset.grupo=group.toLowerCase();
 document.title=group+' · Tojnit Majané Kaitz 2026';
 const shades=groupColors[group.toLowerCase()];
 const stops=shades.map((color,index)=>color+' '+Math.round(index*100/(shades.length-1))+'%').join(',');
