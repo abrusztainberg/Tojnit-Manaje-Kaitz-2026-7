@@ -20,7 +20,7 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section class="empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
 <script>
-const topics=[['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
+const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
 const params=new URLSearchParams(location.search);
 const selected=params.get('seccion')||'tema';
 const validGroups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
@@ -31,11 +31,12 @@ const back=document.getElementById('back-to-group');
 back.href=group?'grupo.html?grupo='+encodeURIComponent(group.toLowerCase())+'#innova':'grupos.html';
 back.textContent=group?'← Volver a '+group:'← Todos los grupos';
 const current=topics.find(([id])=>id===selected);
+if(selected==='racional'){location.replace('racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
 if(!current){location.replace(group?'grupo.html?grupo='+encodeURIComponent(group.toLowerCase())+'#innova':'grupos.html')}else{
 document.getElementById('topic-title').textContent=current[1];
 document.title=current[1]+(group?' · '+group:'')+' · Tojnit Majané Kaitz 2026';
 if(group)document.querySelector('.eyebrow').textContent='Innová en la planificación de '+group;
 const nav=document.getElementById('topic-links');
-topics.forEach(([id,label])=>{const a=document.createElement('a');a.href='planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
+topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
 }
 </script></body></html>
