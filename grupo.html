@@ -53,6 +53,13 @@ footer{background:#f1f6ff;padding:34px clamp(20px,7vw,90px);display:flex;justify
 footer strong{font-family:Montserrat,sans-serif;color:var(--blue);font-size:18px}
 @media(max-width:680px){header{flex-direction:column;align-items:flex-start}.hero{padding:70px 20px}.cards{grid-template-columns:1fr}.schedule-item{flex-direction:column;align-items:flex-start;gap:8px}.hero:before,.hero:after{font-size:140px}.hero:before{left:-45px}.hero:after{right:-45px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Foto del grupo únicamente en la cabecera de su página individual. */
+.hero.has-group-photo{background-size:cover;background-position:center 40%;min-height:440px}
+.hero.has-group-photo .kicker,.hero.has-group-photo h1,.hero.has-group-photo .subtitle{color:white;text-shadow:0 2px 12px rgba(0,0,0,.85)}
+.hero.has-group-photo h1{color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.85)}
+.hero.has-group-photo .pill{background:rgba(255,255,255,.95);color:#173c91;border-color:white}
+.hero.has-group-photo .nav-pills a{background:rgba(255,255,255,.96);color:#214995}
+.hero.has-group-photo:before,.hero.has-group-photo:after{display:none}
 </style>
 </head>
 <body>
@@ -102,5 +109,5 @@ document.documentElement.style.setProperty('--accent',shades[1]);
 document.documentElement.style.setProperty('--group-text',shades.includes('#181818')||group==='Shingsha'?'#ffffff':'#173563');
 }
 </script>
-<script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script><script defer src="imagenes.js"></script></body>
+<script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script><script defer src="imagenes.js"></script><script defer src="fotos-grupos.js"></script></body>
 </html>
