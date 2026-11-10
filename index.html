@@ -28,8 +28,8 @@
     .flags{position:absolute;inset:15px 3% auto;display:flex;justify-content:space-between;align-items:flex-start}
     .flag{position:relative;width:clamp(27px,5vw,52px);height:clamp(55px,8vw,94px);display:grid;place-items:center;background:linear-gradient(90deg,var(--blue) 0 17%,white 17% 83%,var(--blue) 83%);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);filter:drop-shadow(2px 3px 0 #b4d4e9);color:var(--blue);font-size:clamp(19px,3vw,33px);transform:rotate(var(--r,0deg));margin-top:var(--y,0px)}
     .flag:nth-child(1),.flag:nth-child(9){--r:13deg;--y:0px}.flag:nth-child(2),.flag:nth-child(8){--r:9deg;--y:21px}.flag:nth-child(3),.flag:nth-child(7){--r:5deg;--y:36px}.flag:nth-child(4),.flag:nth-child(6){--r:2deg;--y:43px}.flag:nth-child(5){--y:46px}
-    .confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-2}
-    .confetti i{position:absolute;left:var(--x);top:var(--y);width:var(--w,9px);height:var(--h,16px);background:var(--c);transform:rotate(var(--rot));border-radius:var(--radius,2px);opacity:.85}
+    
+    
     .eyebrow{display:inline-block;color:var(--blue);font-weight:800;letter-spacing:.19em;text-transform:uppercase;font-size:13px;margin:24px 0 16px}
     .hero-frame{border:0;padding:18px clamp(16px,4vw,56px) 22px;max-width:830px;width:100%;background:transparent;box-shadow:none;transform:none}
     .hero-frame .hello{font-family:Montserrat,sans-serif;color:var(--blue);font-weight:600;font-size:clamp(25px,4.5vw,54px);letter-spacing:.06em;transform:rotate(-3deg);margin:0 0 8px}
@@ -95,7 +95,7 @@
     </header>
     <main>
       <section class="hero" aria-labelledby="titulo">
-        <div class="confetti" id="confetti" aria-hidden="true"></div>
+        
         <div class="eyebrow">Or Jadash Juventud · Majané Kaitz 2026</div>
         <div class="hero-frame">
           <p class="hello">¡BIENVENIDOS AL</p>
@@ -162,20 +162,6 @@
   </div>
   <script>
 function updateCountdowns(){const now=Date.now();document.querySelectorAll('.countdown-card[data-departure]').forEach(card=>{const remaining=Math.max(0,Date.parse(card.dataset.departure)-now);const seconds=Math.floor(remaining/1000);const values={days:Math.floor(seconds/86400),hours:Math.floor(seconds%86400/3600),minutes:Math.floor(seconds%3600/60),seconds:seconds%60};Object.entries(values).forEach(([unit,value])=>{const el=card.querySelector('[data-unit="'+unit+'"]');if(el)el.textContent=unit==='days'?String(value):String(value).padStart(2,'0')});const status=card.querySelector('.countdown-status');if(status)status.textContent=remaining===0?'¡Llegó el día del majané!':''})}updateCountdowns();setInterval(updateCountdowns,1000);
-    const confetti = document.getElementById('confetti');
-    const palette=['#214995','#29a6c3','#8b3fff','#d3d5d8','#29205f'];
-    for(let i=0;i<42;i++){
-      const piece=document.createElement('i');
-      const x=(i*37.73)%100, y=(i*23.17)%100;
-      piece.style.setProperty('--x',x+'%');
-      piece.style.setProperty('--y',y+'%');
-      piece.style.setProperty('--c',palette[i%palette.length]);
-      piece.style.setProperty('--rot',((i*47)%180)+'deg');
-      piece.style.setProperty('--w',(5+i%7)+'px');
-      piece.style.setProperty('--h',(7+i%11)+'px');
-      piece.style.setProperty('--radius',i%4===0?'50%':'2px');
-      confetti.appendChild(piece);
-    }
     const menu=document.querySelector('.menu-toggle');
     const links=document.querySelector('.nav-links');
     menu.addEventListener('click',()=>{
