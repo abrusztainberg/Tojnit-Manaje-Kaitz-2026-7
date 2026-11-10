@@ -31,8 +31,8 @@ header{padding:24px clamp(20px,6vw,78px);display:flex;justify-content:space-betw
 .nav-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
 .nav-pills a{text-decoration:none;background:#fff;border:1.5px solid #ccdafa;border-radius:100px;padding:11px 18px;font-weight:800;font-size:13px;color:var(--blue)}
 .nav-pills a:hover{background:var(--blue);color:#fff}
-.confetti{position:absolute;inset:0;pointer-events:none}
-.confetti i{position:absolute;width:9px;height:17px;background:var(--c);left:var(--x);top:var(--y);transform:rotate(var(--r));border-radius:3px;opacity:.65}
+
+
 .hero-content{position:relative;z-index:1}
 main section.panel{padding:68px clamp(20px,7vw,90px)}
 .panel:nth-child(2){background:#fbfcff}
@@ -60,7 +60,7 @@ footer strong{font-family:Montserrat,sans-serif;color:var(--blue);font-size:18px
 <header><a class="brand" href="index.html"><img data-zip-path="assets/logo-or-jadash.png" alt="Or Jadash Juventud" style="height:46px;vertical-align:middle;margin-right:10px">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" href="index.html#grupos">← Todos los grupos</a></header>
 <main>
 <section class="hero">
-<div class="confetti" aria-hidden="true" id="confetti"></div>
+
 <div class="hero-content">
 <div class="kicker">Nuestra tojnit · 2026</div>
 <h1><span>GRUPO</span><b id="group-name">Grupo</b></h1>
@@ -100,16 +100,6 @@ const stops=shades.map((color,index)=>color+' '+Math.round(index*100/(shades.len
 document.documentElement.style.setProperty('--group-hero','linear-gradient(115deg,'+stops+')');
 document.documentElement.style.setProperty('--accent',shades[1]);
 document.documentElement.style.setProperty('--group-text',shades.includes('#181818')||group==='Shingsha'?'#ffffff':'#173563');
-}
-const confetti=document.getElementById('confetti');
-const colors=['#214995','#29a6c3','#8b3fff','#d3d5d8'];
-for(let i=0;i<28;i++){
-const piece=document.createElement('i');
-piece.style.setProperty('--x',((i*37.7)%100)+'%');
-piece.style.setProperty('--y',((i*19.1)%100)+'%');
-piece.style.setProperty('--r',((i*53)%180)+'deg');
-piece.style.setProperty('--c',colors[i%colors.length]);
-confetti.appendChild(piece);
 }
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script><script defer src="imagenes.js"></script></body>
