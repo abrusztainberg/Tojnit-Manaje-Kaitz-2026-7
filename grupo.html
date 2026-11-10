@@ -25,6 +25,17 @@ body{background:#f3f6fb}main{max-width:1180px;margin:0 auto;background:white}
 .back-link{display:inline-flex;justify-content:center;align-items:center;padding:17px 29px;text-decoration:none;border:3px solid #dce6f9;border-radius:999px;font-size:clamp(14px,1.45vw,19px);font-weight:800;color:#193970;white-space:nowrap;background:#fff}
 .back-link:hover,.back-link:focus-visible{border-color:#214995}
 @media(max-width:760px){.topbar{min-height:0;padding:18px;gap:12px}.brand{gap:12px}.brand img{width:62px;max-height:62px}.brand-title{font-size:clamp(13px,3.4vw,20px)}.back-link{font-size:12px;padding:12px 14px;border-width:2px;white-space:normal;text-align:center}}
+
+.innovation-section{padding:62px clamp(20px,6vw,76px) 85px;background:#f2f6ff}
+.innovation-kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#3c92b5}
+.innovation-section h2{font-size:clamp(30px,4.5vw,48px);color:#214995;margin:13px 0 12px;font-weight:900;letter-spacing:-.035em}
+.innovation-subtitle{color:#607291;line-height:1.6;font-size:16px}
+.innovation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:30px}
+.innovation-link{background:#fff;border:2px solid #dce7f9;border-radius:22px;padding:23px;min-height:128px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#214995;text-decoration:none;font-size:clamp(17px,2vw,23px);font-weight:800;box-shadow:0 8px 20px rgba(22,51,102,.06);transition:transform .2s,border-color .2s}
+.innovation-link:hover,.innovation-link:focus-visible{transform:translateY(-4px);border-color:#8b3fff}
+.innovation-link span{font-size:28px;color:#4385bc}
+@media(max-width:850px){.innovation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:530px){.innovation-grid{grid-template-columns:1fr}.innovation-link{min-height:85px}}
 </style>
 </head>
 <body>
@@ -39,6 +50,19 @@ body{background:#f3f6fb}main{max-width:1180px;margin:0 auto;background:white}
 <section class="hero" aria-label="Foto del grupo">
 <h1 id="group-name"></h1>
 </section>
+<section class="innovation-section" id="innova" aria-labelledby="innova-title">
+ <div class="innovation-kicker">Planificación del grupo</div>
+ <h2 id="innova-title">Innová en tu hoja de planificación</h2>
+ <p class="innovation-subtitle">Elegí una categoría para sumar ideas y propuestas de tu grupo.</p>
+ <div class="innovation-grid">
+  <a class="innovation-link" data-topic="tema" href="planificacion.html?seccion=tema">Tema <span aria-hidden="true">→</span></a>
+  <a class="innovation-link" data-topic="hilo" href="planificacion.html?seccion=hilo">Hilo <span aria-hidden="true">→</span></a>
+  <a class="innovation-link" data-topic="juegos" href="planificacion.html?seccion=juegos">Juegos <span aria-hidden="true">→</span></a>
+  <a class="innovation-link" data-topic="dinamicas" href="planificacion.html?seccion=dinamicas">Dinámicas <span aria-hidden="true">→</span></a>
+  <a class="innovation-link" data-topic="dinamicas-de-cierre" href="planificacion.html?seccion=dinamicas-de-cierre">Dinámicas de cierre <span aria-hidden="true">→</span></a>
+  <a class="innovation-link" data-topic="momentos" href="planificacion.html?seccion=momentos">Momentos <span aria-hidden="true">→</span></a>
+ </div>
+</section>
 </main>
 <script>
 const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','Lojamuza'];
@@ -50,6 +74,7 @@ else{
   document.getElementById('group-name').textContent=group;
   document.documentElement.dataset.grupo=group.toLowerCase();
   document.title=group+' · Tojnit Majané Kaitz 2026';
+  document.querySelectorAll('.innovation-link[data-topic]').forEach(link=>{link.href='planificacion.html?grupo='+encodeURIComponent(group.toLowerCase())+'&seccion='+encodeURIComponent(link.dataset.topic);});
   const colors=groupColors[group.toLowerCase()];
   document.documentElement.style.setProperty('--group-hero','linear-gradient(115deg,'+colors.map((c,i)=>c+' '+Math.round(i*100/(colors.length-1))+'%').join(',')+')');
 }
