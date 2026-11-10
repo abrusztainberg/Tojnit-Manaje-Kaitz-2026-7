@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c91">
+  <meta name="description" content="Tojnit Majané Kaitz 2026–2027: un espacio para organizar y compartir la magia del majané.">
+  <title>Tojnit · Majané Kaitz 2026–2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#214995;--navy:#071a78;--sky:#29a6c3;--purple:#8b3fff;--ink:#1b3265;--paper:#fff;--soft:#f1f6ff;--shadow:0 20px 55px rgba(31,67,137,.12)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#f2f6fc;color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+    button,a{font:inherit} a{color:inherit} button{cursor:pointer}
+    .page{max-width:1280px;margin:auto;background:white;min-height:100vh;overflow:hidden;position:relative}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px clamp(20px,6vw,86px);position:relative;z-index:4}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue);font-family:Fredoka,sans-serif;font-weight:700;font-size:19px}
+    .brand-symbol{height:43px;width:43px;border:3px solid var(--blue);border-radius:14px;display:grid;place-items:center;font-size:27px;transform:rotate(-8deg)}
+    .nav-links{display:flex;align-items:center;gap:28px}.nav-links a{text-decoration:none;font-weight:800;font-size:14px}
+    .nav-links a:hover,.nav-links a:focus-visible{color:var(--purple)}
+    .menu-toggle{display:none;background:white;border:2px solid var(--blue);border-radius:12px;padding:9px 12px;color:var(--blue);font-size:22px}
+    .hero{min-height:690px;position:relative;isolation:isolate;display:flex;align-items:center;flex-direction:column;justify-content:center;padding:120px 24px 98px;text-align:center}
+    .bunting{position:absolute;top:-10px;left:3%;width:94%;height:175px;pointer-events:none;z-index:-1}
+    .rope{position:absolute;left:0;right:0;top:0;height:68px;border-bottom:3px solid #d9ba74;border-radius:0 0 50% 50%;transform:rotate(-1deg)}
+    .flags{position:absolute;inset:15px 3% auto;display:flex;justify-content:space-between;align-items:flex-start}
+    .flag{position:relative;width:clamp(27px,5vw,52px);height:clamp(55px,8vw,94px);display:grid;place-items:center;background:linear-gradient(90deg,var(--blue) 0 17%,white 17% 83%,var(--blue) 83%);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);filter:drop-shadow(2px 3px 0 #b4d4e9);color:var(--blue);font-size:clamp(19px,3vw,33px);transform:rotate(var(--r,0deg));margin-top:var(--y,0px)}
+    .flag:nth-child(1),.flag:nth-child(9){--r:13deg;--y:0px}.flag:nth-child(2),.flag:nth-child(8){--r:9deg;--y:21px}.flag:nth-child(3),.flag:nth-child(7){--r:5deg;--y:36px}.flag:nth-child(4),.flag:nth-child(6){--r:2deg;--y:43px}.flag:nth-child(5){--y:46px}
+    .confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-2}
+    .confetti i{position:absolute;left:var(--x);top:var(--y);width:var(--w,9px);height:var(--h,16px);background:var(--c);transform:rotate(var(--rot));border-radius:var(--radius,2px);opacity:.85}
+    .eyebrow{display:inline-block;color:var(--blue);font-weight:800;letter-spacing:.19em;text-transform:uppercase;font-size:13px;margin:24px 0 16px}
+    .hero-frame{border:4px solid var(--purple);padding:18px clamp(16px,4vw,56px) 22px;max-width:830px;width:100%;background:rgba(255,255,255,.94);box-shadow:10px 10px 0 #e8e5ff;transform:rotate(-.4deg)}
+    .hero-frame .hello{font-family:Fredoka,sans-serif;color:var(--blue);font-weight:600;font-size:clamp(25px,4.5vw,54px);letter-spacing:.06em;transform:rotate(-3deg);margin:0 0 8px}
+    h1{font-family:Fredoka,sans-serif;font-size:clamp(60px,11vw,145px);line-height:.94;letter-spacing:-.035em;margin:0;color:var(--blue);text-shadow:5px 7px 0 #a9c7e1;font-weight:700}
+    h1 span{display:block;font-size:clamp(42px,7.7vw,98px);margin-top:14px}
+    .year-pill{margin:22px auto 0;display:inline-block;border:2px solid var(--navy);padding:10px 31px;border-radius:99px;color:var(--navy);font-family:Fredoka,sans-serif;font-size:clamp(19px,3vw,30px);font-weight:700;letter-spacing:.05em;background:white}
+    .hero-sub{font-size:clamp(15px,2vw,20px);font-weight:700;margin:20px 0 28px}
+    .brush{background:var(--navy);color:white;padding:13px 44px;clip-path:polygon(3% 7%,96% 0,100% 15%,97% 87%,4% 100%,0 82%);font-size:17px;display:inline-block}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;padding:15px 28px;border-radius:99px;font-weight:800;transition:transform .2s,box-shadow .2s;background:var(--blue);color:white;border:2px solid var(--blue)}
+    .button:hover,.button:focus-visible{transform:translateY(-3px);box-shadow:0 8px 20px #193d8e40}
+    .hero .button{margin-top:28px}
+    .wave{height:70px;background:var(--soft);clip-path:ellipse(72% 100% at 50% 100%)}
+    section.content{padding:85px clamp(22px,7vw,100px)}
+    .section-kicker{font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);font-size:12px}
+    h2{font-family:Fredoka,sans-serif;font-size:clamp(37px,5.5vw,58px);line-height:1.06;margin:12px 0 16px;color:var(--blue)}
+    .section-intro{max-width:620px;color:#53658a;font-size:17px;line-height:1.65}
+    .welcome{background:var(--soft)}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:37px}
+    .feature{background:white;border:2px solid #e2ebfa;border-radius:25px;padding:30px;box-shadow:var(--shadow);transition:transform .2s}
+    .feature:hover{transform:translateY(-5px)}
+    .feature .emoji{height:62px;width:62px;display:grid;place-items:center;background:#e7f7fc;border-radius:19px;font-size:31px;margin-bottom:22px}
+    .feature:nth-child(2) .emoji{background:#efe8ff}.feature:nth-child(3) .emoji{background:#fff1db}
+    .feature h3{font-family:Fredoka,sans-serif;font-size:24px;margin:0 0 10px;color:var(--blue)}
+    .feature p{line-height:1.6;color:#5b6d8f;margin:0}
+    .agenda{background:white}
+    .agenda-panel{margin-top:30px;border:2px solid #dce7f8;border-radius:28px;overflow:hidden}
+    .agenda-top{background:var(--blue);padding:22px 28px;color:white;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+    .agenda-top strong{font-family:Fredoka,sans-serif;font-size:24px}
+    .status{background:#fff;color:var(--blue);border-radius:30px;padding:8px 14px;font-weight:800;font-size:12px}
+    .agenda-rows{display:grid;grid-template-columns:repeat(3,1fr)}
+    .agenda-row{padding:30px;border-right:1px solid #dce7f8}
+    .agenda-row:last-child{border:0}
+    .agenda-row .time{font-weight:800;color:var(--sky);font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+    .agenda-row h3{font-family:Fredoka,sans-serif;color:var(--blue);font-size:26px;margin:10px 0}
+    .agenda-row p{color:#6a7894;line-height:1.55;margin:0}
+    .note{margin:17px 0 0;color:#637494;font-size:14px}
+    .banner{margin:0 clamp(22px,7vw,100px) 80px;background:var(--navy);color:white;padding:42px clamp(22px,5vw,70px);border-radius:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
+    .banner:after{content:"✡";font-size:180px;position:absolute;right:22%;top:-75px;opacity:.09}
+    .banner h2{color:white;margin:0;font-size:clamp(30px,4vw,46px)}.banner p{margin:10px 0 0;color:#dbe9ff}
+    .banner .button{background:white;color:var(--navy);border-color:white;white-space:nowrap;z-index:1}
+    footer{padding:35px clamp(22px,7vw,100px);background:#f7faff;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;font-size:14px;color:#60708e}
+    footer strong{font-family:Fredoka,sans-serif;font-size:18px;color:var(--blue)}
+    :focus-visible{outline:3px solid var(--purple);outline-offset:4px}
+    @media(max-width:760px){.nav{padding:18px 22px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;right:20px;top:76px;background:white;padding:20px;border:2px solid #dce7f8;border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;min-width:185px}.nav-links.open{display:flex}.hero{padding-top:145px;min-height:665px}.hero-frame{padding:23px 10px}.bunting{left:0;width:100%}.feature-grid,.agenda-rows{grid-template-columns:1fr}.agenda-row{border-right:0;border-bottom:1px solid #dce7f8}.agenda-row:last-child{border:0}.banner{flex-direction:column;align-items:flex-start}.banner .button{white-space:normal}.brush{padding:12px 24px}section.content{padding-top:65px;padding-bottom:65px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="page" id="inicio">
+    <header class="nav">
+      <a href="#inicio" class="brand" aria-label="Inicio de Tojnit Majané"><span class="brand-symbol" aria-hidden="true">✡</span><span>TOJNIT · KAITZ</span></a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a><a href="#propuesta">La propuesta</a><a href="#cronograma">Cronograma</a><a href="#contacto">Info</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="titulo">
+        <div class="bunting" aria-hidden="true"><div class="rope"></div><div class="flags">
+          <span class="flag">✡</span><span class="flag">✡</span><span class="flag">✡</span><span class="flag">✡</span><span class="flag">✡</span><span class="flag">✡</span><span class="flag">✡</span><span class="flag">✡</span><span class="flag">✡</span>
+        </div></div>
+        <div class="confetti" id="confetti" aria-hidden="true"></div>
+        <div class="eyebrow">Una experiencia para compartir</div>
+        <div class="hero-frame">
+          <p class="hello">¡SE VIENE ALGO INCREÍBLE!</p>
+          <h1 id="titulo">MAJANÉ <span>KAITZ</span></h1>
+        </div>
+        <div class="year-pill">TOJNIT 2026–2027</div>
+        <p class="hero-sub">Ideas · Peulot · Juegos · Momentos inolvidables</p>
+        <div class="brush">¡Toda la magia del majané en un solo lugar!</div>
+        <a class="button" href="#propuesta">Conocer la tojnit <span aria-hidden="true">↓</span></a>
+      </section>
+      <div class="wave" aria-hidden="true"></div>
+      <section class="content welcome" id="propuesta">
+        <div class="section-kicker">El espíritu del majané</div>
+        <h2>Un verano para recordar ✨</h2>
+        <p class="section-intro">Este es el espacio de nuestra Tojnit Majané Kaitz 2026–2027. Lo vamos a ir llenando de ideas, actividades y toda la información para vivir un majané único.</p>
+        <div class="feature-grid">
+          <article class="feature"><div class="emoji" aria-hidden="true">🎨</div><h3>Peulot</h3><p>Espacios para crear, descubrir, aprender y compartir en grupo.</p></article>
+          <article class="feature"><div class="emoji" aria-hidden="true">🎉</div><h3>Juegos y sorpresas</h3><p>Propuestas llenas de energía, diversión y experiencias nuevas.</p></article>
+          <article class="feature"><div class="emoji" aria-hidden="true">💙</div><h3>Momentos juntos</h3><p>Encuentros, amistades y recuerdos que nos acompañan todo el año.</p></article>
+        </div>
+      </section>
+      <section class="content agenda" id="cronograma">
+        <div class="section-kicker">Organización</div>
+        <h2>Nuestra tojnit 📅</h2>
+        <p class="section-intro">Acá vamos a compartir el cronograma y las actividades. Por ahora, esta sección es una plantilla: los horarios y contenidos todavía no están cargados.</p>
+        <div class="agenda-panel">
+          <div class="agenda-top"><strong>Un día en el majané</strong><span class="status">Próximamente</span></div>
+          <div class="agenda-rows">
+            <div class="agenda-row"><span class="time">01 / Mañana</span><h3>Arrancamos juntos</h3><p>Actividades y horarios por definir.</p></div>
+            <div class="agenda-row"><span class="time">02 / Tarde</span><h3>Seguimos creando</h3><p>Actividades y horarios por definir.</p></div>
+            <div class="agenda-row"><span class="time">03 / Noche</span><h3>Cerramos el día</h3><p>Actividades y horarios por definir.</p></div>
+          </div>
+        </div>
+        <p class="note">* Los bloques son ilustrativos, no representan un programa confirmado.</p>
+      </section>
+      <section class="banner" id="contacto">
+        <div><h2>¡Esto recién empieza!</h2><p>Pronto sumamos más información, propuestas y novedades.</p></div>
+        <a class="button" href="#inicio">Volver al inicio ↑</a>
+      </section>
+    </main>
+    <footer><strong>✡ TOJNIT · MAJANÉ KAITZ</strong><span>Hecho con 💙 · 2026–2027</span></footer>
+  </div>
+  <script>
+    const confetti = document.getElementById('confetti');
+    const palette=['#214995','#29a6c3','#8b3fff','#d3d5d8','#29205f'];
+    for(let i=0;i<42;i++){
+      const piece=document.createElement('i');
+      const x=(i*37.73)%100, y=(i*23.17)%100;
+      piece.style.setProperty('--x',x+'%');
+      piece.style.setProperty('--y',y+'%');
+      piece.style.setProperty('--c',palette[i%palette.length]);
+      piece.style.setProperty('--rot',((i*47)%180)+'deg');
+      piece.style.setProperty('--w',(5+i%7)+'px');
+      piece.style.setProperty('--h',(7+i%11)+'px');
+      piece.style.setProperty('--radius',i%4===0?'50%':'2px');
+      confetti.appendChild(piece);
+    }
+    const menu=document.querySelector('.menu-toggle');
+    const links=document.querySelector('.nav-links');
+    menu.addEventListener('click',()=>{
+      const open=links.classList.toggle('open');
+      menu.setAttribute('aria-expanded',String(open));
+      menu.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+    });
+    links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menú');
+    }));
+  </script>
+</body>
+</html>
