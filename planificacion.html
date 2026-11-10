@@ -23,7 +23,7 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 const topics=[['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
 const params=new URLSearchParams(location.search);
 const selected=params.get('seccion')||'tema';
-const validGroups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','Lojamuza'];
+const validGroups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
 const requestedGroup=params.get('grupo')||'';
 const group=validGroups.find(name=>name.toLowerCase()===requestedGroup.toLowerCase())||null;
 const groupParam=group?'&grupo='+encodeURIComponent(group.toLowerCase()):'';
