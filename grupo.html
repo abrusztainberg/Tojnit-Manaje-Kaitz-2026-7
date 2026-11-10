@@ -96,7 +96,7 @@ if(!group){location.replace('index.html#grupos')}else{
 document.getElementById('group-name').textContent=group;
 document.title=group+' · Tojnit Majané Kaitz 2026';
 const shades=groupColors[group.toLowerCase()];
-const stops=shades.length===2?shades[0]+' 0%,'+shades[0]+' 50%,'+shades[1]+' 50%,'+shades[1]+' 100%':shades[0]+' 0%,'+shades[0]+' 34%,'+shades[1]+' 34%,'+shades[1]+' 67%,'+shades[2]+' 67%,'+shades[2]+' 100%';
+const stops=shades.map((color,index)=>color+' '+Math.round(index*100/(shades.length-1))+'%').join(',');
 document.documentElement.style.setProperty('--group-hero','linear-gradient(115deg,'+stops+')');
 document.documentElement.style.setProperty('--accent',shades[1]);
 document.documentElement.style.setProperty('--group-text',shades.includes('#181818')||group==='Shingsha'?'#ffffff':'#173563');
