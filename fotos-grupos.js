@@ -16,6 +16,9 @@
     if(!hero)return;
     const image=document.createElement('img');
     image.className='group-photo';
+    // Mantener la foto a todo el ancho y centrar a las personas por grupo.
+    const positions={jaza:'50% 63%',mega:'50% 58%',nifla:'50% 66%',leitza:'50% 60%',mabri:'50% 62%',kasu:'50% 52%',mebu:'50% 55%',shingsha:'50% 59%',jamu:'50% 59%',shoja:'50% 57%',metu:'50% 63%',shalu:'50% 65%',netza:'50% 64%',ofna:'50% 56%',lojamuza:'50% 62%'};
+    image.style.objectPosition=positions[key]||'center';
     image.alt='Foto completa del grupo '+key;
     image.src=url;
     image.addEventListener('load',()=>hero.classList.add('has-group-photo'),{once:true});
