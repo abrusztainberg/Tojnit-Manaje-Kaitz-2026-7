@@ -14,12 +14,11 @@
     const url=URL.createObjectURL(new Blob([blob],{type:'image/jpeg'}));
     const hero=document.querySelector('.hero');
     if(!hero)return;
-    hero.style.backgroundImage='linear-gradient(to bottom, rgba(0,0,0,.23), rgba(0,0,0,.60)), url("'+url+'")';
-    // Bajar el punto de enfoque hace que la foto se desplace hacia arriba.
-    // Ajuste únicamente para Leitza, Mabri y Netza.
-    if (['leitza', 'mabri', 'netza'].includes(key)) {
-      hero.style.backgroundPosition = 'center 78%';
-    }
-    hero.classList.add('has-group-photo');
+    const image=document.createElement('img');
+    image.className='group-photo';
+    image.alt='Foto completa del grupo '+key;
+    image.src=url;
+    image.addEventListener('load',()=>hero.classList.add('has-group-photo'),{once:true});
+    hero.prepend(image);
   }catch(error){console.warn('Se mantiene el degradé hasta que estén disponibles las fotos:',error.message)}
 })();
