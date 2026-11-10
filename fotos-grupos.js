@@ -5,7 +5,7 @@
   if(!valid.includes(key))return;
   try{
     if(!window.JSZip)throw new Error('No está disponible el lector de fotografías');
-    const response=await fetch('fotos-grupos-majane.zip');
+    const response=await fetch('fotos-grupos-majane.zip?v=13');
     if(!response.ok)throw new Error('Todavía falta subir fotos-grupos-majane.zip al repositorio');
     const zip=await window.JSZip.loadAsync(await response.arrayBuffer());
     const entry=zip.file(key+'.jpeg');
@@ -18,7 +18,7 @@
     // Bajar el punto de enfoque hace que la foto se desplace hacia arriba.
     // Ajuste únicamente para Leitza, Mabri y Netza.
     if (['leitza', 'mabri', 'netza'].includes(key)) {
-      hero.style.backgroundPosition = 'center 65%';
+      hero.style.backgroundPosition = 'center 78%';
     }
     hero.classList.add('has-group-photo');
   }catch(error){console.warn('Se mantiene el degradé hasta que estén disponibles las fotos:',error.message)}
