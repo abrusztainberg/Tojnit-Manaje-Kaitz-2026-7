@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#214995">
+<title>Planificación · Tojnit Majané Kaitz 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6fd;color:#1d3f80;font-family:Montserrat,Arial,sans-serif}.shell{max-width:1100px;margin:auto;min-height:100vh;background:#fff}
+header{padding:24px clamp(20px,6vw,76px);display:flex;gap:20px;justify-content:space-between;align-items:center;border-bottom:1px solid #e3ebfa}
+.brand{color:#214995;text-decoration:none;font-weight:900;font-size:clamp(15px,2.3vw,23px)}.back{border:2px solid #dae6f9;border-radius:100px;padding:13px 19px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap}
+main{padding:clamp(32px,7vw,80px)}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:#4195b7;font-size:12px;font-weight:800}h1{font-size:clamp(40px,7vw,75px);letter-spacing:-.04em;line-height:1.1;margin:14px 0;color:#214995;font-weight:900}
+p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linear-gradient(90deg,#2b64b2,#a26de2);border-radius:8px;margin:25px 0}
+.category-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.category-links a{text-decoration:none;color:#214995;border:1.5px solid #d9e5f9;background:#f5f8ff;border-radius:100px;padding:10px 16px;font-weight:800;font-size:13px}.category-links a[aria-current="page"]{background:#214995;color:white;border-color:#214995}
+.empty{margin-top:36px;border:2px dashed #d5e1f6;border-radius:22px;background:#f9fbff;padding:35px;max-width:750px}.empty strong{font-size:21px}.empty p{margin-bottom:0}
+@media(max-width:620px){header{align-items:flex-start;flex-direction:column}.empty{padding:25px}}
+</style></head>
+<body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" href="index.html#innova">← Volver a planificación</a></header>
+<main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section class="empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
+<script>
+const topics=[['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
+const selected=new URLSearchParams(location.search).get('seccion')||'tema';
+const current=topics.find(([id])=>id===selected);
+if(!current){location.replace('index.html#innova')}else{
+document.getElementById('topic-title').textContent=current[1];
+document.title=current[1]+' · Tojnit Majané Kaitz 2026';
+const nav=document.getElementById('topic-links');
+topics.forEach(([id,label])=>{const a=document.createElement('a');a.href='planificacion.html?seccion='+id;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
+}
+</script></body></html>
