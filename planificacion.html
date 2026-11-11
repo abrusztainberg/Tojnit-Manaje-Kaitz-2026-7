@@ -140,7 +140,7 @@ if(selected==='tema'){
  function nextPrompt(topic){
   const list=allIdeas[ageConfig.nivel]?.[topic]||[];
   if(!list.length){ideaCard.hidden=true;return}
-  const key='mk26-tema-ideas:'+ageConfig.nivel+':'+topic;
+  const key='mk26-tema-ideas:'+(group?.toLowerCase()||ageConfig.nivel)+':'+topic;
   let seen=[];
   try{const saved=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(saved))seen=saved.filter(n=>Number.isInteger(n)&&n>=0&&n<list.length)}catch(e){}
   if(seen.length>=list.length)seen=[];
