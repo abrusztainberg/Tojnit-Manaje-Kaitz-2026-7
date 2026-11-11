@@ -40,7 +40,7 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 .primary{background:var(--blue);color:#fff}.secondary{background:white;color:var(--blue)}
 .draw-box{background:#eef4ff;border:2px solid #d8e4fa;border-radius:20px;padding:clamp(20px,4vw,34px);text-align:center}
 .draw-box .date{font-size:clamp(24px,4vw,39px);font-weight:900;color:var(--blue);margin:20px 0;min-height:45px;line-height:1.2}
-.draw-box p{margin:0 0 19px}.talk-prompts{margin-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.draw-box p{margin:0 0 19px}.planning-reminder{font-size:17px;font-weight:800;color:#214995;margin:30px 0 12px;line-height:1.5}\n.talk-prompts{margin-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .talk-prompts div{background:#fff;padding:23px;border:1.5px solid #dce6f6;border-radius:18px;color:var(--blue);font-weight:800;font-size:clamp(18px,2.3vw,24px)}
 @media(max-width:570px){.talk-prompts{grid-template-columns:1fr}}
 .tip{background:#eaf3ff;border-left:4px solid #5f99ce;padding:17px 19px;border-radius:10px;color:#2d5384;font-size:14px;line-height:1.6;margin-top:27px}
@@ -157,7 +157,8 @@ function begin(id){
    drawBox.append(prompt,date,drawButton);
    const prompts=document.createElement('div');prompts.className='talk-prompts';
    for(const question of ['¿Qué salió bien?','¿Qué salió mal?']){const card=document.createElement('div');card.textContent=question;prompts.appendChild(card)}
-   content.append(drawBox,prompts);
+   const reminder=document.createElement('p');reminder.className='planning-reminder';reminder.textContent='Respondé estas preguntas en tu hoja de planificación.';
+   content.append(drawBox,reminder,prompts);
  }else{
    const fields=document.createElement('div');fields.className='fields';
    journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);
