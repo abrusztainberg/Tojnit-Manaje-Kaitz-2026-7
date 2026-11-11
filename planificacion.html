@@ -84,13 +84,13 @@ body.wheel-modal-open{overflow:hidden}
           <button type="button" id="idea-next" class="idea-next">🔄 Quiero otra propuesta</button>
           <button type="button" id="idea-reveal" class="idea-reveal" hidden>Ver respuesta del acertijo</button>
         </div>
-        <p class="idea-note">Una propuesta a la vez. Podés pedir otra sin volver a girar la ruleta.</p>
+        <p class="idea-note" id="idea-note">Pensá qué necesidad real de tu grupo podría abrir esta pregunta. Podés pedir otra sin volver a girar.</p>
       </div>
     </div>
   </div>
 </section>
 <section class="empty" id="topic-empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
-<script src="ideas-temas.js?v=1"></script>
+<script src="ideas-temas.js?v=2"></script>
 <script>
 const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
 const params=new URLSearchParams(location.search);
@@ -137,6 +137,24 @@ if(selected==='tema'){
  svg.appendChild(el('circle',{cx:250,cy:250,r:237,fill:'none',stroke:'#fff','stroke-width':10}));
 
  const ageConfig=window.EDADES_TEMAS?.[group?.toLowerCase()]||{nivel:'secundaria',edad:'12 a 18 años'};
+ const ageFocus={
+ jaza:'Para 2 y 3 años, pensá en juego, apego, exploración sensorial y gestos cotidianos.',
+ mega:'Para 4 años, pensá en juego simbólico, emociones, primeras reglas y experiencias concretas.',
+ nifla:'Para 5 años, pensá en preguntas de los chicos, cooperación, curiosidad y preparación de mayor autonomía.',
+ leitza:'Para 6 años, pensá en consignas simples, juego compartido y primeras explicaciones propias.',
+ mabri:'Para 7 años, pensá en perspectivas diferentes, vínculos y decisiones dentro de juegos grupales.',
+ kasu:'Para 8 años, pensá en argumentar con ejemplos, acuerdos y responsabilidades compartidas.',
+ mebu:'Para 9 años, pensá en dilemas, participación real y consecuencias de sus decisiones.',
+ shingsha:'Para 10 años, pensá en contradicciones del grupo, pertenencia y autonomía creciente.',
+ jamu:'Para 11 años, pensá en presión de pares, pensamiento crítico y construcción de identidad.',
+ shoja:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ metu:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ shalu:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ netza:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ ofna:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ lojamuza:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.'
+ };
+
  const allIdeas=window.IDEAS_TEMAS||{};
  const ideaCard=document.getElementById('idea-card');
  const ideaText=document.getElementById('idea-text');
@@ -170,6 +188,7 @@ if(selected==='tema'){
   ideaKind.textContent=kind==='Dato'?'💡 Dato curioso':kind==='Acertijo'?'🧩 Acertijo':'💬 Pregunta disparadora';
   ideaAge.textContent=(group||'Madrijim')+' · '+ageConfig.edad;
   ideaText.textContent=text;
+  document.getElementById('idea-note').textContent=(ageFocus[group?.toLowerCase()]||'Pensá en las necesidades reales de tu grupo.')+' ¿Qué pregunta educativa puede nacer de esto? Podés pedir otra sin volver a girar.';
   ideaAnswer.textContent=answer||'';
   ideaAnswer.hidden=true;
   reveal.hidden=kind!=='Acertijo'||!answer;
