@@ -16,9 +16,46 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 .category-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.category-links a{text-decoration:none;color:#214995;border:1.5px solid #d9e5f9;background:#f5f8ff;border-radius:100px;padding:10px 16px;font-weight:800;font-size:13px}.category-links a[aria-current="page"]{background:#214995;color:white;border-color:#214995}
 .empty{margin-top:36px;border:2px dashed #d5e1f6;border-radius:22px;background:#f9fbff;padding:35px;max-width:750px}.empty strong{font-size:21px}.empty p{margin-bottom:0}
 @media(max-width:620px){header{align-items:flex-start;flex-direction:column}.empty{padding:25px}}
+
+/* Ruleta de temas */
+.wheel-section{margin:32px auto 0;max-width:860px;padding:clamp(20px,4vw,40px);border-radius:28px;background:linear-gradient(150deg,#f3f7ff,#faf2ff 58%,#eefaff);border:2px solid #e1e9fb;text-align:center;overflow:hidden}
+.wheel-section h2{font-size:clamp(23px,3.5vw,36px);color:#214995;margin:0 0 8px;font-weight:900;letter-spacing:-.03em}
+.wheel-subtitle{margin:0 auto 20px;max-width:550px;font-size:15px}
+.wheel-stage{position:relative;width:min(100%,480px);margin:12px auto 23px;isolation:isolate}
+.wheel-disc{display:block;width:100%;aspect-ratio:1/1;filter:drop-shadow(0 18px 21px rgba(34,57,126,.17));transform:rotate(0deg);transform-origin:center center;will-change:transform}
+.wheel-pointer{position:absolute;z-index:4;left:50%;top:-9px;transform:translateX(-50%);width:0;height:0;border-left:21px solid transparent;border-right:21px solid transparent;border-top:39px solid #173d85;filter:drop-shadow(0 3px 2px rgba(0,0,0,.14))}
+.wheel-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:70px;height:70px;border:10px solid #fff;background:#214995;border-radius:50%;box-shadow:0 3px 16px #173d8540}
+.wheel-button{border:0;border-radius:999px;background:#214995;color:#fff;padding:17px 35px;font:900 17px Montserrat,Arial,sans-serif;cursor:pointer;box-shadow:0 7px 0 #143472,0 12px 22px #123c8f2a}
+.wheel-button:hover{background:#325fb5}.wheel-button:disabled{opacity:.68;cursor:wait}
+.wheel-result{margin:30px auto 5px;max-width:520px;padding:24px 20px;background:#fff;border:2px solid #d9e6ff;border-radius:24px;box-shadow:0 8px 26px #315dae17}
+.wheel-result[hidden],.wheel-section[hidden]{display:none}
+.wheel-result .result-kicker{color:#7181a1;text-transform:uppercase;letter-spacing:.13em;font-weight:800;font-size:12px}
+.wheel-result strong{display:block;font-size:clamp(30px,5.5vw,52px);color:#214995;font-weight:900;margin:10px 0}
+.wheel-result p{margin:0;font-size:14px}
+.confetti-layer{position:absolute;inset:-5% -15%;z-index:5;pointer-events:none;overflow:visible}
+.confetti-piece{position:absolute;top:8%;left:50%;height:12px;width:8px;border-radius:2px;animation:confetti-fly 2.4s cubic-bezier(.1,.6,.35,1) forwards}
+@keyframes confetti-fly{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(var(--spin))}}
+@media(prefers-reduced-motion:reduce){.confetti-piece{animation:none;display:none}.wheel-disc{will-change:auto}}
+@media(max-width:570px){.wheel-section{padding:22px 12px}.wheel-pointer{border-left-width:16px;border-right-width:16px;border-top-width:29px}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
-<main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section class="empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
+<main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
+  <h2 id="wheel-title">🎡 ¡Que la ruleta elija!</h2>
+  <p class="wheel-subtitle">Girá la ruleta y descubrí qué tema les toca explorar en su próxima peulá.</p>
+  <div class="wheel-stage">
+    <div class="wheel-pointer" aria-hidden="true"></div>
+    <svg id="wheel-disc" class="wheel-disc" viewBox="0 0 500 500" role="img" aria-label="Ruleta con Sionismo, Masorti, ESI, Tikun Olam y Jinuj"></svg>
+    <div class="wheel-hub" aria-hidden="true"></div>
+    <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  </div>
+  <button id="wheel-spin" class="wheel-button" type="button">🎲 Girar ruleta</button>
+  <div id="wheel-result" class="wheel-result" hidden role="status" aria-live="polite">
+    <div class="result-kicker">✨ ¡Salió este tema! ✨</div>
+    <strong id="winner-name"></strong>
+    <p>¡A pensar cómo llevarlo a una peulá con su grupo!</p>
+  </div>
+</section>
+<section class="empty" id="topic-empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
 <script>
 const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
 const params=new URLSearchParams(location.search);
@@ -36,7 +73,72 @@ if(!current){location.replace(group?'grupo.html?grupo='+encodeURIComponent(group
 document.getElementById('topic-title').textContent=current[1];
 document.title=current[1]+(group?' · '+group:'')+' · Tojnit Majané Kaitz 2026';
 if(group)document.querySelector('.eyebrow').textContent='Innová en la planificación de '+group;
+if(selected==='tema'){
+ document.getElementById('tema-wheel').hidden=false;
+ document.getElementById('topic-empty').hidden=true;
+ document.querySelector('main > p').textContent='Dejá que el azar te dé una idea para tu próxima peulá.';
+}
 const nav=document.getElementById('topic-links');
 topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
+}
+
+// Ruleta: los temas se eligen al azar, sin favorecer ninguna opción.
+if(selected==='tema'){
+ const labels=['Sionismo','Masorti','ESI','Tikun Olam','Jinuj'];
+ const colors=['#3668C5','#8B62CB','#1C9F9D','#F48B70','#E5AB32'];
+ const svg=document.getElementById('wheel-disc');
+ const ns='http://www.w3.org/2000/svg';
+ const point=(radius,angle)=>({x:250+radius*Math.cos(angle*Math.PI/180),y:250+radius*Math.sin(angle*Math.PI/180)});
+ function el(name,attrs){const node=document.createElementNS(ns,name);for(const [key,value] of Object.entries(attrs))node.setAttribute(key,String(value));return node}
+ labels.forEach((label,index)=>{
+  const start=-90+index*72,end=start+72;
+  const a=point(235,start),b=point(235,end);
+  const path=el('path',{d:'M 250 250 L '+a.x+' '+a.y+' A 235 235 0 0 1 '+b.x+' '+b.y+' Z',fill:colors[index],stroke:'#fff','stroke-width':5});
+  svg.appendChild(path);
+  const pos=point(145,start+36);
+  const text=el('text',{x:pos.x,y:pos.y,'text-anchor':'middle','dominant-baseline':'middle','font-size':label==='Tikun Olam'?21:24,'font-weight':900,'font-family':'Montserrat,Arial,sans-serif',fill:'#fff',stroke:'#17346a','stroke-width':.4,'paint-order':'stroke'});
+  text.textContent=label;svg.appendChild(text);
+ });
+ svg.appendChild(el('circle',{cx:250,cy:250,r:237,fill:'none',stroke:'#fff','stroke-width':10}));
+ let rotation=0,spinning=false;
+ const spin=document.getElementById('wheel-spin'),result=document.getElementById('wheel-result'),winner=document.getElementById('winner-name');
+ const confetti=document.getElementById('confetti-layer');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function celebrate(){
+  confetti.replaceChildren();
+  if(reduced)return;
+  for(let i=0;i<85;i++){
+   const piece=document.createElement('i');piece.className='confetti-piece';
+   piece.style.background=colors[i%colors.length];
+   piece.style.left=(15+Math.random()*70)+'%';
+   piece.style.top=(5+Math.random()*23)+'%';
+   piece.style.setProperty('--tx',((Math.random()-.5)*620)+'px');
+   piece.style.setProperty('--ty',(140+Math.random()*360)+'px');
+   piece.style.setProperty('--spin',(500+Math.random()*950)+'deg');
+   piece.style.animationDelay=(Math.random()*.28)+'s';
+   confetti.appendChild(piece);
+  }
+  setTimeout(()=>confetti.replaceChildren(),3000);
+ }
+ spin.addEventListener('click',()=>{
+  if(spinning)return;
+  spinning=true;spin.disabled=true;spin.textContent='🎡 ¡Girando!';
+  result.hidden=true;confetti.replaceChildren();
+  const randomValues=new Uint32Array(1);
+  if(window.crypto&&window.crypto.getRandomValues)window.crypto.getRandomValues(randomValues);
+  else randomValues[0]=Math.floor(Math.random()*4294967296);
+  const choice=randomValues[0]%labels.length;
+  const target=((-(choice+.5)*72)%360+360)%360;
+  const current=((rotation%360)+360)%360;
+  const adjustment=(target-current+360)%360;
+  rotation+=360*6+adjustment;
+  svg.style.transition=reduced?'none':'transform 4.6s cubic-bezier(.12,.76,.16,1)';
+  svg.style.transform='rotate('+rotation+'deg)';
+  function finish(){
+   spinning=false;spin.disabled=false;spin.textContent='🎲 Girar de nuevo';
+   winner.textContent=labels[choice];result.hidden=false;celebrate();
+  }
+  if(reduced)finish();else setTimeout(finish,4700);
+ });
 }
 </script></body></html>
