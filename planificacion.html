@@ -58,6 +58,11 @@ body.wheel-modal-open{overflow:hidden}
 .idea-reveal[hidden]{display:none}
 .idea-note{font-size:12px!important;margin-top:15px!important;color:#7787a1!important}
 @media(max-width:500px){.idea-actions button{width:100%}}
+
+.theme-tip{display:flex;flex-direction:column;gap:9px;border-left:5px solid #8b62cb;border-radius:13px;background:#f2efff;padding:17px 19px;margin:0 0 22px;text-align:left}
+.theme-tip-label{font-size:12px;font-weight:900;letter-spacing:.03em;color:#7753ad}
+.theme-tip strong{display:block!important;color:#273b7a!important;font-size:clamp(17px,2.2vw,22px)!important;font-weight:900!important;line-height:1.45!important;margin:0!important}
+.theme-tip-hint{font-size:12px;line-height:1.6;color:#656b91}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
@@ -79,9 +84,14 @@ body.wheel-modal-open{overflow:hidden}
       <div id="idea-card" class="idea-card" hidden>
         <div class="idea-meta"><span id="idea-kind" class="idea-kind">Pregunta</span><span id="idea-age" class="idea-age"></span></div>
         <p id="idea-text" class="idea-text"></p>
+        <div class="theme-tip" id="theme-tip">
+          <span class="theme-tip-label">💡 Tip para encontrar un tema</span>
+          <strong id="theme-tip-title"></strong>
+          <span class="theme-tip-hint">Una dirección posible, no una respuesta cerrada. ¿Qué tensión o necesidad del grupo podrían trabajar a partir de acá?</span>
+        </div>
         <div id="idea-answer" class="idea-answer" hidden></div>
         <div class="idea-actions">
-          <button type="button" id="idea-next" class="idea-next">🔄 Quiero otra propuesta</button>
+          <button type="button" id="idea-next" class="idea-next">🔄 Otro disparador</button>
           <button type="button" id="idea-reveal" class="idea-reveal" hidden>Ver respuesta del acertijo</button>
         </div>
         <p class="idea-note" id="idea-note">Pensá qué necesidad real de tu grupo podría abrir esta pregunta. Podés pedir otra sin volver a girar.</p>
@@ -90,7 +100,7 @@ body.wheel-modal-open{overflow:hidden}
   </div>
 </section>
 <section class="empty" id="topic-empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
-<script src="ideas-temas.js?v=2"></script>
+<script src="ideas-temas.js?v=3"></script>
 <script>
 const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
 const params=new URLSearchParams(location.search);
@@ -180,6 +190,8 @@ if(selected==='tema'){
   if(window.crypto?.getRandomValues)window.crypto.getRandomValues(random);
   else random[0]=Math.floor(Math.random()*4294967296);
   const index=available[random[0]%available.length];
+  const suggestions=window.TIPS_TEMAS?.[ageConfig.nivel]?.[topic]||[];
+  document.getElementById('theme-tip-title').textContent=suggestions[index]||'¿Qué necesidad educativa concreta aparece detrás de esta pregunta?';
   seen.push(index);roundPools.set(key,index);
   try{localStorage.setItem(key,JSON.stringify(seen))}catch(e){}
   const parts=list[index].split('|');
