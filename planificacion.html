@@ -37,6 +37,20 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 @keyframes confetti-fly{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(var(--spin))}}
 @media(prefers-reduced-motion:reduce){.confetti-piece{animation:none;display:none}.wheel-disc{will-change:auto}}
 @media(max-width:570px){.wheel-section{padding:22px 12px}.wheel-pointer{border-left-width:16px;border-right-width:16px;border-top-width:29px}}
+
+.idea-card{margin:19px auto 2px;padding:25px 24px;max-width:590px;background:linear-gradient(140deg,#f4f8ff,#fff);border:2px solid #c8dcfc;border-radius:22px;text-align:left}
+.idea-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.idea-kind{display:inline-block;background:#e7f0ff;border-radius:100px;padding:7px 13px;font-size:12px;font-weight:900;color:#285c9e}
+.idea-age{color:#7786a5;font-size:12px;font-weight:700}
+.idea-text{font-size:clamp(17px,2.5vw,23px)!important;font-weight:800!important;line-height:1.55!important;margin:17px 0!important;color:#193e79!important}
+.idea-answer{padding:12px 15px;margin-top:12px;background:#ebf5fa;border-radius:12px;color:#244b75;font-size:14px;line-height:1.5}
+.idea-answer[hidden],.idea-card[hidden]{display:none}
+.idea-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.idea-next,.idea-reveal{padding:13px 18px;border:2px solid #214995;border-radius:100px;background:#214995;color:#fff;font:800 13px Montserrat,Arial,sans-serif;cursor:pointer}
+.idea-reveal{color:#214995;background:#fff}
+.idea-reveal[hidden]{display:none}
+.idea-note{font-size:12px!important;margin-top:15px!important;color:#7787a1!important}
+@media(max-width:500px){.idea-actions button{width:100%}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
@@ -53,9 +67,20 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
     <div class="result-kicker">✨ ¡Salió este tema! ✨</div>
     <strong id="winner-name"></strong>
     <p>¡A pensar cómo llevarlo a una peulá con su grupo!</p>
+    <div id="idea-card" class="idea-card" hidden>
+      <div class="idea-meta"><span id="idea-kind" class="idea-kind">Pregunta</span><span id="idea-age" class="idea-age"></span></div>
+      <p id="idea-text" class="idea-text"></p>
+      <div id="idea-answer" class="idea-answer" hidden></div>
+      <div class="idea-actions">
+        <button type="button" id="idea-next" class="idea-next">🔄 Quiero otra propuesta</button>
+        <button type="button" id="idea-reveal" class="idea-reveal" hidden>Ver respuesta del acertijo</button>
+      </div>
+      <p class="idea-note">Una propuesta a la vez. Podés pedir otra sin volver a girar la ruleta.</p>
+    </div>
   </div>
 </section>
 <section class="empty" id="topic-empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
+<script src="ideas-temas.js?v=1"></script>
 <script>
 const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
 const params=new URLSearchParams(location.search);
@@ -100,6 +125,49 @@ if(selected==='tema'){
   text.textContent=label;svg.appendChild(text);
  });
  svg.appendChild(el('circle',{cx:250,cy:250,r:237,fill:'none',stroke:'#fff','stroke-width':10}));
+
+ const ageConfig=window.EDADES_TEMAS?.[group?.toLowerCase()]||{nivel:'secundaria',edad:'12 a 18 años'};
+ const allIdeas=window.IDEAS_TEMAS||{};
+ const ideaCard=document.getElementById('idea-card');
+ const ideaText=document.getElementById('idea-text');
+ const ideaKind=document.getElementById('idea-kind');
+ const ideaAge=document.getElementById('idea-age');
+ const ideaAnswer=document.getElementById('idea-answer');
+ const reveal=document.getElementById('idea-reveal');
+ const nextIdea=document.getElementById('idea-next');
+ let currentTopic='';
+ const roundPools=new Map();
+ function nextPrompt(topic){
+  const list=allIdeas[ageConfig.nivel]?.[topic]||[];
+  if(!list.length){ideaCard.hidden=true;return}
+  const key='mk26-tema-ideas:'+ageConfig.nivel+':'+topic;
+  let seen=[];
+  try{const saved=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(saved))seen=saved.filter(n=>Number.isInteger(n)&&n>=0&&n<list.length)}catch(e){}
+  if(seen.length>=list.length)seen=[];
+  let available=list.map((_,i)=>i).filter(i=>!seen.includes(i));
+  // Evitar que la primera idea del ciclo nuevo repita la anterior.
+  const previous=roundPools.get(key);
+  if(available.length>1&&previous!==undefined)available=available.filter(i=>i!==previous);
+  const random=new Uint32Array(1);
+  if(window.crypto?.getRandomValues)window.crypto.getRandomValues(random);
+  else random[0]=Math.floor(Math.random()*4294967296);
+  const index=available[random[0]%available.length];
+  seen.push(index);roundPools.set(key,index);
+  try{localStorage.setItem(key,JSON.stringify(seen))}catch(e){}
+  const parts=list[index].split('|');
+  const kind=parts[0],body=parts.slice(1).join('|');
+  const [text,answer]=body.split('::');
+  ideaKind.textContent=kind==='Dato'?'💡 Dato curioso':kind==='Acertijo'?'🧩 Acertijo':'💬 Pregunta disparadora';
+  ideaAge.textContent=(group||'Madrijim')+' · '+ageConfig.edad;
+  ideaText.textContent=text;
+  ideaAnswer.textContent=answer||'';
+  ideaAnswer.hidden=true;
+  reveal.hidden=kind!=='Acertijo'||!answer;
+  reveal.textContent='Ver respuesta del acertijo';
+  ideaCard.hidden=false;
+ }
+ nextIdea.addEventListener('click',()=>{if(currentTopic)nextPrompt(currentTopic)});
+ reveal.addEventListener('click',()=>{ideaAnswer.hidden=!ideaAnswer.hidden;reveal.textContent=ideaAnswer.hidden?'Ver respuesta del acertijo':'Ocultar respuesta'});
  let rotation=0,spinning=false;
  const spin=document.getElementById('wheel-spin'),result=document.getElementById('wheel-result'),winner=document.getElementById('winner-name');
  const confetti=document.getElementById('confetti-layer');
@@ -136,7 +204,7 @@ if(selected==='tema'){
   svg.style.transform='rotate('+rotation+'deg)';
   function finish(){
    spinning=false;spin.disabled=false;spin.textContent='🎲 Girar de nuevo';
-   winner.textContent=labels[choice];result.hidden=false;celebrate();
+   winner.textContent=labels[choice];currentTopic=labels[choice];result.hidden=false;nextPrompt(currentTopic);celebrate();
   }
   if(reduced)finish();else setTimeout(finish,4700);
  });
