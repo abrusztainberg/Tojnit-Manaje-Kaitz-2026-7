@@ -153,7 +153,7 @@ function begin(id){
    const drawButton=document.createElement('button');drawButton.type='button';drawButton.className='primary';drawButton.textContent='🎲 Sortear sábado';
    const saturdays=[];
    for(let month=2;month<=10;month++){for(let day=1;day<=31;day++){const d=new Date(2026,month,day,12);if(d.getMonth()===month&&d.getDay()===6)saturdays.push(d)}}
-   drawButton.addEventListener('click',()=>{const picked=saturdays[Math.floor(Math.random()*saturdays.length)];date.textContent=new Intl.DateTimeFormat('es-AR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(picked)});
+   drawButton.addEventListener('click',()=>{const picked=saturdays[Math.floor(Math.random()*saturdays.length)];date.textContent=(formatted=>formatted.charAt(0).toUpperCase()+formatted.slice(1))(new Intl.DateTimeFormat('es-AR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(picked))});
    drawBox.append(prompt,date,drawButton);
    const prompts=document.createElement('div');prompts.className='talk-prompts';
    for(const question of ['¿Qué salió bien?','¿Qué salió mal?']){const card=document.createElement('div');card.textContent=question;prompts.appendChild(card)}
