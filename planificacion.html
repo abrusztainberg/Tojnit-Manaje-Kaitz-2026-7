@@ -27,7 +27,14 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 .wheel-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:70px;height:70px;border:10px solid #fff;background:#214995;border-radius:50%;box-shadow:0 3px 16px #173d8540}
 .wheel-button{border:0;border-radius:999px;background:#214995;color:#fff;padding:17px 35px;font:900 17px Montserrat,Arial,sans-serif;cursor:pointer;box-shadow:0 7px 0 #143472,0 12px 22px #123c8f2a}
 .wheel-button:hover{background:#325fb5}.wheel-button:disabled{opacity:.68;cursor:wait}
-.wheel-result{margin:30px auto 5px;max-width:520px;padding:24px 20px;background:#fff;border:2px solid #d9e6ff;border-radius:24px;box-shadow:0 8px 26px #315dae17}
+.wheel-result{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(10,31,78,.55);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);text-align:center}
+.result-panel{position:relative;width:min(100%,600px);max-height:min(90vh,840px);overflow-y:auto;padding:clamp(26px,5vw,42px) clamp(18px,4vw,35px);background:linear-gradient(155deg,#fff,#f4f8ff);border:3px solid #d3e1ff;border-radius:29px;box-shadow:0 30px 100px rgba(8,31,80,.3);animation:result-pop .45s cubic-bezier(.2,1.5,.35,1) both}
+@keyframes result-pop{from{opacity:0;transform:translateY(22px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+.result-close{position:absolute;top:12px;right:12px;width:41px;height:41px;border-radius:50%;border:2px solid #d8e4fb;background:#fff;color:#214995;cursor:pointer;font:900 23px Montserrat,Arial,sans-serif;display:grid;place-items:center}
+.result-close:hover,.result-close:focus-visible{background:#e6eeff}
+.result-intro{padding:0 35px}
+body.wheel-modal-open{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.result-panel{animation:none}}
 .wheel-result[hidden],.wheel-section[hidden]{display:none}
 .wheel-result .result-kicker{color:#7181a1;text-transform:uppercase;letter-spacing:.13em;font-weight:800;font-size:12px}
 .wheel-result strong{display:block;font-size:clamp(30px,5.5vw,52px);color:#214995;font-weight:900;margin:10px 0}
@@ -63,19 +70,22 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
     <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
   </div>
   <button id="wheel-spin" class="wheel-button" type="button">🎲 Girar ruleta</button>
-  <div id="wheel-result" class="wheel-result" hidden role="status" aria-live="polite">
-    <div class="result-kicker">✨ ¡Salió este tema! ✨</div>
-    <strong id="winner-name"></strong>
-    <p>¡A pensar cómo llevarlo a una peulá con su grupo!</p>
-    <div id="idea-card" class="idea-card" hidden>
-      <div class="idea-meta"><span id="idea-kind" class="idea-kind">Pregunta</span><span id="idea-age" class="idea-age"></span></div>
-      <p id="idea-text" class="idea-text"></p>
-      <div id="idea-answer" class="idea-answer" hidden></div>
-      <div class="idea-actions">
-        <button type="button" id="idea-next" class="idea-next">🔄 Quiero otra propuesta</button>
-        <button type="button" id="idea-reveal" class="idea-reveal" hidden>Ver respuesta del acertijo</button>
+  <div id="wheel-result" class="wheel-result" hidden role="dialog" aria-modal="true" aria-labelledby="winner-name" aria-describedby="result-intro">
+    <div class="result-panel">
+      <button type="button" id="result-close" class="result-close" aria-label="Cerrar propuesta" title="Cerrar">×</button>
+      <div class="result-kicker">✨ ¡Salió este tema! ✨</div>
+      <strong id="winner-name"></strong>
+      <p id="result-intro" class="result-intro">¡Una idea para inspirar la próxima peulá!</p>
+      <div id="idea-card" class="idea-card" hidden>
+        <div class="idea-meta"><span id="idea-kind" class="idea-kind">Pregunta</span><span id="idea-age" class="idea-age"></span></div>
+        <p id="idea-text" class="idea-text"></p>
+        <div id="idea-answer" class="idea-answer" hidden></div>
+        <div class="idea-actions">
+          <button type="button" id="idea-next" class="idea-next">🔄 Quiero otra propuesta</button>
+          <button type="button" id="idea-reveal" class="idea-reveal" hidden>Ver respuesta del acertijo</button>
+        </div>
+        <p class="idea-note">Una propuesta a la vez. Podés pedir otra sin volver a girar la ruleta.</p>
       </div>
-      <p class="idea-note">Una propuesta a la vez. Podés pedir otra sin volver a girar la ruleta.</p>
     </div>
   </div>
 </section>
@@ -171,6 +181,26 @@ if(selected==='tema'){
  let rotation=0,spinning=false;
  const spin=document.getElementById('wheel-spin'),result=document.getElementById('wheel-result'),winner=document.getElementById('winner-name');
  const confetti=document.getElementById('confetti-layer');
+ const closeResult=document.getElementById('result-close');
+ function hideResult(){
+   result.hidden=true;
+   document.body.classList.remove('wheel-modal-open');
+   spin.focus();
+ }
+ closeResult.addEventListener('click',hideResult);
+ result.addEventListener('click',event=>{if(event.target===result)hideResult()});
+ document.addEventListener('keydown',event=>{
+   if(result.hidden)return;
+   if(event.key==='Escape'){event.preventDefault();hideResult();return}
+   if(event.key==='Tab'){
+     const elements=[...result.querySelectorAll('button:not([disabled])')].filter(el=>!el.hidden&&el.getClientRects().length);
+     if(!elements.length)return;
+     const first=elements[0],last=elements[elements.length-1];
+     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}
+     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
+   }
+ });
+
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  function celebrate(){
   confetti.replaceChildren();
@@ -191,7 +221,7 @@ if(selected==='tema'){
  spin.addEventListener('click',()=>{
   if(spinning)return;
   spinning=true;spin.disabled=true;spin.textContent='🎡 ¡Girando!';
-  result.hidden=true;confetti.replaceChildren();
+  result.hidden=true;document.body.classList.remove('wheel-modal-open');confetti.replaceChildren();
   const randomValues=new Uint32Array(1);
   if(window.crypto&&window.crypto.getRandomValues)window.crypto.getRandomValues(randomValues);
   else randomValues[0]=Math.floor(Math.random()*4294967296);
@@ -204,7 +234,7 @@ if(selected==='tema'){
   svg.style.transform='rotate('+rotation+'deg)';
   function finish(){
    spinning=false;spin.disabled=false;spin.textContent='🎲 Girar de nuevo';
-   winner.textContent=labels[choice];currentTopic=labels[choice];result.hidden=false;nextPrompt(currentTopic);celebrate();
+   winner.textContent=labels[choice];currentTopic=labels[choice];nextPrompt(currentTopic);result.hidden=false;document.body.classList.add('wheel-modal-open');closeResult.focus();celebrate();
   }
   if(reduced)finish();else setTimeout(finish,4700);
  });
