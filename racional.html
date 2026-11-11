@@ -38,6 +38,11 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 .actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:28px}
 .primary,.secondary{border-radius:100px;border:2px solid var(--blue);padding:15px 24px;font:800 14px Montserrat,Arial,sans-serif;cursor:pointer}
 .primary{background:var(--blue);color:#fff}.secondary{background:white;color:var(--blue)}
+.draw-box{background:#eef4ff;border:2px solid #d8e4fa;border-radius:20px;padding:clamp(20px,4vw,34px);text-align:center}
+.draw-box .date{font-size:clamp(24px,4vw,39px);font-weight:900;color:var(--blue);margin:20px 0;min-height:45px;line-height:1.2}
+.draw-box p{margin:0 0 19px}.talk-prompts{margin-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.talk-prompts div{background:#fff;padding:23px;border:1.5px solid #dce6f6;border-radius:18px;color:var(--blue);font-weight:800;font-size:clamp(18px,2.3vw,24px)}
+@media(max-width:570px){.talk-prompts{grid-template-columns:1fr}}
 .tip{background:#eaf3ff;border-left:4px solid #5f99ce;padding:17px 19px;border-radius:10px;color:#2d5384;font-size:14px;line-height:1.6;margin-top:27px}
 .example{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:18px}
 .example>div{background:white;border:1.5px solid var(--line);padding:20px;border-radius:17px}
@@ -95,15 +100,10 @@ if(group){document.querySelector('#group-pill').hidden=false;document.querySelec
 const journeys={
 error:{
  name:'De un error, una oportunidad',
- subtitle:'Volvé a una peulá anterior que no funcionó del todo. Reconstruí lo que pasó y buscá qué te enseñó sobre el grupo.',
- challenge:'Desafío: identificá algo que el grupo necesite trabajar a partir de esta experiencia.',
- fields:[
- {name:'Peulá anterior',placeholder:'¿Cuál fue la peulá que no salió como esperaban?',hint:'Por ahora escribí el nombre de una peulá de tu grupo. Todavía no hay un archivo de peulot anteriores conectado.'},
- {name:'¿Qué querían lograr?',placeholder:'¿Qué esperaban que sucediera?'},
- {name:'¿Qué terminó pasando?',placeholder:'Contá qué ocurrió realmente.'},
- {name:'¿Por qué creen que pasó?',placeholder:'Piensen posibles razones, sin buscar culpables.'},
- {name:'¿Qué descubrieron sobre sus janijim?',placeholder:'¿Qué les mostró esa experiencia sobre el grupo?'}
-]},
+ subtitle:'Sorteá un sábado entre marzo y noviembre de 2026 y recuerden juntos cómo fue ese día.',
+ challenge:'',
+ fields:[]
+},
 detectives:{
  name:'Detectives del grupo',
  subtitle:'El próximo racional puede estar escondido en lo que sucede cada sábado. Elegí una característica de tu diagnóstico y buscá evidencias.',
@@ -146,9 +146,25 @@ function begin(id){
  for(const [title,value] of [['LO QUE DICEN','“Somos un grupo súper unido.”'],['LO QUE HACEN','Siempre se juntan con las mismas personas.']]){
  const item=document.createElement('div');const strong=document.createElement('strong');strong.textContent=title;const span=document.createElement('span');span.textContent=value;item.append(strong,span);example.appendChild(item)}
  content.appendChild(example)}
- const fields=document.createElement('div');fields.className='fields';
- journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);
+ if(id==='error'){
+   const drawBox=document.createElement('div');drawBox.className='draw-box';
+   const prompt=document.createElement('p');prompt.textContent='¿Qué sábado les tocó?';
+   const date=document.createElement('div');date.className='date';date.setAttribute('aria-live','polite');date.textContent='¡Sorteen una fecha!';
+   const drawButton=document.createElement('button');drawButton.type='button';drawButton.className='primary';drawButton.textContent='🎲 Sortear sábado';
+   const saturdays=[];
+   for(let month=2;month<=10;month++){for(let day=1;day<=31;day++){const d=new Date(2026,month,day,12);if(d.getMonth()===month&&d.getDay()===6)saturdays.push(d)}}
+   drawButton.addEventListener('click',()=>{const picked=saturdays[Math.floor(Math.random()*saturdays.length)];date.textContent=new Intl.DateTimeFormat('es-AR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(picked)});
+   drawBox.append(prompt,date,drawButton);
+   const prompts=document.createElement('div');prompts.className='talk-prompts';
+   for(const question of ['¿Qué salió bien?','¿Qué salió mal?']){const card=document.createElement('div');card.textContent=question;prompts.appendChild(card)}
+   content.append(drawBox,prompts);
+ }else{
+   const fields=document.createElement('div');fields.className='fields';
+   journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);
+ }
  $('challenge').textContent=journey.challenge;
+ $('challenge').classList.toggle('hidden',id==='error');
+ $('go-final').classList.toggle('hidden',id==='error');
  ['finding','importance','goal'].forEach(id=>$(id).value='');syncPreview();show('activity');
 }
 function syncPreview(){for(const id of ['finding','importance','goal'])$('preview-'+id).textContent=$(id).value.trim()||'Todavía sin completar.'}
