@@ -43,6 +43,9 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 .draw-box p{margin:0 0 19px}.planning-reminder{font-size:17px;font-weight:800;color:#214995;margin:30px 0 12px;line-height:1.5}\n.talk-prompts{margin-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .talk-prompts div{background:#fff;padding:23px;border:1.5px solid #dce6f6;border-radius:18px;color:var(--blue);font-weight:800;font-size:clamp(18px,2.3vw,24px)}
 @media(max-width:570px){.talk-prompts{grid-template-columns:1fr}}
+.rethink-card{margin-top:28px;padding:24px 26px;background:linear-gradient(135deg,#eaf2ff,#f5f0ff);border:2px solid #d6e3fa;border-radius:20px;text-align:left}
+.rethink-card strong{display:block;font-size:clamp(19px,2.5vw,25px);font-weight:900;color:#214995;margin-bottom:9px}
+.rethink-card p{margin:0;color:#2b4b7e;line-height:1.75;font-size:15px}
 .tip{background:#eaf3ff;border-left:4px solid #5f99ce;padding:17px 19px;border-radius:10px;color:#2d5384;font-size:14px;line-height:1.6;margin-top:27px}
 .example{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:18px}
 .example>div{background:white;border:1.5px solid var(--line);padding:20px;border-radius:17px}
@@ -158,7 +161,11 @@ function begin(id){
    const prompts=document.createElement('div');prompts.className='talk-prompts';
    for(const question of ['¿Qué salió bien?','¿Qué salió mal?']){const card=document.createElement('div');card.textContent=question;prompts.appendChild(card)}
    const reminder=document.createElement('p');reminder.className='planning-reminder';reminder.textContent='Respondé estas preguntas en tu hoja de planificación.';
-   content.append(drawBox,reminder,prompts);
+   const rethink=document.createElement('div');rethink.className='rethink-card';
+   const rethinkTitle=document.createElement('strong');rethinkTitle.textContent='Con el diario del lunes...';
+   const rethinkText=document.createElement('p');rethinkText.textContent='Ahora que saben qué funcionó y qué no, miren esa peulá con otros ojos. ¿Qué necesidad del grupo quedó al descubierto? Usen esa dificultad como punto de partida para construir un racional y repensar la peulá: ¿qué cambiarían para que esta vez tenga sentido y funcione para sus janijim?';
+   rethink.append(rethinkTitle,rethinkText);
+   content.append(drawBox,reminder,prompts,rethink);
  }else{
    const fields=document.createElement('div');fields.className='fields';
    journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);
