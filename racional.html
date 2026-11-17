@@ -111,13 +111,8 @@ detectives:{
  name:'Dar vuelta el racional',
  subtitle:'¿Y si, en vez de empezar preguntándonos qué problemática queremos trabajar, nos preguntamos qué podría pasar si no hacemos nada? Imaginen a su kvutzá dentro de unos meses: ¿qué situaciones podrían repetirse, qué vínculos podrían desgastarse o qué oportunidades de crecimiento podrían perderse? No se trata de exagerar ni inventar problemas, sino de mirar lo que hoy sucede y descubrir por qué merece nuestra atención ahora. A veces, el verdadero sentido de un racional aparece cuando entendemos qué está en juego si dejamos pasar el tiempo.',
  challenge:'Desafío: descubran qué vale la pena prevenir o transformar hoy, antes de que se vuelva una dificultad más grande para el grupo.',
- fields:[
- {name:'¿Qué situación observan hoy en su grupo?',placeholder:'Piensen en algo real que estén notando en los vínculos o en la dinámica de la kvutzá.'},
- {name:'¿Qué podría pasar si esta situación sigue igual?',placeholder:'Imaginen cómo podría evolucionar durante los próximos meses.'},
- {name:'¿Qué riesgos tendría no abordarla?',placeholder:'¿Qué vínculos, aprendizajes, espacios o posibilidades se podrían ver afectados?'},
- {name:'¿Qué señales les muestran que vale la pena ocuparse ahora?',placeholder:'No inventen una problemática: vuelvan a ejemplos concretos de su grupo.'},
- {name:'¿Qué les gustaría evitar y qué quisieran construir en su lugar?',placeholder:'Transformen esa preocupación en una intención educativa.'}
-]},
+ fields:[]
+},
 moneda:{
  name:'Las dos caras de la moneda',
  subtitle:'No toda contradicción es un problema. Mirá lo que el grupo dice y comparalo con lo que hace.',
@@ -167,11 +162,11 @@ function begin(id){
    content.append(drawBox,reminder,prompts,rethink);
  }else{
    const fields=document.createElement('div');fields.className='fields';
-   journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);
+   if(journey.fields.length){journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);}
  }
  $('challenge').textContent=journey.challenge;
  $('challenge').classList.toggle('hidden',id==='error');
- $('go-final').classList.toggle('hidden',id==='error');
+ $('go-final').classList.toggle('hidden',id==='error'||id==='detectives');
  ['finding','importance','goal'].forEach(id=>$(id).value='');syncPreview();show('activity');
 }
 function syncPreview(){for(const id of ['finding','importance','goal'])$('preview-'+id).textContent=$(id).value.trim()||'Todavía sin completar.'}
