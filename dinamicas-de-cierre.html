@@ -103,6 +103,16 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 @media(max-width:850px){.movie-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.movie-card{height:350px}}
 @media(max-width:500px){.movie-grid{gap:10px}.movie-card{height:360px}.movie-front-text{padding:12px 9px}.movie-back{padding:12px 10px}.movie-back p{font-size:11px}.movie-front-text strong{font-size:16px}.movie-poster-icon{font-size:55px}}
 @media(prefers-reduced-motion:reduce){.movie-card-inner,.movie-poster-icon{transition:none}}
+</style><style>
+/* Carteles cinematográficos reales cargados desde Wikipedia */
+.movie-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.movie-cover[hidden]{display:none}
+.movie-front:before{z-index:1}
+.movie-front-text{z-index:2}
+.movie-poster-icon{z-index:1}
+.movie-front.movie-has-cover .movie-poster-icon{display:none}
+.movie-front.movie-has-cover .movie-front-text{padding-top:55px}
+.movie-front.movie-has-cover:before{background:linear-gradient(180deg,#0000000c 0%,#00000012 46%,#050b1ded 100%)}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas de cierre</h1><div class="divider"></div>
@@ -279,6 +289,35 @@ document.getElementById('lab-copy').addEventListener('click',()=>{
  else prompt('Copiá la propuesta:',labOutput);
 });
 const movieLibrary=[{"title":"Intensamente","emoji":"🧠","vibe":"Emociones","c1":"#38b9ff","c2":"#ef789e","dynamicTitle":"Cierre con emociones distintas","dynamicText":"Cada janij responde una pregunta de cierre desde una emoción diferente: alegría, tristeza, enojo, miedo, ansiedad o calma. Pueden elegirla libremente, responder con un gesto o escribir sin compartir. La misma pregunta cambia según la emoción que la responde."},{"title":"La Sirenita","emoji":"🧜‍♀️","vibe":"El mar y la voz","c1":"#0bbec2","c2":"#285ad4","dynamicTitle":"Cierre bajo el mar","dynamicText":"Hagan el cierre ambientado en el mar: con telas azules, sonidos de olas o una ronda imaginando la orilla. Si tienen pileta o playa, pueden hacerlo cerca del agua, en un lugar seguro y supervisado. Cada janij comparte algo que quiere expresar o llevarse de la peulá."},{"title":"Coco","emoji":"🎸","vibe":"Recuerdos","c1":"#ff9836","c2":"#9c40bf","dynamicTitle":"El recuerdo que queda","dynamicText":"Cada janij elige una imagen, frase o momento de la peulá que le gustaría recordar. Lo escriben, dibujan o representan y crean una pequeña galería compartida de recuerdos del encuentro."},{"title":"Toy Story","emoji":"🤠","vibe":"Los objetos hablan","c1":"#3d83e3","c2":"#f1c14a","dynamicTitle":"Si el objeto pudiera hablar","dynamicText":"Cada janij elige un objeto del lugar y hace el cierre desde su punto de vista: ¿qué vio?, ¿qué aprendió del grupo?, ¿qué recordaría de la peulá? Pueden contarlo en primera persona o dibujarlo."},{"title":"Frozen","emoji":"❄️","vibe":"Soltar","c1":"#5fc3eb","c2":"#8f9ff6","dynamicTitle":"Dejarlo ir","dynamicText":"En el cierre, cada janij elige algo pequeño que quiera soltar o dejar atrás. Puede ser algo ficticio, una costumbre o una idea. Lo escriben en un copo de papel y lo guardan o dejan en una caja, sin obligación de mostrarlo."},{"title":"Encanto","emoji":"🦋","vibe":"Talentos","c1":"#ed73ba","c2":"#45b38d","dynamicTitle":"El don que compartimos","dynamicText":"Cada janij recibe un papel que simboliza un don que aportó al grupo: escuchar, ayudar, animarse, crear, etc. Pueden elegirlo o recibir una sugerencia positiva de sus compañeros. Terminen reconociendo la diversidad de aportes."},{"title":"Harry Potter","emoji":"🪄","vibe":"Magia","c1":"#6040a1","c2":"#b79a52","dynamicTitle":"El hechizo del próximo encuentro","dynamicText":"Cada janij inventa una palabra o gesto mágico para representar algo que quiere llevarse o intentar la próxima peulá. La ronda final combina esos hechizos en una despedida compartida."},{"title":"Shrek","emoji":"🧅","vibe":"Capas","c1":"#8bbd40","c2":"#aa7941","dynamicTitle":"Las capas de la peulá","dynamicText":"Construyan un cierre de tres capas: lo primero que pareció, lo que descubrieron después y lo que realmente se llevan. Cada capa puede expresarse con una palabra, dibujo o gesto."},{"title":"Buscando a Nemo","emoji":"🐠","vibe":"Encontrar","c1":"#168ed4","c2":"#ed963e","dynamicTitle":"¿Qué encontré hoy?","dynamicText":"Cada janij cuenta, dibuja o señala algo que encontró durante la peulá: una idea, una conexión, una sorpresa o una nueva pregunta. Juntan todo en un océano de descubrimientos."},{"title":"Monsters Inc.","emoji":"👾","vibe":"Miedo y risas","c1":"#7753c2","c2":"#53c8c1","dynamicTitle":"El monstruo cambia de cara","dynamicText":"Al cerrar, cada janij elige un monstruo imaginario que represente una dificultad del comienzo. Después le cambia la cara o el nombre según cómo se siente al terminar. Compartirlo es opcional."},{"title":"Matilda","emoji":"📚","vibe":"La voz propia","c1":"#397db9","c2":"#cb6ba6","dynamicTitle":"Una frase poderosa","dynamicText":"Cada janij escribe una frase breve que resuma qué se lleva de la peulá. Pueden guardar todas las frases en un libro del grupo para volver a leerlas otro día."},{"title":"Up","emoji":"🎈","vibe":"Llevarse algo","c1":"#4ba6ea","c2":"#ffc55f","dynamicTitle":"El globo de lo que me llevo","dynamicText":"Dibujen globos de papel. Cada janij escribe o dibuja una idea, sensación o recuerdo que quisiera llevarse del encuentro. Armen un cielo colectivo de globos antes de despedirse."},{"title":"Ratatouille","emoji":"🐭","vibe":"Mezclar aportes","c1":"#5f78ce","c2":"#df9659","dynamicTitle":"La receta de la peulá","dynamicText":"Entre todos construyan la receta del encuentro: cada janij aporta un ingrediente simbólico —una idea, una emoción o una acción— que hizo falta para que la peulá fuera como fue."},{"title":"El Rey León","emoji":"🦁","vibe":"El lugar en el grupo","c1":"#e2a448","c2":"#b45f48","dynamicTitle":"Mi lugar en la ronda","dynamicText":"Para el cierre, cada janij elige una palabra que describa qué lugar ocupó hoy: escuchar, acompañar, observar, proponer o aprender. Pueden colocar esas palabras en un círculo compartido."},{"title":"Spider-Man","emoji":"🕸️","vibe":"Conexiones","c1":"#cf384e","c2":"#3261b0","dynamicTitle":"La red del grupo","dynamicText":"Con un ovillo de lana o con tiras de papel, vayan conectando aportes de la peulá: una ayuda, una idea, un gesto. Si no usan materiales, dibujen las conexiones en un afiche. Cierren mirando la red que formaron."},{"title":"Zootopia","emoji":"🦊","vibe":"Diferencias que suman","c1":"#59aae3","c2":"#f2a753","dynamicTitle":"Lo diferente nos suma","dynamicText":"Cada janij puede elegir una manera distinta de expresar qué aportó al grupo. Reúnan esas formas en una producción final que destaque que no todos participan igual."},{"title":"Moana","emoji":"🌊","vibe":"Encontrar el rumbo","c1":"#0a9da7","c2":"#2468bb","dynamicTitle":"La brújula de salida","dynamicText":"Al cerrar, cada janij elige un rumbo simbólico: algo que quiere seguir pensando, algo que dejará atrás o algo que quiere probar. Pueden marcarlo en una brújula dibujada en el piso o papel."},{"title":"Los Increíbles","emoji":"🦸","vibe":"Fortalezas","c1":"#d74a52","c2":"#e7a84e","dynamicTitle":"Superpoderes compartidos","dynamicText":"Cada janij nombra o dibuja un superpoder que vio aparecer durante la peulá, como escuchar o ayudar. Formen un equipo de superpoderes para llevarse a la próxima actividad."},{"title":"Alicia en el País de las Maravillas","emoji":"🐇","vibe":"Otra perspectiva","c1":"#8b60bf","c2":"#58b4ce","dynamicTitle":"El cierre al revés","dynamicText":"En vez de preguntar qué pasó, pregunten primero qué se llevan; luego qué los sorprendió y recién al final cómo empezó todo. Alteren el orden habitual del cierre para reconstruir la experiencia."},{"title":"Kung Fu Panda","emoji":"🐼","vibe":"Aprender de uno mismo","c1":"#d3a04b","c2":"#5ca46e","dynamicTitle":"Mi ingrediente secreto","dynamicText":"Cada janij completa la idea «Hoy descubrí que puedo…» con una palabra, dibujo o gesto. Después el grupo reconoce que cada persona puede aportar algo distinto."},{"title":"Lilo & Stitch","emoji":"🌺","vibe":"Pertenecer","c1":"#e67794","c2":"#4889cf","dynamicTitle":"Nadie queda afuera","dynamicText":"El grupo elige pequeñas acciones que hicieron sentir acompañados a otros durante la peulá. Las representan con flores, dibujos o gestos y arman una despedida que incluya a todos."}];
+const movieWikipediaTitles={"Intensamente":"Inside_Out_(2015_film)","La Sirenita":"The_Little_Mermaid_(1989_film)","Coco":"Coco_(2017_film)","Toy Story":"Toy_Story","Frozen":"Frozen_(2013_film)","Encanto":"Encanto_(film)","Harry Potter":"Harry_Potter_and_the_Philosopher%27s_Stone_(film)","Shrek":"Shrek","Buscando a Nemo":"Finding_Nemo","Monsters Inc.":"Monsters,_Inc.","Matilda":"Matilda_(1996_film)","Up":"Up_(2009_film)","Ratatouille":"Ratatouille_(film)","El Rey León":"The_Lion_King","Spider-Man":"Spider-Man_(2002_film)","Zootopia":"Zootopia","Moana":"Moana_(2016_film)","Los Increíbles":"The_Incredibles","Alicia en el País de las Maravillas":"Alice_in_Wonderland_(1951_film)","Kung Fu Panda":"Kung_Fu_Panda_(film)","Lilo & Stitch":"Lilo_%26_Stitch"};
+const moviePosterCache=new Map();
+async function getMoviePoster(title){
+ if(moviePosterCache.has(title))return moviePosterCache.get(title);
+ const promise=(async()=>{
+  const film=movieWikipediaTitles[title];if(!film)return '';
+  const api='https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&pithumbsize=550&titles='+film+'&origin=*';
+  try{
+   const response=await fetch(api,{mode:'cors'});
+   if(response.ok){
+    const json=await response.json();
+    const poster=json.query?.pages?.[0]?.thumbnail?.source;
+    if(poster&&poster.startsWith('https://'))return poster;
+   }
+  }catch(error){}
+  try{
+   const article=decodeURIComponent(film).replaceAll('_',' ');
+   const response=await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(article),{mode:'cors'});
+   if(response.ok){
+    const json=await response.json();
+    const poster=json.thumbnail?.source;
+    if(poster&&poster.startsWith('https://'))return poster;
+   }
+  }catch(error){}
+  return '';
+ })();
+ moviePosterCache.set(title,promise);
+ return promise;
+}
 let moviePrevious=[];
 function movieShuffle(list){
  const array=list.slice();
@@ -300,12 +339,19 @@ function renderMovieCatalog(){
   front.setAttribute('aria-label','Revelar dinámica inspirada en '+movie.title);
   front.style.background='linear-gradient(150deg,'+movie.c1+','+movie.c2+')';
   const poster=document.createElement('span');poster.className='movie-poster-icon';poster.textContent=movie.emoji;
+  const posterImage=document.createElement('img');posterImage.className='movie-cover';posterImage.alt='Portada de '+movie.title;posterImage.loading='lazy';posterImage.decoding='async';
+  getMoviePoster(movie.title).then(url=>{
+   if(!url||!posterImage.isConnected)return;
+   posterImage.src=url;
+   posterImage.onload=()=>{front.classList.add('movie-has-cover');posterImage.hidden=false;};
+   posterImage.onerror=()=>{posterImage.hidden=true;front.classList.remove('movie-has-cover');};
+  });
   const frontText=document.createElement('span');frontText.className='movie-front-text';
   const type=document.createElement('small');type.textContent='TOJNITFLIX · PELÍCULA';
   const title=document.createElement('strong');title.textContent=movie.title;
   const vibe=document.createElement('span');vibe.textContent=movie.vibe;
   const prompt=document.createElement('span');prompt.className='movie-prompt';prompt.textContent='▶ DESCUBRIR EL CIERRE';
-  frontText.append(type,title,vibe,prompt);front.append(poster,frontText);
+  frontText.append(type,title,vibe,prompt);front.append(posterImage,poster,frontText);
   const back=document.createElement('div');back.className='movie-back movie-face';
   const kicker=document.createElement('small');kicker.textContent='✨ DINÁMICA DE CIERRE';
   const header=document.createElement('h4');header.textContent=movie.dynamicTitle;
