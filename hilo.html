@@ -119,7 +119,7 @@ back.href=group?'grupo.html?grupo='+encodeURIComponent(group.toLowerCase())+'#in
 back.textContent=group?'← Volver a '+group:'← Todos los grupos';
 if(group){document.getElementById('hilo-group').hidden=false;document.getElementById('hilo-group').textContent='Grupo '+group;document.title='Hilo · '+group+' · Majané Kaitz 2026'}
 const nav=document.getElementById('hilo-categories');
-for(const [id,label] of [['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']]){
+for(const [id,label] of [['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre']]){
  const link=document.createElement('a');
  link.href=id==='racional'?'racional.html'+q:id==='hilo'?'hilo.html'+q:'planificacion.html?seccion='+id+extra;
  link.textContent=label;
