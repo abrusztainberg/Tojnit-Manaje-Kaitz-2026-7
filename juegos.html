@@ -192,9 +192,9 @@ const back=document.getElementById('back');
 back.href=group?'grupo.html?grupo='+encodeURIComponent(slug)+'#innova':'grupos.html';
 back.textContent=group?'← Volver a '+group:'← Todos los grupos';
 if(group){document.title='Juegos · '+group+' · Tojnit Majané Kaitz 2026';document.getElementById('eyebrow').textContent='Innová en la planificación de '+group}
-for(const [id,label] of [['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']]){
+for(const [id,label] of [['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre']]){
  const a=document.createElement('a');
- a.href=id==='racional'?'racional.html'+q:id==='hilo'?'hilo.html'+q:id==='juegos'?'juegos.html'+q:id==='dinamicas'?'dinamicas.html'+q:'planificacion.html?seccion='+id+extra;
+ a.href=id==='racional'?'racional.html'+q:id==='hilo'?'hilo.html'+q:id==='juegos'?'juegos.html'+q:id==='dinamicas'?'dinamicas.html'+q:id==='dinamicas-de-cierre'?'dinamicas-de-cierre.html'+q:'planificacion.html?seccion='+id+extra;
  a.textContent=label;if(id==='juegos')a.setAttribute('aria-current','page');document.getElementById('nav').appendChild(a);
 }
 const $=id=>document.getElementById(id);
