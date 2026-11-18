@@ -330,7 +330,7 @@ function drawObject(){
  let available=all.filter(item=>!used.includes(item));
  if(!available.length){const previous=used[used.length-1];memorySeen[currentMemoryLetter]=[];available=all.filter(item=>item!==previous);}
  const object=available[Math.floor(Math.random()*available.length)];
- memorySeen[currentMemoryLetter].push(object);
+ memorySeen[currentMemoryLetter]=[...(memorySeen[currentMemoryLetter]||[]),object];
  document.getElementById('memory-label').textContent='LETRA '+currentMemoryLetter+' · OBJETO SORTEADO';
  document.getElementById('memory-object').textContent=object;
  letterResult.hidden=false;
