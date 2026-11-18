@@ -81,6 +81,36 @@ body.wheel-modal-open{overflow:hidden}
 .tema-path-pending>b{color:#8e9bb0}
 .tema-back{display:block;margin:0 0 24px;border:0;background:none;color:#285bb0;font:800 13px Montserrat,Arial,sans-serif;text-align:left;cursor:pointer}
 @media(max-width:800px){.tema-path-grid{grid-template-columns:1fr}.tema-path-card{min-height:0}}
+
+.machine-section{margin:32px auto 0;max-width:930px}
+.machine-section[hidden],.machine-result[hidden]{display:none}
+.machine-heading{text-align:center;margin:10px 0 22px}
+.machine-tag{color:#8a5ec0;letter-spacing:.12em;font-size:11px;font-weight:900}
+.machine-heading h2{font-size:clamp(27px,4vw,42px);color:#214995;letter-spacing:-.04em;margin:12px 0}
+.machine-heading>p{max-width:680px;margin:0 auto}
+.machine-game{border:5px solid #253f89;border-radius:27px;background:linear-gradient(145deg,#3c64c7,#5f43ae);padding:25px;box-shadow:0 16px 27px #273a7c35;text-align:center}
+.machine-top{display:flex;justify-content:space-between;color:#ffe7a1;align-items:center;font-weight:900;letter-spacing:.08em;padding:0 5px 19px;font-size:13px}
+.machine-reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.machine-reel{min-height:205px;border-radius:15px;background:#fff;box-shadow:inset 0 6px 12px #213a8c17,0 7px 12px #15286030;border:3px solid #cfdaff;padding:19px 13px;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:flex-start}
+.machine-reel-label{font-size:10px;color:#7c6aa4;font-weight:900;letter-spacing:.08em}
+.machine-reel p{font-size:clamp(13px,1.8vw,18px);line-height:1.5;margin:0;color:#214995;font-weight:800}
+.machine-reel-theme{background:#fff9e8;border-color:#ffdc7a}
+.machine-reel-theme p{color:#8b4a00}
+.machine-reels.is-rolling .machine-reel{animation:machine-jiggle .14s ease-in-out infinite alternate}
+@keyframes machine-jiggle{from{transform:translateY(-3px)}to{transform:translateY(3px)}}
+.machine-lever{margin:25px 0 8px;padding:16px clamp(16px,3vw,32px);border:0;border-radius:999px;background:#ffce56;box-shadow:0 7px 0 #c38f21;color:#263b78;cursor:pointer;font:900 clamp(13px,2vw,17px) Montserrat,Arial,sans-serif}
+.machine-lever:disabled{opacity:.75;cursor:wait}
+.machine-status{font-size:12px;color:#fff!important;margin:15px 0 0!important;font-weight:700}
+.machine-result{margin:26px 0 0;background:#f7f4ff;border:2px solid #e0d7f5;border-radius:22px;padding:25px;text-align:center}
+.machine-result-heading{font-size:12px;color:#8256b5;font-weight:900;letter-spacing:.08em}
+.machine-result h3{font-size:clamp(23px,3vw,32px);color:#24478e;margin:15px 0 12px;line-height:1.3}
+.machine-result>p{font-size:16px;color:#304b7b;font-weight:700}
+.machine-think{margin:20px 0 0;text-align:left;background:#fff;border-left:5px solid #b17bd8;border-radius:12px;padding:17px 19px}
+.machine-think strong{font-size:14px;color:#24478e}
+.machine-think p{font-size:13px;margin:7px 0 0}
+.machine-context{margin:16px auto 0;font-size:12px;max-width:700px;text-align:center}
+@media(max-width:650px){.machine-reels{grid-template-columns:1fr}.machine-reel{min-height:115px;padding:15px;gap:8px}.machine-game{padding:17px}.machine-reel p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.machine-reels.is-rolling .machine-reel{animation:none}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-paths" class="tema-paths" hidden aria-labelledby="tema-paths-title">
@@ -93,12 +123,12 @@ body.wheel-modal-open{overflow:hidden}
       <span>Girá la ruleta, recibí una pregunta profunda y descubrí un posible tema para tu próxima peulá.</span>
       <b>Explorar este camino →</b>
     </button>
-    <div class="tema-path-card tema-path-pending">
+    <button type="button" id="open-tema-machine" class="tema-path-card tema-path-ready">
       <span class="tema-path-number">CAMINO 02</span>
-      <strong>Segundo camino</strong>
-      <span>Acá vamos a sumar la próxima dinámica.</span>
-      <b>Próximamente</b>
-    </div>
+      <strong>🎰 La máquina de las ideas</strong>
+      <span>Tres casilleros, una pregunta que incomoda y un tema concreto nacido del diagnóstico del grupo.</span>
+      <b>Explorar este camino →</b>
+    </button>
     <div class="tema-path-card tema-path-pending">
       <span class="tema-path-number">CAMINO 03</span>
       <strong>Tercer camino</strong>
@@ -106,6 +136,40 @@ body.wheel-modal-open{overflow:hidden}
       <b>Próximamente</b>
     </div>
   </div>
+</section>
+<section id="tema-machine" class="machine-section" hidden aria-labelledby="machine-title">
+  <button type="button" class="tema-back" id="back-machine-paths">← Elegir otro camino</button>
+  <div class="machine-heading">
+    <span class="machine-tag">CAMINO 02 · DIAGNÓSTICO DEL GRUPO</span>
+    <h2 id="machine-title">🎰 La máquina de las ideas</h2>
+    <p id="machine-intro">Inspirada en lo que los madrijim contaron sobre sus grupos: encontrá una tensión real, una pregunta potente y un posible tema para tu peulá.</p>
+  </div>
+  <div class="machine-game" aria-label="Máquina de las ideas con tres casilleros">
+    <div class="machine-top"><span>✦</span><strong id="machine-group">TU GRUPO</strong><span>✦</span></div>
+    <div class="machine-reels" id="machine-reels">
+      <div class="machine-reel">
+        <span class="machine-reel-label">LO QUE VEMOS</span>
+        <p id="reel-signal">¿Qué está pasando en nuestro grupo?</p>
+      </div>
+      <div class="machine-reel">
+        <span class="machine-reel-label">LA PREGUNTA INCÓMODA</span>
+        <p id="reel-question">¿Qué no nos estamos preguntando?</p>
+      </div>
+      <div class="machine-reel machine-reel-theme">
+        <span class="machine-reel-label">TEMA PARA LA PEULÁ</span>
+        <p id="reel-theme">¿Qué vale la pena trabajar?</p>
+      </div>
+    </div>
+    <button type="button" class="machine-lever" id="machine-generate">🎰 ¡ACTIVAR LA MÁQUINA!</button>
+    <p id="machine-status" class="machine-status" aria-live="polite">Tocá el botón para generar una idea.</p>
+  </div>
+  <div class="machine-result" id="machine-result" hidden>
+    <div class="machine-result-heading">✨ ¡Hay una idea para trabajar!</div>
+    <h3 id="machine-result-title"></h3>
+    <p id="machine-result-question"></p>
+    <div class="machine-think"><strong>Ahora viene lo importante</strong><p>¿Esto refleja algo real que vive tu grupo? Si sí, pensá qué querés que puedan descubrir, cuestionar o transformar con la peulá. Si no, generá otra idea.</p></div>
+  </div>
+  <p class="machine-context">Estas propuestas se inspiran en las respuestas del diagnóstico. Son hipótesis educativas, no etiquetas sobre los janijim: confirmen siempre si siguen representando al grupo.</p>
 </section>
 <section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
   <button type="button" id="back-tema-paths" class="tema-back">← Elegir otro camino</button>
@@ -144,6 +208,7 @@ body.wheel-modal-open{overflow:hidden}
 </section>
 <section class="empty" id="topic-empty"><strong>Espacio para completar</strong><p id="topic-help">Acá vamos a sumar las ideas y recursos que quieras compartir.</p></section></main></div>
 <script src="ideas-temas.js?v=3"></script>
+<script src="maquina-temas.js?v=1"></script>
 <script>
 const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
 const params=new URLSearchParams(location.search);
@@ -169,7 +234,16 @@ if(selected==='tema'){
   document.getElementById('tema-paths').hidden=true;
   document.getElementById('tema-wheel').hidden=false;
  });
- document.getElementById('back-tema-paths').addEventListener('click',()=>{
+ document.getElementById('open-tema-machine').addEventListener('click',()=>{
+  document.getElementById('tema-paths').hidden=true;
+  document.getElementById('tema-machine').hidden=false;
+  setupMachine();
+ });
+ document.getElementById('back-machine-paths').addEventListener('click',()=>{
+  document.getElementById('tema-machine').hidden=true;
+  document.getElementById('tema-paths').hidden=false;
+ });
+  document.getElementById('back-tema-paths').addEventListener('click',()=>{
   const result=document.getElementById('wheel-result');
   result.hidden=true;document.body.classList.remove('wheel-modal-open');
   document.getElementById('tema-wheel').hidden=true;
@@ -178,6 +252,72 @@ if(selected==='tema'){
 }
 const nav=document.getElementById('topic-links');
 topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
+}
+
+
+const machineSuggestions=window.MAQUINA_TEMAS||{};
+let machineReady=false;
+let machineBusy=false;
+let machinePrevious=-1;
+let machineTimerIds=[];
+function setupMachine(){
+ const slug=(group||'').toLowerCase();
+ const info=machineSuggestions[slug]||machineSuggestions.shoja;
+ document.getElementById('machine-group').textContent=(group||'Tu grupo')+' · '+info.age;
+ if(machineReady)return;
+ machineReady=true;
+ const generate=document.getElementById('machine-generate');
+ const ids=['reel-signal','reel-question','reel-theme'];
+ const defaultCopy=['¿Qué está pasando en nuestro grupo?','¿Qué no nos estamos preguntando?','¿Qué vale la pena trabajar?'];
+ const status=document.getElementById('machine-status');
+ const result=document.getElementById('machine-result');
+ const choose=()=>{
+  const list=info.items;
+  let seen=[];
+  const key='mk27-maquina:'+slug;
+  try{const parsed=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(parsed))seen=parsed.filter(n=>Number.isInteger(n)&&n>=0&&n<list.length)}catch(e){}
+  if(seen.length>=list.length)seen=[];
+  let available=list.map((_,i)=>i).filter(i=>!seen.includes(i));
+  if(available.length>1&&machinePrevious>=0)available=available.filter(i=>i!==machinePrevious);
+  const random=new Uint32Array(1);
+  if(window.crypto?.getRandomValues)window.crypto.getRandomValues(random);else random[0]=Math.floor(Math.random()*4294967296);
+  const index=available[random[0]%available.length];
+  machinePrevious=index;seen.push(index);
+  try{localStorage.setItem(key,JSON.stringify(seen))}catch(e){}
+  return list[index];
+ };
+ generate.addEventListener('click',()=>{
+  if(machineBusy)return;
+  machineBusy=true;generate.disabled=true;result.hidden=true;
+  generate.textContent='🎰 GIRANDO...';status.textContent='Mezclando ideas de tu grupo...';
+  const list=info.items;
+  const chosen=choose();
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('machine-reels').classList.add('is-rolling');
+  let turns=0;
+  const show=(entry)=>{
+   document.getElementById(ids[0]).textContent=entry.signal;
+   document.getElementById(ids[1]).textContent=entry.question;
+   document.getElementById(ids[2]).textContent=entry.theme;
+  };
+  if(reduced){complete();return}
+  const interval=setInterval(()=>{
+   const entry=list[Math.floor(Math.random()*list.length)];
+   show(entry);turns++;
+   if(turns>=15){clearInterval(interval);complete()}
+  },95);
+  machineTimerIds.push(interval);
+  function complete(){
+   show(chosen);
+   document.getElementById('machine-reels').classList.remove('is-rolling');
+   document.getElementById('machine-result-title').textContent=chosen.theme;
+   document.getElementById('machine-result-question').textContent=chosen.question;
+   result.hidden=false;
+   status.textContent='¡Idea desbloqueada! ¿Se conecta con lo que necesita tu grupo?';
+   generate.disabled=false;generate.textContent='↻ GENERAR OTRA IDEA';
+   machineBusy=false;
+  }
+ });
 }
 
 // Ruleta: los temas se eligen al azar, sin favorecer ninguna opción.
