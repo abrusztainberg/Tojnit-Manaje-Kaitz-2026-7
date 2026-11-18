@@ -112,7 +112,7 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 .remove-add{display:inline-flex;margin-top:16px;border:2px solid #cdddf6;border-radius:99px;background:white;color:#214995;font:800 13px Montserrat,Arial,sans-serif;padding:12px 19px;cursor:pointer}
 .remove-req-count{margin:10px 0 0;font-size:12px;color:#6780a0}
 .remove-deck{--card-h:clamp(130px,17vw,190px);position:relative;width:100%;height:calc(var(--rows,1)*var(--card-h));margin:16px auto 23px;isolation:isolate}
-.remove-card{position:absolute;left:calc(var(--col,0)*100% / var(--cols,5));top:calc(var(--row,0)*var(--card-h));width:calc(100% / var(--cols,5) - 8px);height:calc(var(--card-h) - 8px);transition:left .48s cubic-bezier(.23,.72,.26,1),top .48s cubic-bezier(.23,.72,.26,1),transform .2s}
+.remove-card{position:absolute;left:calc(var(--col,0)*100% / var(--cols,5));top:calc(var(--row,0)*var(--card-h));width:calc(100% / var(--cols,5) - 8px);height:calc(var(--card-h) - 8px);transform:translateY(var(--lift,0px)) rotate(var(--tilt,0deg));transition:left .18s cubic-bezier(.2,.85,.35,1),top .18s cubic-bezier(.2,.85,.35,1),transform .18s ease}
 .remove-card-face{font-size:clamp(10px,1.35vw,14px);padding:8px}
 .remove-card-front{overflow:hidden;overflow-wrap:anywhere}
 @media(max-width:650px){.remove-reqs{grid-template-columns:1fr}.remove-deck{--card-h:clamp(130px,32vw,175px)}.remove-card-face{font-size:clamp(10px,2.7vw,13px)}}
@@ -484,32 +484,63 @@ function removeShuffle(){
  removeClearTimers();removeBusy=true;removeReady=false;
  document.getElementById('result2').hidden=true;removeStage.hidden=false;
  document.getElementById('remove-restart').disabled=true;
- removeProgress.textContent='Mirá los '+removeCards.length+' requisitos…';
- removeHelp.textContent='Estas son las '+removeCards.length+' cartas con los requisitos que escribieron. ¡Miren cómo se dan vuelta y se mezclan!';
+ const count=removeCards.length;
+ removeProgress.textContent='¡Preparados para mezclar!';
+ removeHelp.textContent='Miren los '+count+' requisitos: las cartas se dan vuelta y empiezan a cruzarse a toda velocidad.';
  removeLayout();
  removeCards.forEach((card,i)=>{
-  card.button.disabled=true;card.button.classList.remove('chosen');
-  card.button.style.transition='none';removePosition(card,i);removeSetCardFace(card,true);
+  card.button.disabled=true;card.button.classList.remove('chosen','is-mixing');
+  card.button.style.transition='none';
+  card.button.style.setProperty('--tilt','0deg');
+  card.button.style.setProperty('--lift','0px');
+  card.button.style.zIndex='auto';
+  removePosition(card,i);removeSetCardFace(card,true);
  });
  removeSchedule(()=>{
-  removeCards.forEach(card=>{card.button.style.transition='';removeSetCardFace(card,false)});
-  removeProgress.textContent='Dando vuelta las cartas…';
- },1350);
+  removeCards.forEach(card=>{
+   card.button.style.transition='';
+   card.button.classList.add('is-mixing');
+   removeSetCardFace(card,false);
+  });
+  removeProgress.textContent='¡Se dan vuelta!';
+ },600);
  let positions=removeCards.map((_,i)=>i);
- const rounds=removeCards.length>1?6:0;
+ const rounds=count>1?14:0;
+ const firstMove=1170,step=190;
  for(let turn=0;turn<rounds;turn++){
   removeSchedule(()=>{
    if(!removeBusy)return;
    const n=positions.length;
-   const shift=1+Math.floor(Math.random()*(n-1));
-   positions=positions.map(position=>(position+shift)%n);
-   removeCards.forEach((card,i)=>removePosition(card,positions[i]));
-   removeProgress.textContent='Mezclando… '+(turn+1)+'/'+rounds;
-  },2250+turn*670);
+   // Permutación genuina: distintas cartas cruzan filas y columnas, no solo rotan juntas.
+   const previous=positions.slice();
+   let proposed=previous.slice(),attempt=0;
+   do{
+    proposed=previous.slice();
+    for(let i=n-1;i>0;i--){
+     const j=Math.floor(Math.random()*(i+1));
+     [proposed[i],proposed[j]]=[proposed[j],proposed[i]];
+    }
+    attempt++;
+   }while(proposed.every((pos,i)=>pos===previous[i])&&attempt<30);
+   if(proposed.every((pos,i)=>pos===previous[i]))proposed=previous.map(pos=>(pos+1)%n);
+   positions=proposed;
+   removeCards.forEach((card,i)=>{
+    const moved=previous[i]!==positions[i];
+    card.button.style.zIndex=String(1+Math.floor(Math.random()*count));
+    card.button.style.setProperty('--tilt',(moved?(Math.random()*28-14):0).toFixed(1)+'deg');
+    card.button.style.setProperty('--lift',(moved?-(6+Math.floor(Math.random()*20)):0)+'px');
+    removePosition(card,positions[i]);
+   });
+   removeProgress.textContent='¡Mezclando a toda velocidad! '+(turn+1)+'/'+rounds;
+  },firstMove+turn*step);
  }
  removeSchedule(()=>{
   removeBusy=false;removeReady=true;
   removeCards.forEach(card=>{
+   card.button.classList.remove('is-mixing');
+   card.button.style.setProperty('--tilt','0deg');
+   card.button.style.setProperty('--lift','0px');
+   card.button.style.zIndex='auto';
    card.button.disabled=false;
    card.button.setAttribute('aria-label','Elegir carta boca abajo');
   });
@@ -517,7 +548,7 @@ function removeShuffle(){
   document.getElementById('remove-restart').disabled=false;
   removeProgress.textContent='¡Listo! Elegí una carta';
   removeHelp.textContent='PASO 4 · Elegí una carta boca abajo. Al darla vuelta, descubrirás qué requisito tienen que sacar del juego.';
- },2250+rounds*670+470);
+ },firstMove+rounds*step+240);
 }
 function removeSelectCard(card){
  if(!removeReady||removeBusy)return;
