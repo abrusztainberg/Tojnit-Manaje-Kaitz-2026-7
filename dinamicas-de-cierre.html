@@ -206,7 +206,7 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
  <div id="explore-result" class="explore-result" hidden aria-live="polite">
   <div class="result-label">TU DINÁMICA DE CIERRE</div>
   <h3 id="explore-result-title"></h3><p id="explore-result-description"></p>
-  <div class="explore-actions"><button type="button" class="action" id="explore-copy">📋 Copiar propuesta</button></div>
+  <div class="explore-actions"></div>
  </div>
 </div>
 <p class="tip">Las rutinas de Project Zero se identifican como tales. Las propuestas vinculadas con Anijovich y Furman son adaptaciones didácticas inspiradas en sus enfoques, no técnicas originales atribuidas literalmente a ellas. Fotos cargadas desde internet cuando estén disponibles.</p>
@@ -506,10 +506,6 @@ function exploreSelectFormat(index){
  ex('explore-result').hidden=false;
  ex('explore-result').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-ex('explore-copy').addEventListener('click',()=>{
- if(navigator.clipboard?.writeText)navigator.clipboard.writeText(exploreCopyText).then(()=>{ex('explore-copy').textContent='✓ Copiado'}).catch(()=>window.prompt('Copiá esta propuesta:',exploreCopyText));
- else window.prompt('Copiá esta propuesta:',exploreCopyText);
-});
 
 exploreRenderAuthors();
 </script></body></html>
