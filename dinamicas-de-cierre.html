@@ -62,6 +62,15 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 @media(max-width:820px){.path-grid{grid-template-columns:1fr}.path-card{min-height:0}.fields,.case-fields{grid-template-columns:1fr}.case-field p{min-height:0}}
 @media(max-width:600px){header{flex-direction:column;align-items:flex-start}.stars{gap:8px}.star{height:94px;border-radius:12px}.star-symbol{font-size:31px}.star>span:last-child{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.result,.sky-reveal{animation:none}.star{transition:none}}
+</style><style>
+.lab-step{padding:20px 0;border-bottom:2px solid #e1eaf8}.lab-step h3{font-size:clamp(17px,2vw,21px);margin:0 0 17px;color:#214995;font-weight:900}
+.lab-choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:11px}
+.lab-choice{min-height:107px;background:white;color:#214995;border:2px solid #dbe6f8;border-radius:17px;padding:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:9px;font:800 13px Montserrat,Arial,sans-serif;cursor:pointer;transition:transform .15s,border-color .15s}
+.lab-choice:hover{transform:translateY(-2px);border-color:#99b8ed}
+.lab-choice[aria-pressed=true]{background:#214995;color:#fff;border-color:#214995;box-shadow:0 6px 18px #21499530}
+.lab-emoji{font-size:29px}.lab-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:4px 0 0}
+.lab-result{background:linear-gradient(130deg,#fff,#f8f3ff)}.lab-detail{border:2px solid #e1e8f7;border-radius:15px;background:#fff;padding:16px;margin:14px 0}.lab-detail strong{color:#214995}.lab-detail p{margin:9px 0 0}
+@media(max-width:550px){.lab-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas de cierre</h1><div class="divider"></div>
@@ -69,17 +78,20 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 <nav class="category-links" id="nav" aria-label="Categorías de planificación"></nav>
 <section id="paths" class="path-section"><h2>¿Cómo queremos cerrar?</h2><p>Tres caminos distintos: preparar un cierre, construirlo con el grupo o dejar que una sorpresa lo inspire.</p>
 <div class="path-grid">
-<button type="button" class="path-card" data-open="0"><span class="path-number">CAMINO 01</span><strong>🧭 Un cierre a medida</strong><span>Elegí el clima del grupo, lo que querés lograr y cuánto tiempo queda. Descubrí una forma de cerrar con pasos claros.</span><b>Explorar este camino →</b></button>
+<button type="button" class="path-card" data-open="0"><span class="path-number">CAMINO 01</span><strong>🧪 Laboratorio de cierres</strong><span>Combiná materiales, movimiento, juego, música o historia con una acción y una forma de participación. Descubrí una de 40 propuestas.</span><b>Explorar este camino →</b></button>
 <button type="button" class="path-card" data-open="1"><span class="path-number">CAMINO 02</span><strong>🧳 La valija del cierre</strong><span>Una valija con tres compartimentos: qué me llevo, qué dejo y qué quiero hacer diferente. Completá una postal de cierre.</span><b>Explorar este camino →</b></button>
 <button type="button" class="path-card" data-open="2"><span class="path-number">CAMINO 03</span><strong>🌌 El cielo de las estrellas</strong><span>Elegí estrellas sorpresa que esconden consignas breves. Creá un cierre participativo sin repetir siempre la misma ronda.</span><b>Explorar este camino →</b></button>
 </div></section>
-<section class="tool" id="tool0" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 01 · ELEGIR</div><h2>🧭 Un cierre a medida</h2>
-<p class="lead">Pensá cómo llega el grupo al final de la peulá. Elegí las condiciones y recibí una propuesta concreta de cierre, adaptada a sus tiempos.</p>
-<div class="panel"><div class="fields">
-<div class="field"><label for="close-energy">¿Cómo termina el grupo?</label><select id="close-energy"><option value="alto">Con mucha energía</option><option value="bajo">Cansado o tranquilo</option><option value="disperso">Disperso, cuesta prestar atención</option><option value="sensible">Movilizado o sensible</option></select></div>
-<div class="field"><label for="close-goal">¿Qué quieren lograr al cerrar?</label><select id="close-goal"><option value="recordar">Recordar lo vivido</option><option value="sentir">Expresar cómo se van</option><option value="agradecer">Reconocer a los demás</option><option value="proyectar">Llevar algo a la próxima peulá</option></select></div>
-<div class="field"><label for="close-time">¿Cuánto tiempo queda?</label><select id="close-time"><option value="5">5 minutos</option><option value="10" selected>10 minutos</option><option value="15">15 minutos</option></select></div>
-</div><button type="button" class="action" id="close-generate">✨ Descubrir un cierre</button><div class="result" id="close-result" hidden aria-live="polite"></div></div></section>
+<section class="tool" id="tool0" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 01 · LABORATORIO DE CIERRES</div><h2>🧪 Laboratorio de cierres</h2>
+<p class="lead">Elegí un recurso, una acción y una forma de participación. El laboratorio combina las elecciones y propone una dinámica concreta para adaptar al objetivo y al hilo conductor de tu peulá.</p>
+<div class="panel lab-panel">
+<section class="lab-step"><h3>01 · ¿Con qué vas a trabajar?</h3><div class="lab-choices" id="lab-recurso"></div></section>
+<section class="lab-step"><h3>02 · ¿Qué van a hacer los janijim?</h3><div class="lab-choices" id="lab-accion"></div></section>
+<section class="lab-step"><h3>03 · ¿Cómo van a participar?</h3><div class="lab-choices" id="lab-participacion"></div></section>
+<div class="lab-actions"><button class="action" type="button" id="lab-generate">✨ Crear mi cierre</button><button class="outline" type="button" id="lab-reset">↺ Empezar de nuevo</button></div>
+<div class="result lab-result" id="lab-result" hidden aria-live="polite"><span class="result-label" id="lab-selection"></span><h3 id="lab-title"></h3><p id="lab-description"></p><div class="lab-detail"><strong>Cómo participan</strong><p id="lab-participation"></p></div><div class="lab-detail"><strong>Cómo llevarlo a tu peulá</strong><p id="lab-adapt"></p></div><button class="outline" type="button" id="lab-copy">📋 Copiar propuesta</button></div>
+<p class="tip">Una herramienta de planificación: el recurso está al servicio del objetivo educativo, no al revés.</p>
+</div></section>
 <section class="tool" id="tool1" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 02 · CONSTRUIR</div><h2>🧳 La valija del cierre</h2>
 <p class="lead">Imaginen que cada janij vuelve de la peulá con una valija. ¿Qué se lleva, qué deja atrás y qué quiere intentar la próxima vez? Pueden responder individualmente, de a dos o entre todos.</p>
 <div class="panel"><div class="suitcase-banner"><span>MI VALIJA DE LA PEULÁ</span><strong>🧳 ¿Qué guardamos hoy?</strong></div>
@@ -130,54 +142,110 @@ const ageNote={
  preadolescentes:'Con esta edad: permitan respuestas personales, ficticias o anónimas.',
  adolescentes:'Con esta edad: eviten exigir confesiones o intervenciones públicas; pueden responder por escrito o pasar.'
 };
-const closingIdeas={
- recordar:[
- ['El fotograma que queda','Cada janij elige un instante que quiera recordar; lo representa con una palabra, gesto o dibujo. La ronda forma una película de recuerdos del grupo.'],
- ['Tres escenas del día','Entre todos elijan un momento del inicio, otro del medio y uno del final. Reconstrúyanlos sin repetir toda la actividad.'],
- ['La foto invisible','Imaginen una foto de la peulá. Cada persona puede aportar un detalle que estaría en la imagen, hablado o dibujado.']
- ],
- sentir:[
- ['El clima con el que me voy','Ofrezcan imágenes de climas: sol, lluvia, viento, arcoíris. Cada uno elige una para representar cómo se va, sin obligación de explicar.'],
- ['Un color para cerrar','Cada janij elige un color que represente su sensación al terminar. Pueden señalarlo, dibujarlo o guardarlo en silencio.'],
- ['La escala de energía','Muestren una escala visual de energía de 1 a 5. Cada quien marca dónde está y, si quiere, qué le ayudaría a terminar bien.']
- ],
- agradecer:[
- ['La ronda del gracias concreto','Cada persona puede agradecer una acción que ayudó al grupo, sin necesidad de nombrar a nadie en particular.'],
- ['Las huellas que ayudaron','El grupo elige conductas que hicieron la peulá más linda o posible. Escríbanlas en huellas de papel para dejarlas visibles.'],
- ['El aplauso compartido','Piensen tres cosas que lograron juntos y reconózcanlas colectivamente, sin elegir ganadores individuales.']
- ],
- proyectar:[
- ['Una semilla para la próxima','Cada quien propone una pequeña acción que le gustaría intentar la próxima vez. Juntan esas semillas en una lista común.'],
- ['La promesa posible','Cierren con una decisión simple y voluntaria que el grupo pueda retomar en la próxima peulá.'],
- ['Una pregunta que sigue','En lugar de responder todo, cada uno deja una pregunta o curiosidad que quiera llevar a la próxima peulá.']
- ]
+const resources=[['materiales','🎨','Materiales'],['movimiento','🏃','Movimiento'],['juego','🎲','Juego'],['musica','🎵','Música'],['historia','📖','Cuento o historia']];
+const actions=[['opinar','💬','Opinar'],['crear','✂️','Crear'],['decidir','⚖️','Decidir'],['resolver','🧩','Resolver'],['representar','🎭','Representar'],['recordar','💭','Recordar'],['descubrir','🔎','Descubrir'],['construir','🛠️','Construir']];
+const participations=[['individual','👤','Individual'],['parejas','👥','En parejas'],['grupos','🧑‍🤝‍🧑','En grupos'],['todos','🌎','Todos juntos']];
+// 40 dinámicas predeterminadas: 5 recursos × 8 acciones. Cada una se adapta a 4 participaciones.
+const library={
+materiales:{
+opinar:['Galería de posturas','Colocá afiches con frases relacionadas con el tema. Los janijim pegan una marca junto a las que más los representan y observan la diversidad de respuestas.'],
+crear:['El mural que queda','Entregá papeles, colores y recortes para crear una pieza visual sobre la idea central. Exponela en el GED para volver a ella en otros encuentros.'],
+decidir:['El tablero de prioridades','Prepará tarjetas con decisiones posibles ante un dilema del tema. Los janijim seleccionan las más importantes y las ordenan según sus criterios.'],
+resolver:['Rompecabezas del mensaje','Dividí una idea importante en piezas o pistas físicas. El desafío es organizarlas hasta reconstruir un mensaje que dé sentido a la peulá.'],
+representar:['El símbolo del grupo','Con objetos o materiales simples, los janijim crean un símbolo que represente la idea principal del encuentro y explican qué eligieron mostrar.'],
+recordar:['Línea del tiempo compartida','Distribuí tarjetas para recuperar momentos clave de la peulá. Los janijim las ordenan y eligen cuáles fueron más significativos.'],
+descubrir:['El sobre final','Prepará sobres con pistas o fragmentos de una frase. Al abrirlos y unirlos aparece una información que cambia o completa lo trabajado.'],
+construir:['El corcho del futuro','Construyan un panel con lo que aprendieron, lo que quieren cambiar y lo que se proponen hacer. Déjenlo en el GED y acuerden cuándo revisarlo.']},
+movimiento:{
+opinar:['El mapa de las opiniones','Marcá sectores del espacio con posturas distintas. Los janijim se ubican según su opinión y pueden cambiar de lugar al escuchar otras perspectivas.'],
+crear:['Esculturas en movimiento','Los janijim inventan una secuencia de movimientos que exprese una idea central del tema. La presentan sin necesidad de explicarla con palabras.'],
+decidir:['Caminos con consecuencias','Marcá rutas diferentes en el piso. Cada bifurcación representa una decisión y conduce a una consecuencia relacionada con el tema.'],
+resolver:['La misión cooperativa','Planteá un desafío físico breve que solo pueda resolverse poniendo en práctica la habilidad o valor trabajado durante la peulá.'],
+representar:['Estatuas humanas','Los janijim construyen con sus cuerpos escenas congeladas que representen situaciones, conflictos o aprendizajes del encuentro.'],
+recordar:['Recorrido de momentos','Distribuí estaciones por el espacio, cada una vinculada con un momento de la peulá. Los janijim recorren y eligen dónde detenerse.'],
+descubrir:['La búsqueda de la última pista','Escondé pistas por el GED que lleven a una revelación final conectada con el hilo conductor de la peulá.'],
+construir:['La figura colectiva','Proponé que todos creen una figura o recorrido con sus cuerpos. Solo se completa cuando cada participante encuentra su lugar.']},
+juego:{
+opinar:['Semáforo de ideas','Presentá afirmaciones y tres señales: de acuerdo, en duda y en desacuerdo. Cada ronda permite elegir una señal y ver cómo se distribuyen las opiniones.'],
+crear:['Inventores de reglas','Ofrecé un juego sencillo y desafiá a modificar una regla para que represente mejor el valor o aprendizaje trabajado.'],
+decidir:['La partida de las consecuencias','Prepará tarjetas con dilemas. Cada decisión hace avanzar una ficha hacia un desenlace distinto, mostrando sus consecuencias.'],
+resolver:['El desafío final','Diseñá una misión corta con pistas o reglas que exija aplicar lo trabajado durante la peulá para llegar a la solución.'],
+representar:['Adiviná la escena','Los janijim representan con mímica situaciones del tema y los demás intentan reconocer qué idea está en juego.'],
+recordar:['Memotest de la peulá','Armá pares de tarjetas que relacionen situaciones vividas con conceptos o aprendizajes. Los janijim encuentran las parejas.'],
+descubrir:['El juego con una regla secreta','Jugá una ronda breve con una regla oculta. Al revelarla, vinculá la sorpresa con una idea central del encuentro.'],
+construir:['El juego que queda','Inventen un pequeño juego con reglas inspiradas en el tema. Guarden sus instrucciones para usarlo en un próximo encuentro.']},
+musica:{
+opinar:['Termómetro musical','Reproducí fragmentos musicales distintos. Los janijim eligen cuál expresa mejor una postura o sensación relacionada con el tema.'],
+crear:['La canción del grupo','Usen un ritmo conocido o creen uno nuevo para componer una breve letra que recupere el mensaje principal de la peulá.'],
+decidir:['La banda sonora de las decisiones','Presentá una situación de la peulá y varias canciones. Los janijim eligen cuál representa mejor la decisión del protagonista y por qué.'],
+resolver:['El mensaje entre sonidos','Prepará una secuencia de sonidos o fragmentos con pistas. Los janijim deben ordenarlos o asociarlos para descifrar un mensaje final.'],
+representar:['Un tema, una escena','Reproducí un fragmento musical y proponé representarlo con gestos o una escena que conecte con el tema de la peulá.'],
+recordar:['La playlist del encuentro','Elegí canciones asociadas a momentos de la peulá. Los janijim relacionan cada fragmento con algo que vivieron y arman una lista final.'],
+descubrir:['La letra que cambia todo','Compartí un fragmento instrumental o una canción sin revelar su sentido. Al final mostrales una línea elegida que conecte con el tema.'],
+construir:['Nuestro himno','Compongan una breve estrofa o estribillo que represente un acuerdo o valor del grupo y puedan volver a cantar.']},
+historia:{
+opinar:['El juicio a un personaje','Contá una historia breve con una decisión discutible. Los janijim toman postura sobre el personaje y comparan interpretaciones.'],
+crear:['Otro final posible','Detené un cuento antes del desenlace. Los janijim inventan finales que reflejen el objetivo de la peulá.'],
+decidir:['Elegí tu propia aventura','Presentá una historia con dos o tres bifurcaciones. Las decisiones de los janijim determinan el final y sus consecuencias.'],
+resolver:['El misterio del relato','Contá un cuento con pistas dispersas. Los janijim deben reconstruir qué sucedió y qué enseñanza deja la resolución.'],
+representar:['La escena que faltaba','Elegí una escena de un cuento y pedí que la representen o la modifiquen para mostrar otra perspectiva.'],
+recordar:['La historia de nuestra peulá','Invitá a reconstruir el encuentro como si fuera un cuento: inicio, conflicto, momentos importantes y desenlace.'],
+descubrir:['El narrador no lo contó todo','Relatá una situación desde un único punto de vista. Al final revelá otra versión que transforme la interpretación inicial.'],
+construir:['El libro que continúa','Creen una página de un relato colectivo sobre el tema. Guárdenla en el GED para agregar nuevas páginas en próximos encuentros.']}
 };
-const moods={
- alto:'Empiecen con una señal que invite a bajar el ritmo y den tiempo para que puedan responder.',
- bajo:'Usen un cierre tranquilo, sin desplazamientos ni explicaciones largas.',
- disperso:'Mantengan una única consigna a la vista y un turno breve para cada respuesta.',
- sensible:'Permitan responder de forma privada, con dibujos o sin explicar; no fuercen una ronda emocional.'
-};
-let lastClose='';
-$('close-generate').addEventListener('click',()=>{
- const goal=$('close-goal').value,energy=$('close-energy').value,mins=Number($('close-time').value);
- const choices=closingIdeas[goal].filter(item=>item[0]!==lastClose);
- const idea=(choices.length?choices:closingIdeas[goal])[Math.floor(Math.random()*(choices.length||closingIdeas[goal].length))];
- lastClose=idea[0];
- const result=$('close-result');result.hidden=false;result.replaceChildren();
- const lab=document.createElement('span');lab.className='result-label';lab.textContent='CIERRE PARA '+(group||'TU GRUPO').toUpperCase();
- const title=document.createElement('h3');title.textContent=idea[0];
- const p=document.createElement('p');p.textContent=idea[1];
- const steps=document.createElement('ol');
- const flow=[
- 'Preparación ('+Math.max(1,Math.round(mins*.2))+' min): expliquen la consigna con un ejemplo breve.',
- 'Participación ('+Math.max(2,Math.round(mins*.6))+' min): dejen que cada janij elija cómo responder y cuiden los turnos.',
- 'Despedida ('+Math.max(1,mins-Math.round(mins*.2)-Math.round(mins*.6))+' min): recuperen una idea compartida y cierren la peulá con claridad.'
- ];
- flow.forEach(t=>{const li=document.createElement('li');li.textContent=t;steps.appendChild(li)});
- const adapt=document.createElement('p');adapt.className='tip';adapt.textContent='Para adaptar: '+moods[energy]+' '+ageNote[age];
- result.append(lab,title,p,steps,adapt);
- $('close-generate').textContent='↻ Otra idea con estas condiciones';
+const participationText={
+individual:'Cada janij realiza su elección o producción de forma personal. Se pueden compartir los resultados voluntariamente, sin obligar a nadie a exponerse.',
+parejas:'Cada pareja conversa y llega a una única elección, solución o producción. La propuesta debe incluir un momento para negociar y escuchar al otro.',
+grupos:'Dividí a los janijim en equipos pequeños. Cada equipo desarrolla su propuesta y luego se comparan los resultados.',
+todos:'El grupo completo debe llegar a una producción, decisión o resultado común. Organizá turnos o señales para que todas las voces puedan participar.'};
+const adaptation={
+individual:'Prepará una instancia de participación personal y un cierre visible o compartible opcional.',
+parejas:'Entregá una consigna por pareja y pedí que acuerden un resultado común.',
+grupos:'Prepará una consigna por equipo y un breve momento para mostrar sus resultados.',
+todos:'Diseñá una única producción o decisión colectiva, asegurando que nadie quede afuera.'};
+
+const labOptions={recurso:resources,accion:actions,participacion:participations};
+const labState={recurso:null,accion:null,participacion:null};
+let labOutput='';
+for(const [type,items] of Object.entries(labOptions)){
+ const parent=document.getElementById('lab-'+type);
+ for(const [id,emoji,name] of items){
+  const button=document.createElement('button');
+  button.type='button';button.className='lab-choice';button.setAttribute('aria-pressed','false');
+  const picture=document.createElement('span');picture.className='lab-emoji';picture.textContent=emoji;
+  const text=document.createElement('span');text.textContent=name;
+  button.append(picture,text);
+  button.addEventListener('click',()=>{
+   labState[type]=id;
+   parent.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===button)));
+   document.getElementById('lab-result').hidden=true;
+  });
+  parent.appendChild(button);
+ }
+}
+document.getElementById('lab-generate').addEventListener('click',()=>{
+ if(!labState.recurso||!labState.accion||!labState.participacion){alert('Elegí una opción en cada una de las tres categorías.');return}
+ const [title,description]=library[labState.recurso][labState.accion];
+ const chosen=Object.entries(labState).map(([type,id])=>labOptions[type].find(row=>row[0]===id)[2]).join(' + ');
+ const part=participationText[labState.participacion];
+ const adapt=adaptation[labState.participacion]+' Adaptá los ejemplos, las consignas y las preguntas al objetivo y al hilo conductor de tu peulá.';
+ document.getElementById('lab-selection').textContent=chosen;
+ document.getElementById('lab-title').textContent=title;
+ document.getElementById('lab-description').textContent=description;
+ document.getElementById('lab-participation').textContent=part;
+ document.getElementById('lab-adapt').textContent=adapt;
+ labOutput=[title,chosen,description,part,adapt].join(String.fromCharCode(10,10));
+ document.getElementById('lab-result').hidden=false;
+ document.getElementById('lab-result').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+document.getElementById('lab-reset').addEventListener('click',()=>{
+ for(const type of Object.keys(labState))labState[type]=null;
+ document.querySelectorAll('.lab-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
+ document.getElementById('lab-result').hidden=true;
+});
+document.getElementById('lab-copy').addEventListener('click',()=>{
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(labOutput).then(()=>document.getElementById('lab-copy').textContent='✓ Copiado').catch(()=>prompt('Copiá la propuesta:',labOutput));
+ else prompt('Copiá la propuesta:',labOutput);
 });
 function caseText(){
  const a=$('case-take').value.trim(),b=$('case-leave').value.trim(),c=$('case-next').value.trim();
