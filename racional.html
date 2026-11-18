@@ -118,6 +118,7 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 .news-eldestape{border-top:6px solid #172e49}.news-eldestape h3{font-family:Arial,Helvetica,sans-serif;font-weight:900;color:#172e49}
 .news-lanacion .news-source{color:#174b80}.news-pagina12 .news-source{color:#d52531}.news-clarin .news-source{color:#cf1e28}.news-eldestape .news-source{color:#172e49}
 @media(max-width:540px){.paper-pick{grid-template-columns:1fr}}
+.news-link-note{font-size:12px!important;line-height:1.5!important;color:#8090a7!important;margin:-8px 0 18px!important;font-weight:500}
 </style></head>
 <body><div class="shell">
 <header class="topbar"><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Todos los grupos</a></header>
@@ -292,8 +293,9 @@ function newsJourney(){
  const summary=document.createElement('p');summary.className='news-summary';
  const date=document.createElement('div');date.className='news-date';
  const link=document.createElement('a');link.className='news-link';link.target='_blank';link.rel='noopener noreferrer';link.textContent='Leer noticia completa ↗';
+ const note=document.createElement('p');note.className='news-link-note';note.textContent='Entrá a la noticia completa solo si te interesa profundizar.';
  const another=document.createElement('button');another.type='button';another.className='news-another';another.textContent='📰 Otra noticia del mismo diario';
- article.append(source,headline,summary,date,link,another);
+ article.append(source,headline,summary,date,link,note,another);
  let currentPaper='',lastIndex=-1;
  const buttonsMap=new Map();
  for(const paper of newsPapers){
