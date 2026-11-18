@@ -104,6 +104,41 @@ body.wheel-modal-open{overflow:hidden}
 .machine-context{margin:16px auto 0;font-size:12px;max-width:700px;text-align:center}
 @media(max-width:650px){.machine-reels{grid-template-columns:1fr}.machine-reel{min-height:115px;padding:15px;gap:8px}.machine-game{padding:17px}.machine-reel p{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.machine-reels.is-rolling .machine-reel{animation:none}}
+
+.fotos-section{max-width:870px;margin:34px auto 0}
+.fotos-section[hidden],.fotos-reflection[hidden]{display:none}
+.fotos-heading{text-align:center;margin:8px 0 25px}
+.fotos-tag{font-size:11px;letter-spacing:.14em;font-weight:900;color:#895bc0}
+.fotos-heading h2{font-size:clamp(25px,4.2vw,43px);color:#214995;letter-spacing:-.045em;margin:12px 0}
+.fotos-heading p{max-width:650px;margin:0 auto}
+.fotos-game{padding:clamp(17px,4vw,35px);border-radius:28px;background:linear-gradient(150deg,#eff5ff,#fbf5ff);border:2px solid #dde4f9}
+.fotos-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#657bab;font-size:11px;font-weight:900;letter-spacing:.08em;margin-bottom:17px}
+.fotos-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:580px;margin:0 auto}
+.fotos-tile{border:4px solid white;overflow:hidden;border-radius:19px;aspect-ratio:1/1;background:linear-gradient(130deg,#e3ecff,#c6d3f5);box-shadow:0 4px 15px #132f6820}
+.fotos-tile img{width:100%;height:100%;object-fit:cover;display:block}
+.fotos-tile.fotos-fallback{display:grid;place-items:center;color:#526896;text-align:center;padding:15px;font-weight:800;font-size:14px}
+.fotos-placeholder{display:grid;place-items:center;font-size:50px;border-radius:18px;background:#dbe7ff;aspect-ratio:1}
+.fotos-indication{text-align:center;color:#214995;font-size:clamp(15px,2.5vw,20px);font-weight:900;margin:24px 0 18px}
+.fotos-answer-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;max-width:590px;margin:0 auto;align-items:center}
+.fotos-input-label{grid-column:1/-1;color:#4d648a;font-weight:800;font-size:12px}
+.fotos-answer-form input{min-width:0;padding:15px 18px;border:2px solid #bbcef0;border-radius:15px;background:white;color:#214995;font:800 16px Montserrat,Arial,sans-serif;text-transform:uppercase}
+.fotos-answer-form button{border:0;border-radius:15px;background:#214995;color:white;font:800 14px Montserrat,Arial,sans-serif;padding:17px 18px;cursor:pointer}
+.fotos-answer-form button:disabled{opacity:.5}
+.fotos-feedback{text-align:center;min-height:24px;font-size:14px;font-weight:800;margin:17px auto}
+.fotos-feedback.is-correct{color:#24714d}.fotos-feedback.is-wrong{color:#aa5b3c}
+.fotos-hints{display:grid;gap:9px;max-width:590px;margin:0 auto}
+.fotos-hint{margin:0;padding:12px 15px;background:#fff;border-left:4px solid #956bd0;border-radius:12px;color:#3f5482;font-size:14px}
+.fotos-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.fotos-actions button{border-radius:100px;padding:13px 20px;cursor:pointer;font:800 13px Montserrat,Arial,sans-serif}
+.fotos-hint-btn{border:2px solid #9b6bd3;background:#fff;color:#7952b2}
+.fotos-next-btn{border:2px solid #214995;background:#214995;color:white}
+.fotos-actions button:disabled{opacity:.5;cursor:not-allowed}
+.fotos-reflection{margin:22px 0 0;padding:24px 27px;border-radius:23px;background:#f2f8ff;border:2px solid #d8e6fb}
+.fotos-reflection>span{font-size:12px;letter-spacing:.1em;font-weight:900;color:#4e87af}
+.fotos-reflection h3{font-size:clamp(21px,3vw,30px);color:#214995;line-height:1.3;margin:11px 0}
+.fotos-reflection p{font-size:15px;color:#365782;line-height:1.7}
+.fotos-closing{font-size:13px!important;color:#74839b!important}
+@media(max-width:540px){.fotos-answer-form{grid-template-columns:1fr}.fotos-grid{gap:7px}.fotos-tile{border-width:2px;border-radius:12px}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-paths" class="tema-paths" hidden aria-labelledby="tema-paths-title">
@@ -122,12 +157,12 @@ body.wheel-modal-open{overflow:hidden}
       <span>Tres casilleros, una pregunta que incomoda y un tema concreto nacido del diagnóstico del grupo.</span>
       <b>Explorar este camino →</b>
     </button>
-    <div class="tema-path-card tema-path-pending">
+    <button type="button" id="open-tema-fotos" class="tema-path-card tema-path-ready">
       <span class="tema-path-number">CAMINO 03</span>
-      <strong>Tercer camino</strong>
-      <span>Reservado para otra forma de encontrar un tema.</span>
-      <b>Próximamente</b>
-    </div>
+      <strong>🧩 Cuatro miradas, una palabra</strong>
+      <span>Observá cuatro fotos, descubrí la palabra que las conecta y usala para imaginar un tema profundo para tu grupo.</span>
+      <b>Explorar este camino →</b>
+    </button>
   </div>
 </section>
 <section id="tema-machine" class="machine-section" hidden aria-labelledby="machine-title">
@@ -157,6 +192,38 @@ body.wheel-modal-open{overflow:hidden}
     <p id="machine-status" class="machine-status" aria-live="polite">Tocá el botón para generar una idea.</p>
   </div>
   <p class="machine-context">Estas propuestas se inspiran en las respuestas del diagnóstico. Son hipótesis educativas, no etiquetas sobre los janijim: confirmen siempre si siguen representando al grupo.</p>
+</section>
+<section id="tema-fotos" class="fotos-section" hidden aria-labelledby="fotos-title">
+  <button type="button" id="back-fotos-paths" class="tema-back">← Elegir otro camino</button>
+  <div class="fotos-heading">
+    <span class="fotos-tag">CAMINO 03 · UN JUEGO PARA ENCONTRAR UN TEMA</span>
+    <h2 id="fotos-title">🧩 Cuatro miradas, una palabra</h2>
+    <p>Cuatro fotos esconden un concepto que puede abrir una gran pregunta educativa. Descubran la palabra y después piensen qué significa para su grupo.</p>
+  </div>
+  <div class="fotos-game">
+    <div class="fotos-top"><span id="fotos-round">DESAFÍO 1</span><span id="fotos-counter">0 / 3 pistas</span></div>
+    <div class="fotos-grid" id="fotos-grid" aria-label="Cuatro fotografías del desafío">
+      <div class="fotos-placeholder">📷</div><div class="fotos-placeholder">📷</div><div class="fotos-placeholder">📷</div><div class="fotos-placeholder">📷</div>
+    </div>
+    <p class="fotos-indication">¿Qué palabra conecta estas cuatro imágenes?</p>
+    <form id="fotos-form" class="fotos-answer-form" autocomplete="off">
+      <label class="fotos-input-label" for="fotos-answer">Tu palabra</label>
+      <input id="fotos-answer" type="text" spellcheck="false" autocapitalize="characters" placeholder="Escribí una palabra..." maxlength="30" required>
+      <button type="submit" id="fotos-check">✓ Comprobar respuesta</button>
+    </form>
+    <div class="fotos-feedback" id="fotos-feedback" role="status" aria-live="polite"></div>
+    <div id="fotos-hints" class="fotos-hints" aria-live="polite"></div>
+    <div class="fotos-actions">
+      <button type="button" id="fotos-hint" class="fotos-hint-btn">💡 Pedir una pista</button>
+      <button type="button" id="fotos-next" class="fotos-next-btn">↻ Otra palabra</button>
+    </div>
+  </div>
+  <div class="fotos-reflection" id="fotos-reflection" hidden>
+    <span>💙 DEL JUEGO A LA PEULÁ</span>
+    <h3 id="fotos-theme"></h3>
+    <p id="fotos-question"></p>
+    <p class="fotos-closing">La palabra es un disparador, no un racional armado. ¿Qué necesidad real del grupo les hace pensar?</p>
+  </div>
 </section>
 <section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
   <button type="button" id="back-tema-paths" class="tema-back">← Elegir otro camino</button>
@@ -225,6 +292,15 @@ if(selected==='tema'){
   document.getElementById('tema-paths').hidden=true;
   document.getElementById('tema-machine').hidden=false;
   setupMachine();
+ });
+ document.getElementById('open-tema-fotos').addEventListener('click',()=>{
+  document.getElementById('tema-paths').hidden=true;
+  document.getElementById('tema-fotos').hidden=false;
+  setupPhotoGame();
+ });
+ document.getElementById('back-fotos-paths').addEventListener('click',()=>{
+  document.getElementById('tema-fotos').hidden=true;
+  document.getElementById('tema-paths').hidden=false;
  });
  document.getElementById('back-machine-paths').addEventListener('click',()=>{
   document.getElementById('tema-machine').hidden=true;
@@ -301,6 +377,130 @@ function setupMachine(){
    machineBusy=false;
   }
  });
+}
+
+
+/* Camino 3: 4 fotos, 1 palabra; conceptos para la educación de grupos.
+   Fotografías de Unsplash, con créditos y licencias consultables en Unsplash. */
+const photoSources={
+ friends:'photo-1529156069898-49953e39b3ac',
+ team:'photo-1527525443983-6e60c75fff46',
+ hands:'photo-1517457373958-b7bdd4587205',
+ meeting:'photo-1543269865-cbf427effbad',
+ circle:'photo-1722963220475-979db2dbf216',
+ alone:'photo-1524504388940-b1c1722653e1',
+ walk:'photo-1500534623283-312aade485b7',
+ landscape:'photo-1469474968028-56623f02e42e',
+ bridge:'photo-1506784983877-45594efa4cbe',
+ nature:'photo-1473448912268-2022ce9509d8',
+ books:'photo-1503676260728-1c00da094a0b',
+ mountain:'photo-1464822759023-fed622ff2c3b',
+ discussion:'photo-1521737711867-e3b97375f902',
+ puzzle:'photo-1491438590914-bc09fcaaf77a',
+ children:'photo-1500648767791-00dcc994a43e',
+ classroom:'photo-1484820540004-14229fe36ca4',
+ sky:'photo-1475721027785-f74eccf877e2',
+ friends2:'photo-1531482615713-2afd69097998',
+ path:'photo-1470770841072-f978cf4d019e',
+ sea:'photo-1500375592092-40eb2168fd21'
+};
+const photoPuzzles=[
+ {word:'INCLUSIÓN',accept:['INCLUSION','INCLUIR'],pics:['friends','circle','alone','team'],hints:['Pensá en quiénes encuentran un lugar y quiénes todavía quedan afuera.','Empieza con I.','Tiene 9 letras.'],theme:'¿Somos inclusivos o solo cuando no nos cuesta?',question:'¿Quién queda al margen de nuestro grupo aunque digamos que todos forman parte?'},
+ {word:'EMPATÍA',accept:['EMPATIA'],pics:['hands','meeting','alone','friends2'],hints:['Va más allá de ayudar: exige intentar entender cómo se siente el otro.','Empieza con E.','Tiene 7 letras.'],theme:'Ponernos en el lugar del otro',question:'¿Escuchamos lo que el otro necesita o suponemos que ya lo sabemos?'},
+ {word:'CONFIANZA',pics:['team','friends','bridge','hands'],hints:['Se construye con acciones pequeñas y puede romperse en un instante.','Empieza con C.','Tiene 9 letras.'],theme:'¿La confianza se exige o se construye?',question:'¿Qué necesita pasar para que alguien se anime a mostrar lo que piensa o siente frente al grupo?'},
+ {word:'PERTENENCIA',pics:['circle','friends2','meeting','alone'],hints:['No es simplemente estar presente: es sentir que ese lugar también es tuyo.','Empieza con P.','Tiene 11 letras.'],theme:'¿Pertenecer es asistir o sentirse esperado?',question:'¿Qué hace que un janij quiera volver porque siente que forma parte?'},
+ {word:'RESPETO',pics:['discussion','hands','children','friends'],hints:['No significa estar de acuerdo; también aparece al escuchar un límite.','Empieza con R.','Tiene 7 letras.'],theme:'Respetar no significa pensar igual',question:'¿Cómo reaccionamos cuando alguien hace, quiere o piensa algo diferente?'},
+ {word:'AUTONOMÍA',accept:['AUTONOMIA'],pics:['walk','mountain','books','path'],hints:['Crece cuando tenemos oportunidades reales de elegir y asumir consecuencias.','Empieza con A.','Tiene 9 letras.'],theme:'¿Acompañar es dejar decidir?',question:'¿Qué decisiones podríamos empezar a confiarles a los janijim?'},
+ {word:'COOPERACIÓN',accept:['COOPERACION','COLABORACION'],pics:['team','meeting','hands','puzzle'],hints:['Sucede cuando el resultado depende de lo que aportamos juntos, no solo de lo que hace cada uno.','Empieza con C.','Tiene 11 letras.'],theme:'¿Trabajamos juntos o solo repartimos tareas?',question:'¿Sabemos pedir ayuda, escuchar y reconocer lo que aporta cada compañero?'},
+ {word:'IDENTIDAD',pics:['alone','friends','sky','circle'],hints:['Incluye aquello que nos hace únicos y lo que nos conecta con otros.','Empieza con I.','Tiene 9 letras.'],theme:'¿Quién soy cuando estoy con mi grupo?',question:'¿Podemos ser nosotros mismos sin sentir que debemos encajar en un molde?'},
+ {word:'VALENTÍA',accept:['VALENTIA','CORAJE'],pics:['mountain','bridge','sea','walk'],hints:['No exige que desaparezca el miedo: a veces consiste en actuar a pesar de él.','Empieza con V.','Tiene 8 letras.'],theme:'Animarse a intentar sin miedo al error',question:'¿Qué riesgos personales sentimos al participar, equivocarnos o mostrarnos frente a otros?'},
+ {word:'SOLIDARIDAD',pics:['hands','team','friends2','meeting'],hints:['Tiene que ver con hacer lugar a las necesidades de otros sin decidir por ellos.','Empieza con S.','Tiene 11 letras.'],theme:'¿Ayudamos para sentirnos bien o para transformar algo?',question:'¿Preguntamos qué necesita el otro antes de salir a ayudarlo?'},
+ {word:'CAMBIO',pics:['path','nature','sea','mountain'],hints:['Puede incomodar, abrir oportunidades y exigir dejar algo conocido atrás.','Empieza con C.','Tiene 6 letras.'],theme:'¿Cambiar es perder algo o empezar a crecer?',question:'¿Qué costumbre del grupo podría transformarse si nos animáramos a revisarla?'},
+ {word:'ESCUCHA',pics:['discussion','classroom','meeting','alone'],hints:['No se trata solo de quedarse callado mientras alguien habla.','Empieza con E.','Tiene 7 letras.'],theme:'¿Escuchamos para entender o para responder?',question:'¿Qué voces del grupo no estamos escuchando, aunque estén presentes?'},
+ {word:'DIVERSIDAD',pics:['friends','circle','landscape','children'],hints:['Hace visible que no necesitamos ser iguales para compartir un espacio.','Empieza con D.','Tiene 10 letras.'],theme:'Diferentes, pero parte del mismo grupo',question:'¿Celebramos las diferencias o esperamos que todos actúen igual para ser aceptados?'},
+ {word:'RESPONSABILIDAD',pics:['books','nature','team','walk'],hints:['Implica reconocer que nuestras decisiones también tienen consecuencias para otros.','Empieza con R.','Tiene 15 letras.'],theme:'Lo que hacemos también afecta a los demás',question:'¿Cómo nos hacemos cargo del impacto que tenemos sobre el grupo?'},
+ {word:'COMPROMISO',pics:['hands','mountain','classroom','team'],hints:['Se nota especialmente cuando algo deja de ser fácil o divertido.','Empieza con C.','Tiene 10 letras.'],theme:'¿Estar presentes es lo mismo que comprometernos?',question:'¿Qué hacemos por el grupo incluso cuando nadie nos está mirando?'},
+ {word:'FRUSTRACIÓN',accept:['FRUSTRACION'],pics:['mountain','alone','puzzle','path'],hints:['Aparece cuando algo que deseamos no sucede como esperábamos.','Empieza con F.','Tiene 11 letras.'],theme:'¿Perder es fracasar?',question:'¿Cómo acompañamos el error y la frustración sin perder las ganas de intentar?'}
+];
+let fotosInitialized=false;
+let fotosCurrent=-1;
+let fotosSeen=[];
+let fotosHintsShown=0;
+let fotosSolved=false;
+function normalizePhotoWord(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-ZÑ]/g,'')}
+function setupPhotoGame(){
+ if(fotosInitialized)return;
+ fotosInitialized=true;
+ const grid=document.getElementById('fotos-grid');
+ const answer=document.getElementById('fotos-answer');
+ const hints=document.getElementById('fotos-hints');
+ const feedback=document.getElementById('fotos-feedback');
+ const hintBtn=document.getElementById('fotos-hint');
+ const next=document.getElementById('fotos-next');
+ const check=document.getElementById('fotos-check');
+ const reflection=document.getElementById('fotos-reflection');
+ const counter=document.getElementById('fotos-counter');
+ const groupKey=(group||'general').toLowerCase();
+ function chooseNext(){
+   const available=photoPuzzles.map((_,i)=>i).filter(i=>!fotosSeen.includes(i)&&i!==fotosCurrent);
+   if(!available.length){fotosSeen=[];return chooseNext()}
+   const bytes=new Uint32Array(1);
+   if(window.crypto?.getRandomValues)window.crypto.getRandomValues(bytes);else bytes[0]=Math.floor(Math.random()*4294967296);
+   const i=available[bytes[0]%available.length];
+   fotosSeen.push(i);fotosCurrent=i;fotosHintsShown=0;fotosSolved=false;
+   try{localStorage.setItem('mk27-cuatro-fotos:'+groupKey,JSON.stringify({seen:fotosSeen,index:i}))}catch(e){}
+   render();
+ }
+ function render(){
+   const puzzle=photoPuzzles[fotosCurrent];
+   grid.replaceChildren();
+   for(const [index,name] of puzzle.pics.entries()){
+     const tile=document.createElement('div');tile.className='fotos-tile';
+     const img=document.createElement('img');
+     img.src='https://images.unsplash.com/'+photoSources[name]+'?auto=format&fit=crop&w=650&h=650&q=78';
+     img.alt='Pista visual '+(index+1)+' del desafío';img.loading='lazy';img.decoding='async';
+     img.onerror=()=>{img.style.display='none';tile.classList.add('fotos-fallback');tile.textContent='📷 Imagen no disponible'};
+     tile.appendChild(img);grid.appendChild(tile);
+   }
+   document.getElementById('fotos-round').textContent='DESAFÍO '+fotosSeen.length+' / '+photoPuzzles.length;
+   counter.textContent='0 / 3 pistas';hints.replaceChildren();answer.value='';answer.disabled=false;check.disabled=false;
+   hintBtn.disabled=false;hintBtn.textContent='💡 Pedir una pista';
+   feedback.textContent='';feedback.className='fotos-feedback';reflection.hidden=true;
+   next.textContent='↻ Otra palabra';
+ }
+ function showHint(){
+   if(fotosCurrent<0||fotosHintsShown>=3||fotosSolved)return;
+   const p=document.createElement('p');p.className='fotos-hint';p.textContent='Pista '+(fotosHintsShown+1)+': '+photoPuzzles[fotosCurrent].hints[fotosHintsShown];
+   hints.appendChild(p);fotosHintsShown++;
+   counter.textContent=fotosHintsShown+' / 3 pistas';
+   if(fotosHintsShown===3){hintBtn.disabled=true;hintBtn.textContent='Ya viste todas las pistas'}
+ }
+ function validate(event){
+   event.preventDefault();
+   if(fotosCurrent<0||fotosSolved)return;
+   const puzzle=photoPuzzles[fotosCurrent],guess=normalizePhotoWord(answer.value);
+   if(!guess){feedback.textContent='Escribí una palabra para comprobar.';return}
+   const accepted=[puzzle.word,...(puzzle.accept||[])].map(normalizePhotoWord);
+   if(accepted.includes(guess)){
+     fotosSolved=true;answer.disabled=true;check.disabled=true;hintBtn.disabled=true;
+     feedback.textContent='🎉 ¡Correcto! La palabra era '+puzzle.word+'.';
+     feedback.className='fotos-feedback is-correct';
+     document.getElementById('fotos-theme').textContent=puzzle.theme;
+     document.getElementById('fotos-question').textContent=puzzle.question;
+     reflection.hidden=false;next.textContent='✨ Jugar otra ronda';
+   }else{
+     feedback.textContent='Todavía no. Miren las cuatro fotos y busquen qué idea las une. ¡Pueden pedir una pista!';
+     feedback.className='fotos-feedback is-wrong';
+   }
+ }
+ document.getElementById('fotos-form').addEventListener('submit',validate);
+ hintBtn.addEventListener('click',showHint);
+ next.addEventListener('click',chooseNext);
+ try{
+   const data=JSON.parse(localStorage.getItem('mk27-cuatro-fotos:'+groupKey)||'null');
+   if(Array.isArray(data?.seen))fotosSeen=data.seen.filter(i=>Number.isInteger(i)&&i>=0&&i<photoPuzzles.length);
+ }catch(e){}
+ chooseNext();
 }
 
 // Ruleta: los temas se eligen al azar, sin favorecer ninguna opción.
