@@ -71,6 +71,38 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 .lab-emoji{font-size:29px}.lab-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:4px 0 0}
 .lab-result{background:linear-gradient(130deg,#fff,#f8f3ff)}.lab-detail{border:2px solid #e1e8f7;border-radius:15px;background:#fff;padding:16px;margin:14px 0}.lab-detail strong{color:#214995}.lab-detail p{margin:9px 0 0}
 @media(max-width:550px){.lab-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style><style>
+/* Tojnitflix: Camino 2 */
+.movie-panel{background:linear-gradient(165deg,#121827,#1b2131);border-radius:26px;padding:clamp(18px,3.5vw,31px);margin-top:25px;color:#fff;box-shadow:0 14px 35px #15213828}
+.movie-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.movie-logo{font-weight:900;letter-spacing:.07em;font-size:24px;color:#fff}.movie-logo span{color:#f34958}
+.movie-top h3{color:#fff;font-size:clamp(18px,2.8vw,25px);margin:12px 0 0;font-weight:900}
+.movie-refresh{border:2px solid #ffffff50;border-radius:50px;padding:12px 18px;color:#fff;background:#ffffff16;cursor:pointer;font:800 12px Montserrat,Arial,sans-serif}
+.movie-refresh:hover{background:#ffffff2c}
+.movie-label{letter-spacing:.11em;font-size:11px;font-weight:900;color:#d2dbef;margin-bottom:16px}
+.movie-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.movie-card{height:350px;perspective:1000px;min-width:0}.movie-card-inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.75,.25,1)}
+.movie-card.flipped .movie-card-inner{transform:rotateY(180deg)}
+.movie-face{position:absolute;inset:0;overflow:hidden;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 9px 22px #0004}
+.movie-front{appearance:none;border:0;padding:0;color:white;cursor:pointer;text-align:left;font-family:inherit;display:flex;align-items:flex-end;position:absolute}
+.movie-front:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#0000 15%,#0001 38%,#080d21cb 100%)}
+.movie-front:hover .movie-poster-icon{transform:scale(1.08) rotate(-4deg)}
+.movie-poster-icon{position:absolute;top:15%;left:0;right:0;text-align:center;font-size:clamp(55px,7vw,88px);filter:drop-shadow(0 12px 20px #0004);transition:transform .2s}
+.movie-front-text{position:relative;padding:19px 14px;display:flex;flex-direction:column;gap:8px;width:100%}
+.movie-front-text small{color:#fffdf2;font-size:9px;font-weight:900;letter-spacing:.09em}
+.movie-front-text strong{font-size:clamp(16px,2vw,23px);line-height:1.15;font-weight:900;overflow-wrap:anywhere}
+.movie-front-text>span:not(.movie-prompt){font-size:12px;color:#f1f4fa}
+.movie-prompt{background:#ffffff23;border:1px solid #ffffff60;border-radius:30px;padding:9px 11px;text-align:center;font-size:10px;font-weight:900}
+.movie-back{transform:rotateY(180deg);background:linear-gradient(155deg,#fff,#f3f5ff);color:#214995;padding:17px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:11px}
+.movie-back small{font-size:10px;letter-spacing:.07em;color:#8e65ad;font-weight:900}
+.movie-back h4{font-size:clamp(16px,1.8vw,21px);line-height:1.25;margin:0;color:#214995;font-weight:900}
+.movie-back p{color:#475c7d;font-size:12px;line-height:1.55;margin:0;overflow-y:auto;flex:1;min-height:0}
+.movie-flip-back{padding:10px 12px;border:2px solid #d9e3f7;background:white;border-radius:30px;font:800 11px Montserrat,Arial,sans-serif;color:#214995;cursor:pointer}
+.movie-front:focus-visible,.movie-flip-back:focus-visible{outline:3px solid #ffd677;outline-offset:-4px}
+.movie-note{color:#bac5d9;font-size:12px;margin:20px 0 0}
+@media(max-width:850px){.movie-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.movie-card{height:350px}}
+@media(max-width:500px){.movie-grid{gap:10px}.movie-card{height:360px}.movie-front-text{padding:12px 9px}.movie-back{padding:12px 10px}.movie-back p{font-size:11px}.movie-front-text strong{font-size:16px}.movie-poster-icon{font-size:55px}}
+@media(prefers-reduced-motion:reduce){.movie-card-inner,.movie-poster-icon{transition:none}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas de cierre</h1><div class="divider"></div>
@@ -79,7 +111,7 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 <section id="paths" class="path-section"><h2>¿Cómo queremos cerrar?</h2><p>Tres caminos distintos: preparar un cierre, construirlo con el grupo o dejar que una sorpresa lo inspire.</p>
 <div class="path-grid">
 <button type="button" class="path-card" data-open="0"><span class="path-number">CAMINO 01</span><strong>🧪 Laboratorio de cierres</strong><span>Combiná materiales, movimiento, juego, música o historia con una acción y una forma de participación. Descubrí una de 40 propuestas.</span><b>Explorar este camino →</b></button>
-<button type="button" class="path-card" data-open="1"><span class="path-number">CAMINO 02</span><strong>🧳 La valija del cierre</strong><span>Una valija con tres compartimentos: qué me llevo, qué dejo y qué quiero hacer diferente. Completá una postal de cierre.</span><b>Explorar este camino →</b></button>
+<button type="button" class="path-card" data-open="1"><span class="path-number">CAMINO 02</span><strong>🎬 Netflix de cierres</strong><span>Elegí una película conocida y descubrí una dinámica de cierre inspirada en su historia. ¡Cambiá el catálogo cuando quieras!</span><b>Explorar este camino →</b></button>
 <button type="button" class="path-card" data-open="2"><span class="path-number">CAMINO 03</span><strong>🌌 El cielo de las estrellas</strong><span>Elegí estrellas sorpresa que esconden consignas breves. Creá un cierre participativo sin repetir siempre la misma ronda.</span><b>Explorar este camino →</b></button>
 </div></section>
 <section class="tool" id="tool0" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 01 · LABORATORIO DE CIERRES</div><h2>🧪 Laboratorio de cierres</h2>
@@ -92,16 +124,15 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 <div class="result lab-result" id="lab-result" hidden aria-live="polite"><span class="result-label" id="lab-selection"></span><h3 id="lab-title"></h3><p id="lab-description"></p><div class="lab-detail"><strong>Cómo participan</strong><p id="lab-participation"></p></div><div class="lab-detail"><strong>Cómo llevarlo a tu peulá</strong><p id="lab-adapt"></p></div><button class="outline" type="button" id="lab-copy">📋 Copiar propuesta</button></div>
 <p class="tip">Una herramienta de planificación: el recurso está al servicio del objetivo educativo, no al revés.</p>
 </div></section>
-<section class="tool" id="tool1" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 02 · CONSTRUIR</div><h2>🧳 La valija del cierre</h2>
-<p class="lead">Imaginen que cada janij vuelve de la peulá con una valija. ¿Qué se lleva, qué deja atrás y qué quiere intentar la próxima vez? Pueden responder individualmente, de a dos o entre todos.</p>
-<div class="panel"><div class="suitcase-banner"><span>MI VALIJA DE LA PEULÁ</span><strong>🧳 ¿Qué guardamos hoy?</strong></div>
-<div class="case-fields">
-<div class="case-field"><div class="case-icon">🎒</div><strong>Me llevo…</strong><p>Una idea, un momento, algo que aprendí o disfruté.</p><textarea id="case-take" maxlength="340" placeholder="Hoy me llevo…"></textarea></div>
-<div class="case-field"><div class="case-icon">🍃</div><strong>Dejo atrás…</strong><p>Algo que no necesito llevarme o algo que quiero hacer distinto.</p><textarea id="case-leave" maxlength="340" placeholder="Hoy dejo atrás…"></textarea></div>
-<div class="case-field"><div class="case-icon">🌱</div><strong>Para la próxima…</strong><p>Algo que me gustaría probar, mejorar o repetir.</p><textarea id="case-next" maxlength="340" placeholder="La próxima me gustaría…"></textarea></div>
-</div><div class="case-buttons"><button type="button" class="action" id="case-create">✨ Armar postal de cierre</button><button type="button" class="outline" id="case-clear">Limpiar respuestas</button></div>
-<div id="case-result" class="case-result" hidden aria-live="polite"><h3>✉️ Nuestra postal de cierre</h3><div class="case-line" id="case-out-take"></div><div class="case-line" id="case-out-leave"></div><div class="case-line" id="case-out-next"></div><button type="button" id="case-copy" class="action">📋 Copiar nuestra postal</button></div>
-<p class="tip">Las respuestas son voluntarias y no se guardan en la web. Si algún janij no quiere compartir, puede pasar, dibujar o inventar un ejemplo.</p></div></section>
+<section class="tool" id="tool1" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button>
+<div class="kicker">CAMINO 02 · PELÍCULAS QUE INSPIRAN</div><h2>🎬 Tojnitflix: Netflix de cierres</h2>
+<p class="lead">Elegí una película conocida y tocá su tarjeta para darla vuelta. Del otro lado te espera una <strong>dinámica de cierre inspirada en la película</strong>. Podés cambiar el catálogo para descubrir otras.</p>
+<div class="movie-panel">
+<div class="movie-top"><div><span class="movie-logo">TOJNIT<span>FLIX</span></span><h3>¿Qué peli inspira la peulá de hoy?</h3></div><button class="movie-refresh" id="movie-refresh" type="button">↻ Cambiar catálogo</button></div>
+<div class="movie-label">PELÍCULAS PARA TU PRÓXIMO CIERRE</div>
+<div class="movie-grid" id="movie-grid"></div>
+<p class="movie-note">Tocá una película para revelar su dinámica. Cada propuesta puede adaptarse a la edad y a los espacios disponibles. La participación personal siempre es voluntaria.</p>
+</div></section>
 <section class="tool" id="tool2" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 03 · SORPRESA</div><h2>🌌 El cielo de las estrellas</h2>
 <p class="lead">Cada estrella es una consigna para hacer un cierre distinto. Elijan una estrella, descubran cómo cerrar y, si quieren, sumen otras. El desafío es llevar la propuesta a una peulá real.</p>
 <div class="sky-panel">
@@ -247,27 +278,47 @@ document.getElementById('lab-copy').addEventListener('click',()=>{
  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(labOutput).then(()=>document.getElementById('lab-copy').textContent='✓ Copiado').catch(()=>prompt('Copiá la propuesta:',labOutput));
  else prompt('Copiá la propuesta:',labOutput);
 });
-function caseText(){
- const a=$('case-take').value.trim(),b=$('case-leave').value.trim(),c=$('case-next').value.trim();
- return [['Me llevo',a],['Dejo atrás',b],['Para la próxima',c]];
+const movieLibrary=[{"title":"Intensamente","emoji":"🧠","vibe":"Emociones","c1":"#38b9ff","c2":"#ef789e","dynamicTitle":"Cierre con emociones distintas","dynamicText":"Cada janij responde una pregunta de cierre desde una emoción diferente: alegría, tristeza, enojo, miedo, ansiedad o calma. Pueden elegirla libremente, responder con un gesto o escribir sin compartir. La misma pregunta cambia según la emoción que la responde."},{"title":"La Sirenita","emoji":"🧜‍♀️","vibe":"El mar y la voz","c1":"#0bbec2","c2":"#285ad4","dynamicTitle":"Cierre bajo el mar","dynamicText":"Hagan el cierre ambientado en el mar: con telas azules, sonidos de olas o una ronda imaginando la orilla. Si tienen pileta o playa, pueden hacerlo cerca del agua, en un lugar seguro y supervisado. Cada janij comparte algo que quiere expresar o llevarse de la peulá."},{"title":"Coco","emoji":"🎸","vibe":"Recuerdos","c1":"#ff9836","c2":"#9c40bf","dynamicTitle":"El recuerdo que queda","dynamicText":"Cada janij elige una imagen, frase o momento de la peulá que le gustaría recordar. Lo escriben, dibujan o representan y crean una pequeña galería compartida de recuerdos del encuentro."},{"title":"Toy Story","emoji":"🤠","vibe":"Los objetos hablan","c1":"#3d83e3","c2":"#f1c14a","dynamicTitle":"Si el objeto pudiera hablar","dynamicText":"Cada janij elige un objeto del lugar y hace el cierre desde su punto de vista: ¿qué vio?, ¿qué aprendió del grupo?, ¿qué recordaría de la peulá? Pueden contarlo en primera persona o dibujarlo."},{"title":"Frozen","emoji":"❄️","vibe":"Soltar","c1":"#5fc3eb","c2":"#8f9ff6","dynamicTitle":"Dejarlo ir","dynamicText":"En el cierre, cada janij elige algo pequeño que quiera soltar o dejar atrás. Puede ser algo ficticio, una costumbre o una idea. Lo escriben en un copo de papel y lo guardan o dejan en una caja, sin obligación de mostrarlo."},{"title":"Encanto","emoji":"🦋","vibe":"Talentos","c1":"#ed73ba","c2":"#45b38d","dynamicTitle":"El don que compartimos","dynamicText":"Cada janij recibe un papel que simboliza un don que aportó al grupo: escuchar, ayudar, animarse, crear, etc. Pueden elegirlo o recibir una sugerencia positiva de sus compañeros. Terminen reconociendo la diversidad de aportes."},{"title":"Harry Potter","emoji":"🪄","vibe":"Magia","c1":"#6040a1","c2":"#b79a52","dynamicTitle":"El hechizo del próximo encuentro","dynamicText":"Cada janij inventa una palabra o gesto mágico para representar algo que quiere llevarse o intentar la próxima peulá. La ronda final combina esos hechizos en una despedida compartida."},{"title":"Shrek","emoji":"🧅","vibe":"Capas","c1":"#8bbd40","c2":"#aa7941","dynamicTitle":"Las capas de la peulá","dynamicText":"Construyan un cierre de tres capas: lo primero que pareció, lo que descubrieron después y lo que realmente se llevan. Cada capa puede expresarse con una palabra, dibujo o gesto."},{"title":"Buscando a Nemo","emoji":"🐠","vibe":"Encontrar","c1":"#168ed4","c2":"#ed963e","dynamicTitle":"¿Qué encontré hoy?","dynamicText":"Cada janij cuenta, dibuja o señala algo que encontró durante la peulá: una idea, una conexión, una sorpresa o una nueva pregunta. Juntan todo en un océano de descubrimientos."},{"title":"Monsters Inc.","emoji":"👾","vibe":"Miedo y risas","c1":"#7753c2","c2":"#53c8c1","dynamicTitle":"El monstruo cambia de cara","dynamicText":"Al cerrar, cada janij elige un monstruo imaginario que represente una dificultad del comienzo. Después le cambia la cara o el nombre según cómo se siente al terminar. Compartirlo es opcional."},{"title":"Matilda","emoji":"📚","vibe":"La voz propia","c1":"#397db9","c2":"#cb6ba6","dynamicTitle":"Una frase poderosa","dynamicText":"Cada janij escribe una frase breve que resuma qué se lleva de la peulá. Pueden guardar todas las frases en un libro del grupo para volver a leerlas otro día."},{"title":"Up","emoji":"🎈","vibe":"Llevarse algo","c1":"#4ba6ea","c2":"#ffc55f","dynamicTitle":"El globo de lo que me llevo","dynamicText":"Dibujen globos de papel. Cada janij escribe o dibuja una idea, sensación o recuerdo que quisiera llevarse del encuentro. Armen un cielo colectivo de globos antes de despedirse."},{"title":"Ratatouille","emoji":"🐭","vibe":"Mezclar aportes","c1":"#5f78ce","c2":"#df9659","dynamicTitle":"La receta de la peulá","dynamicText":"Entre todos construyan la receta del encuentro: cada janij aporta un ingrediente simbólico —una idea, una emoción o una acción— que hizo falta para que la peulá fuera como fue."},{"title":"El Rey León","emoji":"🦁","vibe":"El lugar en el grupo","c1":"#e2a448","c2":"#b45f48","dynamicTitle":"Mi lugar en la ronda","dynamicText":"Para el cierre, cada janij elige una palabra que describa qué lugar ocupó hoy: escuchar, acompañar, observar, proponer o aprender. Pueden colocar esas palabras en un círculo compartido."},{"title":"Spider-Man","emoji":"🕸️","vibe":"Conexiones","c1":"#cf384e","c2":"#3261b0","dynamicTitle":"La red del grupo","dynamicText":"Con un ovillo de lana o con tiras de papel, vayan conectando aportes de la peulá: una ayuda, una idea, un gesto. Si no usan materiales, dibujen las conexiones en un afiche. Cierren mirando la red que formaron."},{"title":"Zootopia","emoji":"🦊","vibe":"Diferencias que suman","c1":"#59aae3","c2":"#f2a753","dynamicTitle":"Lo diferente nos suma","dynamicText":"Cada janij puede elegir una manera distinta de expresar qué aportó al grupo. Reúnan esas formas en una producción final que destaque que no todos participan igual."},{"title":"Moana","emoji":"🌊","vibe":"Encontrar el rumbo","c1":"#0a9da7","c2":"#2468bb","dynamicTitle":"La brújula de salida","dynamicText":"Al cerrar, cada janij elige un rumbo simbólico: algo que quiere seguir pensando, algo que dejará atrás o algo que quiere probar. Pueden marcarlo en una brújula dibujada en el piso o papel."},{"title":"Los Increíbles","emoji":"🦸","vibe":"Fortalezas","c1":"#d74a52","c2":"#e7a84e","dynamicTitle":"Superpoderes compartidos","dynamicText":"Cada janij nombra o dibuja un superpoder que vio aparecer durante la peulá, como escuchar o ayudar. Formen un equipo de superpoderes para llevarse a la próxima actividad."},{"title":"Alicia en el País de las Maravillas","emoji":"🐇","vibe":"Otra perspectiva","c1":"#8b60bf","c2":"#58b4ce","dynamicTitle":"El cierre al revés","dynamicText":"En vez de preguntar qué pasó, pregunten primero qué se llevan; luego qué los sorprendió y recién al final cómo empezó todo. Alteren el orden habitual del cierre para reconstruir la experiencia."},{"title":"Kung Fu Panda","emoji":"🐼","vibe":"Aprender de uno mismo","c1":"#d3a04b","c2":"#5ca46e","dynamicTitle":"Mi ingrediente secreto","dynamicText":"Cada janij completa la idea «Hoy descubrí que puedo…» con una palabra, dibujo o gesto. Después el grupo reconoce que cada persona puede aportar algo distinto."},{"title":"Lilo & Stitch","emoji":"🌺","vibe":"Pertenecer","c1":"#e67794","c2":"#4889cf","dynamicTitle":"Nadie queda afuera","dynamicText":"El grupo elige pequeñas acciones que hicieron sentir acompañados a otros durante la peulá. Las representan con flores, dibujos o gestos y arman una despedida que incluya a todos."}];
+let moviePrevious=[];
+function movieShuffle(list){
+ const array=list.slice();
+ for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];}
+ return array;
 }
-$('case-create').addEventListener('click',()=>{
- const fields=caseText();if(!fields.some(item=>item[1])){alert('Escriban al menos una idea para armar la postal.');$('case-take').focus();return}
- $('case-out-take').textContent='🎒 Me llevo: '+(fields[0][1]||'—');
- $('case-out-leave').textContent='🍃 Dejo atrás: '+(fields[1][1]||'—');
- $('case-out-next').textContent='🌱 Para la próxima: '+(fields[2][1]||'—');
- $('case-result').hidden=false;$('case-result').scrollIntoView({behavior:'smooth',block:'nearest'});
-});
-$('case-clear').addEventListener('click',()=>{
- ['case-take','case-leave','case-next'].forEach(id=>$(id).value='');$('case-result').hidden=true;
-});
-$('case-copy').addEventListener('click',()=>{
- const summary='Nuestra postal de cierre\n'+
- ['case-out-take','case-out-leave','case-out-next'].map(id=>$(id).textContent).join('\n');
- if(navigator.clipboard&&navigator.clipboard.writeText){
- navigator.clipboard.writeText(summary).then(()=>$('case-copy').textContent='✓ Copiado').catch(()=>window.prompt('Copiá la postal:',summary));
- }else window.prompt('Copiá la postal:',summary);
-});
+function renderMovieCatalog(){
+ const grid=document.getElementById('movie-grid');grid.replaceChildren();
+ const all=movieLibrary.map((_,i)=>i);
+ const unseen=all.filter(i=>!moviePrevious.includes(i));
+ const selected=movieShuffle(unseen).slice(0,8);
+ if(selected.length<8)selected.push(...movieShuffle(all.filter(i=>!selected.includes(i))).slice(0,8-selected.length));
+ moviePrevious=selected;
+ selected.forEach(index=>{
+  const movie=movieLibrary[index];
+  const card=document.createElement('article');card.className='movie-card';
+  const inner=document.createElement('div');inner.className='movie-card-inner';
+  const front=document.createElement('button');front.type='button';front.className='movie-front movie-face';
+  front.setAttribute('aria-label','Revelar dinámica inspirada en '+movie.title);
+  front.style.background='linear-gradient(150deg,'+movie.c1+','+movie.c2+')';
+  const poster=document.createElement('span');poster.className='movie-poster-icon';poster.textContent=movie.emoji;
+  const frontText=document.createElement('span');frontText.className='movie-front-text';
+  const type=document.createElement('small');type.textContent='TOJNITFLIX · PELÍCULA';
+  const title=document.createElement('strong');title.textContent=movie.title;
+  const vibe=document.createElement('span');vibe.textContent=movie.vibe;
+  const prompt=document.createElement('span');prompt.className='movie-prompt';prompt.textContent='▶ DESCUBRIR EL CIERRE';
+  frontText.append(type,title,vibe,prompt);front.append(poster,frontText);
+  const back=document.createElement('div');back.className='movie-back movie-face';
+  const kicker=document.createElement('small');kicker.textContent='✨ DINÁMICA DE CIERRE';
+  const header=document.createElement('h4');header.textContent=movie.dynamicTitle;
+  const paragraph=document.createElement('p');paragraph.textContent=movie.dynamicText;
+  const flip=document.createElement('button');flip.type='button';flip.className='movie-flip-back';flip.textContent='↺ Volver a la película';
+  back.append(kicker,header,paragraph,flip);
+  inner.append(front,back);card.appendChild(inner);grid.appendChild(card);
+  front.addEventListener('click',()=>{card.classList.add('flipped');flip.focus({preventScroll:true})});
+  flip.addEventListener('click',()=>{card.classList.remove('flipped');front.focus({preventScroll:true})});
+ });
+}
+document.getElementById('movie-refresh').addEventListener('click',renderMovieCatalog);
+renderMovieCatalog();
 const skyIdeas=[
  ['La palabra que queda','Cada persona dice, escribe o dibuja una sola palabra que resuma cómo se va. Junten las palabras en un cierre grupal.','Formato: una palabra o símbolo'],
  ['El gesto final','Cada quien elige un gesto sencillo que represente algo que se lleva. Hagan una secuencia de gestos, sin exigir que todos expliquen.','Formato: movimiento breve'],
