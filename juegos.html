@@ -36,6 +36,23 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 .result .result-prompt{border-left:4px solid #956bc3;background:#f6f2ff;padding:13px 17px;border-radius:8px}
 @media(max-width:820px){.path-grid{grid-template-columns:1fr}.path-card{min-height:0}}
 @media(max-width:680px){header{flex-direction:column;align-items:flex-start}.form-grid{grid-template-columns:1fr}.triple{grid-template-columns:1fr}.reel{min-height:105px;gap:9px}.game-panel{padding:17px}}
+</style><style>
+/* Edición interactiva de juegos con IA */
+#tool0 .game-panel input,#tool0 .game-panel textarea{display:block;width:100%;border:2px solid #d5e1f5;border-radius:14px;background:#fff;color:#214995;padding:14px 15px;font:600 14px Montserrat,Arial,sans-serif;line-height:1.55}
+#tool0 .game-panel textarea{resize:vertical;min-height:96px}
+#tool0 .game-panel input:focus,#tool0 .game-panel textarea:focus{outline:3px solid #acd0fa;outline-offset:1px}
+#tool0 .field label small{font-weight:500;color:#7386a5}
+.modify-extra{margin:20px 0}
+.modify-status{margin-top:18px;font-size:13px;font-weight:700;color:#365d98;line-height:1.6}
+.modify-unavailable{background:white;border:2px dashed #b9cbee;border-radius:18px;padding:21px;margin-top:18px;color:#214995}
+.modify-unavailable[hidden]{display:none}
+.modify-unavailable p{margin:8px 0 0}
+.modify-copy{margin-top:14px;font-size:12px}
+.modify-idea{margin-top:22px;border-top:1px solid #dfebf9;padding-top:20px}
+.modify-idea h4{font-size:18px;color:#214995;margin:0 0 10px}
+.modify-idea ol{padding-left:23px;color:#496385;line-height:1.8;font-size:14px}
+.modify-idea li{margin-bottom:5px}.modify-idea p{font-size:14px}
+#generate-game:disabled{opacity:.65;cursor:wait}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en tu hoja de planificación</div><h1>Juegos</h1><div class="divider"></div>
@@ -47,11 +64,29 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 <button class="path-card" type="button" data-open="1"><span class="path-number">CAMINO 02</span><strong>A</strong><span><b>Agregar:</b> elegí un juego conocido y sumale una regla, un desafío o un giro nuevo.</span><b>Explorar este camino →</b></button>
 <button class="path-card" type="button" data-open="2"><span class="path-number">CAMINO 03</span><strong>S</strong><span><b>Sacar:</b> probá qué pasa cuando quitás una regla, un recurso o una facilidad y tienen que reinventar cómo jugar.</span><b>Explorar este camino →</b></button>
 </div></section>
-<section id="tool0" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 01 · MODIFICAR</span><h2>M · Modificar</h2><p>Modificá las condiciones de un juego: cambiá el espacio, el ritmo o el propósito y descubrí una versión diferente para tu grupo.</p></div>
-<div class="game-panel"><div class="form-grid"><div class="field"><label for="space">¿Dónde van a jugar?</label><select id="space"><option value="patio">Patio / aire libre</option><option value="salon">Salón</option><option value="agua">Con agua</option><option value="noche">De noche</option></select></div>
-<div class="field"><label for="energy">¿Qué energía buscan?</label><select id="energy"><option value="movimiento">Mucho movimiento</option><option value="tranquilo">Algo tranquilo</option><option value="mixto">Un poco de todo</option></select></div>
-<div class="field"><label for="goal">¿Para qué?</label><select id="goal"><option value="cooperacion">Cooperar</option><option value="conocerse">Conocerse mejor</option><option value="ingenio">Pensar y resolver</option><option value="expresion">Expresarse</option><option value="diversion">Divertirse</option></select></div></div>
-<button type="button" class="action" id="generate-game">🎲 Generar juego</button><div class="result" id="result0" hidden aria-live="polite"></div></div></section>
+<section id="tool0" class="tool" hidden>
+<button class="tool-back" data-back type="button">← Elegir otro camino</button>
+<div class="tool-heading"><span class="kicker">CAMINO 01 · MODIFICAR CON IA</span><h2>M · Modificar</h2>
+<p>Escribí el juego que ya conocés y contanos qué querés cambiar. La IA te propondrá maneras concretas de reinventarlo para tu grupo, sin perder su esencia.</p></div>
+<div class="game-panel">
+<form id="modify-form">
+ <div class="field"><label for="modify-game">¿Qué juego querés modificar?</label>
+ <input id="modify-game" name="juego" placeholder="Ej.: Mancha, Escondidas, Quemado, Pictionary…" maxlength="120" required autocomplete="off"></div>
+ <div class="field modify-extra"><label for="modify-context">¿Cómo se juega hoy o qué te gustaría cambiar? <small>(opcional)</small></label>
+ <textarea id="modify-context" name="contexto" rows="3" maxlength="600" placeholder="Ej.: Se eliminan muchos janijim; quiero que participen todos."></textarea></div>
+ <div class="form-grid">
+ <div class="field"><label for="space">¿Dónde van a jugar?</label><select id="space"><option value="patio">Patio / aire libre</option><option value="salon">Salón</option><option value="agua">Con agua</option><option value="noche">De noche</option></select></div>
+ <div class="field"><label for="energy">¿Qué energía buscan?</label><select id="energy"><option value="movimiento">Mucho movimiento</option><option value="tranquilo">Algo tranquilo</option><option value="mixto">Un poco de todo</option></select></div>
+ <div class="field"><label for="goal">¿Qué quieren lograr?</label><select id="goal"><option value="cooperacion">Cooperar</option><option value="conocerse">Conocerse mejor</option><option value="ingenio">Pensar y resolver</option><option value="expresion">Expresarse</option><option value="diversion">Divertirse</option></select></div>
+ </div>
+ <button class="action" id="generate-game" type="submit">✨ Pedir 3 modificaciones a la IA</button>
+</form>
+<div id="modify-status" class="modify-status" role="status" aria-live="polite"></div>
+<div class="result" id="result0" hidden aria-live="polite"></div>
+<div class="modify-unavailable" id="modify-unavailable" hidden><strong>La conexión con IA todavía no está activada.</strong>
+<p>La página ya está preparada, pero falta conectar el servicio seguro de IA para generar respuestas acá mismo.</p>
+<button id="modify-copy" class="action modify-copy" type="button">📋 Copiar consulta para usar en ChatGPT</button></div>
+</div></section>
 <section id="tool1" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 02 · AGREGAR</span><h2>A · Agregar</h2><p>Agregá una regla, un giro o una misión extra a un juego conocido para generar una experiencia nueva.</p></div>
 <div class="game-panel"><div class="form-grid"><div class="field"><label for="classic-game">Juego que vamos a transformar</label><select id="classic-game"></select></div>
 <div class="field"><label for="remix-goal">¿Qué querés provocar?</label><select id="remix-goal"><option value="equipo">Más cooperación</option><option value="sorpresa">Más sorpresa</option><option value="creatividad">Más creatividad</option><option value="inclusion">Más inclusión</option></select></div></div>
@@ -60,6 +95,7 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 <div class="game-panel"><div class="triple"><div class="reel"><small>🎯 MISIÓN</small><strong id="mission">¿Qué hay que lograr?</strong></div><div class="reel"><small>🔒 QUÉ SACAMOS</small><strong id="constraint">¿Qué facilidad vamos a sacar?</strong></div><div class="reel"><small>🧰 ELEMENTO</small><strong id="prop">¿Qué objeto aparece?</strong></div></div>
 <button type="button" class="action" id="generate-challenge">⚡ Sortear tres cartas</button><div class="result" id="result2" hidden aria-live="polite"></div><p class="tip">No hace falta usar todo literalmente. Si una carta no funciona para la edad o las posibilidades del grupo, volvé a sortear.</p></div></section>
 </main></div>
+<script src="juegos-ia-config.js"></script>
 <script>
 const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
 const params=new URLSearchParams(location.search),requested=params.get('grupo')||'';
@@ -102,18 +138,71 @@ mixto:['Alternen una posta activa con otra de observación o ingenio.','Intercal
 };
 let lastGame='',lastRemix='',lastChallenge='';
 function noRepeat(list,previous){const available=list.filter(x=>JSON.stringify(x)!==previous);return rand(available.length?available:list)}
-$('generate-game').addEventListener('click',()=>{
- const loc=$('space').value,goal=$('goal').value,en=$('energy').value;
- const chosen=noRepeat(goals[goal],lastGame);lastGame=JSON.stringify(chosen);
- const where=rand(styles[loc].places),materials=rand(styles[loc].props),how=rand(styles[loc].moves),pace=rand(energy[en]);
+// M - Modificar: respuesta real desde un servicio privado (sin claves en GitHub Pages).
+const MODIFY_AI_ENDPOINT=typeof window.JUEGOS_IA_ENDPOINT==='string'?window.JUEGOS_IA_ENDPOINT.trim():'';
+function getModifyInput(){
+ const game=$('modify-game').value.trim();
+ const context=$('modify-context').value.trim();
+ return {game,context,group:group||'Grupo sin especificar',space:$('space').selectedOptions[0].text,
+ energy:$('energy').selectedOptions[0].text,goal:$('goal').selectedOptions[0].text,
+ ageBand:age,ageGuidance:ages[age]};
+}
+function makeModifyPrompt(input){
+ return 'Sos un especialista en juegos educativos y peulot de majané. Partí del juego "'+input.game+'". Grupo: '+input.group+
+ '. Espacio: '+input.space+'. Energía: '+input.energy+'. Objetivo: '+input.goal+
+ '. Contexto adicional: '+(input.context||'No hay')+'. Orientación por edad: '+input.ageGuidance+
+ '. Proponé 3 modificaciones ORIGINALES y realizables de ESE juego, sin reemplazarlo por otro. '+
+ 'Para cada una: nombre, qué se modifica, reglas concretas paso a paso, materiales y por qué funciona con ese grupo. '+
+ 'No inventes detalles sobre el grupo. Cuidá la seguridad, inclusión y participación sin eliminaciones.';
+}
+function showModifiedGames(data){
  const box=$('result0');box.replaceChildren();box.hidden=false;
- const heading=document.createElement('div');heading.className='result-label';heading.textContent='JUEGO PROPUESTO · '+(group||'PARA TU GRUPO');
- const title=document.createElement('h3');title.textContent=chosen[0];
- const rule=document.createElement('p');rule.textContent=chosen[1];
- const detail=document.createElement('p');detail.textContent='Preparación: armen '+where+' usando '+materials+'. La dinámica se desarrolla '+how+'. '+pace;
- const duration=document.createElement('div');duration.className='tags';for(const t of [loc==='noche'?'Zona iluminada':loc==='agua'?'Zona acuática segura':loc==='salon'?'Interior':'Aire libre',en==='tranquilo'?'Ritmo tranquilo':en==='movimiento'?'Juego activo':'Ritmo mixto','Objetivo: '+$('goal').selectedOptions[0].text]){const span=document.createElement('span');span.className='tag';span.textContent=t;duration.appendChild(span)}
- const adjust=document.createElement('p');adjust.className='idea-note';adjust.textContent='Adaptación: '+ages[age]+(loc==='agua'?' Eviten superficies resbaladizas y juegos que impliquen sumergirse.':'')+(loc==='noche'?' Mantengan supervisión, buena visibilidad y el recorrido delimitado.':'');
- box.append(heading,title,duration,rule,detail,adjust);
+ const label=document.createElement('div');label.className='result-label';label.textContent='3 MODIFICACIONES PARA '+$('modify-game').value.trim().toUpperCase();
+ const title=document.createElement('h3');title.textContent='Ideas para reinventar este juego';
+ box.append(label,title);
+ for(const item of data.ideas){
+  const article=document.createElement('article');article.className='modify-idea';
+  const head=document.createElement('h4');head.textContent=item.nombre;
+  const change=document.createElement('p');const strong=document.createElement('strong');strong.textContent='Qué modificamos: ';
+  change.append(strong,document.createTextNode(item.cambio));
+  const steps=document.createElement('ol');
+  for(const step of item.pasos){const li=document.createElement('li');li.textContent=step;steps.appendChild(li)}
+  const supplies=document.createElement('p');supplies.textContent='Materiales: '+item.materiales;
+  const why=document.createElement('p');why.textContent='Para este grupo: '+item.por_que;
+  article.append(head,change,steps,supplies,why);box.appendChild(article);
+ }
+}
+$('modify-form').addEventListener('submit',async event=>{
+ event.preventDefault();
+ const input=getModifyInput(), status=$('modify-status'),unavailable=$('modify-unavailable');
+ if(!input.game){status.textContent='Escribí el nombre de un juego primero.';return}
+ $('result0').hidden=true;unavailable.hidden=true;
+ if(!MODIFY_AI_ENDPOINT){
+  status.textContent='Todavía no está conectada la IA.';
+  unavailable.hidden=false;
+  return;
+ }
+ const btn=$('generate-game');btn.disabled=true;btn.textContent='✨ Pensando modificaciones…';
+ status.textContent='La IA está buscando tres maneras de modificar '+input.game+'…';
+ try{
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),35000);
+  let response;
+  try{response=await fetch(MODIFY_AI_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input),signal:controller.signal})}
+  finally{clearTimeout(timer)}
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok)throw Error(result.error||'La IA no pudo responder en este momento.');
+  if(!result||!Array.isArray(result.ideas)||result.ideas.length!==3||result.ideas.some(x=>!x.nombre||!x.cambio||!Array.isArray(x.pasos)||!x.materiales||!x.por_que))throw Error('La respuesta llegó incompleta. Probá de nuevo.');
+  showModifiedGames(result);
+  status.textContent='¡Tres modificaciones listas! Podés pedir más ideas con el mismo juego.';
+ }catch(err){
+  status.textContent=err.name==='AbortError'?'Se agotó el tiempo de espera. Probá de nuevo.':('No se pudieron generar las ideas: '+err.message);
+ }finally{btn.disabled=false;btn.textContent='✨ Pedir otras 3 modificaciones a la IA'}
+});
+$('modify-copy').addEventListener('click',async()=>{
+ const prompt=makeModifyPrompt(getModifyInput());
+ try{await navigator.clipboard.writeText(prompt);$('modify-status').textContent='Consulta copiada. Pegala en ChatGPT para obtener ideas.'}
+ catch(err){$('modify-status').textContent='No se pudo copiar automáticamente. Seleccioná el texto y copialo: ';const p=document.createElement('p');p.textContent=prompt;$('modify-status').appendChild(p)}
 });
 const classics={
 'Mancha':['Para cambiar de perseguidor hay que completar una misión cooperativa.','La persona que persigue solo puede avanzar después de recibir una pista del grupo.','Cuando alguien es tocado, recibe una misión creativa y vuelve al juego sin eliminación.','El equipo tiene que asegurarse de que todos cambien de rol.'],
