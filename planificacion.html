@@ -106,7 +106,7 @@ body.wheel-modal-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.machine-reels.is-rolling .machine-reel{animation:none}}
 
 .fotos-section{max-width:870px;margin:34px auto 0}
-.fotos-section[hidden],.fotos-reflection[hidden]{display:none}
+.fotos-section[hidden],.fotos-inspiration[hidden]{display:none}
 .fotos-heading{text-align:center;margin:8px 0 25px}
 .fotos-tag{font-size:11px;letter-spacing:.14em;font-weight:900;color:#895bc0}
 .fotos-heading h2{font-size:clamp(25px,4.2vw,43px);color:#214995;letter-spacing:-.045em;margin:12px 0}
@@ -139,6 +139,15 @@ body.wheel-modal-open{overflow:hidden}
 .fotos-reflection p{font-size:15px;color:#365782;line-height:1.7}
 .fotos-closing{font-size:13px!important;color:#74839b!important}
 @media(max-width:540px){.fotos-answer-form{grid-template-columns:1fr}.fotos-grid{gap:7px}.fotos-tile{border-width:2px;border-radius:12px}}
+.fotos-reflect{text-align:center;max-width:680px;margin:25px auto 0}
+.fotos-reflect strong{color:#214995;font-size:clamp(19px,2.7vw,24px);font-weight:900}
+.fotos-reflect p{font-size:14px;line-height:1.8;color:#4b6389}
+.fotos-inspiration{margin:22px auto 0;padding:22px;border-left:5px solid #8b62cb;border-radius:14px;background:white;max-width:700px}
+.fotos-inspiration strong{font-size:clamp(18px,2.4vw,24px);color:#214995}
+.fotos-inspiration p{font-size:14px;color:#48658a;line-height:1.8}
+.fotos-quiet{text-align:center;font-size:12px;max-width:660px;margin:20px auto;color:#7385a2;line-height:1.8}
+.fotos-tile img{filter:saturate(.85) contrast(1.06);transition:transform .3s}
+.fotos-tile:hover img{transform:scale(1.03)}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-paths" class="tema-paths" hidden aria-labelledby="tema-paths-title">
@@ -159,8 +168,8 @@ body.wheel-modal-open{overflow:hidden}
     </button>
     <button type="button" id="open-tema-fotos" class="tema-path-card tema-path-ready">
       <span class="tema-path-number">CAMINO 03</span>
-      <strong>🧩 Cuatro miradas, una palabra</strong>
-      <span>Observá cuatro fotos, descubrí la palabra que las conecta y usala para imaginar un tema profundo para tu grupo.</span>
+      <strong>📸 Cuatro fotos, mil preguntas</strong>
+      <span>Dejá que cuatro imágenes distintas inspiren una pregunta profunda y un posible tema para tu grupo.</span>
       <b>Explorar este camino →</b>
     </button>
   </div>
@@ -194,37 +203,19 @@ body.wheel-modal-open{overflow:hidden}
   <p class="machine-context">Estas propuestas se inspiran en las respuestas del diagnóstico. Son hipótesis educativas, no etiquetas sobre los janijim: confirmen siempre si siguen representando al grupo.</p>
 </section>
 <section id="tema-fotos" class="fotos-section" hidden aria-labelledby="fotos-title">
-  <button type="button" id="back-fotos-paths" class="tema-back">← Elegir otro camino</button>
-  <div class="fotos-heading">
-    <span class="fotos-tag">CAMINO 03 · UN JUEGO PARA ENCONTRAR UN TEMA</span>
-    <h2 id="fotos-title">🧩 Cuatro miradas, una palabra</h2>
-    <p>Cuatro fotos esconden un concepto que puede abrir una gran pregunta educativa. Descubran la palabra y después piensen qué significa para su grupo.</p>
-  </div>
-  <div class="fotos-game">
-    <div class="fotos-top"><span id="fotos-round">DESAFÍO 1</span><span id="fotos-counter">0 / 3 pistas</span></div>
-    <div class="fotos-grid" id="fotos-grid" aria-label="Cuatro fotografías del desafío">
-      <div class="fotos-placeholder">📷</div><div class="fotos-placeholder">📷</div><div class="fotos-placeholder">📷</div><div class="fotos-placeholder">📷</div>
-    </div>
-    <p class="fotos-indication">¿Qué palabra conecta estas cuatro imágenes?</p>
-    <form id="fotos-form" class="fotos-answer-form" autocomplete="off">
-      <label class="fotos-input-label" for="fotos-answer">Tu palabra</label>
-      <input id="fotos-answer" type="text" spellcheck="false" autocapitalize="characters" placeholder="Escribí una palabra..." maxlength="30" required>
-      <button type="submit" id="fotos-check">✓ Comprobar respuesta</button>
-    </form>
-    <div class="fotos-feedback" id="fotos-feedback" role="status" aria-live="polite"></div>
-    <div id="fotos-hints" class="fotos-hints" aria-live="polite"></div>
-    <div class="fotos-actions">
-      <button type="button" id="fotos-hint" class="fotos-hint-btn">💡 Pedir una pista</button>
-      <button type="button" id="fotos-next" class="fotos-next-btn">↻ Otra palabra</button>
-    </div>
-  </div>
-  <div class="fotos-reflection" id="fotos-reflection" hidden>
-    <span>💙 DEL JUEGO A LA PEULÁ</span>
-    <h3 id="fotos-theme"></h3>
-    <p id="fotos-question"></p>
-    <p class="fotos-closing">La palabra es un disparador, no un racional armado. ¿Qué necesidad real del grupo les hace pensar?</p>
-  </div>
-</section>
+<button type="button" id="back-fotos-paths" class="tema-back">← Elegir otro camino</button>
+<div class="fotos-heading"><span class="fotos-tag">CAMINO 03 · MIRAR MÁS ALLÁ DE LO EVIDENTE</span>
+<h2 id="fotos-title">📸 Cuatro fotos, mil preguntas</h2>
+<p>Cuatro imágenes para abrir una conversación. No hay una palabra correcta: observen, debatan y descubran qué tema profundo les hace pensar para su grupo.</p></div>
+<div class="fotos-game"><div class="fotos-top"><span id="fotos-round">SERIE 1</span><span>OBSERVÁ · DEBATÍ · CONECTÁ</span></div>
+<div class="fotos-grid" id="fotos-grid" aria-label="Cuatro fotografías que inspiran una reflexión educativa"></div>
+<div class="fotos-reflect"><strong>¿Qué les hacen pensar estas imágenes?</strong>
+<p>¿Qué tensiones o contradicciones descubren? ¿Qué situaciones de su grupo les recuerdan? No necesitan estar todos de acuerdo.</p></div>
+<div class="fotos-actions">
+<button type="button" class="fotos-hint-btn" id="fotos-inspiration">💡 Una pregunta para profundizar</button>
+<button type="button" class="fotos-next-btn" id="fotos-next">↻ Otras cuatro fotos</button></div>
+<div class="fotos-inspiration" id="fotos-inspiration-box" hidden aria-live="polite"></div></div>
+<p class="fotos-quiet">Usen la conversación como punto de partida para encontrar una necesidad real y un tema para su próxima peulá. No hay respuestas únicas.</p></section>
 <section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
   <button type="button" id="back-tema-paths" class="tema-back">← Elegir otro camino</button>
   <h2 id="wheel-title">🎡 Que el azar dispare la idea</h2>
@@ -380,127 +371,51 @@ function setupMachine(){
 }
 
 
-/* Camino 3: 4 fotos, 1 palabra; conceptos para la educación de grupos.
-   Fotografías de Unsplash, con créditos y licencias consultables en Unsplash. */
-const photoSources={
- friends:'photo-1529156069898-49953e39b3ac',
- team:'photo-1527525443983-6e60c75fff46',
- hands:'photo-1517457373958-b7bdd4587205',
- meeting:'photo-1543269865-cbf427effbad',
- circle:'photo-1722963220475-979db2dbf216',
- alone:'photo-1524504388940-b1c1722653e1',
- walk:'photo-1500534623283-312aade485b7',
- landscape:'photo-1469474968028-56623f02e42e',
- bridge:'photo-1506784983877-45594efa4cbe',
- nature:'photo-1473448912268-2022ce9509d8',
- books:'photo-1503676260728-1c00da094a0b',
- mountain:'photo-1464822759023-fed622ff2c3b',
- discussion:'photo-1521737711867-e3b97375f902',
- puzzle:'photo-1491438590914-bc09fcaaf77a',
- children:'photo-1500648767791-00dcc994a43e',
- classroom:'photo-1484820540004-14229fe36ca4',
- sky:'photo-1475721027785-f74eccf877e2',
- friends2:'photo-1531482615713-2afd69097998',
- path:'photo-1470770841072-f978cf4d019e',
- sea:'photo-1500375592092-40eb2168fd21'
-};
-const photoPuzzles=[
- {word:'INCLUSIÓN',accept:['INCLUSION','INCLUIR'],pics:['friends','circle','alone','team'],hints:['Pensá en quiénes encuentran un lugar y quiénes todavía quedan afuera.','Empieza con I.','Tiene 9 letras.'],theme:'¿Somos inclusivos o solo cuando no nos cuesta?',question:'¿Quién queda al margen de nuestro grupo aunque digamos que todos forman parte?'},
- {word:'EMPATÍA',accept:['EMPATIA'],pics:['hands','meeting','alone','friends2'],hints:['Va más allá de ayudar: exige intentar entender cómo se siente el otro.','Empieza con E.','Tiene 7 letras.'],theme:'Ponernos en el lugar del otro',question:'¿Escuchamos lo que el otro necesita o suponemos que ya lo sabemos?'},
- {word:'CONFIANZA',pics:['team','friends','bridge','hands'],hints:['Se construye con acciones pequeñas y puede romperse en un instante.','Empieza con C.','Tiene 9 letras.'],theme:'¿La confianza se exige o se construye?',question:'¿Qué necesita pasar para que alguien se anime a mostrar lo que piensa o siente frente al grupo?'},
- {word:'PERTENENCIA',pics:['circle','friends2','meeting','alone'],hints:['No es simplemente estar presente: es sentir que ese lugar también es tuyo.','Empieza con P.','Tiene 11 letras.'],theme:'¿Pertenecer es asistir o sentirse esperado?',question:'¿Qué hace que un janij quiera volver porque siente que forma parte?'},
- {word:'RESPETO',pics:['discussion','hands','children','friends'],hints:['No significa estar de acuerdo; también aparece al escuchar un límite.','Empieza con R.','Tiene 7 letras.'],theme:'Respetar no significa pensar igual',question:'¿Cómo reaccionamos cuando alguien hace, quiere o piensa algo diferente?'},
- {word:'AUTONOMÍA',accept:['AUTONOMIA'],pics:['walk','mountain','books','path'],hints:['Crece cuando tenemos oportunidades reales de elegir y asumir consecuencias.','Empieza con A.','Tiene 9 letras.'],theme:'¿Acompañar es dejar decidir?',question:'¿Qué decisiones podríamos empezar a confiarles a los janijim?'},
- {word:'COOPERACIÓN',accept:['COOPERACION','COLABORACION'],pics:['team','meeting','hands','puzzle'],hints:['Sucede cuando el resultado depende de lo que aportamos juntos, no solo de lo que hace cada uno.','Empieza con C.','Tiene 11 letras.'],theme:'¿Trabajamos juntos o solo repartimos tareas?',question:'¿Sabemos pedir ayuda, escuchar y reconocer lo que aporta cada compañero?'},
- {word:'IDENTIDAD',pics:['alone','friends','sky','circle'],hints:['Incluye aquello que nos hace únicos y lo que nos conecta con otros.','Empieza con I.','Tiene 9 letras.'],theme:'¿Quién soy cuando estoy con mi grupo?',question:'¿Podemos ser nosotros mismos sin sentir que debemos encajar en un molde?'},
- {word:'VALENTÍA',accept:['VALENTIA','CORAJE'],pics:['mountain','bridge','sea','walk'],hints:['No exige que desaparezca el miedo: a veces consiste en actuar a pesar de él.','Empieza con V.','Tiene 8 letras.'],theme:'Animarse a intentar sin miedo al error',question:'¿Qué riesgos personales sentimos al participar, equivocarnos o mostrarnos frente a otros?'},
- {word:'SOLIDARIDAD',pics:['hands','team','friends2','meeting'],hints:['Tiene que ver con hacer lugar a las necesidades de otros sin decidir por ellos.','Empieza con S.','Tiene 11 letras.'],theme:'¿Ayudamos para sentirnos bien o para transformar algo?',question:'¿Preguntamos qué necesita el otro antes de salir a ayudarlo?'},
- {word:'CAMBIO',pics:['path','nature','sea','mountain'],hints:['Puede incomodar, abrir oportunidades y exigir dejar algo conocido atrás.','Empieza con C.','Tiene 6 letras.'],theme:'¿Cambiar es perder algo o empezar a crecer?',question:'¿Qué costumbre del grupo podría transformarse si nos animáramos a revisarla?'},
- {word:'ESCUCHA',pics:['discussion','classroom','meeting','alone'],hints:['No se trata solo de quedarse callado mientras alguien habla.','Empieza con E.','Tiene 7 letras.'],theme:'¿Escuchamos para entender o para responder?',question:'¿Qué voces del grupo no estamos escuchando, aunque estén presentes?'},
- {word:'DIVERSIDAD',pics:['friends','circle','landscape','children'],hints:['Hace visible que no necesitamos ser iguales para compartir un espacio.','Empieza con D.','Tiene 10 letras.'],theme:'Diferentes, pero parte del mismo grupo',question:'¿Celebramos las diferencias o esperamos que todos actúen igual para ser aceptados?'},
- {word:'RESPONSABILIDAD',pics:['books','nature','team','walk'],hints:['Implica reconocer que nuestras decisiones también tienen consecuencias para otros.','Empieza con R.','Tiene 15 letras.'],theme:'Lo que hacemos también afecta a los demás',question:'¿Cómo nos hacemos cargo del impacto que tenemos sobre el grupo?'},
- {word:'COMPROMISO',pics:['hands','mountain','classroom','team'],hints:['Se nota especialmente cuando algo deja de ser fácil o divertido.','Empieza con C.','Tiene 10 letras.'],theme:'¿Estar presentes es lo mismo que comprometernos?',question:'¿Qué hacemos por el grupo incluso cuando nadie nos está mirando?'},
- {word:'FRUSTRACIÓN',accept:['FRUSTRACION'],pics:['mountain','alone','puzzle','path'],hints:['Aparece cuando algo que deseamos no sucede como esperábamos.','Empieza con F.','Tiene 11 letras.'],theme:'¿Perder es fracasar?',question:'¿Cómo acompañamos el error y la frustración sin perder las ganas de intentar?'}
-];
+/* Cada serie contiene cuatro fotos propias; ninguna se usa en otra serie. */
+const photoSeries=[{"heading":"¿Nos vemos como somos o como el grupo espera?","question":"¿Qué parte de nosotros escondemos para sentir que pertenecemos? ¿Cuándo lo colectivo empieza a limitar lo individual?","images":["photo-1529156069898-49953e39b3ac","photo-1524504388940-b1c1722653e1","photo-1506794778202-cad84cf45f1d","photo-1529626455594-4ff0802cfb7e"]},{"heading":"¿Nos escuchamos o esperamos para hablar?","question":"¿Qué pasa cuando las voces más fuertes ocupan todo el espacio? ¿Quiénes dejaron de intentar ser escuchados?","images":["photo-1521737711867-e3b97375f902","photo-1551836022-d5d88e9218df","photo-1543269865-cbf427effbad","photo-1556761175-b413da4baf72"]},{"heading":"¿La solidaridad dura después del sábado?","question":"¿Qué diferencia existe entre ayudar para sentirnos bien y comprometernos con lo que otro realmente necesita?","images":["photo-1531206715517-5c0ba140b2b8","photo-1517457373958-b7bdd4587205","photo-1559027615-cd4628902d4a","photo-1527525443983-6e60c75fff46"]},{"heading":"¿El éxito de uno puede ser el fracaso de todos?","question":"¿Qué pasa con nuestros vínculos cuando ganar importa más que cómo tratamos a los demás?","images":["photo-1461896836934-ffe607ba8211","photo-1518611012118-696072aa579a","photo-1530549387789-4c1017266635","photo-1517836357463-d25dfeac3438"]},{"heading":"¿Formamos parte o solo estamos presentes?","question":"¿Quién está siempre al costado? ¿Qué hacemos para que asistir se convierta en sentirse esperado?","images":["photo-1491438590914-bc09fcaaf77a","photo-1531482615713-2afd69097998","photo-1528605248644-14dd04022da1","photo-1511632765486-a01980e01a18"]},{"heading":"¿Elegimos o nos dejamos llevar?","question":"Si todos hacen lo mismo, ¿cómo saber si realmente lo eligieron? ¿Qué pasa con quien piensa diferente?","images":["photo-1541339907198-e08756dedf3f","photo-1523050854058-8df90110c9f1","photo-1523240795612-9a054b0db644","photo-1523580494863-6f3031224c94"]},{"heading":"¿Quién se anima a equivocarse delante de todos?","question":"¿El miedo a la mirada ajena determina quién participa? ¿Se puede aprender cuando fallar no parece seguro?","images":["photo-1503676260728-1c00da094a0b","photo-1456513080510-7bf3a84b82f8","photo-1434030216411-0b793f4b4173","photo-1513258496099-48168024aec0"]},{"heading":"¿Cuidamos el mundo o solo hablamos de cuidarlo?","question":"¿Cuándo nuestros hábitos contradicen los valores que decimos defender? ¿Qué cambiaríamos de verdad?","images":["photo-1473448912268-2022ce9509d8","photo-1500534623283-312aade485b7","photo-1501004318641-b39e6451bec6","photo-1516934024742-b461fba47600"]},{"heading":"¿Cómo convivimos con lo que no controlamos?","question":"¿Cómo reaccionamos cuando no sale como esperábamos? ¿La frustración puede enseñarnos a acompañarnos?","images":["photo-1464822759023-fed622ff2c3b","photo-1500530855697-b586d89ba3ee","photo-1500534314209-a25ddb2bd429","photo-1470770841072-f978cf4d019e"]},{"heading":"¿Decimos lo que pensamos o lo que conviene?","question":"¿Qué lugar ocupa la sinceridad cuando puede costarnos aceptación? ¿Cómo disentir sin miedo a quedar afuera?","images":["photo-1500648767791-00dcc994a43e","photo-1487412720507-e7ab37603c6f","photo-1517841905240-472988babdf9","photo-1507003211169-0a1dd7228f2d"]},{"heading":"¿Repartir tareas es cooperar?","question":"¿Quién carga con lo difícil mientras los demás reciben el resultado? ¿Qué sería construir algo entre todos?","images":["photo-1497366811353-6870744d04b2","photo-1552664730-d307ca884978","photo-1556761175-5973dc0f32e7","photo-1556761175-4b46a572b786"]},{"heading":"¿El grupo puede cambiar sin perder su identidad?","question":"¿Qué costumbres sostenemos porque nos representan y cuáles porque nunca nos animamos a revisarlas?","images":["photo-1469474968028-56623f02e42e","photo-1470252649378-9c29740c9fa8","photo-1501785888041-af3ef285b470","photo-1475924156734-496f6cac6ec1"]}];
 let fotosInitialized=false;
-let fotosCurrent=-1;
-let fotosSeen=[];
-let fotosHintsShown=0;
-let fotosSolved=false;
-function normalizePhotoWord(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-ZÑ]/g,'')}
 function setupPhotoGame(){
  if(fotosInitialized)return;
  fotosInitialized=true;
  const grid=document.getElementById('fotos-grid');
- const answer=document.getElementById('fotos-answer');
- const hints=document.getElementById('fotos-hints');
- const feedback=document.getElementById('fotos-feedback');
- const hintBtn=document.getElementById('fotos-hint');
- const next=document.getElementById('fotos-next');
- const check=document.getElementById('fotos-check');
- const reflection=document.getElementById('fotos-reflection');
- const counter=document.getElementById('fotos-counter');
- const groupKey=(group||'general').toLowerCase();
- function chooseNext(){
-   const available=photoPuzzles.map((_,i)=>i).filter(i=>!fotosSeen.includes(i)&&i!==fotosCurrent);
-   if(!available.length){fotosSeen=[];return chooseNext()}
-   const bytes=new Uint32Array(1);
-   if(window.crypto?.getRandomValues)window.crypto.getRandomValues(bytes);else bytes[0]=Math.floor(Math.random()*4294967296);
-   const i=available[bytes[0]%available.length];
-   fotosSeen.push(i);fotosCurrent=i;fotosHintsShown=0;fotosSolved=false;
-   try{localStorage.setItem('mk27-cuatro-fotos:'+groupKey,JSON.stringify({seen:fotosSeen,index:i}))}catch(e){}
-   render();
+ const inspiration=document.getElementById('fotos-inspiration-box');
+ const more=document.getElementById('fotos-inspiration');
+ const storageKey='mk27-photos2:'+(group||'general').toLowerCase();
+ let seen=[],current=-1,opened=false;
+ try{const data=JSON.parse(localStorage.getItem(storageKey)||'[]');if(Array.isArray(data))seen=data.filter(n=>Number.isInteger(n)&&n>=0&&n<photoSeries.length)}catch(e){}
+ function next(){
+  let candidates=photoSeries.map((_,i)=>i).filter(i=>!seen.includes(i)&&i!==current);
+  if(!candidates.length){seen=[];candidates=photoSeries.map((_,i)=>i).filter(i=>i!==current)}
+  const random=new Uint32Array(1);
+  if(window.crypto?.getRandomValues)window.crypto.getRandomValues(random);else random[0]=Math.floor(Math.random()*4294967296);
+  current=candidates[random[0]%candidates.length];seen.push(current);
+  try{localStorage.setItem(storageKey,JSON.stringify(seen))}catch(e){}
+  opened=false;inspiration.hidden=true;inspiration.replaceChildren();more.textContent='💡 Una pregunta para profundizar';
+  const data=photoSeries[current];grid.replaceChildren();
+  for(const [index,photo] of data.images.entries()){
+   const tile=document.createElement('div');tile.className='fotos-tile';
+   const img=document.createElement('img');
+   img.src='https://images.unsplash.com/'+photo+'?auto=format&fit=crop&w=900&h=900&q=85';
+   img.alt='Fotografía '+(index+1)+' de esta serie para interpretar libremente';
+   img.loading='lazy';img.decoding='async';
+   img.onerror=()=>{img.style.display='none';tile.classList.add('fotos-fallback');tile.textContent='Imagen no disponible'};
+   tile.appendChild(img);grid.appendChild(tile);
+  }
+  document.getElementById('fotos-round').textContent='SERIE '+seen.length+' / '+photoSeries.length;
  }
- function render(){
-   const puzzle=photoPuzzles[fotosCurrent];
-   grid.replaceChildren();
-   for(const [index,name] of puzzle.pics.entries()){
-     const tile=document.createElement('div');tile.className='fotos-tile';
-     const img=document.createElement('img');
-     img.src='https://images.unsplash.com/'+photoSources[name]+'?auto=format&fit=crop&w=650&h=650&q=78';
-     img.alt='Pista visual '+(index+1)+' del desafío';img.loading='lazy';img.decoding='async';
-     img.onerror=()=>{img.style.display='none';tile.classList.add('fotos-fallback');tile.textContent='📷 Imagen no disponible'};
-     tile.appendChild(img);grid.appendChild(tile);
-   }
-   document.getElementById('fotos-round').textContent='DESAFÍO '+fotosSeen.length+' / '+photoPuzzles.length;
-   counter.textContent='0 / 3 pistas';hints.replaceChildren();answer.value='';answer.disabled=false;check.disabled=false;
-   hintBtn.disabled=false;hintBtn.textContent='💡 Pedir una pista';
-   feedback.textContent='';feedback.className='fotos-feedback';reflection.hidden=true;
-   next.textContent='↻ Otra palabra';
- }
- function showHint(){
-   if(fotosCurrent<0||fotosHintsShown>=3||fotosSolved)return;
-   const p=document.createElement('p');p.className='fotos-hint';p.textContent='Pista '+(fotosHintsShown+1)+': '+photoPuzzles[fotosCurrent].hints[fotosHintsShown];
-   hints.appendChild(p);fotosHintsShown++;
-   counter.textContent=fotosHintsShown+' / 3 pistas';
-   if(fotosHintsShown===3){hintBtn.disabled=true;hintBtn.textContent='Ya viste todas las pistas'}
- }
- function validate(event){
-   event.preventDefault();
-   if(fotosCurrent<0||fotosSolved)return;
-   const puzzle=photoPuzzles[fotosCurrent],guess=normalizePhotoWord(answer.value);
-   if(!guess){feedback.textContent='Escribí una palabra para comprobar.';return}
-   const accepted=[puzzle.word,...(puzzle.accept||[])].map(normalizePhotoWord);
-   if(accepted.includes(guess)){
-     fotosSolved=true;answer.disabled=true;check.disabled=true;hintBtn.disabled=true;
-     feedback.textContent='🎉 ¡Correcto! La palabra era '+puzzle.word+'.';
-     feedback.className='fotos-feedback is-correct';
-     document.getElementById('fotos-theme').textContent=puzzle.theme;
-     document.getElementById('fotos-question').textContent=puzzle.question;
-     reflection.hidden=false;next.textContent='✨ Jugar otra ronda';
-   }else{
-     feedback.textContent='Todavía no. Miren las cuatro fotos y busquen qué idea las une. ¡Pueden pedir una pista!';
-     feedback.className='fotos-feedback is-wrong';
-   }
- }
- document.getElementById('fotos-form').addEventListener('submit',validate);
- hintBtn.addEventListener('click',showHint);
- next.addEventListener('click',chooseNext);
- try{
-   const data=JSON.parse(localStorage.getItem('mk27-cuatro-fotos:'+groupKey)||'null');
-   if(Array.isArray(data?.seen))fotosSeen=data.seen.filter(i=>Number.isInteger(i)&&i>=0&&i<photoPuzzles.length);
- }catch(e){}
- chooseNext();
+ more.addEventListener('click',()=>{
+  if(current<0)return;
+  opened=!opened;inspiration.hidden=!opened;
+  more.textContent=opened?'Ocultar pregunta':'💡 Una pregunta para profundizar';
+  if(opened){
+   inspiration.replaceChildren();
+   const head=document.createElement('strong');head.textContent=photoSeries[current].heading;
+   const question=document.createElement('p');question.textContent=photoSeries[current].question;
+   inspiration.append(head,question);
+  }
+ });
+ document.getElementById('fotos-next').addEventListener('click',next);
+ next();
 }
 
 // Ruleta: los temas se eligen al azar, sin favorecer ninguna opción.
