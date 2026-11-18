@@ -83,7 +83,7 @@ body.wheel-modal-open{overflow:hidden}
 @media(max-width:800px){.tema-path-grid{grid-template-columns:1fr}.tema-path-card{min-height:0}}
 
 .machine-section{margin:32px auto 0;max-width:930px}
-.machine-section[hidden],.machine-result[hidden]{display:none}
+.machine-section[hidden]{display:none}
 .machine-heading{text-align:center;margin:10px 0 22px}
 .machine-tag{color:#8a5ec0;letter-spacing:.12em;font-size:11px;font-weight:900}
 .machine-heading h2{font-size:clamp(27px,4vw,42px);color:#214995;letter-spacing:-.04em;margin:12px 0}
@@ -101,13 +101,6 @@ body.wheel-modal-open{overflow:hidden}
 .machine-lever{margin:25px 0 8px;padding:16px clamp(16px,3vw,32px);border:0;border-radius:999px;background:#ffce56;box-shadow:0 7px 0 #c38f21;color:#263b78;cursor:pointer;font:900 clamp(13px,2vw,17px) Montserrat,Arial,sans-serif}
 .machine-lever:disabled{opacity:.75;cursor:wait}
 .machine-status{font-size:12px;color:#fff!important;margin:15px 0 0!important;font-weight:700}
-.machine-result{margin:26px 0 0;background:#f7f4ff;border:2px solid #e0d7f5;border-radius:22px;padding:25px;text-align:center}
-.machine-result-heading{font-size:12px;color:#8256b5;font-weight:900;letter-spacing:.08em}
-.machine-result h3{font-size:clamp(23px,3vw,32px);color:#24478e;margin:15px 0 12px;line-height:1.3}
-.machine-result>p{font-size:16px;color:#304b7b;font-weight:700}
-.machine-think{margin:20px 0 0;text-align:left;background:#fff;border-left:5px solid #b17bd8;border-radius:12px;padding:17px 19px}
-.machine-think strong{font-size:14px;color:#24478e}
-.machine-think p{font-size:13px;margin:7px 0 0}
 .machine-context{margin:16px auto 0;font-size:12px;max-width:700px;text-align:center}
 @media(max-width:650px){.machine-reels{grid-template-columns:1fr}.machine-reel{min-height:115px;padding:15px;gap:8px}.machine-game{padding:17px}.machine-reel p{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.machine-reels.is-rolling .machine-reel{animation:none}}
@@ -142,7 +135,7 @@ body.wheel-modal-open{overflow:hidden}
   <div class="machine-heading">
     <span class="machine-tag">CAMINO 02 · DIAGNÓSTICO DEL GRUPO</span>
     <h2 id="machine-title">🎰 La máquina de las ideas</h2>
-    <p id="machine-intro">Inspirada en lo que los madrijim contaron sobre sus grupos: encontrá una tensión real, una pregunta potente y un posible tema para tu peulá.</p>
+    <p id="machine-intro">Basado en las respuestas que dieron los madrijim en el diagnóstico de su grupo, la máquina combina situaciones reales, preguntas que invitan a pensar y posibles temas para su próxima peulá.</p>
   </div>
   <div class="machine-game" aria-label="Máquina de las ideas con tres casilleros">
     <div class="machine-top"><span>✦</span><strong id="machine-group">TU GRUPO</strong><span>✦</span></div>
@@ -162,12 +155,6 @@ body.wheel-modal-open{overflow:hidden}
     </div>
     <button type="button" class="machine-lever" id="machine-generate">🎰 ¡ACTIVAR LA MÁQUINA!</button>
     <p id="machine-status" class="machine-status" aria-live="polite">Tocá el botón para generar una idea.</p>
-  </div>
-  <div class="machine-result" id="machine-result" hidden>
-    <div class="machine-result-heading">✨ ¡Hay una idea para trabajar!</div>
-    <h3 id="machine-result-title"></h3>
-    <p id="machine-result-question"></p>
-    <div class="machine-think"><strong>Ahora viene lo importante</strong><p>¿Esto refleja algo real que vive tu grupo? Si sí, pensá qué querés que puedan descubrir, cuestionar o transformar con la peulá. Si no, generá otra idea.</p></div>
   </div>
   <p class="machine-context">Estas propuestas se inspiran en las respuestas del diagnóstico. Son hipótesis educativas, no etiquetas sobre los janijim: confirmen siempre si siguen representando al grupo.</p>
 </section>
@@ -263,14 +250,13 @@ let machineTimerIds=[];
 function setupMachine(){
  const slug=(group||'').toLowerCase();
  const info=machineSuggestions[slug]||machineSuggestions.shoja;
- document.getElementById('machine-group').textContent=(group||'Tu grupo')+' · '+info.age;
+ document.getElementById('machine-group').textContent=group||'Tu grupo';
  if(machineReady)return;
  machineReady=true;
  const generate=document.getElementById('machine-generate');
  const ids=['reel-signal','reel-question','reel-theme'];
  const defaultCopy=['¿Qué está pasando en nuestro grupo?','¿Qué no nos estamos preguntando?','¿Qué vale la pena trabajar?'];
  const status=document.getElementById('machine-status');
- const result=document.getElementById('machine-result');
  const choose=()=>{
   const list=info.items;
   let seen=[];
@@ -288,7 +274,7 @@ function setupMachine(){
  };
  generate.addEventListener('click',()=>{
   if(machineBusy)return;
-  machineBusy=true;generate.disabled=true;result.hidden=true;
+  machineBusy=true;generate.disabled=true;
   generate.textContent='🎰 GIRANDO...';status.textContent='Mezclando ideas de tu grupo...';
   const list=info.items;
   const chosen=choose();
@@ -310,9 +296,6 @@ function setupMachine(){
   function complete(){
    show(chosen);
    document.getElementById('machine-reels').classList.remove('is-rolling');
-   document.getElementById('machine-result-title').textContent=chosen.theme;
-   document.getElementById('machine-result-question').textContent=chosen.question;
-   result.hidden=false;
    status.textContent='¡Idea desbloqueada! ¿Se conecta con lo que necesita tu grupo?';
    generate.disabled=false;generate.textContent='↻ GENERAR OTRA IDEA';
    machineBusy=false;
