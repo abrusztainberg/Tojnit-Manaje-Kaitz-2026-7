@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#214995">
+<title>Juegos · Tojnit Majané Kaitz 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6fd;color:#1d3f80;font-family:Montserrat,Arial,sans-serif}
+.shell{max-width:1100px;margin:auto;min-height:100vh;background:white}header{padding:24px clamp(20px,6vw,76px);display:flex;gap:20px;justify-content:space-between;align-items:center;border-bottom:1px solid #e3ebfa}
+.brand{color:#214995;text-decoration:none;font-weight:900;font-size:clamp(15px,2.3vw,23px)}.back{border:2px solid #dae6f9;border-radius:100px;padding:13px 19px;text-decoration:none;color:#214995;font-weight:800;font-size:13px;white-space:nowrap}
+main{padding:clamp(25px,6vw,75px)}.eyebrow{letter-spacing:.16em;color:#4195b7;font-size:12px;font-weight:800;text-transform:uppercase}
+h1{font-size:clamp(40px,7vw,75px);letter-spacing:-.04em;line-height:1.1;margin:14px 0;color:#214995;font-weight:900}
+p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:linear-gradient(90deg,#2b64b2,#a26de2);border-radius:8px;margin:25px 0}
+.category-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.category-links a{text-decoration:none;color:#214995;border:1.5px solid #d9e5f9;background:#f5f8ff;border-radius:100px;padding:10px 16px;font-weight:800;font-size:13px}.category-links a[aria-current="page"]{background:#214995;color:white;border-color:#214995}
+.path-section{margin-top:36px}.path-section h2,.tool-heading h2{font-weight:900;color:#214995;font-size:clamp(24px,3.5vw,36px);letter-spacing:-.03em;margin:0 0 8px}
+.path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:25px}
+.path-card{padding:25px 23px;border:2px solid #dce6f6;border-radius:24px;background:#fff;text-align:left;display:flex;flex-direction:column;gap:14px;min-height:300px;color:#214995;cursor:pointer;font-family:inherit;box-shadow:0 10px 22px #2149950b;transition:transform .2s,border-color .2s}
+.path-card:hover,.path-card:focus-visible{border-color:#628ce1;transform:translateY(-3px)}
+.path-number{align-self:flex-start;background:#e7efff;padding:8px 13px;border-radius:100px;font-weight:900;font-size:12px}
+.path-card strong{font-size:20px;line-height:1.35;font-weight:900}.path-card>span:not(.path-number){font-size:13px;line-height:1.7;color:#687995;flex:1}.path-card b{font-size:12px;color:#2959ae}
+.tool{margin-top:32px}.tool[hidden],.path-section[hidden],.result[hidden]{display:none!important}
+.tool-back{display:block;margin-bottom:25px;border:0;background:none;color:#285bb0;font:800 13px Montserrat,Arial,sans-serif;cursor:pointer;padding:4px 0}
+.tool-heading{margin-bottom:23px}.tool-heading p{max-width:720px}.kicker{font-size:11px;letter-spacing:.1em;color:#9872c1;font-weight:900}
+.game-panel{border:2px solid #dce6f8;border-radius:27px;background:linear-gradient(140deg,#f4f8ff,#fcf6ff);padding:clamp(18px,4vw,34px)}
+.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:8px}.field label{color:#33558d;font-size:12px;font-weight:900}.field select{width:100%;min-width:0;border:2px solid #d5e1f5;border-radius:13px;background:white;color:#214995;padding:14px 10px;font:700 13px Montserrat,Arial,sans-serif}
+.action{border:0;border-radius:100px;background:#214995;color:white;padding:16px 25px;font:900 14px Montserrat,Arial,sans-serif;cursor:pointer;margin-top:24px}.action:hover{background:#315eb2}
+.result{border:2px solid #dbe6f8;border-radius:22px;padding:clamp(19px,3vw,28px);margin-top:24px;background:white}
+.result-label{font-size:11px;font-weight:900;letter-spacing:.1em;color:#8862b4}
+.result h3{font-size:clamp(23px,3vw,32px);line-height:1.3;color:#214995;margin:12px 0 16px}
+.result p{margin:12px 0}.result strong{color:#214995}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.tag{background:#ecf2ff;border-radius:100px;padding:8px 12px;font-weight:800;color:#375e9c;font-size:12px}
+.triple{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:23px 0}
+.reel{border:2px solid #d8e3f7;border-radius:19px;background:white;min-height:164px;padding:17px 13px;display:flex;flex-direction:column;gap:16px;text-align:center}
+.reel small{font-weight:900;color:#7990b4;font-size:10px;letter-spacing:.07em}.reel strong{font-weight:900;color:#214995;font-size:clamp(14px,2vw,19px);line-height:1.5}
+.idea-note{margin-top:18px;background:#eaf2ff;padding:16px 19px;border-radius:15px;color:#48638c;font-size:13px}
+.tip{color:#72829b;font-size:12px;margin-top:20px}
+.result .result-prompt{border-left:4px solid #956bc3;background:#f6f2ff;padding:13px 17px;border-radius:8px}
+@media(max-width:820px){.path-grid{grid-template-columns:1fr}.path-card{min-height:0}}
+@media(max-width:680px){header{flex-direction:column;align-items:flex-start}.form-grid{grid-template-columns:1fr}.triple{grid-template-columns:1fr}.reel{min-height:105px;gap:9px}.game-panel{padding:17px}}
+</style></head>
+<body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
+<main><div class="eyebrow" id="eyebrow">Innová en tu hoja de planificación</div><h1>Juegos</h1><div class="divider"></div>
+<p>Una misma consigna puede transformarse en mil juegos. Explorá tres caminos para crear propuestas nuevas que tengan sentido para tu grupo.</p>
+<nav class="category-links" id="nav" aria-label="Categorías de planificación"></nav>
+<section id="paths" class="path-section"><h2>¿Por dónde empezamos a jugar?</h2><p>Elegí un camino. Podés volver y probar otro cuando quieras.</p>
+<div class="path-grid">
+<button class="path-card" type="button" data-open="0"><span class="path-number">CAMINO 01</span><strong>🎲 La fábrica de juegos</strong><span>Elegí el espacio, el tipo de energía y el objetivo. Recibí un juego completo, con reglas y adaptación para tu grupo.</span><b>Explorar este camino →</b></button>
+<button class="path-card" type="button" data-open="1"><span class="path-number">CAMINO 02</span><strong>🔀 Dalo vuelta</strong><span>Tomá un juego conocido y cambiale una regla para convertirlo en una experiencia completamente nueva.</span><b>Explorar este camino →</b></button>
+<button class="path-card" type="button" data-open="2"><span class="path-number">CAMINO 03</span><strong>⚡ Desafío imposible</strong><span>Combiná una misión, una limitación y un elemento sorpresa. ¿Qué juego pueden inventar con eso?</span><b>Explorar este camino →</b></button>
+</div></section>
+<section id="tool0" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 01 · CONSTRUIR</span><h2>🎲 La fábrica de juegos</h2><p>Contanos qué necesitás y te proponemos un juego que puedas llevar a la peulá. Podés pedir otra idea con los mismos filtros.</p></div>
+<div class="game-panel"><div class="form-grid"><div class="field"><label for="space">¿Dónde van a jugar?</label><select id="space"><option value="patio">Patio / aire libre</option><option value="salon">Salón</option><option value="agua">Con agua</option><option value="noche">De noche</option></select></div>
+<div class="field"><label for="energy">¿Qué energía buscan?</label><select id="energy"><option value="movimiento">Mucho movimiento</option><option value="tranquilo">Algo tranquilo</option><option value="mixto">Un poco de todo</option></select></div>
+<div class="field"><label for="goal">¿Para qué?</label><select id="goal"><option value="cooperacion">Cooperar</option><option value="conocerse">Conocerse mejor</option><option value="ingenio">Pensar y resolver</option><option value="expresion">Expresarse</option><option value="diversion">Divertirse</option></select></div></div>
+<button type="button" class="action" id="generate-game">🎲 Generar juego</button><div class="result" id="result0" hidden aria-live="polite"></div></div></section>
+<section id="tool1" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 02 · REINVENTAR</span><h2>🔀 Dalo vuelta</h2><p>Los juegos que ya conocen pueden sorprender cuando cambian sus reglas. Probá combinaciones nuevas y pensá cómo adaptarlas.</p></div>
+<div class="game-panel"><div class="form-grid"><div class="field"><label for="classic-game">Juego que vamos a transformar</label><select id="classic-game"></select></div>
+<div class="field"><label for="remix-goal">¿Qué querés provocar?</label><select id="remix-goal"><option value="equipo">Más cooperación</option><option value="sorpresa">Más sorpresa</option><option value="creatividad">Más creatividad</option><option value="inclusion">Más inclusión</option></select></div></div>
+<button type="button" class="action" id="generate-remix">🔀 Transformar este juego</button><div class="result" id="result1" hidden aria-live="polite"></div></div></section>
+<section id="tool2" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 03 · DESAFIARSE</span><h2>⚡ Desafío imposible</h2><p>Tres cartas al azar. Parecen imposibles de combinar, pero de eso se trata: imaginen cómo convertirlas en un juego original.</p></div>
+<div class="game-panel"><div class="triple"><div class="reel"><small>🎯 MISIÓN</small><strong id="mission">¿Qué hay que lograr?</strong></div><div class="reel"><small>🔒 REGLA SORPRESA</small><strong id="constraint">¿Qué regla cambia todo?</strong></div><div class="reel"><small>🧰 ELEMENTO</small><strong id="prop">¿Qué objeto aparece?</strong></div></div>
+<button type="button" class="action" id="generate-challenge">⚡ Sortear tres cartas</button><div class="result" id="result2" hidden aria-live="polite"></div><p class="tip">No hace falta usar todo literalmente. Si una carta no funciona para la edad o las posibilidades del grupo, volvé a sortear.</p></div></section>
+</main></div>
+<script>
+const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
+const params=new URLSearchParams(location.search),requested=params.get('grupo')||'';
+const group=groups.find(g=>g.toLowerCase()===requested.toLowerCase())||null;
+const slug=group?group.toLowerCase():'';
+const q=group?'?grupo='+encodeURIComponent(slug):'';
+const extra=group?'&grupo='+encodeURIComponent(slug):'';
+const back=document.getElementById('back');
+back.href=group?'grupo.html?grupo='+encodeURIComponent(slug)+'#innova':'grupos.html';
+back.textContent=group?'← Volver a '+group:'← Todos los grupos';
+if(group){document.title='Juegos · '+group+' · Tojnit Majané Kaitz 2026';document.getElementById('eyebrow').textContent='Innová en la planificación de '+group}
+for(const [id,label] of [['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']]){
+ const a=document.createElement('a');
+ a.href=id==='racional'?'racional.html'+q:id==='hilo'?'hilo.html'+q:id==='juegos'?'juegos.html'+q:'planificacion.html?seccion='+id+extra;
+ a.textContent=label;if(id==='juegos')a.setAttribute('aria-current','page');document.getElementById('nav').appendChild(a);
+}
+const $=id=>document.getElementById(id);
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{$('paths').hidden=true;document.querySelectorAll('.tool').forEach((t,i)=>t.hidden=i!==Number(b.dataset.open))}));
+document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tool').forEach(t=>t.hidden=true);$('paths').hidden=false}));
+const rand=arr=>arr[Math.floor(Math.random()*arr.length)];
+const age=group?(['Jaza','Mega','Nifla'].includes(group)?'peques':['Leitza','Mabri','Kasu','Mebu'].includes(group)?'infancia':['Shingsha','Jamu'].includes(group)?'preadolescentes':'adolescentes'):'infancia';
+const ages={peques:'Usen consignas de un paso, tiempos cortos, demostraciones visuales y acompañamiento permanente. Eviten eliminaciones y competencias intensas.',infancia:'Sumen roles sencillos, pruebas breves y reglas que puedan repetir entre todos. Ofrezcan siempre una forma de participar sin competir.',preadolescentes:'Dejen margen para decisiones estratégicas, roles rotativos y desafíos con varias soluciones; no premien solo la velocidad.',adolescentes:'Propongan dilemas, estrategias y decisiones reales; pueden construir o modificar reglas y debatir por qué las eligieron.'};
+const styles={
+patio:{places:['el patio dividido en estaciones','un circuito de postas','una zona de búsqueda con señales','un terreno con tres bases'],props:['conos, tarjetas y cintas','tizas y señales de colores','sobres escondidos y banderines','sogas y carteles'],moves:['desplazándose de estación en estación','intercambiando pistas entre bases','alternando roles durante cada ronda','armando recorridos entre todos']},
+salon:{places:['un salón con mesas por equipos','un círculo de exploración','una sala con cuatro rincones','un espacio de tarjetas en el piso'],props:['cartas, lápices y sobres','piezas de papel y objetos cotidianos','imágenes y fichas de colores','papeles grandes, tarjetas y marcadores'],moves:['rotando entre rincones','compartiendo información sin mostrar las tarjetas','organizando las pistas sobre el piso','cambiando de rol en cada turno']},
+agua:{places:['una zona preparada para juegos de agua','un recorrido de estaciones acuáticas','una pista de relevos con recipientes','un circuito de trasvase'],props:['vasos plásticos y baldes pequeños','esponjas y recipientes livianos','botellas plásticas y cucharones','pelotitas flotantes y bandejas'],moves:['trasladando pequeñas cantidades de agua','resolviendo pistas entre postas','construyendo una cadena de trasvase','intercambiando funciones en cada ronda']},
+noche:{places:['un circuito iluminado y delimitado','un espacio de pistas reflectantes','un salón con luz tenue','un recorrido de señales luminosas'],props:['linternas y tarjetas de alto contraste','stickers reflectantes y sobres','luces LED y señales grandes','papeles fluorescentes y pistas'],moves:['siguiendo señales sin correr','resolviendo enigmas con una linterna','rotando por estaciones iluminadas','buscando pistas por turnos']}
+};
+const goals={
+cooperacion:[['Misión: nadie queda atrás','El grupo debe completar un recorrido donde cada persona tiene una pista diferente. Solo si escuchan todas las pistas pueden resolver la misión.'],['Cadena de soluciones','Cada equipo recibe una parte del desafío; no puede completar su propia prueba sin intercambiar ayuda con otro equipo.'],['La base compartida','Deben trasladar los materiales a una base común y diseñar entre todos una forma de lograrlo sin dejar a nadie sin rol.']],
+conocerse:[['El mapa invisible','Cada pista revela una preferencia o recuerdo de alguien del grupo; tienen que descubrir coincidencias inesperadas.'],['Historias cruzadas','Cada participante aporta una pequeña historia anónima y deben conectarlas en una secuencia creativa.'],['La misión de las coincidencias','Buscan conexiones entre personas que normalmente no eligen jugar juntas. Las coincidencias abren nuevas estaciones.']],
+ingenio:[['El código perdido','Deben descifrar un mensaje a partir de símbolos, secuencias y pistas repartidas en varias postas.'],['El museo imposible','Hay objetos con funciones nuevas. Deben descubrir reglas ocultas y construir una explicación colectiva.'],['Las cuatro llaves','Cuatro pruebas diferentes abren el acceso a la pista final; cada prueba exige una manera distinta de pensar.']],
+expresion:[['La historia que se mueve','Cada ronda suma una escena, un sonido o un gesto a una historia creada por el grupo.'],['Mensajes sin palabras','Deben transmitir ideas por dibujos, gestos y símbolos; después comparan cómo las interpretaron.'],['La galería secreta','Cada equipo crea una representación de un sentimiento sin nombrarlo, y los demás imaginan qué puede expresar.']],
+diversion:[['El desafío absurdo','Superan misiones inesperadas combinando destreza, imaginación y trabajo en equipo.'],['El festival de las reglas locas','Cada ronda propone una mini prueba con una regla cómica que cambia el modo de jugar.'],['La expedición disparatada','Recorren postas con desafíos sorprendentes y una historia cada vez más absurda.']]
+};
+const energy={
+movimiento:['Cada ronda implica desplazarse o cambiar de estación; habiliten una variante sin correr.','Al completar una prueba, intercambien de base antes de continuar.','Las pistas se descubren al superar postas cortas y dinámicas.'],
+tranquilo:['Se juega por turnos, con tiempo para pensar y conversar.','Las pruebas priorizan observar, interpretar y crear sin necesidad de velocidad.','El desafío se resuelve sentados o con desplazamientos breves.'],
+mixto:['Alternen una posta activa con otra de observación o ingenio.','Intercalen momentos de movimiento con decisiones grupales.','Cada ronda combina una acción física simple con una consigna creativa.']
+};
+let lastGame='',lastRemix='',lastChallenge='';
+function noRepeat(list,previous){const available=list.filter(x=>JSON.stringify(x)!==previous);return rand(available.length?available:list)}
+$('generate-game').addEventListener('click',()=>{
+ const loc=$('space').value,goal=$('goal').value,en=$('energy').value;
+ const chosen=noRepeat(goals[goal],lastGame);lastGame=JSON.stringify(chosen);
+ const where=rand(styles[loc].places),materials=rand(styles[loc].props),how=rand(styles[loc].moves),pace=rand(energy[en]);
+ const box=$('result0');box.replaceChildren();box.hidden=false;
+ const heading=document.createElement('div');heading.className='result-label';heading.textContent='JUEGO PROPUESTO · '+(group||'PARA TU GRUPO');
+ const title=document.createElement('h3');title.textContent=chosen[0];
+ const rule=document.createElement('p');rule.textContent=chosen[1];
+ const detail=document.createElement('p');detail.textContent='Preparación: armen '+where+' usando '+materials+'. La dinámica se desarrolla '+how+'. '+pace;
+ const duration=document.createElement('div');duration.className='tags';for(const t of [loc==='noche'?'Zona iluminada':loc==='agua'?'Zona acuática segura':loc==='salon'?'Interior':'Aire libre',en==='tranquilo'?'Ritmo tranquilo':en==='movimiento'?'Juego activo':'Ritmo mixto','Objetivo: '+$('goal').selectedOptions[0].text]){const span=document.createElement('span');span.className='tag';span.textContent=t;duration.appendChild(span)}
+ const adjust=document.createElement('p');adjust.className='idea-note';adjust.textContent='Adaptación: '+ages[age]+(loc==='agua'?' Eviten superficies resbaladizas y juegos que impliquen sumergirse.':'')+(loc==='noche'?' Mantengan supervisión, buena visibilidad y el recorrido delimitado.':'');
+ box.append(heading,title,duration,rule,detail,adjust);
+});
+const classics={
+'Mancha':['Para cambiar de perseguidor hay que completar una misión cooperativa.','La persona que persigue solo puede avanzar después de recibir una pista del grupo.','Cuando alguien es tocado, recibe una misión creativa y vuelve al juego sin eliminación.','El equipo tiene que asegurarse de que todos cambien de rol.'],
+'Escondidas':['En vez de encontrar personas, hay que encontrar mensajes que dejaron los demás.','Los escondites guardan pistas para resolver un misterio conjunto.','Cada ronda una persona diseña un escondite seguro y explica su estrategia.','Nadie queda eliminado: cada hallazgo abre una misión compartida.'],
+'Carrera de postas':['Cada posta necesita la habilidad de una persona distinta.','Gana la misión colectiva si todos los equipos llegan antes de un tiempo acordado.','Entre postas deben inventar cómo trasladar una pelota sin usar las manos.','El recorrido cambia cuando los participantes proponen reglas nuevas.'],
+'Búsqueda del tesoro':['El tesoro no se encuentra sin intercambiar mapas entre equipos.','Cada pista conduce a una decisión con dos caminos posibles.','Deben crear el recorrido para otro equipo antes de resolver el propio.','Cada integrante tiene una pista clave que no puede ser reemplazada.'],
+'Pictionary':['La imagen se dibuja entre varias personas, por turnos.','Todos dibujan una parte sin ver el dibujo completo.','Hay que representar emociones y situaciones, no objetos.','Las pistas pueden ser abstractas y aceptan más de una interpretación.'],
+'Dígalo con mímica':['Cada equipo inventa movimientos que se encadenan en una historia.','La misma consigna debe expresarse desde tres perspectivas.','Los demás pueden intervenir para cambiar el final de la escena.','Nadie queda afuera: los roles cambian en cada ronda.'],
+'Quemado (adaptado sin eliminación)':['Quien recibe un toque con pelota blanda pasa a ser ayudante y vuelve enseguida.','El objetivo es completar pases entre todos, no sacar compañeros.','Cada punto exige que la pelota haya pasado por todas las personas.','Al cambiar de ronda, los equipos intercambian jugadores y estrategias.'],
+'Memotest':['Las parejas no son idénticas: deben explicar qué relación existe.','Cada pareja encontrada dispara una pequeña historia compartida.','Las cartas se ordenan por conexiones, no solamente por coincidencia.','Todos ven el tablero y deben debatir juntos antes de dar vuelta.'],
+'Simón dice':['El grupo inventa instrucciones para un Simón colectivo.','Cada ronda las consignas se convierten en movimientos creativos.','Todos deben poder proponer una regla nueva.','Si alguien se equivoca, cambia la consigna y continúa jugando.'],
+'El teléfono descompuesto':['En vez de palabras se transmiten dibujos que se transforman.','El mensaje se transmite con gestos y se compara el resultado final.','Cada vuelta suma una idea hasta crear un cuento.','Después de cada ronda inventan una manera de mejorar la comunicación.'],
+'La silla musical (sin eliminación)':['Cada ronda hay menos lugares, pero todos deben encontrar la manera de incluirse de forma segura.','En vez de sacar sillas se agregan desafíos de coordinación.','Cada pausa musical cambia la manera de ocupar el espacio.','La meta es encontrar una solución donde nadie quede afuera.'],
+'Trivia':['Cada equipo crea preguntas para otros equipos.','Se suman puntos por buenas explicaciones y por escuchar, no solo por acertar.','Las respuestas se defienden con ejemplos creativos.','Cada acierto desbloquea una mini misión compartida.'],
+'Capturar la bandera':['La bandera solo se puede trasladar con un mensaje acordado por el equipo.','El objetivo es conseguir símbolos de ambos equipos para armar uno compartido.','Cada jugador tiene una responsabilidad diferente en el recorrido.','Al alcanzar la bandera deben resolver una consigna conjunta.']
+};
+const boxClassic=$('classic-game');Object.keys(classics).forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;boxClassic.appendChild(o)});
+const remixActions={
+equipo:['La meta es un logro compartido: los equipos deben ayudarse para alcanzarlo.','Nadie gana si alguna persona no pudo tener un rol significativo.','Agreguen una ronda en la que se comparten los recursos y las pistas.'],
+sorpresa:['Cada tres minutos se cambia una regla anunciada con una tarjeta.','Cada ronda revela un giro narrativo que altera la misión.','Un rol secreto aparece a mitad del juego y cambia la estrategia.'],
+creatividad:['Dejen que los jugadores inventen una regla antes del comienzo.','Para avanzar, el grupo debe proponer al menos dos soluciones posibles.','Cada turno permite inventar una herramienta imaginaria para la misión.'],
+inclusion:['Reemplacen la eliminación por cambios de rol o misiones de regreso.','Aseguren una forma de participar que no dependa de correr ni de la velocidad.','Diseñen rondas con roles variados para distintas habilidades e intereses.']
+};
+$('generate-remix').addEventListener('click',()=>{
+ const game=boxClassic.value,focus=$('remix-goal').value;
+ const candidates=classics[game].flatMap(rule=>remixActions[focus].map(extra=>({rule,extra})));
+ const result=noRepeat(candidates,lastRemix);lastRemix=JSON.stringify(result);
+ const b=$('result1');b.hidden=false;b.replaceChildren();
+ const top=document.createElement('div');top.className='result-label';top.textContent='JUEGO REINVENTADO';
+ const title=document.createElement('h3');title.textContent=game+': versión inesperada';
+ const intro=document.createElement('p');intro.textContent='Mantené la base del juego que conocen, pero cambiá esta regla:';
+ const p=document.createElement('p');p.className='result-prompt';p.textContent=result.rule;
+ const p2=document.createElement('p');p2.textContent='Giro extra: '+result.extra;
+ const adapt=document.createElement('p');adapt.className='idea-note';adapt.textContent='Para '+(group||'tu grupo')+': '+ages[age];
+ b.append(top,title,intro,p,p2,adapt);
+});
+const challengeData={
+missions:['Transportar un mensaje entre tres bases','Construir una torre entre todos','Descubrir un código secreto','Ordenar pistas para abrir una misión','Rescatar un objeto simbólico','Diseñar un mapa colectivo','Representar una historia sin hablar','Encontrar cuatro conexiones inesperadas','Resolver un misterio con pistas parciales','Inventar una máquina imaginaria','Cruzar un laberinto marcado en el piso','Repartir recursos para lograr una meta','Crear una secuencia de sonidos','Reconstruir un mensaje dividido','Guiar a un compañero por indicaciones verbales','Encontrar una solución que incluya a todos'],
+rules:['No se puede hablar durante la primera ronda','Cada persona debe aportar una idea','Las instrucciones cambian a mitad del juego','Solo pueden usar una mano por pareja, sin atarse','Nadie puede hacer dos turnos seguidos','Cada minuto cambia quien coordina','No pueden usar la palabra más obvia','Las pistas deben compartirse entre equipos','Hay que llegar a tres soluciones distintas','Cada decisión se toma por consenso','Se cambian los roles antes de terminar','El último paso lo decide quien menos participó','Hay que crear una variante accesible','La misión se divide en estaciones','Se empieza por el final y se reconstruye el principio'],
+props:['Una cuerda colocada en el piso','Diez tarjetas de colores','Vasos plásticos','Un dado','Sobres con pistas','Un mapa incompleto','Papeles y marcadores','Piezas de cartón','Un pañuelo','Una pelota blanda','Cintas de colores','Imágenes recortadas','Un reloj de arena','Una caja vacía','Fichas numeradas','Un rompecabezas incompleto']
+};
+$('generate-challenge').addEventListener('click',()=>{
+ let result;do{result=[rand(challengeData.missions),rand(challengeData.rules),rand(challengeData.props)]}while(JSON.stringify(result)===lastChallenge);lastChallenge=JSON.stringify(result);
+ ['mission','constraint','prop'].forEach((id,i)=>$(id).textContent=result[i]);
+ const b=$('result2');b.hidden=false;b.replaceChildren();
+ const h=document.createElement('div');h.className='result-label';h.textContent='TU MISIÓN CREATIVA';
+ const title=document.createElement('h3');title.textContent='¡Inventen un juego a partir de estas cartas!';
+ const p=document.createElement('p');p.textContent='Imaginen una consigna inicial, qué hacen los participantes, cómo cambia la dinámica con la regla sorpresa y cuándo termina el juego. No hace falta que la primera idea sea perfecta.';
+ const a=document.createElement('p');a.className='idea-note';a.textContent='Pista para '+(group||'el grupo')+': '+ages[age];
+ b.append(h,title,p,a);$('generate-challenge').textContent='↻ Sortear otras tres cartas';
+});
+</script></body></html>
