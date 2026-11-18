@@ -269,6 +269,7 @@ const current=topics.find(([id])=>id===selected);
 if(selected==='racional'){location.replace('racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
 if(selected==='hilo'){location.replace('hilo.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
 if(selected==='juegos'){location.replace('juegos.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
+if(selected==='dinamicas'){location.replace('dinamicas.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
 if(!current){location.replace(group?'grupo.html?grupo='+encodeURIComponent(group.toLowerCase())+'#innova':'grupos.html')}else{
 document.getElementById('topic-title').textContent=current[1];
 document.title=current[1]+(group?' · '+group:'')+' · Tojnit Majané Kaitz 2026';
@@ -307,7 +308,7 @@ if(selected==='tema'){
  });
 }
 const nav=document.getElementById('topic-links');
-topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='hilo'?'hilo.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='juegos'?'juegos.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
+topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='hilo'?'hilo.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='juegos'?'juegos.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='dinamicas'?'dinamicas.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
 }
 
 
