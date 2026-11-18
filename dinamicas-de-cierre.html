@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#214995"><title>Dinámicas de cierre · Tojnit Majané Kaitz 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eff4fd;color:#214995;font-family:Montserrat,Arial,sans-serif}
+.shell{max-width:1100px;background:#fff;min-height:100vh;margin:auto}
+header{padding:25px clamp(20px,6vw,76px);border-bottom:1px solid #e1eafa;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:clamp(15px,2.2vw,22px);color:#214995;font-weight:900;text-decoration:none}
+.back{color:#214995;text-decoration:none;border:2px solid #dce5f7;border-radius:99px;padding:13px 18px;font-weight:800;font-size:12px;white-space:nowrap}
+main{padding:clamp(25px,6vw,76px)}.eyebrow{color:#4196bb;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:900}
+h1{font-size:clamp(36px,6vw,72px);letter-spacing:-.04em;line-height:1.08;margin:16px 0;font-weight:900}
+p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:linear-gradient(90deg,#315cbb,#a578d4);border-radius:9px;margin:25px 0}
+.category-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+.category-links a{padding:10px 14px;text-decoration:none;color:#214995;background:#f4f8ff;border:1.5px solid #dae5f7;border-radius:99px;font-size:12px;font-weight:800}
+.category-links a[aria-current=page]{background:#214995;color:white}
+.path-section{margin-top:40px}.path-section h2,.tool h2{font-size:clamp(24px,3.7vw,36px);font-weight:900;letter-spacing:-.03em;margin:0 0 9px}
+.path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.path-card{font:inherit;min-height:285px;text-align:left;border:2px solid #dce6f7;border-radius:23px;background:#fff;display:flex;flex-direction:column;gap:14px;padding:24px;cursor:pointer;color:#214995;transition:transform .2s,border-color .2s}
+.path-card:hover,.path-card:focus-visible{transform:translateY(-3px);border-color:#7ca3e1}
+.path-number{align-self:flex-start;border-radius:90px;background:#e8f0ff;padding:8px 12px;font-size:11px;font-weight:900}
+.path-card strong{font-size:22px;line-height:1.3}.path-card>span:not(.path-number){font-size:13px;line-height:1.7;color:#647692;flex:1}.path-card b{font-size:12px}
+.tool{margin-top:30px}.tool[hidden],.path-section[hidden],[hidden]{display:none!important}
+.tool-back{color:#2454a3;font:800 13px Montserrat,Arial,sans-serif;border:0;background:none;cursor:pointer;padding:0;margin-bottom:23px}
+.kicker{letter-spacing:.1em;color:#9273b2;font-size:11px;font-weight:900}.lead{max-width:750px}
+.panel{margin-top:22px;padding:clamp(18px,3vw,32px);border:2px solid #dfE8f9;border-radius:26px;background:linear-gradient(135deg,#f3f8ff,#f9f5ff)}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.field{display:flex;flex-direction:column;gap:9px}
+.field label{font-size:12px;font-weight:900;color:#3a5b96}.field select,.field input,.field textarea{border:2px solid #d7e3f7;border-radius:13px;padding:13px;font:700 13px Montserrat,Arial,sans-serif;background:#fff;color:#214995;min-width:0;width:100%}
+.field textarea{resize:vertical;min-height:110px;line-height:1.6}
+.action{font:900 13px Montserrat,Arial,sans-serif;background:#214995;border:0;color:#fff;border-radius:99px;padding:16px 24px;cursor:pointer;margin-top:19px}
+.action:hover{background:#345daf}.outline{border:2px solid #c8d8f2;border-radius:99px;background:#fff;color:#214995;padding:12px 17px;font:800 12px Montserrat,Arial,sans-serif;cursor:pointer}
+.result{margin-top:20px;padding:24px;background:#fff;border:2px solid #dae5f8;border-radius:20px;animation:rise .38s ease}
+.result-label{font-size:11px;font-weight:900;color:#906eb2;letter-spacing:.1em}
+.result h3{font-size:clamp(23px,3.2vw,33px);margin:12px 0;color:#214995;font-weight:900}
+.result ol{color:#48638a;padding-left:22px;line-height:1.85;font-size:14px}.result li{margin:7px 0}
+.result p{font-size:13px}.tip{font-size:12px;color:#7387a4;line-height:1.75}
+.suitcase-banner{background:#214995;border-radius:20px;padding:22px;color:white;text-align:center;margin-bottom:19px}
+.suitcase-banner strong{display:block;font-weight:900;font-size:29px;margin:6px 0}.suitcase-banner span{font-size:12px;letter-spacing:.1em;font-weight:800;color:#dbeaff}
+.case-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.case-field{background:#fff;border:2px solid #e1e8f6;border-radius:17px;padding:15px}
+.case-field .case-icon{font-size:30px}.case-field strong{display:block;margin:9px 0;font-size:15px}
+.case-field p{font-size:12px;min-height:72px;margin:7px 0}.case-field textarea{width:100%;min-height:90px;resize:vertical;border:2px solid #d9e4f5;border-radius:11px;padding:10px;color:#214995;font:600 13px Montserrat,Arial,sans-serif}
+.case-result{background:linear-gradient(135deg,#e6f4ff,#eee8ff);border:2px dashed #8da7df;border-radius:18px;padding:21px;margin-top:20px}
+.case-result h3{color:#214995;margin:0 0 12px}.case-result .case-line{font-size:14px;line-height:1.8;color:#385a87;border-bottom:1px solid #d3ddf4;padding:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.case-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.sky-panel{background:radial-gradient(circle at 50% 10%,#365ba6,#132d65 76%);border-radius:24px;padding:clamp(19px,3vw,29px);margin-top:23px;overflow:hidden}
+.sky-panel>p{color:#dfebff;text-align:center;font-size:13px}
+.stars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;max-width:690px;margin:24px auto}
+.star{height:120px;background:#ffffff0c;border:1px solid #ffffff2b;border-radius:22px;color:#ffe6a5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font:900 13px Montserrat,Arial,sans-serif;cursor:pointer;transition:transform .2s,background .2s}
+.star:hover{transform:scale(1.07);background:#ffffff29}.star:focus-visible{outline:3px solid #fff}
+.star-symbol{font-size:42px;line-height:1;text-shadow:0 0 14px #ffd86f}
+.star.active{background:#fff1c933;border-color:#fff0ad}.star.used{opacity:.65}
+.sky-counter{text-align:center;color:#d6eaff;font-size:12px;font-weight:800}
+.sky-reveal{background:#fff;border-radius:20px;padding:23px;max-width:690px;margin:0 auto;animation:rise .35s ease}
+.sky-reveal small{font-size:11px;color:#926eb7;font-weight:900;letter-spacing:.1em}
+.sky-reveal h3{font-size:clamp(22px,3vw,30px);font-weight:900;color:#214995;margin:10px 0}
+.sky-reveal p{font-size:14px}.sky-reveal strong{color:#214995}
+.sky-footer{display:flex;justify-content:center;gap:10px;margin:18px auto 0;flex-wrap:wrap}
+.sky-footer button{background:#ffffff20;border:2px solid #a5c4ee;color:white;border-radius:99px;padding:13px 20px;font:800 12px Montserrat,Arial,sans-serif;cursor:pointer}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:820px){.path-grid{grid-template-columns:1fr}.path-card{min-height:0}.fields,.case-fields{grid-template-columns:1fr}.case-field p{min-height:0}}
+@media(max-width:600px){header{flex-direction:column;align-items:flex-start}.stars{gap:8px}.star{height:94px;border-radius:12px}.star-symbol{font-size:31px}.star>span:last-child{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.result,.sky-reveal{animation:none}.star{transition:none}}
+</style></head>
+<body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
+<main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas de cierre</h1><div class="divider"></div>
+<p>Una buena peulá también necesita una forma de terminar. Estos tres caminos ayudan a que los janijimot puedan reconocer lo que pasó, llevarse algo y cerrar la experiencia con sentido.</p>
+<nav class="category-links" id="nav" aria-label="Categorías de planificación"></nav>
+<section id="paths" class="path-section"><h2>¿Cómo queremos cerrar?</h2><p>Tres caminos distintos: preparar un cierre, construirlo con el grupo o dejar que una sorpresa lo inspire.</p>
+<div class="path-grid">
+<button type="button" class="path-card" data-open="0"><span class="path-number">CAMINO 01</span><strong>🧭 Un cierre a medida</strong><span>Elegí el clima del grupo, lo que querés lograr y cuánto tiempo queda. Descubrí una forma de cerrar con pasos claros.</span><b>Explorar este camino →</b></button>
+<button type="button" class="path-card" data-open="1"><span class="path-number">CAMINO 02</span><strong>🧳 La valija del cierre</strong><span>Una valija con tres compartimentos: qué me llevo, qué dejo y qué quiero hacer diferente. Completá una postal de cierre.</span><b>Explorar este camino →</b></button>
+<button type="button" class="path-card" data-open="2"><span class="path-number">CAMINO 03</span><strong>🌌 El cielo de las estrellas</strong><span>Elegí estrellas sorpresa que esconden consignas breves. Creá un cierre participativo sin repetir siempre la misma ronda.</span><b>Explorar este camino →</b></button>
+</div></section>
+<section class="tool" id="tool0" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 01 · ELEGIR</div><h2>🧭 Un cierre a medida</h2>
+<p class="lead">Pensá cómo llega el grupo al final de la peulá. Elegí las condiciones y recibí una propuesta concreta de cierre, adaptada a sus tiempos.</p>
+<div class="panel"><div class="fields">
+<div class="field"><label for="close-energy">¿Cómo termina el grupo?</label><select id="close-energy"><option value="alto">Con mucha energía</option><option value="bajo">Cansado o tranquilo</option><option value="disperso">Disperso, cuesta prestar atención</option><option value="sensible">Movilizado o sensible</option></select></div>
+<div class="field"><label for="close-goal">¿Qué quieren lograr al cerrar?</label><select id="close-goal"><option value="recordar">Recordar lo vivido</option><option value="sentir">Expresar cómo se van</option><option value="agradecer">Reconocer a los demás</option><option value="proyectar">Llevar algo a la próxima peulá</option></select></div>
+<div class="field"><label for="close-time">¿Cuánto tiempo queda?</label><select id="close-time"><option value="5">5 minutos</option><option value="10" selected>10 minutos</option><option value="15">15 minutos</option></select></div>
+</div><button type="button" class="action" id="close-generate">✨ Descubrir un cierre</button><div class="result" id="close-result" hidden aria-live="polite"></div></div></section>
+<section class="tool" id="tool1" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 02 · CONSTRUIR</div><h2>🧳 La valija del cierre</h2>
+<p class="lead">Imaginen que cada janij vuelve de la peulá con una valija. ¿Qué se lleva, qué deja atrás y qué quiere intentar la próxima vez? Pueden responder individualmente, de a dos o entre todos.</p>
+<div class="panel"><div class="suitcase-banner"><span>MI VALIJA DE LA PEULÁ</span><strong>🧳 ¿Qué guardamos hoy?</strong></div>
+<div class="case-fields">
+<div class="case-field"><div class="case-icon">🎒</div><strong>Me llevo…</strong><p>Una idea, un momento, algo que aprendí o disfruté.</p><textarea id="case-take" maxlength="340" placeholder="Hoy me llevo…"></textarea></div>
+<div class="case-field"><div class="case-icon">🍃</div><strong>Dejo atrás…</strong><p>Algo que no necesito llevarme o algo que quiero hacer distinto.</p><textarea id="case-leave" maxlength="340" placeholder="Hoy dejo atrás…"></textarea></div>
+<div class="case-field"><div class="case-icon">🌱</div><strong>Para la próxima…</strong><p>Algo que me gustaría probar, mejorar o repetir.</p><textarea id="case-next" maxlength="340" placeholder="La próxima me gustaría…"></textarea></div>
+</div><div class="case-buttons"><button type="button" class="action" id="case-create">✨ Armar postal de cierre</button><button type="button" class="outline" id="case-clear">Limpiar respuestas</button></div>
+<div id="case-result" class="case-result" hidden aria-live="polite"><h3>✉️ Nuestra postal de cierre</h3><div class="case-line" id="case-out-take"></div><div class="case-line" id="case-out-leave"></div><div class="case-line" id="case-out-next"></div><button type="button" id="case-copy" class="action">📋 Copiar nuestra postal</button></div>
+<p class="tip">Las respuestas son voluntarias y no se guardan en la web. Si algún janij no quiere compartir, puede pasar, dibujar o inventar un ejemplo.</p></div></section>
+<section class="tool" id="tool2" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 03 · SORPRESA</div><h2>🌌 El cielo de las estrellas</h2>
+<p class="lead">Cada estrella es una consigna para hacer un cierre distinto. Elijan una estrella, descubran cómo cerrar y, si quieren, sumen otras. El desafío es llevar la propuesta a una peulá real.</p>
+<div class="sky-panel">
+<p>✦ Tocá una estrella para descubrir una forma de cerrar ✦</p><div class="sky-counter" id="sky-counter" aria-live="polite">0 estrellas descubiertas</div>
+<div class="stars" id="stars" role="group" aria-label="Doce estrellas con consignas sorpresa"></div>
+<div class="sky-reveal" id="sky-reveal" hidden aria-live="polite"><small>✨ LA ESTRELLA TE PROPONE…</small><h3 id="sky-title"></h3><p id="sky-description"></p><strong id="sky-mode"></strong></div>
+<div class="sky-footer"><button type="button" id="sky-reset">↻ Mezclar todas las estrellas</button></div>
+</div><p class="tip">Una misma consigna se puede resolver hablando, dibujando, señalando o pasando el turno. Cerrar no tiene que ser una exposición personal.</p></section>
+</main></div>
+<script>
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
+const requested=params.get('grupo')||'';
+const group=groups.find(g=>g.toLowerCase()===requested.toLowerCase())||null;
+const slug=group?group.toLowerCase():'',q=group?'?grupo='+encodeURIComponent(slug):'',extra=group?'&grupo='+encodeURIComponent(slug):'';
+$('back').href=group?'grupo.html?grupo='+encodeURIComponent(slug)+'#innova':'grupos.html';
+$('back').textContent=group?'← Volver a '+group:'← Todos los grupos';
+if(group){document.title='Dinámicas de cierre · '+group+' · Tojnit Majané Kaitz 2026';$('eyebrow').textContent='Innová en la planificación de '+group;}
+for(const [id,label] of [['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre']]){
+ const link=document.createElement('a');link.textContent=label;
+ link.href=id==='racional'?'racional.html'+q:id==='hilo'?'hilo.html'+q:id==='juegos'?'juegos.html'+q:id==='dinamicas'?'dinamicas.html'+q:id==='dinamicas-de-cierre'?'dinamicas-de-cierre.html'+q:'planificacion.html?seccion='+id+extra;
+ if(id==='dinamicas-de-cierre')link.setAttribute('aria-current','page');
+ $('nav').appendChild(link);
+}
+document.querySelectorAll('[data-open]').forEach(btn=>btn.addEventListener('click',()=>{
+ $('paths').hidden=true;
+ document.querySelectorAll('.tool').forEach((node,i)=>node.hidden=i!==Number(btn.dataset.open));
+ if(btn.dataset.open==='2'&&!skyBuilt)buildStars();
+}));
+document.querySelectorAll('[data-back]').forEach(btn=>btn.addEventListener('click',()=>{
+ $('paths').hidden=false;document.querySelectorAll('.tool').forEach(node=>node.hidden=true);
+}));
+const age=group?(['Jaza','Mega','Nifla'].includes(group)?'peques':['Leitza','Mabri','Kasu','Mebu'].includes(group)?'infancia':['Shingsha','Jamu'].includes(group)?'preadolescentes':'adolescentes'):'infancia';
+const ageNote={
+ peques:'Con los más chicos: usen una palabra, un gesto, una imagen o un dibujo, sin pedir explicaciones largas.',
+ infancia:'Con esta edad: den un ejemplo concreto y turnos breves; también pueden dibujar.',
+ preadolescentes:'Con esta edad: permitan respuestas personales, ficticias o anónimas.',
+ adolescentes:'Con esta edad: eviten exigir confesiones o intervenciones públicas; pueden responder por escrito o pasar.'
+};
+const closingIdeas={
+ recordar:[
+ ['El fotograma que queda','Cada janij elige un instante que quiera recordar; lo representa con una palabra, gesto o dibujo. La ronda forma una película de recuerdos del grupo.'],
+ ['Tres escenas del día','Entre todos elijan un momento del inicio, otro del medio y uno del final. Reconstrúyanlos sin repetir toda la actividad.'],
+ ['La foto invisible','Imaginen una foto de la peulá. Cada persona puede aportar un detalle que estaría en la imagen, hablado o dibujado.']
+ ],
+ sentir:[
+ ['El clima con el que me voy','Ofrezcan imágenes de climas: sol, lluvia, viento, arcoíris. Cada uno elige una para representar cómo se va, sin obligación de explicar.'],
+ ['Un color para cerrar','Cada janij elige un color que represente su sensación al terminar. Pueden señalarlo, dibujarlo o guardarlo en silencio.'],
+ ['La escala de energía','Muestren una escala visual de energía de 1 a 5. Cada quien marca dónde está y, si quiere, qué le ayudaría a terminar bien.']
+ ],
+ agradecer:[
+ ['La ronda del gracias concreto','Cada persona puede agradecer una acción que ayudó al grupo, sin necesidad de nombrar a nadie en particular.'],
+ ['Las huellas que ayudaron','El grupo elige conductas que hicieron la peulá más linda o posible. Escríbanlas en huellas de papel para dejarlas visibles.'],
+ ['El aplauso compartido','Piensen tres cosas que lograron juntos y reconózcanlas colectivamente, sin elegir ganadores individuales.']
+ ],
+ proyectar:[
+ ['Una semilla para la próxima','Cada quien propone una pequeña acción que le gustaría intentar la próxima vez. Juntan esas semillas en una lista común.'],
+ ['La promesa posible','Cierren con una decisión simple y voluntaria que el grupo pueda retomar en la próxima peulá.'],
+ ['Una pregunta que sigue','En lugar de responder todo, cada uno deja una pregunta o curiosidad que quiera llevar a la próxima peulá.']
+ ]
+};
+const moods={
+ alto:'Empiecen con una señal que invite a bajar el ritmo y den tiempo para que puedan responder.',
+ bajo:'Usen un cierre tranquilo, sin desplazamientos ni explicaciones largas.',
+ disperso:'Mantengan una única consigna a la vista y un turno breve para cada respuesta.',
+ sensible:'Permitan responder de forma privada, con dibujos o sin explicar; no fuercen una ronda emocional.'
+};
+let lastClose='';
+$('close-generate').addEventListener('click',()=>{
+ const goal=$('close-goal').value,energy=$('close-energy').value,mins=Number($('close-time').value);
+ const choices=closingIdeas[goal].filter(item=>item[0]!==lastClose);
+ const idea=(choices.length?choices:closingIdeas[goal])[Math.floor(Math.random()*(choices.length||closingIdeas[goal].length))];
+ lastClose=idea[0];
+ const result=$('close-result');result.hidden=false;result.replaceChildren();
+ const lab=document.createElement('span');lab.className='result-label';lab.textContent='CIERRE PARA '+(group||'TU GRUPO').toUpperCase();
+ const title=document.createElement('h3');title.textContent=idea[0];
+ const p=document.createElement('p');p.textContent=idea[1];
+ const steps=document.createElement('ol');
+ const flow=[
+ 'Preparación ('+Math.max(1,Math.round(mins*.2))+' min): expliquen la consigna con un ejemplo breve.',
+ 'Participación ('+Math.max(2,Math.round(mins*.6))+' min): dejen que cada janij elija cómo responder y cuiden los turnos.',
+ 'Despedida ('+Math.max(1,mins-Math.round(mins*.2)-Math.round(mins*.6))+' min): recuperen una idea compartida y cierren la peulá con claridad.'
+ ];
+ flow.forEach(t=>{const li=document.createElement('li');li.textContent=t;steps.appendChild(li)});
+ const adapt=document.createElement('p');adapt.className='tip';adapt.textContent='Para adaptar: '+moods[energy]+' '+ageNote[age];
+ result.append(lab,title,p,steps,adapt);
+ $('close-generate').textContent='↻ Otra idea con estas condiciones';
+});
+function caseText(){
+ const a=$('case-take').value.trim(),b=$('case-leave').value.trim(),c=$('case-next').value.trim();
+ return [['Me llevo',a],['Dejo atrás',b],['Para la próxima',c]];
+}
+$('case-create').addEventListener('click',()=>{
+ const fields=caseText();if(!fields.some(item=>item[1])){alert('Escriban al menos una idea para armar la postal.');$('case-take').focus();return}
+ $('case-out-take').textContent='🎒 Me llevo: '+(fields[0][1]||'—');
+ $('case-out-leave').textContent='🍃 Dejo atrás: '+(fields[1][1]||'—');
+ $('case-out-next').textContent='🌱 Para la próxima: '+(fields[2][1]||'—');
+ $('case-result').hidden=false;$('case-result').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+$('case-clear').addEventListener('click',()=>{
+ ['case-take','case-leave','case-next'].forEach(id=>$(id).value='');$('case-result').hidden=true;
+});
+$('case-copy').addEventListener('click',()=>{
+ const summary='Nuestra postal de cierre\n'+
+ ['case-out-take','case-out-leave','case-out-next'].map(id=>$(id).textContent).join('\n');
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+ navigator.clipboard.writeText(summary).then(()=>$('case-copy').textContent='✓ Copiado').catch(()=>window.prompt('Copiá la postal:',summary));
+ }else window.prompt('Copiá la postal:',summary);
+});
+const skyIdeas=[
+ ['La palabra que queda','Cada persona dice, escribe o dibuja una sola palabra que resuma cómo se va. Junten las palabras en un cierre grupal.','Formato: una palabra o símbolo'],
+ ['El gesto final','Cada quien elige un gesto sencillo que represente algo que se lleva. Hagan una secuencia de gestos, sin exigir que todos expliquen.','Formato: movimiento breve'],
+ ['Un color de despedida','Ofrezcan varios colores y que cada janij elija cuál representa el día. Pueden mostrarlo o guardárselo.','Formato: elección visual'],
+ ['Lo que no esperaba','Inviten a completar: «Hoy me sorprendió…». Puede ser con un ejemplo ficticio, escrito o compartido.','Formato: frase corta'],
+ ['El eco del grupo','Elijan una palabra que represente la peulá. En ronda, cada uno puede sumarle otra palabra hasta crear una frase colectiva.','Formato: construcción conjunta'],
+ ['Una pregunta pendiente','Cada persona elige una pregunta que quiere llevarse para seguir pensando. No es necesario contestarla.','Formato: pregunta abierta'],
+ ['La postal de un instante','Que elijan un momento del día y lo representen como si fuera una postal: una imagen, frase o gesto.','Formato: recuerdo'],
+ ['Gracias por algo concreto','Piensen en una acción que haya ayudado a que la peulá salga bien. Agradézcanla sin tener que señalar a alguien.','Formato: reconocimiento'],
+ ['Una semilla','Cada janij propone una cosa chiquita que le gustaría repetir o mejorar la próxima vez.','Formato: proyección'],
+ ['Semáforo final','Ofrezcan verde, amarillo y rojo para representar el nivel de energía o cómo se van. Cada persona puede elegir sin justificarlo.','Formato: señal de color'],
+ ['Dos cosas que me llevo','Propongan elegir dos cosas de la experiencia: una idea y una sensación, reales o imaginarias.','Formato: reflexión breve'],
+ ['La última decisión','Dejen que los janijimot decidan entre dos maneras posibles de despedirse, como una frase conjunta o una secuencia de gestos.','Formato: elección grupal'],
+ ['Un sonido final','Que cada persona elija un sonido suave que represente el momento. Hagan juntos una secuencia de sonidos o pasen el turno.','Formato: sonido voluntario'],
+ ['Un dibujo entre todos','En una hoja grande, cada persona agrega un detalle que le gustaría recordar. Al terminar, miren el dibujo completo.','Formato: producción colectiva'],
+ ['Me quedo con…','Que cada uno complete mentalmente, con una palabra o por escrito «Me quedo con…». Compartirlo es opcional.','Formato: frase abierta'],
+ ['La frase del día','Que cada subgrupo proponga una frase breve sobre lo vivido. Junten partes de todas para crear una frase final.','Formato: síntesis compartida'],
+ ['El antes y el después','Con una palabra o imagen, comparen cómo llegó el grupo y cómo se va, sin pedir historias privadas.','Formato: contraste'],
+ ['La huella para mañana','Escriban una acción sencilla que el grupo podría retomar la próxima vez. Guárdenla como recordatorio.','Formato: continuidad'],
+ ['La foto que faltó','Imaginen qué foto les hubiera gustado sacar hoy. Descríbanla con una frase o dibújenla.','Formato: imaginación breve'],
+ ['Cierre en parejas','En parejas, cada uno comparte algo que quiera recordar; luego eligen una idea para llevar al grupo, si quieren.','Formato: parejas'],
+ ['El aplauso compartido','Celebren tres pequeñas cosas que logró el grupo sin elegir a una sola persona como protagonista.','Formato: reconocimiento colectivo'],
+ ['El título de hoy','Si la peulá tuviera un título, ¿cuál sería? Cada uno puede proponerlo y elegir entre varias opciones.','Formato: título']
+];
+let skyBuilt=false,skyDeck=[],skySeen=new Set(),skyCurrent=-1;
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+function buildStars(){
+ skyBuilt=true;skySeen=new Set();skyCurrent=-1;skyDeck=shuffle(skyIdeas.map((_,i)=>i)).slice(0,12);
+ $('sky-reveal').hidden=true;
+ const board=$('stars');board.replaceChildren();$('sky-counter').textContent='0 estrellas descubiertas';
+ skyDeck.forEach((index,i)=>{
+  const button=document.createElement('button');button.type='button';button.className='star';button.setAttribute('aria-label','Descubrir estrella '+(i+1));
+  const emoji=document.createElement('span');emoji.className='star-symbol';emoji.textContent=['✦','✧','★','✶'][i%4];
+  const label=document.createElement('span');label.textContent='ESTRELLA '+(i+1);
+  button.append(emoji,label);
+  button.addEventListener('click',()=>{
+   skyCurrent=i;skySeen.add(i);
+   board.querySelectorAll('button').forEach((other,k)=>{other.classList.toggle('active',k===i);other.classList.toggle('used',skySeen.has(k)&&k!==i)});
+   const idea=skyIdeas[index];$('sky-title').textContent=idea[0];$('sky-description').textContent=idea[1];$('sky-mode').textContent=idea[2];
+   $('sky-reveal').hidden=false;$('sky-counter').textContent=skySeen.size+' de 12 estrellas descubiertas';
+   $('sky-reveal').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+  board.appendChild(button);
+ });
+}
+$('sky-reset').addEventListener('click',buildStars);
+</script></body></html>
