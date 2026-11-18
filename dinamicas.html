@@ -101,6 +101,27 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 @keyframes door-pop{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:640px){.door-choice-grid{gap:8px}.door{height:132px;border-width:5px;border-radius:10px}.door:before{right:8px;width:9px;height:9px}.door-pieces{grid-template-columns:1fr}.door-pieces>div{min-height:80px}.door-progress span{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.door,.door-found,.door-final{transition:none;animation:none}}
+</style><style>
+.scratch-panel{margin-top:24px;padding:clamp(17px,3vw,29px);border-radius:27px;background:linear-gradient(135deg,#f3f8ff,#faf4ff);border:2px solid #dfe8fa}
+.scratch-intro{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;margin-bottom:23px}
+.scratch-intro>span{font-weight:900;color:#214995;letter-spacing:.07em;font-size:12px}.scratch-intro small{font-size:11px;color:#657fa7;font-weight:800}
+.scratch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.scratch-item{min-width:0;border:2px solid #d9e4f9;border-radius:19px;padding:10px;background:#fff}
+.scratch-heading{text-align:center;padding:11px 4px;font-weight:900;font-size:11px;letter-spacing:.04em;color:#315895}
+.scratch-surface{height:180px;border-radius:13px;position:relative;display:flex;justify-content:center;align-items:center;background:#f4f7fe;overflow:hidden}
+.scratch-answer{font-weight:900;color:#214995;font-size:clamp(14px,1.6vw,19px);line-height:1.5;text-align:center;padding:12px;overflow-wrap:anywhere}
+.scratch-surface canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .35s ease}
+.scratch-item.scratched .scratch-surface{background:linear-gradient(135deg,#e3f6ff,#f4e9ff)}
+.scratch-fallback{display:block;margin:10px auto 1px;border:0;background:none;color:#687fa8;text-decoration:underline;font:800 11px Montserrat,Arial,sans-serif;cursor:pointer}
+.scratch-fallback[hidden],.scratch-final[hidden]{display:none}
+.scratch-final{margin-top:24px;border-radius:21px;border:2px solid #c7daf8;background:white;padding:clamp(18px,3vw,30px);animation:scratch-appear .5s ease}
+.scratch-final>span{font-size:11px;color:#9b69b7;letter-spacing:.1em;font-weight:900}
+.scratch-final h3{font-size:clamp(24px,3.5vw,34px);color:#214995;font-weight:900;margin:12px 0}
+.scratch-final p{font-size:14px}.scratch-final ol{color:#46638f;line-height:1.8;font-size:14px;padding-left:24px}
+.scratch-panel>.action{display:block;margin:23px auto 0}
+@keyframes scratch-appear{from{transform:translateY(15px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(max-width:680px){.scratch-grid{grid-template-columns:1fr}.scratch-surface{height:125px}.scratch-answer{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.scratch-final{animation:none}.scratch-surface canvas{transition:none}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas</h1><div class="divider"></div>
@@ -109,7 +130,7 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 <section class="path-section" id="paths"><h2>¿Qué necesita tu grupo hoy?</h2><p>Elegí un camino para descubrir una dinámica distinta.</p>
 <div class="path-grid">
 <button class="path-card" data-open="0" type="button"><span class="path-number">CAMINO 01</span><strong>🎨 La paleta de dinámicas</strong><span>Elegí un color del cuadrado degradado y descubrí una dinámica sorpresa. Para cambiarla, tocá otro color.</span><b>Explorar este camino →</b></button>
-<button class="path-card" data-open="1" type="button"><span class="path-number">CAMINO 02</span><strong>🚪 Las tres puertas de la peulá</strong><span>Abrí puertas misteriosas y combiná tres pistas para inventar una dinámica propia con tu dupla.</span><b>Explorar este camino →</b></button>
+<button class="path-card" data-open="1" type="button"><span class="path-number">CAMINO 02</span><strong>✨ Raspá y creá</strong><span>Raspá tres casilleros para descubrir qué cambia, cómo y cuándo. Inventá una dinámica con tu dupla a partir de las pistas.</span><b>Explorar este camino →</b></button>
 <button class="path-card" data-open="2" type="button"><span class="path-number">CAMINO 03</span><strong>🤝 Bingo de vínculos</strong><span>Un tablero de 16 mini misiones para conocerse, escucharse y descubrir conexiones dentro del grupo.</span><b>Explorar este camino →</b></button>
 </div></section>
 <section id="tool0" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
@@ -132,17 +153,20 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
  </div>
 </div></section>
 <section id="tool1" class="tool" hidden><button type="button" class="tool-back" data-back>← Elegir otro camino</button>
-<div class="kicker">CAMINO 02 · CREÁ TU DINÁMICA</div><h2>🚪 Las tres puertas de la peulá</h2>
-<p class="tool-lead">Elegí una puerta en cada habitación para descubrir tres condiciones. Con esas pistas, la dupla inventa una dinámica que cambie cómo transcurre la peulá, sin inventar juegos ni hilos.</p>
-<div class="door-panel">
-<div class="door-progress" id="door-progress"><span>1 · QUÉ</span><span>2 · CÓMO</span><span>3 · CUÁNDO</span></div>
-<div id="door-room"><div class="door-room-head"><small id="door-room-number">HABITACIÓN 1 DE 3</small><h3 id="door-room-title">¿Qué van a cambiar?</h3><p>Elegí una de las seis puertas. No sabés qué hay detrás.</p></div>
-<div class="door-choice-grid" id="door-choice-grid"></div></div>
-<div class="door-found" id="door-found-box" hidden><span>🔓 PISTA DESCUBIERTA</span><strong id="door-found"></strong><button id="door-next" type="button" class="door-action">Seguir a la próxima habitación →</button></div>
-<div id="door-final" class="door-final" hidden><span>✨ ¡TRES PISTAS REVELADAS!</span><h3>Inventen su propia dinámica</h3><div class="door-pieces" id="door-pieces"></div>
-<div class="door-questions"><strong>Ahora les toca a los madrijim:</strong><ol><li>¿Cómo combinarían estas condiciones en una peulá que ya tienen planeada?</li><li>¿Qué cambiaría en la forma habitual de hacerla?</li><li>¿Qué necesitan preparar para que todos puedan participar?</li></ol></div>
-<button class="door-action" id="door-restart" type="button">↻ Explorar otras puertas</button></div>
-<p class="tip">Las condiciones modifican el orden, los roles, los tiempos o la comunicación; no definen el juego, el tema ni el hilo.</p>
+<div class="kicker">CAMINO 02 · INVENTÁ UNA DINÁMICA</div><h2>✨ Raspá y creá</h2>
+<p class="tool-lead">Una misma idea, tres condiciones: <strong>qué cambia, cómo cambia y cuándo</strong>. Raspá cada casillero para descubrir su pista. Después la dupla inventa cómo combinar las tres en una peulá. ¡Sin juegos ni hilos!</p>
+<div class="scratch-panel">
+ <div class="scratch-intro"><span>🎫 RASPADITA DE DINÁMICAS</span><small id="scratch-progress" aria-live="polite">0 de 3 pistas descubiertas</small></div>
+ <div class="scratch-grid" id="scratch-grid">
+  <div class="scratch-item" data-scratch="0"><div class="scratch-heading">01 · ¿QUÉ CAMBIA?</div><div class="scratch-surface"><strong class="scratch-answer" id="scratch-answer-0"></strong><canvas id="scratch-canvas-0" aria-label="Raspá para descubrir qué cambia"></canvas></div><button type="button" class="scratch-fallback" data-reveal="0">Ver pista sin raspar</button></div>
+  <div class="scratch-item" data-scratch="1"><div class="scratch-heading">02 · ¿CÓMO CAMBIA?</div><div class="scratch-surface"><strong class="scratch-answer" id="scratch-answer-1"></strong><canvas id="scratch-canvas-1" aria-label="Raspá para descubrir cómo cambia"></canvas></div><button type="button" class="scratch-fallback" data-reveal="1">Ver pista sin raspar</button></div>
+  <div class="scratch-item" data-scratch="2"><div class="scratch-heading">03 · ¿CUÁNDO?</div><div class="scratch-surface"><strong class="scratch-answer" id="scratch-answer-2"></strong><canvas id="scratch-canvas-2" aria-label="Raspá para descubrir cuándo"></canvas></div><button type="button" class="scratch-fallback" data-reveal="2">Ver pista sin raspar</button></div>
+ </div>
+ <div id="scratch-final" class="scratch-final" hidden aria-live="polite"><span>✨ ¡COMBINACIÓN DESCUBIERTA!</span><h3>Ahora inventen su dinámica</h3>
+ <p>Piensen una peulá que ya tengan planeada y cambien su forma de llevarla adelante aplicando las tres condiciones.</p>
+ <ol><li>¿Cómo combinarían las tres pistas?</li><li>¿Qué cambiaría en la forma habitual de hacer la peulá?</li><li>¿Qué necesitan preparar para que los janijimot puedan participar?</li></ol></div>
+ <button type="button" id="scratch-restart" class="action">🎫 Nueva raspadita</button>
+ <p class="tip">No hay respuestas correctas: estas condiciones son disparadores para imaginar dinámicas nuevas. Pueden adaptar cualquier pista a la edad del grupo.</p>
 </div></section>
 <section id="tool2" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
 <div class="kicker">CAMINO 03 · HACER Y DESCUBRIR</div><h2>🤝 Bingo de vínculos</h2>
@@ -220,57 +244,69 @@ for(let row=0;row<paletteRows;row++){
   colorBoard.appendChild(button);
  }
 }
-const doorPools=[["La comunicación","El orden de la peulá","Los roles","Quién toma las decisiones","La duración","Cómo se divide el grupo","Cómo llegan las consignas","Los turnos","Quién se beneficia de los logros","El espacio","Las transiciones","Quién guía cada momento","La forma de expresarse","La secuencia de objetivos","La información disponible","Cómo se arman las parejas"],["Se invierte","Lo eligen los janijimot","Se decide con un dado","Se hace por turnos","Cambia entre equipos","No se puede hablar","Se entrega en partes","Se transforma de repente","Se organiza según gustos","Se elige por votación","Se hace en parejas","Se mantiene en secreto","Se comparte entre todos","Se hace al revés","Se sortea con tarjetas","Se dibuja en lugar de decirlo","Lo decide alguien diferente cada vez"],["Durante toda la peulá","En una sola etapa","Cada cinco minutos","Antes de cada transición","Cuando lo decida el grupo","Al principio","En un momento sorpresa","En la última parte","Después de cumplir un objetivo","Dos veces en la peulá","Al cambiar de lugar","Después de cada consigna","En la primera mitad","Cuando aparezca una señal"]];
-const doorNames=['¿Qué van a cambiar?','¿Cómo va a cambiar?','¿Cuándo sucede?'];
-const doorTags=['QUÉ CAMBIA','CÓMO CAMBIA','CUÁNDO'];
-let doorStep=0,doorAnswers=[],doorChosen=false;
-function makeDoors(){
- doorChosen=false;
- document.getElementById('door-room').hidden=false;
- document.getElementById('door-found-box').hidden=true;
- document.getElementById('door-final').hidden=true;
- document.getElementById('door-room-number').textContent='HABITACIÓN '+(doorStep+1)+' DE 3';
- document.getElementById('door-room-title').textContent=doorNames[doorStep];
- document.querySelectorAll('#door-progress span').forEach((node,index)=>{
-  node.classList.toggle('door-current',index===doorStep);node.classList.toggle('door-complete',index<doorStep);
- });
- const candidates=doorPools[doorStep].slice();
- for(let i=candidates.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[candidates[i],candidates[j]]=[candidates[j],candidates[i]];}
- const grid=document.getElementById('door-choice-grid');grid.replaceChildren();
- for(let i=0;i<6;i++){
-  const btn=document.createElement('button');btn.type='button';btn.className='door';
-  btn.setAttribute('aria-label','Abrir puerta '+(i+1));
-  const number=document.createElement('span');number.textContent=String(i+1).padStart(2,'0');btn.appendChild(number);
-  btn.addEventListener('click',()=>{
-   if(doorChosen)return;doorChosen=true;
-   btn.classList.add('door-open');
-   grid.querySelectorAll('button').forEach(el=>el.disabled=true);
-   doorAnswers.push(candidates[i]);
-   document.getElementById('door-found').textContent=candidates[i];
-   document.getElementById('door-next').textContent=doorStep===2?'✨ Ver las tres pistas':'Siguiente habitación →';
-   window.setTimeout(()=>{
-    document.getElementById('door-found-box').hidden=false;
-    document.getElementById('door-found-box').scrollIntoView({behavior:'smooth',block:'nearest'});
-   },360);
-  });
-  grid.appendChild(btn);
+const scratchPools=[["La comunicación","El orden de la peulá","Los roles","Quién toma las decisiones","La duración","Cómo se divide el grupo","Cómo llegan las consignas","Los turnos","Quién se beneficia de los logros","El espacio","Las transiciones","Quién guía cada momento","La forma de expresarse","La secuencia de objetivos","La información disponible","Cómo se arman las parejas"],["Se invierte","Lo eligen los janijimot","Se decide con un dado","Se hace por turnos","Cambia entre equipos","No se puede hablar","Se entrega en partes","Se transforma de repente","Se organiza según gustos","Se elige por votación","Se hace en parejas","Se mantiene en secreto","Se comparte entre todos","Se hace al revés","Se sortea con tarjetas","Se dibuja en lugar de decirlo","Lo decide alguien diferente cada vez"],["Durante toda la peulá","En una sola etapa","Cada cinco minutos","Antes de cada transición","Cuando lo decida el grupo","Al principio","En un momento sorpresa","En la última parte","Después de cumplir un objetivo","Dos veces en la peulá","Al cambiar de lugar","Después de cada consigna","En la primera mitad","Cuando aparezca una señal"]];
+let scratchRound='',scratchAnswers=[],scratchRevealed=[false,false,false],scratchCanvases=[];
+function scratchReveal(index){
+ if(scratchRevealed[index])return;
+ scratchRevealed[index]=true;
+ const item=document.querySelector('[data-scratch="'+index+'"]');
+ item.classList.add('scratched');
+ const canvas=scratchCanvases[index];if(canvas)canvas.style.opacity='0';
+ item.querySelector('.scratch-fallback').hidden=true;
+ const done=scratchRevealed.filter(Boolean).length;
+ document.getElementById('scratch-progress').textContent=done+' de 3 pistas descubiertas';
+ if(done===3){document.getElementById('scratch-final').hidden=false;document.getElementById('scratch-final').scrollIntoView({behavior:'smooth',block:'nearest'});}
+}
+function scratchPaint(canvas,i){
+ const rect=canvas.getBoundingClientRect(),w=rect.width,h=rect.height;
+ if(!w||!h)return;
+ const dpr=Math.min(window.devicePixelRatio||1,2);
+ canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+ const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);
+ const gradient=ctx.createLinearGradient(0,0,w,h);
+ const colors=[['#164c9e','#5f8ce2'],['#6844a7','#b48de0'],['#177995','#58bfd1']];
+ gradient.addColorStop(0,colors[i][0]);gradient.addColorStop(1,colors[i][1]);
+ ctx.fillStyle=gradient;ctx.fillRect(0,0,w,h);
+ ctx.fillStyle='#ffffff2d';for(let x=-h;x<w+h;x+=29){ctx.fillRect(x,0,3,h)}
+ ctx.fillStyle='white';ctx.font='900 16px Montserrat,Arial,sans-serif';ctx.textAlign='center';ctx.fillText('✦ RASPÁ ACÁ ✦',w/2,h/2);
+ ctx.font='700 11px Montserrat,Arial,sans-serif';ctx.fillText('Deslizá el dedo o el mouse',w/2,h/2+25);
+ let dragging=false,distance=0,last=null;
+ canvas.onpointerdown=event=>{if(scratchRevealed[i])return;dragging=true;last={x:event.clientX,y:event.clientY};canvas.setPointerCapture(event.pointerId);erase(event)};
+ canvas.onpointermove=event=>{if(dragging)erase(event)};
+ canvas.onpointerup=()=>{dragging=false;last=null};
+ canvas.onpointercancel=()=>{dragging=false;last=null};
+ function erase(event){
+  const r=canvas.getBoundingClientRect(),x=event.clientX-r.left,y=event.clientY-r.top;
+  if(last)distance+=Math.hypot(event.clientX-last.x,event.clientY-last.y);
+  last={x:event.clientX,y:event.clientY};
+  ctx.globalCompositeOperation='destination-out';
+  ctx.beginPath();ctx.arc(x,y,26,0,Math.PI*2);ctx.fill();
+  if(distance>Math.min(170,w*.7))scratchReveal(i);
  }
 }
-document.getElementById('door-next').addEventListener('click',()=>{
- if(doorStep<2){doorStep++;makeDoors();return}
- document.getElementById('door-room').hidden=true;document.getElementById('door-found-box').hidden=true;
- document.getElementById('door-final').hidden=false;
- document.querySelectorAll('#door-progress span').forEach(el=>{el.classList.remove('door-current');el.classList.add('door-complete')});
- const pieces=document.getElementById('door-pieces');pieces.replaceChildren();
- doorAnswers.forEach((answer,i)=>{
-  const box=document.createElement('div');const label=document.createElement('small');label.textContent=doorTags[i];
-  const value=document.createElement('strong');value.textContent=answer;
-  box.append(label,value);pieces.appendChild(box);
- });
- document.getElementById('door-final').scrollIntoView({behavior:'smooth',block:'nearest'});
-});
-document.getElementById('door-restart').addEventListener('click',()=>{doorStep=0;doorAnswers=[];makeDoors()});
-makeDoors();
+function scratchNewRound(){
+ let answers,signature;
+ do{
+  answers=scratchPools.map(pool=>pool[Math.floor(Math.random()*pool.length)]);
+  signature=answers.join('|');
+ }while(signature===scratchRound);
+ scratchRound=signature;scratchAnswers=answers;scratchRevealed=[false,false,false];
+ document.getElementById('scratch-final').hidden=true;
+ document.getElementById('scratch-progress').textContent='0 de 3 pistas descubiertas';
+ scratchCanvases=[];
+ for(let i=0;i<3;i++){
+  const item=document.querySelector('[data-scratch="'+i+'"]');
+  item.classList.remove('scratched');
+  item.querySelector('.scratch-fallback').hidden=false;
+  document.getElementById('scratch-answer-'+i).textContent=answers[i];
+  const canvas=document.getElementById('scratch-canvas-'+i);
+  canvas.style.opacity='1';scratchCanvases.push(canvas);
+  scratchPaint(canvas,i);
+ }
+}
+document.querySelectorAll('[data-reveal]').forEach(button=>button.addEventListener('click',()=>scratchReveal(Number(button.dataset.reveal))));
+document.getElementById('scratch-restart').addEventListener('click',scratchNewRound);
+scratchNewRound();
 const bingoPool=[
  'Encontrar algo que dos personas tengan en común','Inventar un saludo grupal',
  'Escuchar una idea sin interrumpir','Hacer una pregunta abierta a alguien distinto',
