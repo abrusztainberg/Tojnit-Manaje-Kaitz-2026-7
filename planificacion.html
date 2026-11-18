@@ -63,10 +63,53 @@ body.wheel-modal-open{overflow:hidden}
 .theme-tip-label{font-size:12px;font-weight:900;letter-spacing:.03em;color:#7753ad}
 .theme-tip strong{display:block!important;color:#273b7a!important;font-size:clamp(17px,2.2vw,22px)!important;font-weight:900!important;line-height:1.45!important;margin:0!important}
 .theme-tip-hint{font-size:12px;line-height:1.6;color:#656b91}
+
+/* Los tres caminos para elegir el tema */
+.tema-paths{margin-top:35px}
+.tema-paths[hidden]{display:none}
+.tema-paths h2{font-size:clamp(25px,3.6vw,37px);font-weight:900;color:#214995;margin:0 0 8px;letter-spacing:-.035em}
+.tema-paths>p{margin:0 0 25px;max-width:750px}
+.tema-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.tema-path-card{padding:25px 23px;border:2px solid #dce6f6;border-radius:24px;background:#fff;text-align:left;display:flex;flex-direction:column;gap:14px;min-height:300px;color:#214995;font-family:Montserrat,Arial,sans-serif}
+.tema-path-number{align-self:flex-start;background:#e7efff;padding:8px 13px;border-radius:100px;font-weight:900;font-size:12px}
+.tema-path-card strong{font-size:20px;line-height:1.35;font-weight:900}
+.tema-path-card>span:not(.tema-path-number){font-size:13px;line-height:1.7;color:#687995;flex:1}
+.tema-path-card>b{font-size:12px;color:#2959ae}
+.tema-path-ready{cursor:pointer;box-shadow:0 10px 22px #2149950b;transition:transform .2s,border-color .2s}
+.tema-path-ready:hover,.tema-path-ready:focus-visible{border-color:#628ce1;transform:translateY(-3px)}
+.tema-path-pending{background:#f7f9fe;border-style:dashed}
+.tema-path-pending>b{color:#8e9bb0}
+.tema-back{display:block;margin:0 0 24px;border:0;background:none;color:#285bb0;font:800 13px Montserrat,Arial,sans-serif;text-align:left;cursor:pointer}
+@media(max-width:800px){.tema-path-grid{grid-template-columns:1fr}.tema-path-card{min-height:0}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back-to-group" href="grupos.html">← Volver al grupo</a></header>
-<main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
-  <h2 id="wheel-title">🎡 ¡Que la ruleta elija!</h2>
+<main><div class="eyebrow">Innová en tu hoja de planificación</div><h1 id="topic-title">Planificación</h1><div class="divider"></div><p>Un espacio para desarrollar y reunir propuestas del majané.</p><nav class="category-links" aria-label="Categorías de planificación" id="topic-links"></nav><section id="tema-paths" class="tema-paths" hidden aria-labelledby="tema-paths-title">
+  <h2 id="tema-paths-title">¿Cómo querés encontrar tu próximo tema?</h2>
+  <p>Hay distintos caminos para descubrir una idea que valga la pena trabajar con tu grupo. Elegí por dónde empezar.</p>
+  <div class="tema-path-grid">
+    <button type="button" id="open-tema-wheel" class="tema-path-card tema-path-ready">
+      <span class="tema-path-number">CAMINO 01</span>
+      <strong>Que el azar dispare la idea</strong>
+      <span>Girá la ruleta, recibí una pregunta profunda y descubrí un posible tema para tu próxima peulá.</span>
+      <b>Explorar este camino →</b>
+    </button>
+    <div class="tema-path-card tema-path-pending">
+      <span class="tema-path-number">CAMINO 02</span>
+      <strong>Segundo camino</strong>
+      <span>Acá vamos a sumar la próxima dinámica.</span>
+      <b>Próximamente</b>
+    </div>
+    <div class="tema-path-card tema-path-pending">
+      <span class="tema-path-number">CAMINO 03</span>
+      <strong>Tercer camino</strong>
+      <span>Reservado para otra forma de encontrar un tema.</span>
+      <b>Próximamente</b>
+    </div>
+  </div>
+</section>
+<section id="tema-wheel" class="wheel-section" aria-labelledby="wheel-title" hidden>
+  <button type="button" id="back-tema-paths" class="tema-back">← Elegir otro camino</button>
+  <h2 id="wheel-title">🎡 Que el azar dispare la idea</h2>
   <p class="wheel-subtitle">Girá la ruleta y descubrí qué tema les toca explorar en su próxima peulá.</p>
   <div class="wheel-stage">
     <div class="wheel-pointer" aria-hidden="true"></div>
@@ -119,9 +162,19 @@ document.getElementById('topic-title').textContent=current[1];
 document.title=current[1]+(group?' · '+group:'')+' · Tojnit Majané Kaitz 2026';
 if(group)document.querySelector('.eyebrow').textContent='Innová en la planificación de '+group;
 if(selected==='tema'){
- document.getElementById('tema-wheel').hidden=false;
+ document.getElementById('tema-paths').hidden=false;
  document.getElementById('topic-empty').hidden=true;
- document.querySelector('main > p').textContent='Dejá que el azar te dé una idea para tu próxima peulá.';
+ document.querySelector('main > p').textContent='Tres caminos para descubrir qué tema educativo merece una peulá con tu grupo.';
+ document.getElementById('open-tema-wheel').addEventListener('click',()=>{
+  document.getElementById('tema-paths').hidden=true;
+  document.getElementById('tema-wheel').hidden=false;
+ });
+ document.getElementById('back-tema-paths').addEventListener('click',()=>{
+  const result=document.getElementById('wheel-result');
+  result.hidden=true;document.body.classList.remove('wheel-modal-open');
+  document.getElementById('tema-wheel').hidden=true;
+  document.getElementById('tema-paths').hidden=false;
+ });
 }
 const nav=document.getElementById('topic-links');
 topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
