@@ -72,6 +72,35 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 .color-pop{animation:color-pop .46s cubic-bezier(.17,1.5,.35,1) both}
 @keyframes color-pop{from{opacity:.25;transform:translateY(25px) scale(.965)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.color-pop{animation:none}.color-cell{transition:none}}
+</style><style>
+.door-panel{margin-top:26px;border:2px solid #dce6fa;border-radius:28px;padding:clamp(18px,3vw,32px);background:linear-gradient(145deg,#f2f7ff,#f8f3ff,#ecfaff)}
+.door-progress{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:25px}
+.door-progress span{text-align:center;border-radius:11px;padding:12px 5px;font-size:11px;font-weight:900;color:#718bb0;background:#e1e9f7}
+.door-progress .door-current{background:#214995;color:white}.door-progress .door-complete{background:#d9ecfa;color:#245c9b}
+.door-room-head{text-align:center;margin:12px 0 23px}.door-room-head small{color:#8968b6;font-weight:900;letter-spacing:.1em}
+.door-room-head h3{font-size:clamp(25px,4vw,37px);font-weight:900;color:#214995;margin:10px 0}.door-room-head p{font-size:13px}
+.door-choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:730px;margin:auto}
+.door{position:relative;min-width:0;height:clamp(150px,23vw,215px);border:7px solid #4978b8;border-radius:16px 16px 8px 8px;background:linear-gradient(135deg,#436db1,#1a3b7a);color:#fff;cursor:pointer;box-shadow:0 7px 12px #1e417b29;font:900 33px Montserrat,Arial,sans-serif;transition:transform .35s,filter .35s}
+.door:nth-child(3n+2){background:linear-gradient(135deg,#9971bd,#4c3f8a);border-color:#aa8fd5}
+.door:nth-child(3n){background:linear-gradient(135deg,#4e9caa,#1c6488);border-color:#83bcc9}
+.door:before{content:'';position:absolute;right:15px;top:55%;width:13px;height:13px;border-radius:50%;background:#ffe8a5}
+.door:hover:not(:disabled){transform:translateY(-4px) rotate(-1deg)}.door.door-open{transform:perspective(550px) rotateY(-28deg);filter:brightness(1.25)}
+.door-found[hidden],.door-final[hidden],#door-room[hidden]{display:none}
+.door-found{text-align:center;background:#fff;border:2px solid #c7d9f6;border-radius:20px;padding:24px;margin:25px auto;max-width:610px;animation:door-pop .4s ease both}
+.door-found span,.door-final>span{font-size:11px;letter-spacing:.11em;font-weight:900;color:#8667b1}
+.door-found strong{display:block;font-size:clamp(22px,3.5vw,34px);color:#214995;margin:16px 0 20px;overflow-wrap:anywhere}
+.door-action{background:#214995;color:#fff;border:0;border-radius:100px;font:900 13px Montserrat,Arial,sans-serif;padding:15px 24px;cursor:pointer}
+.door-final{background:#fff;border:2px solid #d1dff8;border-radius:23px;padding:clamp(18px,3vw,30px);text-align:center;animation:door-pop .5s ease}
+.door-final h3{font-size:clamp(25px,4vw,38px);font-weight:900;color:#214995}
+.door-pieces{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.door-pieces>div{background:linear-gradient(130deg,#eaf4ff,#f5eeff);border:2px solid #d7e6fb;border-radius:16px;min-height:130px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:14px;gap:12px}
+.door-pieces small{font-size:10px;font-weight:900;letter-spacing:.06em;color:#7c87a4}
+.door-pieces strong{color:#214995;font-size:clamp(13px,1.8vw,17px);overflow-wrap:anywhere}
+.door-questions{text-align:left;background:#f5f8ff;border-radius:18px;padding:20px;margin:22px auto;max-width:680px;color:#214995}
+.door-questions ol{font-size:14px;line-height:1.8;color:#526c90;padding-left:23px}
+@keyframes door-pop{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:640px){.door-choice-grid{gap:8px}.door{height:132px;border-width:5px;border-radius:10px}.door:before{right:8px;width:9px;height:9px}.door-pieces{grid-template-columns:1fr}.door-pieces>div{min-height:80px}.door-progress span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.door,.door-found,.door-final{transition:none;animation:none}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas</h1><div class="divider"></div>
@@ -80,7 +109,7 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 <section class="path-section" id="paths"><h2>¿Qué necesita tu grupo hoy?</h2><p>Elegí un camino para descubrir una dinámica distinta.</p>
 <div class="path-grid">
 <button class="path-card" data-open="0" type="button"><span class="path-number">CAMINO 01</span><strong>🎨 La paleta de dinámicas</strong><span>Elegí un color del cuadrado degradado y descubrí una dinámica sorpresa. Para cambiarla, tocá otro color.</span><b>Explorar este camino →</b></button>
-<button class="path-card" data-open="1" type="button"><span class="path-number">CAMINO 02</span><strong>💬 Dos cartas, una conexión</strong><span>Combiná una pregunta con una forma de compartirla. Dejá que las cartas disparen una conversación diferente.</span><b>Explorar este camino →</b></button>
+<button class="path-card" data-open="1" type="button"><span class="path-number">CAMINO 02</span><strong>🚪 Las tres puertas de la peulá</strong><span>Abrí puertas misteriosas y combiná tres pistas para inventar una dinámica propia con tu dupla.</span><b>Explorar este camino →</b></button>
 <button class="path-card" data-open="2" type="button"><span class="path-number">CAMINO 03</span><strong>🤝 Bingo de vínculos</strong><span>Un tablero de 16 mini misiones para conocerse, escucharse y descubrir conexiones dentro del grupo.</span><b>Explorar este camino →</b></button>
 </div></section>
 <section id="tool0" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
@@ -102,15 +131,19 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
   </div>
  </div>
 </div></section>
-<section id="tool1" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
-<div class="kicker">CAMINO 02 · CONVERSAR DE OTRA MANERA</div><h2>💬 Dos cartas, una conexión</h2>
-<p class="tool-lead">Elegí el tipo de conversación y sacá dos cartas: una define qué compartir y la otra cómo hacerlo. Se pueden cambiar por separado.</p>
-<div class="panel"><div class="pills" id="card-categories"></div>
-<div class="card-pair">
-<div class="flip-card"><small>CARTA 01 · LO QUE COMPARTIMOS</small><strong id="prompt-card">Una pregunta para conectar</strong><button type="button" class="ghost" id="next-prompt">↻ Cambiar pregunta</button></div>
-<div class="flip-card"><small>CARTA 02 · CÓMO LO COMPARTIMOS</small><strong id="method-card">Una forma de conversar</strong><button type="button" class="ghost" id="next-method">↻ Cambiar dinámica</button></div>
-</div><div class="card-pair-actions"><button type="button" class="action" id="deal-cards">🎴 Sacar dos cartas nuevas</button></div>
-<p class="tip">Nadie está obligado a contar experiencias personales. Pueden responder con ejemplos inventados, dibujos o simplemente pasar.</p></div></section>
+<section id="tool1" class="tool" hidden><button type="button" class="tool-back" data-back>← Elegir otro camino</button>
+<div class="kicker">CAMINO 02 · CREÁ TU DINÁMICA</div><h2>🚪 Las tres puertas de la peulá</h2>
+<p class="tool-lead">Elegí una puerta en cada habitación para descubrir tres condiciones. Con esas pistas, la dupla inventa una dinámica que cambie cómo transcurre la peulá, sin inventar juegos ni hilos.</p>
+<div class="door-panel">
+<div class="door-progress" id="door-progress"><span>1 · QUÉ</span><span>2 · CÓMO</span><span>3 · CUÁNDO</span></div>
+<div id="door-room"><div class="door-room-head"><small id="door-room-number">HABITACIÓN 1 DE 3</small><h3 id="door-room-title">¿Qué van a cambiar?</h3><p>Elegí una de las seis puertas. No sabés qué hay detrás.</p></div>
+<div class="door-choice-grid" id="door-choice-grid"></div></div>
+<div class="door-found" id="door-found-box" hidden><span>🔓 PISTA DESCUBIERTA</span><strong id="door-found"></strong><button id="door-next" type="button" class="door-action">Seguir a la próxima habitación →</button></div>
+<div id="door-final" class="door-final" hidden><span>✨ ¡TRES PISTAS REVELADAS!</span><h3>Inventen su propia dinámica</h3><div class="door-pieces" id="door-pieces"></div>
+<div class="door-questions"><strong>Ahora les toca a los madrijim:</strong><ol><li>¿Cómo combinarían estas condiciones en una peulá que ya tienen planeada?</li><li>¿Qué cambiaría en la forma habitual de hacerla?</li><li>¿Qué necesitan preparar para que todos puedan participar?</li></ol></div>
+<button class="door-action" id="door-restart" type="button">↻ Explorar otras puertas</button></div>
+<p class="tip">Las condiciones modifican el orden, los roles, los tiempos o la comunicación; no definen el juego, el tema ni el hilo.</p>
+</div></section>
 <section id="tool2" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
 <div class="kicker">CAMINO 03 · HACER Y DESCUBRIR</div><h2>🤝 Bingo de vínculos</h2>
 <p class="tool-lead">Un tablero de pequeñas misiones. Lean una casilla, cumplan la consigna y márquenla. Intenten completar una línea, columna o diagonal.</p>
@@ -187,84 +220,57 @@ for(let row=0;row<paletteRows;row++){
   colorBoard.appendChild(button);
  }
 }
-const questionSets={
- romper:[
- '¿Qué invento absurdo haría más divertido un día de majané?',
- 'Si nuestro grupo fuera una película, ¿qué título tendría?',
- '¿Qué lugar imaginario les gustaría visitar juntos?',
- '¿Qué objeto cotidiano podría ser un superpoder?',
- '¿Qué canción inventaríamos para presentar al grupo?',
- '¿Qué animal sería un buen compañero de una aventura inventada?',
- '¿Qué harías si todos tuviéramos una máquina del tiempo por diez minutos?',
- 'Si armáramos una isla, ¿qué tres cosas no podrían faltar?',
- '¿Cómo sería el recreo ideal de un planeta desconocido?',
- '¿Qué nombre tendría un equipo inventado entre todos?'
- ],
- escuchar:[
- '¿Cómo nos damos cuenta de que alguien está siendo escuchado?',
- '¿Qué diferencia hay entre oír y prestar atención?',
- '¿Cómo pediríamos ayuda en una historia imaginaria sin hablar?',
- '¿Qué hace que una explicación sea clara para todos?',
- '¿Cómo cambia una historia si la cuenta otro personaje?',
- '¿Qué podemos hacer cuando alguien piensa distinto?',
- '¿Cómo sabemos cuándo es nuestro turno para hablar?',
- '¿Qué podemos hacer si una persona no tuvo lugar para participar?',
- '¿Qué pregunta ayuda a entender mejor a alguien?',
- '¿Qué significa que todos puedan tener una voz?'
- ],
- confiar:[
- '¿Qué hace que un equipo se sienta seguro para probar algo nuevo?',
- '¿Cómo se construye la confianza en una historia de aventuras?',
- '¿Por qué a veces cuesta pedir ayuda?',
- '¿Cómo sabemos que podemos contar con un compañero?',
- '¿Qué haría un buen equipo si alguien se equivoca?',
- '¿Qué cambia cuando cada persona tiene una responsabilidad?',
- '¿Cómo explicarías la confianza con un dibujo?',
- '¿Qué sería una promesa posible de cumplir como grupo?',
- '¿Por qué es importante poder decir que no?',
- '¿Qué hace que una ayuda sea realmente útil?'
- ],
- equipo:[
- 'Si tuviéramos que construir algo juntos, ¿qué tarea elegiría cada uno?',
- '¿Qué podemos lograr entre todos que sea más difícil en soledad?',
- '¿Qué hacer cuando aparecen dos ideas diferentes?',
- '¿Cómo sería un grupo donde nadie quede mirando?',
- '¿Qué pistas necesita un equipo para tomar decisiones?',
- '¿Cómo podemos repartir tareas sin que se repitan siempre los roles?',
- '¿Qué es más importante: terminar rápido o incluir a todos?',
- '¿Cuándo conviene cambiar la estrategia del grupo?',
- '¿Qué significa colaborar aunque no estemos de acuerdo?',
- '¿Qué haría un equipo si le falta un recurso esencial?'
- ]
-};
-const methods=[
- 'Primero lo piensa cada uno; después lo conversa con alguien en pareja.',
- 'Respondan con un dibujo y dejen que otros propongan interpretaciones.',
- 'Inventen un personaje ficticio que responda por ustedes.',
- 'Armen grupos de tres y elaboren una sola respuesta que represente sus ideas.',
- 'Cada persona elige una palabra; junten las palabras en una frase grupal.',
- 'Respondan con un gesto o una estatua sin contacto físico.',
- 'Inventen una escena breve donde aparezcan dos respuestas distintas.',
- 'Escriban posibilidades anónimas y léanlas sin decir quién las propuso.',
- 'Piensen dos respuestas opuestas y busquen qué tienen de válido ambas.',
- 'Pasen la pregunta a otro grupo, que agregue una idea y la devuelva.',
- 'Elijan tres objetos imaginarios que representen la respuesta.',
- 'Dibujen un mapa que conecte todas las respuestas.'
-];
-let cardCategory='romper',prevQuestion='',prevMethod='';
-for(const [id,label] of [['romper','Romper el hielo'],['escuchar','Escucharnos'],['confiar','Confianza'],['equipo','Trabajo en equipo']]){
- const button=document.createElement('button');button.type='button';button.textContent=label;
- button.classList.toggle('active',id==='romper');button.setAttribute('aria-pressed',String(id==='romper'));
- button.addEventListener('click',()=>{cardCategory=id;document.querySelectorAll('#card-categories button').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});newQuestion()});
- $('card-categories').appendChild(button);
+const doorPools=[["La comunicación","El orden de la peulá","Los roles","Quién toma las decisiones","La duración","Cómo se divide el grupo","Cómo llegan las consignas","Los turnos","Quién se beneficia de los logros","El espacio","Las transiciones","Quién guía cada momento","La forma de expresarse","La secuencia de objetivos","La información disponible","Cómo se arman las parejas"],["Se invierte","Lo eligen los janijimot","Se decide con un dado","Se hace por turnos","Cambia entre equipos","No se puede hablar","Se entrega en partes","Se transforma de repente","Se organiza según gustos","Se elige por votación","Se hace en parejas","Se mantiene en secreto","Se comparte entre todos","Se hace al revés","Se sortea con tarjetas","Se dibuja en lugar de decirlo","Lo decide alguien diferente cada vez"],["Durante toda la peulá","En una sola etapa","Cada cinco minutos","Antes de cada transición","Cuando lo decida el grupo","Al principio","En un momento sorpresa","En la última parte","Después de cumplir un objetivo","Dos veces en la peulá","Al cambiar de lugar","Después de cada consigna","En la primera mitad","Cuando aparezca una señal"]];
+const doorNames=['¿Qué van a cambiar?','¿Cómo va a cambiar?','¿Cuándo sucede?'];
+const doorTags=['QUÉ CAMBIA','CÓMO CAMBIA','CUÁNDO'];
+let doorStep=0,doorAnswers=[],doorChosen=false;
+function makeDoors(){
+ doorChosen=false;
+ document.getElementById('door-room').hidden=false;
+ document.getElementById('door-found-box').hidden=true;
+ document.getElementById('door-final').hidden=true;
+ document.getElementById('door-room-number').textContent='HABITACIÓN '+(doorStep+1)+' DE 3';
+ document.getElementById('door-room-title').textContent=doorNames[doorStep];
+ document.querySelectorAll('#door-progress span').forEach((node,index)=>{
+  node.classList.toggle('door-current',index===doorStep);node.classList.toggle('door-complete',index<doorStep);
+ });
+ const candidates=doorPools[doorStep].slice();
+ for(let i=candidates.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[candidates[i],candidates[j]]=[candidates[j],candidates[i]];}
+ const grid=document.getElementById('door-choice-grid');grid.replaceChildren();
+ for(let i=0;i<6;i++){
+  const btn=document.createElement('button');btn.type='button';btn.className='door';
+  btn.setAttribute('aria-label','Abrir puerta '+(i+1));
+  const number=document.createElement('span');number.textContent=String(i+1).padStart(2,'0');btn.appendChild(number);
+  btn.addEventListener('click',()=>{
+   if(doorChosen)return;doorChosen=true;
+   btn.classList.add('door-open');
+   grid.querySelectorAll('button').forEach(el=>el.disabled=true);
+   doorAnswers.push(candidates[i]);
+   document.getElementById('door-found').textContent=candidates[i];
+   document.getElementById('door-next').textContent=doorStep===2?'✨ Ver las tres pistas':'Siguiente habitación →';
+   window.setTimeout(()=>{
+    document.getElementById('door-found-box').hidden=false;
+    document.getElementById('door-found-box').scrollIntoView({behavior:'smooth',block:'nearest'});
+   },360);
+  });
+  grid.appendChild(btn);
+ }
 }
-function drawAvoid(arr,previous){const available=arr.filter(x=>x!==previous);return pick(available.length?available:arr)}
-function newQuestion(){prevQuestion=drawAvoid(questionSets[cardCategory],prevQuestion);$('prompt-card').textContent=prevQuestion}
-function newMethod(){prevMethod=drawAvoid(methods,prevMethod);$('method-card').textContent=prevMethod}
-$('next-prompt').addEventListener('click',newQuestion);
-$('next-method').addEventListener('click',newMethod);
-$('deal-cards').addEventListener('click',()=>{newQuestion();newMethod()});
-newQuestion();newMethod();
+document.getElementById('door-next').addEventListener('click',()=>{
+ if(doorStep<2){doorStep++;makeDoors();return}
+ document.getElementById('door-room').hidden=true;document.getElementById('door-found-box').hidden=true;
+ document.getElementById('door-final').hidden=false;
+ document.querySelectorAll('#door-progress span').forEach(el=>{el.classList.remove('door-current');el.classList.add('door-complete')});
+ const pieces=document.getElementById('door-pieces');pieces.replaceChildren();
+ doorAnswers.forEach((answer,i)=>{
+  const box=document.createElement('div');const label=document.createElement('small');label.textContent=doorTags[i];
+  const value=document.createElement('strong');value.textContent=answer;
+  box.append(label,value);pieces.appendChild(box);
+ });
+ document.getElementById('door-final').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+document.getElementById('door-restart').addEventListener('click',()=>{doorStep=0;doorAnswers=[];makeDoors()});
+makeDoors();
 const bingoPool=[
  'Encontrar algo que dos personas tengan en común','Inventar un saludo grupal',
  'Escuchar una idea sin interrumpir','Hacer una pregunta abierta a alguien distinto',
