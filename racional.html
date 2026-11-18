@@ -84,6 +84,29 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 .bomb-next:hover{background:#e8f0ff}
 .bomb-small{font-size:13px!important;color:#667b99!important;margin:12px 0 0!important}
 @media(prefers-reduced-motion:reduce){.bomb-fuse::after{animation:none}}
+
+/* Camino 3: noticias actuales y reflexión educativa */
+.news-activity{margin-top:8px}
+.news-instructions{font-size:14px;color:#687a98;line-height:1.65}
+.paper-pick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 22px}
+.paper-btn{border:2px solid #d6e3f6;border-radius:15px;padding:17px 14px;background:#fff;color:#20478b;font:800 15px Montserrat,Arial,sans-serif;cursor:pointer;transition:.2s;text-align:center}
+.paper-btn:hover,.paper-btn:focus-visible{border-color:#6381d3;background:#eef4ff}
+.paper-btn.is-selected{border-color:#214995;background:#214995;color:#fff}
+.news-status{margin:20px 0;font-size:14px;font-weight:700;color:#667a9d;line-height:1.5}
+.news-article{border:2px solid #d6e4f7;border-radius:22px;padding:24px;background:white;text-align:left;margin:20px 0}
+.news-article[hidden],.news-reflection[hidden]{display:none}
+.news-source{font-size:12px;color:#4d7cae;text-transform:uppercase;letter-spacing:.07em;font-weight:800}
+.news-article h3{font-size:clamp(20px,3vw,28px);line-height:1.35;margin:12px 0;color:#173d7c}
+.news-summary{color:#425b7f;font-size:15px;line-height:1.75}
+.news-date{font-size:12px;color:#687a99;margin:12px 0}
+.news-link{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:800;color:#245eab;margin:12px 0 16px}
+.news-another{border-radius:100px;border:2px solid #214995;background:#fff;color:#214995;padding:13px 20px;font:800 13px Montserrat,Arial,sans-serif;cursor:pointer}
+.news-reflection{padding:25px;background:#eef4ff;border-radius:20px;margin-top:24px;border:1.5px solid #d6e5fa}
+.news-reflection h3{margin:0 0 12px;font-size:22px;color:#214995}
+.news-reflection p{color:#385a85;font-size:15px;line-height:1.75}
+.news-reflection .field{margin-top:22px}
+.news-warning{font-size:12px;color:#677c9c;margin-top:12px}
+@media(max-width:540px){.paper-pick{grid-template-columns:1fr}}
 </style></head>
 <body><div class="shell">
 <header class="topbar"><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Todos los grupos</a></header>
@@ -96,7 +119,7 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 <div class="paths">
 <button class="path" data-path="error" type="button"><span class="num">CAMINO 01</span><strong>De un error, una oportunidad</strong><span class="description">Una peulá que no salió como esperábamos puede enseñarnos algo importante sobre los janijim.</span><span class="cta">Explorar este camino →</span></button>
 <button class="path" data-path="detectives" type="button"><span class="num">CAMINO 02</span><strong>Dar vuelta el racional</strong><span class="description">En vez de pensar qué problemática trabajar, imaginá qué podría pasar con el grupo si la dejamos crecer.</span><span class="cta">Explorar este camino →</span></button>
-<button class="path" data-path="moneda" type="button"><span class="num">CAMINO 03</span><strong>Las dos caras de la moneda</strong><span class="description">A veces una contradicción entre lo que dicen y hacen abre una gran pregunta educativa.</span><span class="cta">Explorar este camino →</span></button>
+<button class="path" data-path="moneda" type="button"><span class="num">CAMINO 03</span><strong>Del diario al racional</strong><span class="description">Elegí un diario, descubrí una noticia de hoy y encontrá qué necesidad de tu grupo puede ayudarte a pensar.</span><span class="cta">Explorar este camino →</span></button>
 </div></section>
 <section id="activity" class="hidden" aria-labelledby="activity-title">
 <button id="choose-again" class="back-step" type="button">← Elegir otro camino</button>
@@ -141,16 +164,11 @@ detectives:{
  fields:[]
 },
 moneda:{
- name:'Las dos caras de la moneda',
- subtitle:'No toda contradicción es un problema. Mirá lo que el grupo dice y comparalo con lo que hace.',
- challenge:'Desafío: convertí esa tensión en una pregunta educativa que merezca explorarse en una peulá.',
- example:true,
- fields:[
- {name:'LO QUE DICEN',placeholder:'¿Qué dice el grupo sobre sí mismo?'},
- {name:'LO QUE HACEN',placeholder:'¿Qué comportamiento real muestra algo distinto?'},
- {name:'¿Qué puede haber detrás?',placeholder:'¿Por qué podrían coexistir ambas cosas?'},
- {name:'La pregunta educativa',placeholder:'¿Qué pregunta valdría la pena explorar con ellos?'}
-]}};
+ name:'Del diario al racional',
+ subtitle:'A veces una noticia que parece lejana nos ayuda a mirar de otra manera lo que pasa cerca. Elegí un diario, leé una noticia publicada hoy y preguntate: ¿qué necesidad, tensión o pregunta de esta historia también está presente en nuestro grupo? No se trata de forzar la noticia para que encaje, sino de usarla como disparador para descubrir un racional propio.',
+ challenge:'Desafío: conecten lo que leyeron con una situación real de su grupo y piensen qué les gustaría transformar con una peulá.',
+ fields:[]
+}};
 let selected=null;const $=id=>document.getElementById(id);
 
 let stopBombTimer=null;
@@ -178,7 +196,7 @@ const bombPrompts=[
 ];
 function bombGame(){
  const wrap=document.createElement('div');wrap.className='bomb-game';wrap.setAttribute('aria-label','Juego: frená la bomba para descubrir preguntas de reflexión');
- const title=document.createElement('h3');title.textContent='💣 Frená la bomba';
+ const title=document.createElement('h3');title.textContent='💣 No dejes que explote';
  const intro=document.createElement('p');intro.className='bomb-intro';intro.textContent='El tiempo corre. Frená el contador y descubrí preguntas para pensar qué puede pasar si hoy no trabajamos una problemática de nuestro grupo.';
  const art=document.createElement('div');art.className='bomb-illustration';
  const fuse=document.createElement('div');fuse.className='bomb-fuse';
@@ -233,6 +251,84 @@ function addField(parent,field,i){
  input.id='answer-'+i;label.appendChild(input);
  if(field.hint){const hint=document.createElement('small');hint.textContent=field.hint;label.appendChild(hint)}parent.appendChild(label);
 }
+
+const newsPapers=[
+ {key:'lanacion',name:'La Nación',url:'https://www.lanacion.com.ar/'},
+ {key:'pagina12',name:'Página/12',url:'https://www.pagina12.com.ar/'},
+ {key:'clarin',name:'Clarín',url:'https://www.clarin.com/'},
+ {key:'eldestape',name:'El Destape',url:'https://www.eldestapeweb.com/'}
+];
+let newsLoaded=null;
+async function getNews(){
+ const response=await fetch('noticias-hoy.json?cache='+Date.now(),{cache:'no-store'});
+ if(!response.ok)throw new Error('Todavía no hay actualización automática de noticias');
+ const data=await response.json();
+ if(!data||!data.fuentes||!data.fecha)throw new Error('Archivo de noticias incompleto');
+ const localDate=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Argentina/Buenos_Aires',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ if(data.fecha!==localDate)throw new Error('Todavía no se actualizaron las noticias de hoy ('+localDate+').');
+ return data;
+}
+function newsJourney(){
+ const wrap=document.createElement('div');wrap.className='news-activity';
+ const instructions=document.createElement('p');instructions.className='news-instructions';instructions.textContent='Elegí uno de los diarios. Te vamos a mostrar una noticia de la fecha de hoy con su título y, si el medio lo publicó en su canal, un breve resumen. Después pensá cómo se relaciona con las necesidades de tu grupo.';
+ const buttons=document.createElement('div');buttons.className='paper-pick';
+ const status=document.createElement('p');status.className='news-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent='Elegí un diario para ver una noticia de hoy.';
+ const article=document.createElement('article');article.className='news-article';article.hidden=true;
+ const source=document.createElement('div');source.className='news-source';
+ const headline=document.createElement('h3');
+ const summary=document.createElement('p');summary.className='news-summary';
+ const date=document.createElement('div');date.className='news-date';
+ const link=document.createElement('a');link.className='news-link';link.target='_blank';link.rel='noopener noreferrer';link.textContent='Leer noticia completa ↗';
+ const another=document.createElement('button');another.type='button';another.className='news-another';another.textContent='📰 Otra noticia del mismo diario';
+ article.append(source,headline,summary,date,link,another);
+ const reflection=document.createElement('div');reflection.className='news-reflection';reflection.hidden=true;
+ const title=document.createElement('h3');title.textContent='Del titular a una necesidad del grupo';
+ const thinking=document.createElement('p');thinking.textContent='¿Qué tensión aparece en esta noticia? ¿Conocen una situación concreta de su grupo que dialogue con esa tensión? ¿Qué podría pasar si no la trabajan? No hace falta hablar de la actualidad en la peulá: lo importante es encontrar una necesidad educativa.';
+ const field=document.createElement('label');field.className='field';field.textContent='¿Qué necesidad del grupo les hizo pensar esta noticia?';
+ const input=document.createElement('textarea');input.placeholder='Escriban una idea propia para llevar a su hoja de planificación (opcional)...';field.appendChild(input);
+ const disclaimer=document.createElement('p');disclaimer.className='news-warning';disclaimer.textContent='Los artículos y sus fechas pertenecen a cada medio. Una noticia no demuestra por sí sola una necesidad del grupo: contrasten la idea con lo que conocen de sus janijim.';
+ reflection.append(title,thinking,field,disclaimer);
+ let currentPaper='',lastIndex=-1;
+ const buttonsMap=new Map();
+ for(const paper of newsPapers){
+  const button=document.createElement('button');button.type='button';button.className='paper-btn';button.textContent=paper.name;buttonsMap.set(paper.key,button);
+  button.addEventListener('click',()=>selectPaper(paper));
+  buttons.appendChild(button);
+ }
+ const randomIndex=(length)=>{if(!length)return 0;const bytes=new Uint32Array(1);if(window.crypto&&crypto.getRandomValues)crypto.getRandomValues(bytes);else bytes[0]=Math.floor(Math.random()*4294967296);return bytes[0]%length;};
+ function anotherArticle(paper){
+  const items=newsLoaded?.fuentes?.[paper.key]||[];
+  if(!items.length){article.hidden=true;reflection.hidden=true;status.textContent='Hoy no hay noticias verificadas de '+paper.name+' disponibles en esta fuente. Podés probar con otro diario o visitar su portada.';return}
+  let index=randomIndex(items.length);
+  if(items.length>1&&index===lastIndex)index=(index+1)%items.length;
+  lastIndex=index;
+  const item=items[index];
+  source.textContent=paper.name+' · Noticia de hoy';
+  headline.textContent=item.titulo;
+  summary.textContent=item.resumen||'Este canal no ofrece un resumen verificable. Abrí la noticia para leer más.';
+  date.textContent='Publicada: '+new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'medium',timeStyle:'short'}).format(new Date(item.fecha));
+  link.href=item.url;article.hidden=false;reflection.hidden=false;status.textContent='Noticia seleccionada de '+paper.name+'.';
+  input.value='';
+ }
+ async function selectPaper(paper){
+  currentPaper=paper.key;lastIndex=-1;
+  for(const [key,button] of buttonsMap)button.classList.toggle('is-selected',key===currentPaper);
+  article.hidden=true;reflection.hidden=true;status.textContent='Buscando noticias de hoy de '+paper.name+'...';
+  try{
+   if(!newsLoaded)newsLoaded=await getNews();
+   if(currentPaper!==paper.key)return;
+   anotherArticle(paper);
+  }catch(error){
+   status.replaceChildren();
+   const message=document.createElement('span');message.textContent=error.message+' ';
+   const external=document.createElement('a');external.href=paper.url;external.target='_blank';external.rel='noopener noreferrer';external.textContent='Ir a '+paper.name+' ↗';
+   status.append(message,external);
+  }
+ }
+ another.addEventListener('click',()=>{const paper=newsPapers.find(p=>p.key===currentPaper);if(paper)anotherArticle(paper)});
+ wrap.append(instructions,buttons,status,article,reflection);
+ return wrap;
+}
 function begin(id){
  if(stopBombTimer!==null){clearInterval(stopBombTimer);stopBombTimer=null}
  selected=id;const journey=journeys[id];
@@ -263,6 +359,8 @@ function begin(id){
    content.append(drawBox,reminder,prompts,rethink);
  }else if(id==='detectives'){
    content.appendChild(bombGame());
+ }else if(id==='moneda'){
+   content.appendChild(newsJourney());
  }else{
    const fields=document.createElement('div');fields.className='fields';
    if(journey.fields.length){journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);}
