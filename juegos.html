@@ -72,7 +72,35 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 @media(max-width:700px){.memory-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}.memory-card{border-radius:10px}}
 @media(max-width:370px){.memory-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.memory-card{transition:none}}
-</style><style>.memory-step{padding:20px 22px;margin:0 0 15px;background:white;border:2px solid #dce6fa;border-radius:18px}.memory-step-num{display:inline-block;font-weight:900;font-size:11px;color:#5b76ac;letter-spacing:.12em;margin-bottom:9px}.memory-step>strong{display:block;color:#214995;font-weight:900;font-size:19px}.memory-step p{margin:9px 0 0;font-size:13px}.memory-step-two{margin-bottom:24px;background:#edf4ff}</style></head>
+</style><style>.memory-step{padding:20px 22px;margin:0 0 15px;background:white;border:2px solid #dce6fa;border-radius:18px}.memory-step-num{display:inline-block;font-weight:900;font-size:11px;color:#5b76ac;letter-spacing:.12em;margin-bottom:9px}.memory-step>strong{display:block;color:#214995;font-weight:900;font-size:19px}.memory-step p{margin:9px 0 0;font-size:13px}.memory-step-two{margin-bottom:24px;background:#edf4ff}</style><style>
+/* Camino S: los madrijim crean los requisitos y observan las cartas mezclarse. */
+#remove-form[hidden],#remove-stage[hidden],#result2[hidden]{display:none}
+.remove-form .field input{display:block;width:100%;border:2px solid #d5e1f5;border-radius:13px;background:#fff;color:#214995;padding:13px;font:600 14px Montserrat,Arial,sans-serif;line-height:1.5}
+.remove-form .field input:focus{outline:3px solid #acd0fa;outline-offset:1px}
+.remove-req-heading{margin:24px 0 15px}.remove-req-heading strong{font-weight:900;font-size:17px}.remove-req-heading p{font-size:13px;margin:8px 0}
+.remove-reqs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.remove-reqs .field:last-child{grid-column:span 2;max-width:calc(50% - 7.5px)}
+.remove-stage-top{display:flex;gap:9px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:17px;font-size:11px;font-weight:900;letter-spacing:.05em;color:#526d9f}
+.remove-deck{height:clamp(140px,23vw,235px);position:relative;margin:10px 0 20px;isolation:isolate}
+.remove-card{position:absolute;top:0;left:calc(var(--position)*20.5%);width:18%;height:100%;border:0;background:none;padding:0;perspective:900px;cursor:pointer;transition:left .48s cubic-bezier(.23,.72,.26,1),transform .2s}
+.remove-card:disabled{cursor:default}.remove-card:not(:disabled):hover{transform:translateY(-7px)}
+.remove-card-flipper{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(180deg);transition:transform .65s ease}
+.remove-card.face-up .remove-card-flipper{transform:rotateY(0deg)}
+.remove-card-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:16px;padding:7px;overflow-wrap:anywhere;hyphens:auto;font:800 clamp(10px,1.3vw,13px)/1.4 Montserrat,Arial,sans-serif;box-shadow:0 6px 14px #163a7630}
+.remove-card-front{background:#fff;border:2px solid #adc7ed;color:#214995}
+.remove-card-back{transform:rotateY(180deg);background:linear-gradient(145deg,#3777cb,#16448f);border:2px solid #86abe8;color:#fff;font-size:clamp(32px,5vw,55px)}
+.remove-card.chosen{z-index:2}.remove-card.chosen .remove-card-front{border:3px solid #7e6fc4;background:#f8f4ff}
+.remove-card:focus-visible{outline:3px solid #8cb8f2;outline-offset:4px;border-radius:16px}
+.remove-help{font-size:14px;color:#4f6591;text-align:center;font-weight:700;margin:16px 0}
+.remove-stage-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.remove-reset{background:#fff;color:#214995;border:2px solid #d5e3fa;border-radius:99px;font:800 12px Montserrat,Arial,sans-serif;cursor:pointer;padding:13px 16px}
+.remove-reset:disabled{opacity:.4;cursor:not-allowed}
+.remove-result{text-align:center}.remove-result h3{font-size:clamp(23px,4.3vw,42px);overflow-wrap:anywhere}.remove-result p{max-width:670px;margin:13px auto}
+.remove-mission{background:#f3f7ff;border:2px solid #e0e9f7;border-radius:16px;padding:17px;margin-top:20px;text-align:left}
+.remove-mission strong{color:#214995}.remove-mission p{margin:7px 0 0}
+@media(max-width:650px){.remove-reqs{grid-template-columns:1fr}.remove-reqs .field:last-child{grid-column:auto;max-width:none}.remove-card-face{padding:4px;font-size:clamp(8px,2vw,11px);border-radius:10px}.remove-card-back{font-size:31px}.remove-deck{height:clamp(130px,32vw,180px)}}
+@media(prefers-reduced-motion:reduce){.remove-card,.remove-card-flipper{transition-duration:.08s}}
+</style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en tu hoja de planificación</div><h1>Juegos</h1><div class="divider"></div>
 <p>Una misma consigna puede transformarse en mil juegos. Explorá tres caminos para crear propuestas nuevas que tengan sentido para tu grupo.</p>
@@ -111,9 +139,35 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 <div class="memory-grid" id="letter-memory" role="group" aria-label="Memotest de letras boca abajo"></div>
 <div class="result memory-result" id="result1" hidden aria-live="polite"><div class="result-label" id="memory-label"></div><div class="memory-object" id="memory-object"></div><p>¿Cómo pueden sumar este objeto al juego? Como material, pista, desafío o parte de la historia.</p><button type="button" class="memory-change" id="memory-change">↻ Cambiar objeto sin cambiar de letra</button></div>
 <p class="tip">No hace falta conseguirlo: pueden dibujarlo o usarlo como inspiración. Tocá otra carta para descubrir otra letra.</p></div></section>
-<section id="tool2" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 03 · SACAR</span><h2>S · Sacar</h2><p>Sacá una facilidad del juego: las cartas te proponen una misión y una restricción que obliga a buscar otra forma de resolverla.</p></div>
-<div class="game-panel"><div class="triple"><div class="reel"><small>🎯 MISIÓN</small><strong id="mission">¿Qué hay que lograr?</strong></div><div class="reel"><small>🔒 QUÉ SACAMOS</small><strong id="constraint">¿Qué facilidad vamos a sacar?</strong></div><div class="reel"><small>🧰 ELEMENTO</small><strong id="prop">¿Qué objeto aparece?</strong></div></div>
-<button type="button" class="action" id="generate-challenge">⚡ Sortear tres cartas</button><div class="result" id="result2" hidden aria-live="polite"></div><p class="tip">No hace falta usar todo literalmente. Si una carta no funciona para la edad o las posibilidades del grupo, volvé a sortear.</p></div></section>
+<section id="tool2" class="tool" hidden>
+<button class="tool-back" data-back type="button">← Elegir otro camino</button>
+<div class="tool-heading"><span class="kicker">CAMINO 03 · SACAR</span><h2>S · Sacar</h2>
+<p>Escriban un juego y cinco requisitos que necesita para funcionar. Después las cartas se dan vuelta, se mezclan frente a ustedes y eligen una: ¡ese requisito desaparece del juego!</p></div>
+<div class="game-panel">
+<form id="remove-form" class="remove-form">
+<div class="field"><label for="remove-game">PASO 1 · ¿Qué juego van a transformar?</label>
+<input id="remove-game" type="text" maxlength="110" placeholder="Ej.: Escondidas, Mancha, Carrera de postas…" required autocomplete="off"></div>
+<div class="remove-req-heading"><strong>PASO 2 · Escriban sus 5 requisitos</strong><p>Piensen en cinco cosas que hacen que el juego sea como es: materiales, reglas, espacios, personas o acciones. Cada una irá en una carta.</p></div>
+<div class="remove-reqs">
+<div class="field"><label for="remove-r1">Requisito 1</label><input id="remove-r1" type="text" maxlength="115" required placeholder="Ej.: Un perseguidor"></div>
+<div class="field"><label for="remove-r2">Requisito 2</label><input id="remove-r2" type="text" maxlength="115" required placeholder="Ej.: Correr"></div>
+<div class="field"><label for="remove-r3">Requisito 3</label><input id="remove-r3" type="text" maxlength="115" required placeholder="Ej.: Un lugar delimitado"></div>
+<div class="field"><label for="remove-r4">Requisito 4</label><input id="remove-r4" type="text" maxlength="115" required placeholder="Ej.: Tocar a alguien"></div>
+<div class="field"><label for="remove-r5">Requisito 5</label><input id="remove-r5" type="text" maxlength="115" required placeholder="Ej.: Una base segura"></div>
+</div>
+<button type="submit" class="action" id="remove-shuffle-btn">🃏 Dar vuelta y mezclar las 5 cartas</button>
+</form>
+<div id="remove-stage" class="remove-stage" hidden>
+<div class="remove-stage-top"><span>PASO 3 · MIRÁ CÓMO SE MEZCLAN</span><span id="remove-progress" aria-live="polite">Preparando las cartas…</span></div>
+<div class="remove-deck" id="remove-deck" role="group" aria-label="Cinco cartas que se mezclan boca abajo"></div>
+<p id="remove-help" class="remove-help">Primero vas a ver tus cinco requisitos. Después las cartas se dan vuelta y se mezclan.</p>
+<div class="remove-stage-actions"><button class="remove-reset" id="remove-restart" type="button">↻ Mezclar de nuevo</button><button class="remove-reset" id="remove-edit" type="button">✎ Editar juego o requisitos</button></div>
+</div>
+<div class="result remove-result" id="result2" hidden aria-live="polite">
+<div class="result-label">¡ESTE REQUISITO SE VA!</div><h3 id="remove-picked"></h3>
+<p id="remove-result-text"></p><div class="remove-mission"><strong>🎯 Desafío</strong><p>Inventen cómo seguir jugando <em>sin ese requisito</em>. ¿Qué cambia en las reglas? ¿Cómo se puede lograr el objetivo de otra manera?</p></div>
+</div>
+</div></section>
 </main></div>
 <script>
 const groups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
@@ -338,19 +392,100 @@ function drawObject(){
 document.getElementById('memory-change').addEventListener('click',drawObject);
 document.getElementById('memory-reset').addEventListener('click',resetMemory);
 resetMemory();
-const challengeData={
-missions:['Transportar un mensaje entre tres bases','Construir una torre entre todos','Descubrir un código secreto','Ordenar pistas para abrir una misión','Rescatar un objeto simbólico','Diseñar un mapa colectivo','Representar una historia sin hablar','Encontrar cuatro conexiones inesperadas','Resolver un misterio con pistas parciales','Inventar una máquina imaginaria','Cruzar un laberinto marcado en el piso','Repartir recursos para lograr una meta','Crear una secuencia de sonidos','Reconstruir un mensaje dividido','Guiar a un compañero por indicaciones verbales','Encontrar una solución que incluya a todos'],
-rules:['Sin hablar durante la primera ronda','Sin usar las manos para mover los objetos (siempre de forma segura)','Sin que una sola persona decida por todos','Sin repetir el mismo rol dos veces seguidas','Sin consultar las pistas más de una vez','Sin poder competir contra otro equipo','Sin correr, solo con estrategia','Sin ver todas las pistas al mismo tiempo','Sin usar las palabras más obvias','Sin turnarse de la manera habitual','Sin materiales extra: solo los asignados','Sin eliminar a ninguna persona','Sin depender de la velocidad para ganar','Sin poder resolver la prueba en solitario','Sin conocer el final de la misión de antemano'],
-props:['Una cuerda colocada en el piso','Diez tarjetas de colores','Vasos plásticos','Un dado','Sobres con pistas','Un mapa incompleto','Papeles y marcadores','Piezas de cartón','Un pañuelo','Una pelota blanda','Cintas de colores','Imágenes recortadas','Un reloj de arena','Una caja vacía','Fichas numeradas','Un rompecabezas incompleto']
-};
-$('generate-challenge').addEventListener('click',()=>{
- let result;do{result=[rand(challengeData.missions),rand(challengeData.rules),rand(challengeData.props)]}while(JSON.stringify(result)===lastChallenge);lastChallenge=JSON.stringify(result);
- ['mission','constraint','prop'].forEach((id,i)=>$(id).textContent=result[i]);
- const b=$('result2');b.hidden=false;b.replaceChildren();
- const h=document.createElement('div');h.className='result-label';h.textContent='TU MISIÓN CREATIVA';
- const title=document.createElement('h3');title.textContent='¡Inventen un juego a partir de estas cartas!';
- const p=document.createElement('p');p.textContent='Imaginen una consigna inicial, qué hacen los participantes, cómo cambia la dinámica con la regla sorpresa y cuándo termina el juego. No hace falta que la primera idea sea perfecta.';
- const a=document.createElement('p');a.className='idea-note';a.textContent='Pista para '+(group||'el grupo')+': '+ages[age];
- b.append(h,title,p,a);$('generate-challenge').textContent='↻ Sortear otras tres cartas';
+// Camino S · Sacar: cinco requisitos propios, cartas que giran y barajado visible.
+const removeForm=document.getElementById('remove-form');
+const removeStage=document.getElementById('remove-stage');
+const removeDeck=document.getElementById('remove-deck');
+const removeHelp=document.getElementById('remove-help');
+const removeProgress=document.getElementById('remove-progress');
+let removeCards=[],removeTimers=[],removeBusy=false,removeReady=false,removeGameName='';
+function removeSchedule(fn,delay){const timer=setTimeout(fn,delay);removeTimers.push(timer)}
+function removeClearTimers(){for(const t of removeTimers)clearTimeout(t);removeTimers=[]}
+function removePosition(card,position){card.position=position;card.button.style.setProperty('--position',String(position))}
+function removeSetCardFace(card,faceUp){card.button.classList.toggle('face-up',faceUp);card.button.setAttribute('aria-label',faceUp?'Requisito: '+card.value:'Carta boca abajo');}
+function removeBuild(game,requirements){
+ removeDeck.replaceChildren();
+ removeCards=requirements.map((value,index)=>{
+  const button=document.createElement('button');button.type='button';button.className='remove-card face-up';button.style.setProperty('--position',String(index));
+  button.disabled=true;button.setAttribute('aria-label','Requisito: '+value);
+  const flipper=document.createElement('span');flipper.className='remove-card-flipper';
+  const front=document.createElement('span');front.className='remove-card-face remove-card-front';front.textContent=value;
+  const back=document.createElement('span');back.className='remove-card-face remove-card-back';back.textContent='?';
+  flipper.append(front,back);button.appendChild(flipper);
+  const card={button,value,position:index};
+  button.addEventListener('click',()=>removeSelectCard(card));
+  removeDeck.appendChild(button);return card;
+ });
+ removeGameName=game;
+ removeForm.hidden=true;removeStage.hidden=false;document.getElementById('result2').hidden=true;
+ removeStage.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function removeShuffle(){
+ removeClearTimers();removeBusy=true;removeReady=false;
+ document.getElementById('result2').hidden=true;removeStage.hidden=false;
+ document.getElementById('remove-restart').disabled=true;
+ removeProgress.textContent='Mirá los requisitos…';
+ removeHelp.textContent='Estos son los cinco requisitos que escribieron. ¡Miren cómo se dan vuelta y se mezclan!';
+ removeCards.forEach((c,i)=>{c.button.disabled=true;c.button.classList.remove('chosen');c.button.style.transition='none';removePosition(c,i);removeSetCardFace(c,true)});
+ // Rehabilitar las transiciones antes de empezar los movimientos.
+ removeSchedule(()=>{
+  removeCards.forEach(c=>{c.button.style.transition='';removeSetCardFace(c,false)});
+  removeProgress.textContent='Dando vuelta las cartas…';
+ },1250);
+ let positions=removeCards.map((_,i)=>i);
+ for(let turn=0;turn<6;turn++){
+  removeSchedule(()=>{
+   if(!removeBusy)return;
+   // Se elige una permutación sin puntos fijos para que TODAS las cartas se muevan.
+   const previous=positions.slice();let proposed=[],attempts=0;
+   do{
+    proposed=previous.slice();
+    for(let i=proposed.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[proposed[i],proposed[j]]=[proposed[j],proposed[i]];}
+    attempts++;
+   }while(proposed.some((v,i)=>v===previous[i])&&attempts<60);
+   positions=proposed;
+   removeCards.forEach((card,i)=>removePosition(card,positions[i]));
+   removeProgress.textContent='Mezclando… '+(turn+1)+'/6';
+  },2050+turn*560);
+ }
+ removeSchedule(()=>{
+  removeBusy=false;removeReady=true;
+  removeCards.forEach(card=>{card.button.disabled=false;card.button.setAttribute('aria-label','Elegir carta boca abajo')});
+  // Orden de teclado consistente con la posición visual final.
+  [...removeCards].sort((x,y)=>x.position-y.position).forEach(card=>removeDeck.appendChild(card.button));
+  document.getElementById('remove-restart').disabled=false;
+  removeProgress.textContent='¡Listo! Elegí una carta';
+  removeHelp.textContent='PASO 4 · Elegí UNA carta boca abajo. Cuando la des vuelta descubrirás el requisito que tienen que sacar del juego.';
+ },2050+6*560+400);
+}
+function removeSelectCard(card){
+ if(!removeReady||removeBusy)return;
+ removeReady=false;removeCards.forEach(c=>c.button.disabled=true);
+ removeSetCardFace(card,true);card.button.classList.add('chosen');
+ const result=document.getElementById('result2');
+ document.getElementById('remove-picked').textContent=card.value;
+ document.getElementById('remove-result-text').textContent='Para seguir jugando '+removeGameName+', a partir de ahora tienen que sacar: '+card.value+'.';
+ removeHelp.textContent='¡Ya eligieron! Saquen ese requisito de '+removeGameName+'. Si quieren probar otra posibilidad, pueden mezclar de nuevo.';
+ removeProgress.textContent='Requisito eliminado';
+ result.hidden=false;
+ removeSchedule(()=>result.scrollIntoView({behavior:'smooth',block:'nearest'}),500);
+}
+removeForm.addEventListener('submit',event=>{
+ event.preventDefault();
+ const game=document.getElementById('remove-game').value.trim();
+ const values=Array.from({length:5},(_,i)=>document.getElementById('remove-r'+(i+1)).value.trim());
+ if(!game||values.some(v=>!v)){removeForm.reportValidity();return}
+ if(new Set(values.map(v=>v.toLocaleLowerCase('es'))).size!==5){
+  alert('Escriban cinco requisitos diferentes para que cada carta tenga uno distinto.');return;
+ }
+ removeClearTimers();removeBuild(game,values);removeShuffle();
+});
+document.getElementById('remove-restart').addEventListener('click',()=>{
+ if(removeBusy)return;
+ removeShuffle();
+});
+document.getElementById('remove-edit').addEventListener('click',()=>{
+ removeClearTimers();removeBusy=false;removeReady=false;removeStage.hidden=true;document.getElementById('result2').hidden=true;removeForm.hidden=false;
+ document.getElementById('remove-game').focus();
 });
 </script></body></html>
