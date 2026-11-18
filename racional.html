@@ -57,6 +57,32 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 .mini{font-size:12px;color:#7b89a0}.hidden{display:none!important}
 @media(max-width:800px){.paths{grid-template-columns:1fr}.path{min-height:0}.path .description{flex:initial}}
 @media(max-width:570px){.topbar{flex-direction:column;align-items:flex-start}.example{grid-template-columns:1fr}.actions button{width:100%}}
+
+/* Bomba del camino 2: simulación educativa con temporizador y preguntas de reflexión. */
+.bomb-game{margin:24px auto 6px;max-width:750px;text-align:center;background:linear-gradient(155deg,#eaf1ff,#fff5f4);border:2px solid #d8e1f4;border-radius:26px;padding:clamp(22px,5vw,38px)}
+.bomb-game h3{margin:0 0 10px;font-size:clamp(22px,3vw,31px);color:#214995;font-weight:900}
+.bomb-game .bomb-intro{max-width:550px;margin:0 auto 18px;color:#51688d;font-size:14px}
+.bomb-illustration{position:relative;margin:22px auto 8px;width:164px;height:142px;display:flex;align-items:flex-end;justify-content:center}
+.bomb-body{width:126px;height:126px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#5d6886 0%,#2b344d 44%,#101729 85%);border:5px solid #e8edff;box-shadow:inset -12px -10px 18px #050b1f77,0 16px 24px #23314f35;display:flex;align-items:center;justify-content:center;position:relative}
+.bomb-body::before{content:'';position:absolute;top:-18px;left:47px;width:25px;height:19px;background:#788098;border-radius:5px 5px 2px 2px;transform:rotate(-10deg)}
+.bomb-fuse{position:absolute;top:0;left:92px;width:38px;height:30px;border-top:6px solid #c4783c;border-right:6px solid #c4783c;border-radius:0 30px 0 0;transform:rotate(-12deg)}
+.bomb-fuse::after{content:'✦';font-size:30px;position:absolute;right:-19px;top:-25px;color:#eea22e;animation:spark 600ms ease-in-out infinite alternate}
+.bomb-game.is-stopped .bomb-fuse::after{animation:none;opacity:0}
+@keyframes spark{from{transform:scale(.7);opacity:.4}to{transform:scale(1.2);opacity:1}}
+.bomb-timer{font-size:36px;letter-spacing:.03em;font-variant-numeric:tabular-nums;color:#fff;font-weight:900;text-shadow:0 3px 8px #0005}
+.bomb-stop{cursor:pointer;border:0;background:#d62f37;color:white;font:900 17px Montserrat,Arial,sans-serif;padding:18px 30px;border-radius:100px;box-shadow:0 8px 0 #922127,0 12px 20px #b6293540;margin:17px 0}
+.bomb-stop:hover,.bomb-stop:focus-visible{background:#b9252f}
+.bomb-stop:disabled{cursor:default;opacity:.6}
+.bomb-message{font-weight:800;color:#b42536;margin:11px 0}
+.bomb-questions{margin-top:25px;padding:24px;background:#fff;border:2px solid #d6e4fb;border-radius:22px;text-align:left}
+.bomb-questions[hidden]{display:none}
+.bomb-questions h4{font-size:clamp(20px,3vw,27px);color:#214995;margin:0 0 8px}
+.bomb-question-list{display:grid;gap:12px;margin:19px 0 22px}
+.bomb-question{margin:0!important;background:#f2f6ff;color:#254674!important;border-radius:14px;padding:17px 19px;font-weight:700;font-size:15px;line-height:1.65}
+.bomb-next{border:2px solid #214995;background:#fff;color:#214995;border-radius:100px;padding:12px 20px;cursor:pointer;font:800 13px Montserrat,Arial,sans-serif}
+.bomb-next:hover{background:#e8f0ff}
+.bomb-small{font-size:13px!important;color:#667b99!important;margin:12px 0 0!important}
+@media(prefers-reduced-motion:reduce){.bomb-fuse::after{animation:none}}
 </style></head>
 <body><div class="shell">
 <header class="topbar"><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Todos los grupos</a></header>
@@ -99,7 +125,7 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 const validGroups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
 const params=new URLSearchParams(location.search);
 const group=validGroups.find(name=>name.toLowerCase()===(params.get('grupo')||'').toLowerCase())||null;
-if(group){document.querySelector('#group-pill').hidden=false;document.querySelector('#group-pill').textContent='Kvutzá '+group;document.querySelector('#back').textContent='← Volver a '+group;document.querySelector('#back').href='grupo.html?grupo='+encodeURIComponent(group.toLowerCase())+'#innova';document.title='Racional · '+group+' · Majané Kaitz 2026'}
+if(group){document.querySelector('#group-pill').hidden=false;document.querySelector('#group-pill').textContent='Grupo '+group;document.querySelector('#back').textContent='← Volver a '+group;document.querySelector('#back').href='grupo.html?grupo='+encodeURIComponent(group.toLowerCase())+'#innova';document.title='Racional · '+group+' · Majané Kaitz 2026'}
 const journeys={
 error:{
  name:'De un error, una oportunidad',
@@ -109,7 +135,7 @@ error:{
 },
 detectives:{
  name:'Dar vuelta el racional',
- subtitle:'¿Y si, en vez de empezar preguntándonos qué problemática queremos trabajar, nos preguntamos qué podría pasar si no hacemos nada? Imaginen a su kvutzá dentro de unos meses: ¿qué situaciones podrían repetirse, qué vínculos podrían desgastarse o qué oportunidades de crecimiento podrían perderse? No se trata de exagerar ni inventar problemas, sino de mirar lo que hoy sucede y descubrir por qué merece nuestra atención ahora. A veces, el verdadero sentido de un racional aparece cuando entendemos qué está en juego si dejamos pasar el tiempo.',
+ subtitle:'¿Y si, en vez de empezar preguntándonos qué problemática queremos trabajar, nos preguntamos qué podría pasar si no hacemos nada? Imaginen a su grupo dentro de unos meses: ¿qué situaciones podrían repetirse, qué vínculos podrían desgastarse o qué oportunidades de crecimiento podrían perderse? No se trata de exagerar ni inventar problemas, sino de mirar lo que hoy sucede y descubrir por qué merece nuestra atención ahora. A veces, el verdadero sentido de un racional aparece cuando entendemos qué está en juego si dejamos pasar el tiempo.',
  challenge:'Desafío: descubran qué vale la pena prevenir o transformar hoy, antes de que se vuelva una dificultad más grande para el grupo.',
  fields:[]
 },
@@ -125,6 +151,79 @@ moneda:{
  {name:'La pregunta educativa',placeholder:'¿Qué pregunta valdría la pena explorar con ellos?'}
 ]}};
 let selected=null;const $=id=>document.getElementById(id);
+
+let stopBombTimer=null;
+const bombPrompts=[
+ 'Pensá en una problemática real del grupo. Si hoy no la trabajan, ¿cómo podría estar el grupo el año que viene?',
+ '¿Qué vínculo podría debilitarse si seguimos evitando esta conversación?',
+ 'Si esta situación se vuelve parte de la normalidad, ¿qué van a aprender los janijim sin que nadie se los enseñe?',
+ '¿Quién podría quedar afuera si dejamos que las cosas sigan igual?',
+ '¿Qué señales pequeñas de hoy podrían transformarse en un conflicto más grande?',
+ '¿Qué oportunidad de crecimiento perdería el grupo si seguimos postergando el tema?',
+ '¿Qué le dirían dentro de un año al tzevet de hoy si este problema todavía sigue presente?',
+ '¿Qué estamos naturalizando solo porque sucede todos los sábados?',
+ '¿Qué consecuencias tendría para alguien que hoy no se anima a decir lo que le pasa?',
+ 'Si el grupo continúa así, ¿qué capacidad de escuchar, confiar o cooperar podría verse afectada?',
+ '¿Qué problema aparentemente pequeño podría terminar definiendo la identidad del grupo?',
+ '¿Qué es más riesgoso: intervenir de manera imperfecta ahora o seguir esperando una ocasión ideal?',
+ '¿Qué podría pasar con la autonomía de los janijim si el tzevet resuelve siempre todo por ellos?',
+ '¿Cómo cambiaría el clima grupal si quienes participan menos siguen sintiéndose invisibles?',
+ '¿Qué perderíamos si esperamos a que aparezca una crisis para hablar de este tema?',
+ '¿Qué queremos que el grupo pueda hacer el año que viene que hoy todavía le cuesta?',
+ '¿Qué les podría pasar a los vínculos si confundimos que nadie discuta con que todos estén bien?',
+ 'Si los janijim aprenden que una broma que lastima no tiene consecuencias, ¿qué puede pasar más adelante?',
+ '¿Qué responsabilidad tenemos como tzevet si vemos algo que incomoda a algunos y decidimos no actuar?',
+ '¿Qué tema nos incomoda trabajar a nosotros, y qué costo podría tener esa incomodidad para el grupo?'
+];
+function bombGame(){
+ const wrap=document.createElement('div');wrap.className='bomb-game';wrap.setAttribute('aria-label','Juego: frená la bomba para descubrir preguntas de reflexión');
+ const title=document.createElement('h3');title.textContent='💣 Frená la bomba';
+ const intro=document.createElement('p');intro.className='bomb-intro';intro.textContent='El tiempo corre. Frená el contador y descubrí preguntas para pensar qué puede pasar si hoy no trabajamos una problemática de nuestro grupo.';
+ const art=document.createElement('div');art.className='bomb-illustration';
+ const fuse=document.createElement('div');fuse.className='bomb-fuse';
+ const body=document.createElement('div');body.className='bomb-body';
+ const clock=document.createElement('span');clock.className='bomb-timer';clock.textContent='00:30';clock.setAttribute('role','timer');clock.setAttribute('aria-label','Segundos restantes para frenar la bomba');body.appendChild(clock);art.append(fuse,body);
+ const stop=document.createElement('button');stop.className='bomb-stop';stop.type='button';stop.textContent='🛑 ¡FRENAR LA BOMBA!';
+ const status=document.createElement('p');status.className='bomb-message';status.setAttribute('aria-live','polite');
+ const questions=document.createElement('section');questions.className='bomb-questions';questions.hidden=true;
+ const qTitle=document.createElement('h4');qTitle.textContent='Y si no hacemos nada... ¿qué pasaría?';
+ const qIntro=document.createElement('p');qIntro.textContent='Conversen estas preguntas entre ustedes. ¿Qué necesidad educativa podría surgir para el racional?';
+ const list=document.createElement('div');list.className='bomb-question-list';
+ const next=document.createElement('button');next.type='button';next.className='bomb-next';next.textContent='↻ Otras preguntas';
+ const hint=document.createElement('p');hint.className='bomb-small';hint.textContent='No tienen que responder en la web: usen estas preguntas como disparadores para pensar el racional.';
+ questions.append(qTitle,qIntro,list,next,hint);
+ wrap.append(title,intro,art,stop,status,questions);
+ let remaining=30;
+ let used=[];
+ function drawQuestions(){
+   let unused=bombPrompts.map((_,i)=>i).filter(i=>!used.includes(i));
+   if(unused.length<3){used=[];unused=bombPrompts.map((_,i)=>i)}
+   const selected=[];
+   for(let n=0;n<3;n++){
+     const k=Math.floor(Math.random()*unused.length);
+     const index=unused.splice(k,1)[0];selected.push(index);used.push(index);
+   }
+   list.replaceChildren();
+   for(const index of selected){const p=document.createElement('p');p.className='bomb-question';p.textContent=bombPrompts[index];list.appendChild(p)}
+ }
+ function stopTimer(expired){
+   if(stopBombTimer!==null){clearInterval(stopBombTimer);stopBombTimer=null}
+   wrap.classList.add('is-stopped');
+   stop.disabled=true;
+   status.textContent=expired?'⏰ ¡Tiempo terminado! Lo importante es actuar antes de que sea tarde.':'✅ ¡Bomba detenida! Ahora toca pensar antes de que el problema crezca.';
+   drawQuestions();questions.hidden=false;
+ }
+ stop.addEventListener('click',()=>stopTimer(false));
+ next.addEventListener('click',drawQuestions);
+ stopBombTimer=setInterval(()=>{
+   if(!wrap.isConnected){clearInterval(stopBombTimer);stopBombTimer=null;return}
+   remaining-=1;
+   clock.textContent='00:'+String(Math.max(remaining,0)).padStart(2,'0');
+   if(remaining<=0)stopTimer(true);
+ },1000);
+ return wrap;
+}
+
 function show(id){['choose','activity','finish'].forEach(name=>$(name).classList.toggle('hidden',name!==id));window.scrollTo({top:0,behavior:'smooth'})}
 function addField(parent,field,i){
  const label=document.createElement('label');label.className='field';label.textContent=field.name;
@@ -134,6 +233,7 @@ function addField(parent,field,i){
  if(field.hint){const hint=document.createElement('small');hint.textContent=field.hint;label.appendChild(hint)}parent.appendChild(label);
 }
 function begin(id){
+ if(stopBombTimer!==null){clearInterval(stopBombTimer);stopBombTimer=null}
  selected=id;const journey=journeys[id];
  $('path-label').textContent='Camino '+({error:'01',detectives:'02',moneda:'03'}[id]);
  $('activity-title').textContent=journey.name;$('path-description').textContent=journey.subtitle;
@@ -160,6 +260,8 @@ function begin(id){
    const rethinkText=document.createElement('p');rethinkText.textContent='Ahora que saben qué funcionó y qué no, miren esa peulá con otros ojos. ¿Qué necesidad del grupo quedó al descubierto? Usen esa dificultad como punto de partida para construir un racional y repensar la peulá: ¿qué cambiarían para que esta vez tenga sentido y funcione para sus janijim?';
    rethink.append(rethinkTitle,rethinkText);
    content.append(drawBox,reminder,prompts,rethink);
+ }else if(id==='detectives'){
+   content.appendChild(bombGame());
  }else{
    const fields=document.createElement('div');fields.className='fields';
    if(journey.fields.length){journey.fields.forEach((field,i)=>addField(fields,field,i));content.appendChild(fields);}
@@ -171,7 +273,7 @@ function begin(id){
 }
 function syncPreview(){for(const id of ['finding','importance','goal'])$('preview-'+id).textContent=$(id).value.trim()||'Todavía sin completar.'}
 document.querySelectorAll('[data-path]').forEach(button=>button.addEventListener('click',()=>begin(button.dataset.path)));
-$('choose-again').addEventListener('click',()=>show('choose'));
+$('choose-again').addEventListener('click',()=>{if(stopBombTimer!==null){clearInterval(stopBombTimer);stopBombTimer=null}show('choose')});
 $('go-final').addEventListener('click',()=>show('finish'));
 $('go-activity').addEventListener('click',()=>show('activity'));
 $('start-over').addEventListener('click',()=>show('choose'));
