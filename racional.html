@@ -153,8 +153,8 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 <label class="field">Qué nos gustaría generar con la próxima peulá<textarea id="goal" placeholder="Qué cambio, pregunta o experiencia queremos habilitar..."></textarea></label>
 </div>
 <div class="final" id="preview"><div class="kicker">Vista previa</div><div class="final-row"><strong>ALGO QUE DESCUBRIMOS</strong><p id="preview-finding">Todavía sin completar.</p></div><div class="final-row"><strong>POR QUÉ IMPORTA</strong><p id="preview-importance">Todavía sin completar.</p></div><div class="final-row"><strong>QUÉ QUEREMOS GENERAR</strong><p id="preview-goal">Todavía sin completar.</p></div></div>
-<div class="actions"><button id="copy" class="primary" type="button">Copiar nuestro punto de partida</button><button id="start-over" class="secondary" type="button">Explorar otro camino</button></div>
-<p class="mini" id="copy-feedback" role="status" aria-live="polite">Las respuestas quedan en esta pantalla. Copialas antes de salir; no se envían ni guardan en una base de datos.</p>
+<div class="actions"><button id="start-over" class="secondary" type="button">Explorar otro camino</button></div>
+<p class="mini">Las respuestas quedan en esta pantalla y no se guardan automáticamente.</p>
 </div></section>
 </main></div>
 <script>
@@ -380,7 +380,7 @@ function begin(id){
  }
  $('challenge').textContent=journey.challenge;
  $('challenge').classList.toggle('hidden',id==='error');
- $('go-final').classList.toggle('hidden',id==='error'||id==='detectives');
+ $('go-final').classList.toggle('hidden',id==='error'||id==='detectives'||id==='moneda');
  ['finding','importance','goal'].forEach(id=>$(id).value='');syncPreview();show('activity');
 }
 function syncPreview(){for(const id of ['finding','importance','goal'])$('preview-'+id).textContent=$(id).value.trim()||'Todavía sin completar.'}
@@ -390,9 +390,4 @@ $('go-final').addEventListener('click',()=>show('finish'));
 $('go-activity').addEventListener('click',()=>show('activity'));
 $('start-over').addEventListener('click',()=>show('choose'));
 ['finding','importance','goal'].forEach(id=>$(id).addEventListener('input',syncPreview));
-$('copy').addEventListener('click',async()=>{
- const text=['TU PUNTO DE PARTIDA'+(group?' — '+group:''),'','Algo que descubrimos sobre nuestro grupo:', $('finding').value.trim()||'(sin completar)','','Por qué creemos que es importante trabajarlo:', $('importance').value.trim()||'(sin completar)','','Qué nos gustaría generar con la próxima peulá:', $('goal').value.trim()||'(sin completar)'].join('\n');
- try{await navigator.clipboard.writeText(text);$('copy-feedback').textContent='¡Copiado! Pegalo en su hoja de planificación.'}
- catch(e){const temp=document.createElement('textarea');temp.value=text;temp.style.position='fixed';temp.style.opacity='0';document.body.appendChild(temp);temp.select();const ok=document.execCommand('copy');temp.remove();$('copy-feedback').textContent=ok?'¡Copiado! Pegalo en su hoja de planificación.':'No se pudo copiar automáticamente. Seleccioná y copiá el texto de la vista previa.'}
-});
 </script></body></html>
