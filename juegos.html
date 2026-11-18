@@ -72,7 +72,7 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 @media(max-width:700px){.memory-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}.memory-card{border-radius:10px}}
 @media(max-width:370px){.memory-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.memory-card{transition:none}}
-</style></head>
+</style><style>.memory-step{padding:20px 22px;margin:0 0 15px;background:white;border:2px solid #dce6fa;border-radius:18px}.memory-step-num{display:inline-block;font-weight:900;font-size:11px;color:#5b76ac;letter-spacing:.12em;margin-bottom:9px}.memory-step>strong{display:block;color:#214995;font-weight:900;font-size:19px}.memory-step p{margin:9px 0 0;font-size:13px}.memory-step-two{margin-bottom:24px;background:#edf4ff}</style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en tu hoja de planificación</div><h1>Juegos</h1><div class="divider"></div>
 <p>Una misma consigna puede transformarse en mil juegos. Explorá tres caminos para crear propuestas nuevas que tengan sentido para tu grupo.</p>
@@ -107,7 +107,7 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 <p class="tip">Las propuestas se combinan a partir de un banco de ideas y tus elecciones. No usan IA: ajustalas según las reglas reales y las necesidades del grupo.</p>
 </div></section>
 <section id="tool1" class="tool" hidden><button type="button" class="tool-back" data-back>← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 02 · AGREGAR</span><h2>A · Agregar</h2><p>Elegí una carta boca abajo del memotest para descubrir una letra y un objeto que empieza con ella. El desafío es agregar ese objeto al juego.</p></div>
-<div class="game-panel"><div class="memory-top"><strong>🃏 27 LETRAS SORPRESA</strong><button class="memory-reset" id="memory-reset" type="button">↻ Mezclar cartas</button></div>
+<div class="game-panel"><div class="memory-step"><span class="memory-step-num">PASO 1</span><strong>Pensá un juego</strong><p>Primero elijan un juego que ya conozcan y quieran transformar. Ténganlo en mente antes de descubrir el objeto.</p></div><div class="memory-step memory-step-two"><span class="memory-step-num">PASO 2</span><strong>Elegí una carta y descubrí qué objeto agregar</strong><p>Den vuelta una carta del memotest: les tocará una letra y un objeto que empiece con ella. Piensen cómo sumarlo al juego que eligieron.</p></div><div class="memory-top"><strong>🃏 27 LETRAS SORPRESA</strong><button class="memory-reset" id="memory-reset" type="button">↻ Mezclar cartas</button></div>
 <div class="memory-grid" id="letter-memory" role="group" aria-label="Memotest de letras boca abajo"></div>
 <div class="result memory-result" id="result1" hidden aria-live="polite"><div class="result-label" id="memory-label"></div><div class="memory-object" id="memory-object"></div><p>¿Cómo pueden sumar este objeto al juego? Como material, pista, desafío o parte de la historia.</p><button type="button" class="memory-change" id="memory-change">↻ Cambiar objeto sin cambiar de letra</button></div>
 <p class="tip">No hace falta conseguirlo: pueden dibujarlo o usarlo como inspiración. Tocá otra carta para descubrir otra letra.</p></div></section>
