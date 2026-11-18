@@ -42,6 +42,36 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 @media(max-width:820px){.path-grid{grid-template-columns:1fr}.path-card{min-height:0}}
 @media(max-width:680px){header{flex-direction:column;align-items:flex-start}.inputs{grid-template-columns:1fr}.card-pair{grid-template-columns:1fr}.flip-card{min-height:150px}.bingo-board{gap:7px}.bingo-cell{min-height:112px;padding:9px 5px;border-radius:12px}.bingo-cell strong{font-size:10px}.bingo-cell small{font-size:9px}}
 @media(max-width:370px){.bingo-board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style><style>
+/* Paleta de dinámicas: 100 colores en degradé y revelación visual de cada idea. */
+.color-lab{max-width:840px;margin:28px auto 0;padding:clamp(17px,3vw,29px);border-radius:28px;border:2px solid #e0e8fc;background:linear-gradient(150deg,#f3f8ff,#f7f4ff,#eefbff)}
+.color-lab-header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;font-weight:900;color:#456399;letter-spacing:.05em;margin-bottom:17px}
+.color-square-wrap{position:relative;max-width:520px;width:100%;margin:0 auto;border-radius:24px;box-shadow:0 16px 35px #24457b32;overflow:hidden}
+.color-square{width:100%;aspect-ratio:1;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));grid-template-rows:repeat(10,minmax(0,1fr));gap:0;isolation:isolate}
+.color-cell{appearance:none;border:0;min-width:0;min-height:0;cursor:pointer;position:relative;transition:filter .17s ease}
+.color-cell:hover{filter:brightness(1.15) saturate(1.35);z-index:2;box-shadow:inset 0 0 0 3px #fff}
+.color-cell.selected{z-index:3;box-shadow:inset 0 0 0 4px white,0 0 0 2px #173b81}
+.color-cell:focus-visible{z-index:4;outline:4px solid white;outline-offset:-5px}
+.color-square-shine{position:absolute;inset:0;background:linear-gradient(130deg,#ffffff26 0%,transparent 38%,#131f4514 100%);pointer-events:none}
+.color-caption{text-align:center;font-size:12px;margin:14px auto 0}
+.color-reveal[hidden]{display:none}
+.color-reveal{--picked:#4077ca;position:relative;isolation:isolate;overflow:hidden;margin-top:25px;border-radius:27px;background:linear-gradient(137deg,var(--picked),#213e87 86%);color:#fff;padding:clamp(22px,5vw,43px);box-shadow:0 18px 35px #18367130}
+.color-reveal::before{content:'';position:absolute;z-index:-1;right:-90px;top:-120px;width:320px;height:320px;border:55px solid #ffffff26;border-radius:50%;filter:blur(3px)}
+.color-reveal::after{content:'';position:absolute;z-index:-1;left:-100px;bottom:-165px;width:270px;height:270px;border:32px solid #ffffff1d;border-radius:50%}
+.color-reveal-art{position:absolute;right:27px;top:18px;display:flex;gap:12px;font-size:29px;color:#ffffff85;transform:rotate(18deg)}
+.color-reveal-inner{position:relative;z-index:1}
+.color-reveal-eyebrow{font-size:11px;letter-spacing:.1em;font-weight:900;color:#fff}
+.color-reveal h3{color:white;font-size:clamp(29px,5.4vw,49px);font-weight:900;letter-spacing:-.035em;line-height:1.15;margin:18px 0 9px;text-wrap:balance}
+.color-reveal-subtitle{font-size:clamp(15px,2vw,19px);font-weight:750;color:#fff!important;line-height:1.5;margin:0 0 22px}
+.color-instructions{background:#ffffffeb;border:2px solid #ffffffb0;border-radius:19px;padding:clamp(17px,3vw,25px);color:#214995}
+.color-instructions strong{font-size:15px;font-weight:900}
+.color-instructions ol{margin:11px 0 0;padding-left:23px;color:#355785;line-height:1.75}
+.color-instructions li{margin:8px 0;font-size:14px}
+.color-extra{background:#ffffff27;border-radius:14px;padding:12px 16px;color:white!important;font-size:13px}
+.color-reveal-bottom{color:#fff!important;opacity:.92;font-size:13px;font-weight:600;margin:20px 0 0}
+.color-pop{animation:color-pop .46s cubic-bezier(.17,1.5,.35,1) both}
+@keyframes color-pop{from{opacity:.25;transform:translateY(25px) scale(.965)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.color-pop{animation:none}.color-cell{transition:none}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas</h1><div class="divider"></div>
@@ -54,14 +84,24 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 <button class="path-card" data-open="2" type="button"><span class="path-number">CAMINO 03</span><strong>🤝 Bingo de vínculos</strong><span>Un tablero de 16 mini misiones para conocerse, escucharse y descubrir conexiones dentro del grupo.</span><b>Explorar este camino →</b></button>
 </div></section>
 <section id="tool0" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
-<div class="kicker">CAMINO 01 · OBSERVAR Y ELEGIR</div><h2>🧭 La brújula del grupo</h2>
-<p class="tool-lead">Partí de lo que necesitan los janijim y encontrá una dinámica para trabajar esa necesidad. Las propuestas son puntos de partida, no diagnósticos.</p>
-<div class="panel"><div class="inputs">
-<div class="field"><label for="mood">¿Cómo está el grupo?</label><select id="mood"><option value="nuevo">Recién se están conociendo</option><option value="disperso">Disperso / cuesta escuchar</option><option value="dividido">Hay grupitos separados</option><option value="callado">Está callado / cuesta participar</option><option value="energico">Tiene mucha energía</option></select></div>
-<div class="field"><label for="objective">¿Qué quieren trabajar?</label><select id="objective"><option value="conocer">Conocerse</option><option value="confianza">Confianza</option><option value="escucha">Escucha</option><option value="equipo">Cooperación</option><option value="expresion">Expresión</option></select></div>
-<div class="field"><label for="minutes">¿Cuánto tiempo tienen?</label><select id="minutes"><option value="10">10 minutos</option><option value="20" selected>20 minutos</option><option value="30">30 minutos</option></select></div>
-</div><button class="action" id="generate-dynamic" type="button">🧭 Encontrar una dinámica</button>
-<div id="dynamic-result" class="result" hidden aria-live="polite"></div></div></section>
+<div class="kicker">CAMINO 01 · LA PALETA DE DINÁMICAS</div><h2>🎨 Elegí un color, descubrí una dinámica</h2>
+<p class="tool-lead">Cada color esconde una forma distinta de hacer una peulá. Tocá un color del cuadrado para descubrirla. <strong>Para cambiar de dinámica, elegí otro color.</strong></p>
+<div class="color-lab">
+ <div class="color-lab-header"><span>✦ PALETA DE IDEAS</span><span id="color-state" aria-live="polite">Elegí el primer color</span></div>
+ <div class="color-square-wrap"><div class="color-square" id="color-square" role="group" aria-label="Cuadrado de colores degradados para descubrir dinámicas"></div><div class="color-square-shine" aria-hidden="true"></div></div>
+ <p class="color-caption">🌈 No hay colores correctos. Cada casillero es una sorpresa.</p>
+ <div id="color-reveal" class="color-reveal" hidden aria-live="polite">
+  <div class="color-reveal-art" aria-hidden="true"><span>✦</span><span>✳</span><span>✦</span></div>
+  <div class="color-reveal-inner">
+   <span class="color-reveal-eyebrow">✨ ¡ESTE COLOR TRAE UNA DINÁMICA!</span>
+   <h3 id="color-title"></h3>
+   <p class="color-reveal-subtitle" id="color-summary"></p>
+   <div class="color-instructions"><strong>¿Cómo la hacemos?</strong><ol id="color-steps"></ol></div>
+   <p class="color-extra" id="color-detail"></p>
+   <p class="color-reveal-bottom">↖ ¿Querés otra? Volvé a la paleta y elegí <strong>un color diferente</strong>.</p>
+  </div>
+ </div>
+</div></section>
 <section id="tool1" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
 <div class="kicker">CAMINO 02 · CONVERSAR DE OTRA MANERA</div><h2>💬 Dos cartas, una conexión</h2>
 <p class="tool-lead">Elegí el tipo de conversación y sacá dos cartas: una define qué compartir y la otra cómo hacerlo. Se pueden cambiar por separado.</p>
@@ -105,56 +145,48 @@ const ageNotes={
  preadolescentes:'Para esta edad: dejen espacio a decisiones propias y varias respuestas válidas.',
  adolescentes:'Para esta edad: permitan debatir diferentes perspectivas sin pedir confesiones personales.'
 };
-const dynamicTemplates={
- conocer:[
- {title:'Mapa de coincidencias',instructions:['En parejas que no suelen elegir, busquen tres cosas que tengan en común; pueden ser inventadas si prefieren.','Cada pareja comparte una coincidencia con el grupo.','Armen entre todos un mapa con las conexiones que aparecieron.'],materials:'Papel grande y marcadores'},
- {title:'La ronda de los mundos',instructions:['Cada persona elige una tarjeta con un lugar, objeto o personaje que le interese.','En grupos pequeños inventan una escena donde aparecen todas esas elecciones.','Cambien integrantes y prueben una historia nueva.'],materials:'Tarjetas con imágenes o palabras'},
- {title:'Tres pistas y un encuentro',instructions:['Cada participante elige tres pistas sencillas sobre gustos o intereses que quiera compartir.','En parejas intentan descubrir una coincidencia a partir de las pistas.','Roten las parejas e intercambien lo que aprendieron, sin obligación de exponer datos personales.'],materials:'Tarjetas y lápices'}
- ],
- confianza:[
- {title:'La construcción a ciegas (sin vendar)',instructions:['Un equipo describe con palabras una figura de bloques o papel que el otro no ve.','El segundo equipo la reconstruye siguiendo las indicaciones; pueden preguntar y pedir aclaraciones.','Muestren los resultados y conversen sobre qué ayudó a confiar en las indicaciones.'],materials:'Bloques, piezas de papel o figuras dibujadas'},
- {title:'La red de apoyos',instructions:['En equipos inventen una situación ficticia en la que alguien necesita ayuda.','Piensen al menos tres formas distintas de acompañarlo sin decidir por esa persona.','Compartan una acción que podrían ofrecer en el grupo cuando alguien necesite apoyo.'],materials:'Tarjetas de situaciones ficticias'},
- {title:'Decisiones compartidas',instructions:['Propongan una misión sencilla, como organizar una expedición imaginaria con cinco objetos.','Cada persona elige una función y una decisión que puede tomar.','Resuelvan la misión por consenso y reflexionen sobre cómo se repartió la confianza.'],materials:'Cinco tarjetas de objetos'}
- ],
- escucha:[
- {title:'La noticia en tres voces',instructions:['Lean una pequeña historia inventada con tres personajes.','Cada equipo escucha y cuenta la misma situación desde una perspectiva distinta.','Comparen qué partes aparecieron y cuáles nadie había escuchado.'],materials:'Tarjeta con una historia breve'},
- {title:'Escuchar para construir',instructions:['Una persona describe una figura simple sin mostrarla.','Los demás la dibujan y pueden hacer preguntas para comprender mejor.','Comparen los dibujos y descubran qué instrucciones resultaron más claras.'],materials:'Papel y marcadores'},
- {title:'Eco de ideas',instructions:['Planteen una pregunta abierta sobre una situación imaginaria.','Antes de aportar una idea propia, cada participante resume con respeto la idea anterior.','Cierren destacando algo que cambió al escuchar a los demás.'],materials:'Una tarjeta con la pregunta'}
- ],
- equipo:[
- {title:'Una misión, muchas piezas',instructions:['Repartan a cada equipo partes distintas de una misión ficticia.','Ningún equipo tiene toda la información: deben preguntar y compartir pistas.','Armen una solución conjunta y revisen qué aportó cada persona.'],materials:'Sobres con piezas o pistas'},
- {title:'La ciudad compartida',instructions:['Cada equipo diseña una parte de una ciudad imaginaria: escuela, plaza, barrio o transporte.','Junten los proyectos y descubran qué conexiones necesitan entre sí.','Cambien una decisión del diseño para que todas las partes funcionen mejor.'],materials:'Hojas grandes y marcadores'},
- {title:'El puente entre equipos',instructions:['Cada equipo construye una mitad de un puente con papel o bloques.','Sin mover las bases, acuerden cómo hacer que ambas mitades se conecten.','Prueben, ajusten y conversen sobre qué hicieron al colaborar.'],materials:'Papel, cinta de papel y bloques livianos'}
- ],
- expresion:[
- {title:'Museo de emociones imaginarias',instructions:['Cada equipo recibe una emoción o situación ficticia.','Represéntenla con un dibujo, una imagen o una pequeña estatua sin contacto físico.','Los demás comparten interpretaciones; no hay una única respuesta correcta.'],materials:'Tarjetas, papel y colores'},
- {title:'Las cuatro versiones',instructions:['Inventen una escena simple, como una invitación que salió distinta a lo esperado.','En grupos creen cuatro finales posibles: alegre, confuso, inesperado y solidario.','Compartan y comparen cómo cambia el sentido de la historia.'],materials:'Tarjetas con situaciones'},
- {title:'El mensaje que viaja',instructions:['Cada equipo escribe una idea que le gustaría transmitir de forma ficticia.','Otro equipo la transforma en dibujo, gesto o relato sin perder su sentido.','Comparen versiones y conversen sobre maneras de expresarse.'],materials:'Hojas y marcadores'}
- ]
-};
-const moodTwists={
- nuevo:'Empezá con una demostración y armá parejas distintas a las habituales; evitá preguntar algo demasiado personal.',
- disperso:'Organizá turnos muy claros y agregá una señal simple para detenerse y escuchar.',
- dividido:'Mezclá integrantes de manera cuidadosa y buscá un resultado que necesite aportes de todos, no competencia entre grupitos.',
- callado:'Ofrecé responder primero con dibujos, tarjetas o de a dos, antes de compartir voluntariamente con todo el grupo.',
- energico:'Incluí un cambio de estación o un breve movimiento entre rondas para canalizar la energía.'
-};
-let previousDynamic='';
-$('generate-dynamic').addEventListener('click',()=>{
- const objective=$('objective').value,mood=$('mood').value,minutes=Number($('minutes').value);
- const options=dynamicTemplates[objective];
- const remaining=options.filter(x=>x.title!==previousDynamic);
- const chosen=pick(remaining.length?remaining:options);previousDynamic=chosen.title;
- const b=$('dynamic-result');b.replaceChildren();b.hidden=false;
- const label=document.createElement('div');label.className='result-label';label.textContent='DINÁMICA PARA '+(group||'TU GRUPO').toUpperCase();
- const title=document.createElement('h3');title.textContent=chosen.title;
- const intro=document.createElement('p');intro.textContent='Duración orientativa: '+minutes+' minutos. Materiales: '+chosen.materials+'.';
- const ol=document.createElement('ol');
- for(const step of chosen.instructions){const li=document.createElement('li');li.textContent=step;ol.appendChild(li)}
- const adap=document.createElement('p');adap.className='tip';adap.textContent='Adaptación: '+moodTwists[mood]+' '+ageNotes[age]+' Ajusten el tiempo de cada ronda para ocupar los '+minutes+' minutos disponibles.';
- b.append(label,title,intro,ol,adap);
- $('generate-dynamic').textContent='↻ Otra dinámica con estos filtros';
-});
+const colorDynamics=[{"title":"La peulá al revés","subtitle":"El final es el principio.","steps":["Arranquen mostrando la conclusión o el desafío final.","Después vuelvan paso a paso para descubrir cómo llegaron ahí.","Cierren reconstruyendo juntos la secuencia original."],"tip":"¿Qué cambia cuando conocemos el final antes de empezar?"},{"title":"Ganar para el otro","subtitle":"Acá ganás cuando gana otra persona.","steps":["Armen parejas o pequeños equipos con metas cruzadas.","Cada logro propio suma puntos para otra persona, no para uno mismo.","Al terminar conversen sobre qué decisiones cambiaron al buscar que gane el otro."],"tip":"No es necesario que exista un equipo perdedor."},{"title":"El dado decide","subtitle":"Seis caras, seis maneras de continuar.","steps":["Escriban seis dinámicas breves en un dado grande o en una lista numerada.","Antes de cada etapa tiren el dado y acepten la nueva consigna.","Al final identifiquen qué cambio inesperado enriqueció la actividad."],"tip":"Las seis opciones deben ser viables y seguras."},{"title":"Dos palabras imposibles","subtitle":"Una palabra de cada madrij; una peulá inesperada.","steps":["Cada madrij de la dupla escribe una palabra al azar y la oculta.","Revelen las dos palabras a la vez.","Inventen una situación, actividad o historia que necesite ambas palabras para avanzar."],"tip":"Cambien las palabras para explorar otra combinación."},{"title":"El grupo elige el camino","subtitle":"Los janijimot escriben la próxima parte.","steps":["Planteen una situación con dos o tres decisiones posibles.","Dejen que los janijimot elijan por dónde avanzar y qué reglas seguir.","Preparen una consecuencia diferente para cada camino y conversen sobre la elección."],"tip":"Ofrezcan alternativas comprensibles según la edad."},{"title":"El juego sin palabras","subtitle":"Una consigna común con otra forma de expresarse.","steps":["Expliquen una misión grupal y permitan elegir gestos, dibujos o tarjetas.","Durante una ronda no se usan palabras habladas, pero sí maneras alternativas de comunicarse.","Devuelvan el habla y comparen qué facilitó o dificultó entenderse."],"tip":"Participación voluntaria; no impedir físicamente hablar."},{"title":"Todos tienen una misión","subtitle":"Una lista de objetivos que se completa entre todos.","steps":["Escriban una lista de desafíos pequeños y distintos.","Cada participante elige o recibe una misión que aporte a la meta general.","Cambien misiones a mitad de camino para que nadie quede sin participar."],"tip":"La clave es el objetivo compartido, no la velocidad."},{"title":"Pensamiento lateral","subtitle":"Cambiar la pregunta cambia la respuesta.","steps":["Presenten una situación extraña con pistas incompletas.","Los janijimot solo pueden hacer preguntas que se respondan con sí, no o irrelevante.","Cuando lleguen a una explicación, inventen otra posible y compárenlas."],"tip":"Eviten acertijos que dependan de datos que no tengan."},{"title":"Agrupados por coincidencias","subtitle":"La forma de armar equipos también es la dinámica.","steps":["Mencionen gustos o intereses cotidianos: música, comidas, colores o actividades.","Los janijimot se agrupan según lo que eligen, sin dejar a nadie solo.","Cambien el criterio dos veces y propongan una misión con personas distintas."],"tip":"Permitan elegir entre varias opciones sin exponer gustos privados."},{"title":"Peulá de opciones ocultas","subtitle":"Lo que eligen hoy cambia lo que sucede después.","steps":["Preparen sobres cerrados con posibles actividades y giros.","Cada equipo elige un sobre sin conocer su consigna.","Combinen los resultados para construir la continuación de la peulá."],"tip":"Que cada sobre tenga una opción realizable."},{"title":"Una peulá, tres finales","subtitle":"El grupo decide qué desenlace construir.","steps":["Preparen un mismo escenario con tres finales posibles.","En grupos inventan qué decisiones llevan a cada final.","Pongan en común los caminos y voten cuál explorar primero."],"tip":"No hay una única solución correcta."},{"title":"La regla invisible","subtitle":"Descubrir la regla es parte de la experiencia.","steps":["Una madrij plantea una regla sencilla que no explica.","El grupo propone acciones y recibe pistas sobre si cumplen la regla.","Cuando la descubren, inventan otra para que la investigue un equipo distinto."],"tip":"La regla debe ser clara y no humillar a nadie."},{"title":"Una pista por persona","subtitle":"Nadie tiene toda la información.","steps":["Repartan fragmentos de una historia o desafío entre participantes.","La información se comparte por turnos y sin mostrar las tarjetas al principio.","Reconstruyan una versión conjunta y revisen qué se entendió diferente."],"tip":"Aseguren apoyos para quienes necesiten ayuda leyendo."},{"title":"El tiempo desordenado","subtitle":"Las etapas no llegan en el orden esperado.","steps":["Anoten las partes de una peulá en tarjetas independientes.","Sorteen el orden en que se harán, adaptando las transiciones.","Al terminar, reconstruyan qué cambió por alterar la secuencia."],"tip":"No alteren partes que requieran preparación previa de seguridad."},{"title":"Roles en préstamo","subtitle":"Nadie conserva la misma función toda la actividad.","steps":["Distribuyan roles sencillos para la primera ronda.","A una señal, intercambien roles y decisiones.","Cierren hablando sobre qué tarea fue más fácil o difícil de asumir."],"tip":"No asignen roles que expongan o incomoden."},{"title":"El mensaje transformado","subtitle":"Una idea pasa por varios lenguajes.","steps":["Una persona inventa un mensaje o situación ficticia.","Otra lo convierte en dibujo, otra en gesto y otra en relato.","Comparen la versión final con la primera y descubran qué se perdió o apareció."],"tip":"No hay errores: las interpretaciones son parte del juego."},{"title":"La brújula humana","subtitle":"El espacio se convierte en un mapa de decisiones.","steps":["Marquen cuatro zonas que representen opciones o perspectivas.","Lean preguntas sobre situaciones inventadas y dejen que elijan una zona.","Escuchen varias razones y permitan cambiar de zona cuando quieran."],"tip":"Nadie tiene que justificar una elección personal."},{"title":"La misión sin materiales","subtitle":"¿Y si desapareciera todo lo que usamos normalmente?","steps":["Presenten una actividad que normalmente usa objetos.","Imaginen cómo completarla sin ese material, con ideas, gestos o tarjetas.","Prueben dos soluciones y elijan la más participativa."],"tip":"Usen representaciones simbólicas si hacen falta."},{"title":"Cambio de narrador","subtitle":"La misma peulá contada desde otro lugar.","steps":["Presenten una historia simple con varios personajes.","Cada equipo recibe un personaje diferente que debe contar lo ocurrido.","Comparen qué cambió al escuchar otras perspectivas."],"tip":"Usen historias ficticias y eviten asignar situaciones personales."},{"title":"Las instrucciones del futuro","subtitle":"Primero se escribe el mensaje para el final.","steps":["Pidan al grupo que imagine qué le gustaría haber aprendido al terminar.","Escriban una nota colectiva desde ese futuro imaginario.","Construyan una dinámica que los acerque a ese mensaje y luego vuelvan a leerlo."],"tip":"La reflexión puede ser una sola palabra o un dibujo."},{"title":"La peulá en silencio compartido","subtitle":"Se construye sin hablar, pero con muchas voces posibles.","steps":["Coloquen una pregunta o consigna en un papel grande.","Cada persona aporta con dibujos, símbolos o palabras escritas sin hablar.","Después conversen sobre qué conexiones aparecen en el mural."],"tip":"Si alguien necesita hablar, puede hacerlo: no se trata de imponer silencio."},{"title":"La palabra prohibida","subtitle":"Una palabra común desaparece por una ronda.","steps":["Elijan una palabra que aparezca seguido durante el juego.","Por unos minutos intenten explicar la actividad sin pronunciarla.","Al finalizar, comparen las expresiones creativas que aparecieron."],"tip":"Eviten usarlo para señalar o ridiculizar errores."},{"title":"Un mapa sin mapa","subtitle":"La orientación nace de la conversación.","steps":["Propongan un destino imaginario y preparen pistas sobre cómo llegar.","Cada participante conoce una parte distinta de las indicaciones.","Armen el recorrido y cambien una decisión para probar otro camino."],"tip":"No hagan recorridos reales con ojos tapados."},{"title":"El comodín del grupo","subtitle":"Un poder colectivo que se puede activar una sola vez.","steps":["Dejen una tarjeta de comodín en el centro.","El grupo decide cuándo utilizarla para cambiar una condición de la actividad.","Reflexionen si fue más importante el momento elegido o el cambio en sí."],"tip":"Todas las personas deben poder participar de la decisión."},{"title":"El desafío cambia de manos","subtitle":"Cada etapa la continúa alguien diferente.","steps":["Armen una tarea grupal que tenga varias etapas sencillas.","Después de cada etapa cambien quién toma decisiones y quién ejecuta.","Observen qué pasa cuando otra persona retoma una idea empezada por alguien más."],"tip":"Los cambios deben incluir opciones accesibles."},{"title":"La caja de lo inesperado","subtitle":"Una consigna nueva irrumpe en la peulá.","steps":["Pongan en una caja sobres con giros posibles: cambio de narrador, misión extra o nueva regla.","En momentos acordados saquen un sobre.","Adapten el resto de la actividad a la nueva situación."],"tip":"No incluyan consignas que comprometan la seguridad o avergüencen."},{"title":"La peulá se vota","subtitle":"Los janijimot toman decisiones de verdad.","steps":["Definan dos caminos posibles para una actividad.","El grupo propone modificaciones y elige cuál probar.","Después evalúen si mantendrían o cambiarían su elección."],"tip":"Expliciten cuáles decisiones pueden tomar y cuáles no."},{"title":"Un mismo objetivo, distintas formas","subtitle":"La meta es común, el recorrido no.","steps":["Planteen una misión grupal con varias estrategias posibles.","Cada equipo elige una manera diferente de resolverla.","Compartan qué caminos funcionaron y armen una versión entre todos."],"tip":"No premien solo a quienes terminan primero."}];
+const colorBoard=$('color-square'),colorReveal=$('color-reveal');
+let chosenColorCell=-1,colorPrevious=-1;
+const paletteRows=10,paletteCols=10;
+for(let row=0;row<paletteRows;row++){
+ for(let col=0;col<paletteCols;col++){
+  const i=row*paletteCols+col;
+  const hue=Math.round(6+col/(paletteCols-1)*295+row*1.5)%360;
+  const saturation=Math.round(80-row*1.2);
+  const lightness=Math.round(73-row*3.8);
+  const color='hsl('+hue+' '+saturation+'% '+lightness+'%)';
+  const button=document.createElement('button');
+  button.type='button';button.className='color-cell';button.style.backgroundColor=color;
+  button.setAttribute('aria-label','Descubrir dinámica con color, fila '+(row+1)+', columna '+(col+1));
+  button.dataset.index=String(i);
+  button.addEventListener('click',()=>{
+   if(chosenColorCell===i)return;
+   chosenColorCell=i;
+   colorBoard.querySelectorAll('button').forEach(b=>{const selected=b===button;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected));});
+   const idea=colorDynamics[(i*13+Math.floor(i/10)*7)%colorDynamics.length];
+   // Si dos colores cercanos llevaran al mismo resultado, el siguiente usa otra opción.
+   let current=idea;
+   if(colorDynamics.length>1 && colorPrevious===colorDynamics.indexOf(current)){
+    current=colorDynamics[(colorDynamics.indexOf(current)+1)%colorDynamics.length];
+   }
+   colorPrevious=colorDynamics.indexOf(current);
+   $('color-title').textContent=current.title;
+   $('color-summary').textContent=current.subtitle;
+   const steps=$('color-steps');steps.replaceChildren();
+   current.steps.forEach(step=>{const li=document.createElement('li');li.textContent=step;steps.appendChild(li)});
+   $('color-detail').textContent=current.tip;
+   colorReveal.style.setProperty('--picked',color);
+   colorReveal.hidden=false;
+   colorReveal.classList.remove('color-pop');
+   void colorReveal.offsetWidth;
+   colorReveal.classList.add('color-pop');
+   $('color-state').textContent='Color elegido · Tocá otro para cambiar';
+   colorReveal.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});
+  });
+  colorBoard.appendChild(button);
+ }
+}
 const questionSets={
  romper:[
  '¿Qué invento absurdo haría más divertido un día de majané?',
