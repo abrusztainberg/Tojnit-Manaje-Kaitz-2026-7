@@ -157,6 +157,8 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 .explore-connection strong{color:#214995;font-weight:900;font-size:14px}
 .explore-connection p{margin:10px 0 0;color:#435f89;font-size:14px;line-height:1.7}
 @media(max-width:700px){.explore-author img{width:76px;height:76px}}
+</style><style>
+.explore-simple-prompt{font-size:clamp(15px,2vw,18px);font-weight:700;line-height:1.65;color:#345b94;background:#eaf3ff;border-left:4px solid #6899e2;border-radius:12px;padding:16px 18px;margin:13px 0 22px}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas de cierre</h1><div class="divider"></div>
@@ -196,18 +198,18 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
  <div id="explore-authors" class="explore-authors"></div></div>
  <div id="explore-strategy-panel" class="explore-step" hidden><span>PASO 02</span><h3 id="explore-strategy-heading">Elegí una estrategia</h3>
  <p>Cada opción propone una manera diferente de recuperar el objetivo de tu peulá.</p><div id="explore-strategies" class="explore-grid"></div></div>
- <div id="explore-format-panel" class="explore-step" hidden><span>PASO 03</span><h3 id="explore-chosen-name"></h3>
- <div id="explore-attribution" class="explore-attribution"></div><p id="explore-description"></p>
- <div class="explore-question"><strong>💭 Pregunta para diseñar el cierre</strong><p id="explore-question"></p></div>
- <div class="explore-question explore-question-kids"><strong>🗣️ Pregunta para los janijim</strong><p id="explore-kid-question"></p></div>
- <div class="explore-connection"><strong>🔗 ¿Cómo se relaciona con el cierre de la peulá?</strong><p id="explore-closing-link"></p></div>
- <h4>¿Cómo querés que los janijim la pongan en práctica?</h4><div id="explore-formats" class="explore-grid"></div>
- <div id="explore-result" class="explore-result" hidden aria-live="polite"><div class="result-label">TU PROPUESTA DE CIERRE</div><h3 id="explore-result-title"></h3><p id="explore-result-description"></p>
- <h4>Para incorporarla a tu planificación</h4><ol><li>Recuperá el objetivo y el hilo conductor de tu peulá.</li><li>Adaptá esta dinámica a la edad y las características de tus janijim.</li><li>Definí qué van a hacer concretamente y qué materiales necesitás.</li><li>Comprobá que el cierre permita recuperar el objetivo, no solo entretener.</li></ol>
- <p class="explore-condition"><strong>Condición pedagógica:</strong> <span id="explore-condition"></span></p>
- <div class="explore-actions"><button type="button" class="action" id="explore-copy">📋 Copiar propuesta</button><button type="button" class="outline" id="explore-print">🖨️ Imprimir</button></div>
- </div></div>
- <p class="tip">Las rutinas de Project Zero se identifican como tales. Las propuestas vinculadas con Anijovich y Furman son adaptaciones didácticas inspiradas en sus enfoques, no técnicas originales atribuidas literalmente a ellas. Fotos cargadas desde internet cuando estén disponibles.</p>
+ <div id="explore-format-panel" class="explore-step" hidden>
+ <span>PASO 03</span><h3 id="explore-chosen-name"></h3>
+ <p class="explore-simple-prompt" id="explore-simple-prompt"></p>
+ <h4>Elegí una dinámica para cerrar la peulá:</h4>
+ <div id="explore-formats" class="explore-grid"></div>
+ <div id="explore-result" class="explore-result" hidden aria-live="polite">
+  <div class="result-label">TU DINÁMICA DE CIERRE</div>
+  <h3 id="explore-result-title"></h3><p id="explore-result-description"></p>
+  <div class="explore-actions"><button type="button" class="action" id="explore-copy">📋 Copiar propuesta</button><button type="button" class="outline" id="explore-print">🖨️ Imprimir</button></div>
+ </div>
+</div>
+<p class="tip">Las rutinas de Project Zero se identifican como tales. Las propuestas vinculadas con Anijovich y Furman son adaptaciones didácticas inspiradas en sus enfoques, no técnicas originales atribuidas literalmente a ellas. Fotos cargadas desde internet cuando estén disponibles.</p>
 </div></section>
 </main></div>
 <script>
@@ -438,6 +440,7 @@ const STRATEGIES=[
 {id:'prototipo',author:'furman',name:'Crear y probar una solución',tag:'Adaptación · aprendizaje activo',description:'Los janijim convierten una idea en una propuesta o solución que puedan poner a prueba.',question:'¿Qué problema relacionado con el objetivo podrían intentar resolver los janijim con una creación concreta?',formats:[['Prototipo rápido','En pequeños grupos crean una solución sencilla con materiales disponibles y muestran cómo funcionaría.'],['Campaña del grupo','Diseñan un afiche, lema o intervención que proponga una acción vinculada con el objetivo.'],['Acuerdo en acción','El grupo construye una regla o iniciativa y acuerda cuándo probarla en la vida del GED.']]}
 ];
 const exploreConnections={"antes":["¿Qué pensabas de este tema antes de la peulá y qué pensás ahora?","Permite cerrar comparando el punto de partida con el aprendizaje final. Hace visible si la peulá cambió ideas o abrió nuevas preguntas."],"color":["Si tuvieras que mostrar lo más importante de hoy con un color, un símbolo y una imagen, ¿cuáles elegirías?","Convierte el cierre en una síntesis visual del objetivo, incluso para quienes prefieren expresarse sin una ronda de palabras."],"chalk":["¿Qué idea o pregunta te queda después de lo que hicimos hoy? ¿Qué le responderías a otro?","Recupera las ideas de todos por escrito y deja una conversación colectiva visible, sin exigir que todos hablen frente al grupo."],"titulares":["Si tuvieras que ponerle un titular a esta peulá, ¿qué diría?","Obliga a elegir lo esencial de la experiencia; el titular funciona como síntesis final y permite ver qué mensaje quedó en el grupo."],"evidencias":["¿Qué momento o acción de hoy demuestra algo que aprendimos o pusimos en práctica?","Vincula el cierre con hechos concretos de la peulá, para comprobar cómo apareció el objetivo educativo en lo que hicieron."],"semaforo":["Sobre lo que trabajamos hoy, ¿qué sentís que ya entendés, qué estás pensando y qué te gustaría seguir explorando?","Es una autoevaluación de cierre: ayuda a identificar avances y dudas sin poner notas ni comparar a los janijim."],"proximo":["Después de esta peulá, ¿qué pequeña acción te gustaría intentar la próxima vez?","El cierre se transforma en un puente hacia la acción: no termina solo en una reflexión, sino en un próximo paso posible."],"desafio":["¿Cómo resolverías esta situación nueva usando algo que trabajamos en la peulá?","Permite cerrar aplicando lo aprendido a un desafío distinto, para ver si el objetivo puede usarse fuera de la actividad original."],"pregunta":["¿Qué pregunta te llevás hoy que te gustaría seguir investigando o conversando?","Cierra sin clausurar el tema: deja una curiosidad auténtica que puede retomarse en la siguiente peulá."],"prototipo":["¿Qué podríamos crear o cambiar para aplicar lo que aprendimos hoy?","Transforma la reflexión final en una propuesta concreta; el cierre sirve para llevar el objetivo de la peulá a una solución o iniciativa."]};
+const exploreShortPrompts={"antes":"Para cerrar, hacé visible qué cambió en lo que pensaban los janijim.","color":"Para cerrar, representen la idea central de la peulá sin necesidad de explicarla con palabras.","chalk":"Para cerrar, recuperen lo que piensan los janijim mediante una conversación escrita.","titulares":"Para cerrar, sinteticen lo más importante de la peulá en una frase.","evidencias":"Para cerrar, encuentren momentos que muestren el objetivo de la peulá en acción.","semaforo":"Para cerrar, reconozcan qué entendieron y qué les gustaría seguir aprendiendo.","proximo":"Para cerrar, elijan una pequeña acción para poner en práctica después de la peulá.","desafio":"Para cerrar, usen lo trabajado en la peulá para resolver un desafío nuevo.","pregunta":"Para cerrar, dejen una pregunta abierta que invite a seguir pensando.","prototipo":"Para cerrar, conviertan lo aprendido en una idea o solución concreta."};
 let exploreAuthor=null,exploreStrategy=null,exploreFormat=null,exploreCopyText='';
 const ex=id=>document.getElementById(id);
 function exploreRenderAuthors(){
@@ -479,11 +482,7 @@ function exploreSelectStrategy(id){
  });
  ex('explore-format-panel').hidden=false;ex('explore-result').hidden=true;
  ex('explore-chosen-name').textContent=exploreStrategy.name;
- ex('explore-attribution').textContent=exploreStrategy.tag;
- ex('explore-description').textContent=exploreStrategy.description;
- ex('explore-question').textContent=exploreStrategy.question;
- ex('explore-kid-question').textContent=exploreConnections[exploreStrategy.id][0];
- ex('explore-closing-link').textContent=exploreConnections[exploreStrategy.id][1];
+ ex('explore-simple-prompt').textContent=exploreShortPrompts[exploreStrategy.id];
  const board=ex('explore-formats');board.replaceChildren();
  exploreStrategy.formats.forEach((format,index)=>{
   const button=document.createElement('button');button.className='explore-choice';button.type='button';
@@ -502,8 +501,8 @@ function exploreSelectFormat(index){
  const [title,description]=exploreStrategy.formats[index];
  ex('explore-result-title').textContent=title;
  ex('explore-result-description').textContent=description;
- ex('explore-condition').textContent=exploreStrategy.description;
- exploreCopyText=[exploreStrategy.name,title,description,'Pregunta disparadora: '+exploreStrategy.question,'Adaptar al objetivo y al hilo conductor de la peulá.'].join(String.fromCharCode(10));
+
+ exploreCopyText=[exploreStrategy.name,title,description,'Elegí y adaptá esta dinámica al cierre de la peulá.','Adaptar al objetivo y al hilo conductor de la peulá.'].join(String.fromCharCode(10));
  ex('explore-result').hidden=false;
  ex('explore-result').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
