@@ -1,0 +1,41 @@
+name: Actualizar noticias para Racional
+
+on:
+  schedule:
+    # Cada hora: el script filtra por fecha de Buenos Aires.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/actualizar_noticias.py'
+      - '.github/workflows/actualizar-noticias.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: noticias-racional
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Leer feeds y generar JSON
+        run: python scripts/actualizar_noticias.py
+      - name: Guardar noticias actualizadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add noticias-hoy.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar noticias de hoy para Racional"
+            git push
+          fi
