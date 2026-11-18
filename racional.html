@@ -264,7 +264,9 @@ async function getNews(){
  if(!response.ok)throw new Error('Todavía no hay actualización automática de noticias');
  const data=await response.json();
  if(!data||!data.fuentes||!data.fecha)throw new Error('Archivo de noticias incompleto');
- const localDate=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Argentina/Buenos_Aires',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Argentina/Buenos_Aires',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+ const today={};for(const part of parts)if(part.type!=='literal')today[part.type]=part.value;
+ const localDate=today.year+'-'+today.month+'-'+today.day;
  if(data.fecha!==localDate)throw new Error('Todavía no se actualizaron las noticias de hoy ('+localDate+').');
  return data;
 }
@@ -285,7 +287,7 @@ function newsJourney(){
  const title=document.createElement('h3');title.textContent='Del titular a una necesidad del grupo';
  const thinking=document.createElement('p');thinking.textContent='¿Qué tensión aparece en esta noticia? ¿Conocen una situación concreta de su grupo que dialogue con esa tensión? ¿Qué podría pasar si no la trabajan? No hace falta hablar de la actualidad en la peulá: lo importante es encontrar una necesidad educativa.';
  const field=document.createElement('label');field.className='field';field.textContent='¿Qué necesidad del grupo les hizo pensar esta noticia?';
- const input=document.createElement('textarea');input.placeholder='Escriban una idea propia para llevar a su hoja de planificación (opcional)...';field.appendChild(input);
+ const input=document.createElement('textarea');input.id='news-group-reflection';input.placeholder='Escriban una idea propia para llevar a su hoja de planificación (opcional)...';field.appendChild(input);
  const disclaimer=document.createElement('p');disclaimer.className='news-warning';disclaimer.textContent='Los artículos y sus fechas pertenecen a cada medio. Una noticia no demuestra por sí sola una necesidad del grupo: contrasten la idea con lo que conocen de sus janijim.';
  reflection.append(title,thinking,field,disclaimer);
  let currentPaper='',lastIndex=-1;
@@ -298,12 +300,17 @@ function newsJourney(){
  const randomIndex=(length)=>{if(!length)return 0;const bytes=new Uint32Array(1);if(window.crypto&&crypto.getRandomValues)crypto.getRandomValues(bytes);else bytes[0]=Math.floor(Math.random()*4294967296);return bytes[0]%length;};
  function anotherArticle(paper){
   const items=newsLoaded?.fuentes?.[paper.key]||[];
-  if(!items.length){article.hidden=true;reflection.hidden=true;status.textContent='Hoy no hay noticias verificadas de '+paper.name+' disponibles en esta fuente. Podés probar con otro diario o visitar su portada.';return}
+  if(!items.length){
+   article.hidden=true;reflection.hidden=true;status.replaceChildren();
+   const notice=document.createElement('span');notice.textContent='Hoy no hay noticias verificadas de '+paper.name+' disponibles en esta fuente. ';
+   const external=document.createElement('a');external.href=paper.url;external.target='_blank';external.rel='noopener noreferrer';external.textContent='Visitar el diario ↗';
+   status.append(notice,external);return
+  }
   let index=randomIndex(items.length);
   if(items.length>1&&index===lastIndex)index=(index+1)%items.length;
   lastIndex=index;
   const item=items[index];
-  source.textContent=paper.name+' · Noticia de hoy';
+  source.textContent=paper.name+' · Noticia de hoy'+(item.url.includes('news.google.com')?' · Vía Google Noticias':'');
   headline.textContent=item.titulo;
   summary.textContent=item.resumen||'Este canal no ofrece un resumen verificable. Abrí la noticia para leer más.';
   date.textContent='Publicada: '+new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'medium',timeStyle:'short'}).format(new Date(item.fecha));
@@ -373,7 +380,14 @@ function begin(id){
 function syncPreview(){for(const id of ['finding','importance','goal'])$('preview-'+id).textContent=$(id).value.trim()||'Todavía sin completar.'}
 document.querySelectorAll('[data-path]').forEach(button=>button.addEventListener('click',()=>begin(button.dataset.path)));
 $('choose-again').addEventListener('click',()=>{if(stopBombTimer!==null){clearInterval(stopBombTimer);stopBombTimer=null}show('choose')});
-$('go-final').addEventListener('click',()=>show('finish'));
+$('go-final').addEventListener('click',()=>{
+ if(selected==='moneda'){
+  const reflection=document.getElementById('news-group-reflection');
+  if(reflection&&reflection.value.trim())$('finding').value=reflection.value.trim();
+  syncPreview();
+ }
+ show('finish');
+});
 $('go-activity').addEventListener('click',()=>show('activity'));
 $('start-over').addEventListener('click',()=>show('choose'));
 ['finding','importance','goal'].forEach(id=>$(id).addEventListener('input',syncPreview));
