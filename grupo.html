@@ -75,7 +75,7 @@ else{
   document.getElementById('group-name').textContent=group;
   document.documentElement.dataset.grupo=group.toLowerCase();
   document.title=group+' · Tojnit Majané Kaitz 2026';
-  document.querySelectorAll('.innovation-link[data-topic]').forEach(link=>{const slug=encodeURIComponent(group.toLowerCase());link.href=link.dataset.topic==='racional'?'racional.html?grupo='+slug:link.dataset.topic==='hilo'?'hilo.html?grupo='+slug:'planificacion.html?grupo='+slug+'&seccion='+encodeURIComponent(link.dataset.topic);});
+  document.querySelectorAll('.innovation-link[data-topic]').forEach(link=>{const slug=encodeURIComponent(group.toLowerCase());link.href=link.dataset.topic==='racional'?'racional.html?grupo='+slug:link.dataset.topic==='hilo'?'hilo.html?grupo='+slug:link.dataset.topic==='juegos'?'juegos.html?grupo='+slug:'planificacion.html?grupo='+slug+'&seccion='+encodeURIComponent(link.dataset.topic);});
   const colors=groupColors[group.toLowerCase()];
   document.documentElement.style.setProperty('--group-hero','linear-gradient(115deg,'+colors.map((c,i)=>c+' '+Math.round(i*100/(colors.length-1))+'%').join(',')+')');
 }
