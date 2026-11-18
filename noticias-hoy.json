@@ -1,259 +1,397 @@
 {
   "fecha": "2026-11-18",
-  "actualizado": "2026-11-18T04:41:41.918568-03:00",
+  "actualizado": "2026-11-18T14:20:52.687057-03:00",
   "fuentes": {
     "lanacion": [
       {
-        "titulo": "Investigadores de Stanford coinciden en qué pasa con el bienestar emocional al cumplir años y el caso de los nacidos entre 1945 y 1965",
-        "resumen": "La edad se asoció con mayor bienestar emocional en dos estudios de Stanford. Conocé qué midieron y cuáles son los límites de sus resultados.",
-        "url": "https://www.lanacion.com.ar/estados-unidos/california/investigadores-de-stanford-coinciden-en-que-pasa-con-el-bienestar-emocional-al-cumplir-anos-y-el-nid17112026/",
-        "fecha": "2026-11-18T04:33:00-03:00"
+        "titulo": "Carlos Melconian apuntó contra el rumbo económico: “Milei es parte de una transición que llegó a un techo”",
+        "resumen": "Lanzado a la carrera presidencial, el economista cuestionó la “falta” de régimen monetario y cambiario, cuestionó el intento de eliminar las PASO y advirtió sobre 2027: “No están incubando una bomba, pero no tienen destino”",
+        "url": "https://www.lanacion.com.ar/economia/carlos-melconian-apunto-contra-el-rumbo-economico-milei-es-parte-de-una-transicion-que-llego-a-un-nid18112026/",
+        "fecha": "2026-11-18T14:15:22-03:00"
       },
       {
-        "titulo": "Javier Milei y sus medidas, en vivo: “Voy a ser relecto: no tengan dudas de que vamos a ganar en primera”, dijo el Presidente",
+        "titulo": "Alineado con Trump, el Gobierno se abstuvo de votar en la ONU una resolución para combatir la violencia contra mujeres y niñas",
+        "resumen": "La delegación argentina evitó apoyar una iniciativa de Francia, que se aprobó por 175 votos a favor, solo uno en contra (Somalia) y seis abstenciones; críticas de la oposición",
+        "url": "https://www.lanacion.com.ar/politica/alineado-con-trump-el-gobierno-se-abstuvo-de-votar-en-la-onu-una-resolucion-para-combatir-la-nid18112026/",
+        "fecha": "2026-11-18T14:14:36-03:00"
+      },
+      {
+        "titulo": "El Gobierno retiró las listas colectoras para asegurarse el apoyo para suspender las PASO",
+        "resumen": "El proyecto de ley con cambios se debatirá esta tarde en comisión en el Senado; con las modificaciones, el oficialismo lograría el dictamen",
+        "url": "https://www.lanacion.com.ar/politica/el-gobierno-retiro-las-listas-colectoras-para-asegurarse-el-apoyo-para-suspender-las-paso-nid18112026/",
+        "fecha": "2026-11-18T14:09:08-03:00"
+      },
+      {
+        "titulo": "El dólar sube hasta los $1580 y alcanza un nuevo máximo",
+        "resumen": "El tipo de cambio minorista registra un avance de $10 en tres días, pero a lo largo del mes acumula $20; el CCL supera los $1700; las acciones argentinas suben hasta 4% en Wall Street",
+        "url": "https://www.lanacion.com.ar/economia/el-dolar-oficial-sube-hasta-los-1580-y-alcanza-un-nuevo-maximo-nid18112026/",
+        "fecha": "2026-11-18T14:06:35-03:00"
+      },
+      {
+        "titulo": "Ana Molina, dermatóloga: “Mover la raya de pelo ligeramente hacia un lado o en zigzag ayuda a disimular el poco pelo en la zona central y dar mayor sensación de volumen”",
+        "resumen": "La especialista explica cómo cambiar la dirección del peinado funciona como un recurso estético eficaz; sostiene que esta técnica aporta movimiento inmediato a las melenas finas",
+        "url": "https://www.lanacion.com.ar/lifestyle/ana-molina-dermatologa-mover-la-raya-de-pelo-ligeramente-hacia-un-lado-o-en-zigzag-ayuda-a-disimular-nid18112026/",
+        "fecha": "2026-11-18T14:04:00-03:00"
+      },
+      {
+        "titulo": "La reacción del dueño de los bloques de juguetes Rasti ante la apertura de una tienda Lego en la Argentina",
+        "resumen": "“La que pone ese local es una pyme argentina que ya tenía una góndola en ese shopping [el Unicenter] y vendía, predominantemente, esa marca”, dijo Daniel Dimare, dueño y director de Marketing de la compañía argentina",
+        "url": "https://www.lanacion.com.ar/economia/la-reaccion-del-dueno-de-los-bloques-de-juguetes-rasti-ante-la-apertura-de-una-tienda-lego-en-la-nid18112026/",
+        "fecha": "2026-11-18T14:02:56-03:00"
+      },
+      {
+        "titulo": "Se aproximan 96 horas de calor, tormentas severas, “episodios húmedos” y ráfagas de más de 90 km/h: las zonas afectadas",
+        "resumen": "El noreste concentrará las precipitaciones más intensas, mientras que el AMBA alternará mejoras con nuevas lluvias; cómo se perfila el fin de semana",
+        "url": "https://www.lanacion.com.ar/sociedad/se-aproximan-96-horas-de-calor-tormentas-severas-episodios-humedos-y-rafagas-de-mas-de-90-kmh-las-nid18112026/",
+        "fecha": "2026-11-18T14:00:46-03:00"
+      },
+      {
+        "titulo": "Argentina lidera el dominio del inglés en América Latina, pero cae en el ranking mundial",
+        "resumen": "Ocupa el lugar 26 del índice que elabora anualmente la escuela de idiomas Education First; el promedio global del manejo del idioma cayó por quinto año consecutivo",
+        "url": "https://www.lanacion.com.ar/sociedad/argentina-lidera-el-dominio-del-ingles-en-america-latina-pero-cae-en-el-ranking-mundial-nid18112026/",
+        "fecha": "2026-11-18T14:00:00-03:00"
+      },
+      {
+        "titulo": "“Mafalda Inmersiva” fue declarada de interés cultural por la Legislatura Porteña",
+        "resumen": "La muestra interactiva que homenajea la obra de Quino en el Centro Cultural Recoleta recibió el reconocimiento oficial; el proyecto propone un recorrido sensorial por el universo del icónico personaje",
+        "url": "https://www.lanacion.com.ar/sociedad/mafalda-inmersiva-fue-declarada-de-interes-cultural-por-la-legislatura-portena-nid18112026/",
+        "fecha": "2026-11-18T13:56:37-03:00"
+      },
+      {
+        "titulo": "Javier Milei y sus medidas, en vivo: “Voy a ser reelecto: no tengan dudas de que vamos a ganar en primera”, dijo el Presidente",
         "resumen": "El minuto a minuto de las decisiones del jefe de Estado, las reacciones de la oposición y las declaraciones de los funcionarios",
         "url": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-el-mandatario-cito-a-pablo-picasso-y-dijo-me-voy-a-encargar-de-lo-nid18112026/",
-        "fecha": "2026-11-18T04:30:00-03:00"
+        "fecha": "2026-11-18T13:50:00-03:00"
       },
       {
-        "titulo": "Es ecuatoriano, le falta un semestre para graduarse y volvía de una entrevista laboral, pero el ICE lo detuvo en Atlanta",
-        "resumen": "Es ecuatoriano, le falta un semestre de graduarse y volvía de una entrevista laboral, pero el ICE lo detuvo en Atlanta.",
-        "url": "https://www.lanacion.com.ar/estados-unidos/florida/es-ecuatoriano-le-falta-un-semestre-de-graduarse-y-volvia-de-una-entrevista-laboral-pero-el-ice-lo-nid16112026/",
-        "fecha": "2026-11-18T04:16:00-03:00"
+        "titulo": "Condenaron a prisión perpetua al joven que mató a su vecina en Burzaco",
+        "resumen": "César Ezequiel Florentín fue hallado culpable de homicidio agravado por violencia de género, ensañamiento y alevosía; la defensa reclamó la absolución",
+        "url": "https://www.lanacion.com.ar/seguridad/se-conoce-el-veredicto-del-crimen-de-la-radiologa-noelia-torres-en-burzaco-el-unico-acusado-era-su-nid18112026/",
+        "fecha": "2026-11-18T13:49:17-03:00"
       },
       {
-        "titulo": "Jefe del DHS sobre inmigrantes con más de 10 años en USA: “Podrían convertirse en ciudadanos o residentes permanentes”",
-        "resumen": "Markwayne Mullin afirmó que el Gobierno de Donald Trump está abierto a conversar con el Congreso sobre un estatus permanente para quienes llegaron de niños, aunque descartó una amnistía",
-        "url": "https://www.lanacion.com.ar/estados-unidos/jefe-del-dhs-sobre-inmigrantes-con-mas-de-10-anos-en-usa-puedan-convertirse-tal-vez-en-ciudadanos-o-nid15112026/",
-        "fecha": "2026-11-18T04:00:00-03:00"
+        "titulo": "Le sacaron el útero por un cáncer, pasó por más de diez cirugías y ahora cumplirá su sueño de ser mamá: “Hay muchas formas de maternar”",
+        "resumen": "La influencer Puli Cocina ingresó una vez más al quirófano, pero en esta oportunidad fue diferente y expresó sus emociones en las redes; “Esta cirugía se dio en paralelo con mi bebita pateando”, destacó",
+        "url": "https://www.lanacion.com.ar/espectaculos/le-sacaron-el-utero-por-un-cancer-paso-por-mas-de-diez-cirugias-y-ahora-cumplira-su-sueno-de-ser-nid18112026/",
+        "fecha": "2026-11-18T13:47:20-03:00"
       },
       {
-        "titulo": "Mamdani confirma el regreso de una iniciativa para repartir frutas y verduras gratis a personas mayores en NYC",
-        "resumen": "Mamdani relanza una iniciativa para repartir frutas y verduras gratis a adultos mayores en Nueva York. En su primera edición, entregó 24.000 bolsas de alimentos",
-        "url": "https://www.lanacion.com.ar/estados-unidos/nueva-york/mamdani-confirma-el-regreso-de-una-iniciativa-para-repartir-frutas-y-verduras-gratis-a-personas-nid17112026/",
-        "fecha": "2026-11-18T04:00:00-03:00"
+        "titulo": "Fin de la espera: ya se sabe cuándo la NASA mostrará las primeras imágenes del telescopio Roman en vivo",
+        "resumen": "La agencia espacial anunció una transmisión desde San Francisco para presentar las imágenes del observatorio",
+        "url": "https://www.lanacion.com.ar/ciencia/fin-de-la-espera-ya-se-sabe-cuando-la-nasa-mostrara-las-primeras-imagenes-del-telescopio-roman-en-nid18112026/",
+        "fecha": "2026-11-18T13:47:13-03:00"
       },
       {
-        "titulo": "La Anmat prohibió un gel utilizado en ecografías y se frenó la actividad en la planta que lo fabricaba",
-        "resumen": "Se trata de un producto de la marca Sanicol, que presentó irregularidades y era promocionado como cosmético sin estar autorizado",
-        "url": "https://www.lanacion.com.ar/sociedad/la-anmat-prohibio-un-gel-utilizado-en-ecografias-y-se-freno-la-actividad-en-la-planta-que-lo-nid18112026/",
-        "fecha": "2026-11-18T03:53:34-03:00"
+        "titulo": "La Cámara Federal, con su nueva composición, recibió a los jueces de primera instancia de Comodoro Py",
+        "resumen": "La reunión fue promovida como un encuentro para agilizar el diálogo entre los magistrados ante las reformas que enfrenta el fuero; la única ausente fue Servini",
+        "url": "https://www.lanacion.com.ar/politica/la-camara-federal-con-su-nueva-composicion-recibio-a-los-jueces-de-primera-instancia-de-comodoro-py-nid18112026/",
+        "fecha": "2026-11-18T13:46:09-03:00"
       },
       {
-        "titulo": "Las nuevas leyes contra el ICE son claras: más estados se suman al bloqueo de agentes migratorios en escuelas de EE.UU.",
-        "resumen": "Un relevamiento nacional identificó 40 proyectos estatales sobre la presencia de agentes migratorios en escuelas públicas.",
-        "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/las-nuevas-leyes-contra-el-ice-son-claras-mas-estados-se-suman-al-bloqueo-de-agentes-migratorios-en-nid16112026/",
-        "fecha": "2026-11-18T03:48:00-03:00"
+        "titulo": "Su hijo murió, sus amigos nunca le devolvieron el dinero prestado y quedó en bancarrota: el actor de las mil risas que terminó en un geriátrico",
+        "resumen": "Larry Fine fue violinista, comediante y se volvió una estrella del mundo del espectáculo con Los tres chiflados; sin embargo, cuando el éxito se disipó, solo quedó a su lado su hermano de la vida; descubrí los detalles",
+        "url": "https://www.lanacion.com.ar/espectaculos/su-hijo-murio-sus-amigos-nunca-le-devolvieron-el-dinero-prestado-y-quedo-en-bancarrota-el-actor-de-nid14112026/",
+        "fecha": "2026-11-18T13:45:07-03:00"
       },
       {
-        "titulo": "Cientos de hinchas sin entrada ingresaron al estadio Mario Alberto Kempes durante el partido de la selección",
-        "resumen": "Con el amistoso entre la Argentina y Costa Rica en marcha, se habilitaron algunos accesos para quienes no habían comprado tickets; se volvieron a ver sectores vacíos como en la Bombonera",
-        "url": "https://www.lanacion.com.ar/deportes/futbol/cientos-de-hinchas-sin-entrada-ingresaron-al-estadio-mario-alberto-kempes-durante-el-partido-de-la-nid18112026/",
-        "fecha": "2026-11-18T03:42:13-03:00"
+        "titulo": "Los dos récords que dejarán la minería y la energía este año",
+        "resumen": "Con el oro, el litio y el crudo en niveles altos, la Argentina se encamina a máximos en exportaciones mineras y producción de petróleo; la balanza energética pasará de déficit a un superávit de US$11.000 millones",
+        "url": "https://www.lanacion.com.ar/economia/antes-eran-un-problema-para-el-banco-central-y-ahora-divisas-los-dos-records-que-dejaran-la-mineria-nid18112026/",
+        "fecha": "2026-11-18T13:43:18-03:00"
       },
       {
-        "titulo": "El ICE detuvo en Texas a Jorge Linares, extricampeón mundial venezolano de boxeo: “Tiene estatus legal en EE.UU. y ha cooperado”",
-        "resumen": "Jorge Linares fue detenido por ICE en Texas. Sus abogados afirman que está legalmente en Estados Unidos y trabajan para resolver su situación migratoria.",
-        "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/el-ice-detuvo-en-texas-a-jorge-linares-extricampeon-mundial-venezolano-de-boxeo-tiene-estatus-legal-nid17112026/",
-        "fecha": "2026-11-18T03:35:00-03:00"
+        "titulo": "Hay alerta naranja y amarilla por tormentas para este miércoles 18 de noviembre: las provincias afectadas",
+        "resumen": "El Servicio Meteorológico Nacional advirtió sobre posibles condiciones adversas en distintas regiones del país; en la ciudad de Buenos Aires la máxima será de 27 grados",
+        "url": "https://www.lanacion.com.ar/sociedad/hay-alerta-naranja-y-amarilla-por-tormentas-y-lluvias-para-este-miercoles-18-de-noviembre-las-nid18112026/",
+        "fecha": "2026-11-18T13:42:12-03:00"
       },
       {
-        "titulo": "Redadas del ICE, salarios y subsidios: las leyes que podrían cambiar a Texas en 2027 para miles de inmigrantes",
-        "resumen": "La sesión empieza el 12 de enero y el Senado en Texas seguirá bajo mayoría republicana y el 1 de diciembre vence el plazo para los acuerdos obligatorios con ICE",
-        "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/redadas-del-ice-salarios-y-subsidios-las-leyes-que-podrian-cambiar-a-texas-en-2027-para-miles-de-nid15112026/",
-        "fecha": "2026-11-18T03:26:00-03:00"
+        "titulo": "Noticias del DHS y el Uscis hoy: qué se sabe del TPS de los venezolanos y qué pasa si no se extiende en noviembre 2026",
+        "resumen": "Noticias del DHS y Uscis: qué se sabe sobre el TPS para venezolanos y qué opciones existen si el beneficio no se extiende en noviembre de 2026",
+        "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/noticias-del-dhs-y-el-uscis-hoy-que-se-sabe-del-tps-de-los-venezolanos-y-que-pasa-si-no-se-extiende-nid18112026/",
+        "fecha": "2026-11-18T13:34:32-03:00"
       },
       {
-        "titulo": "MasterChef Celebrity: el inesperado comentario de Rocío Robles sobre Araceli González en la noche de eliminación",
-        "resumen": "Los participantes enfrentaron un complicado desafío para asegurarse un lugar en el programa en una noche en la que no faltaron los accidentes, los cruces fuertes y las lágrimas",
-        "url": "https://www.lanacion.com.ar/espectaculos/masterchef-celebrity-el-inesperado-comentario-de-rocio-robles-sobre-araceli-gonzalez-en-la-noche-de-nid18112026/",
-        "fecha": "2026-11-18T03:16:17-03:00"
+        "titulo": "Diputados: Llaryora y Pullaro dejaron al Gobierno sin quorum en medio de la disputa por el Consejo de la Magistratura",
+        "resumen": "Los legisladores alineados con los gobernadores de Córdoba y Santa Fe se negaron a sentarse en sus bancas; reclaman lugares en el organismo judicial y cuestionan la falta de acuerdos por el presupuesto y el freno al nuevo esquema de biocombustibles",
+        "url": "https://www.lanacion.com.ar/politica/diputados-llaryora-y-pullaro-dejaron-al-gobierno-sin-quorum-en-medio-de-la-disputa-por-el-consejo-de-nid18112026/",
+        "fecha": "2026-11-18T13:32:51-03:00"
       },
       {
-        "titulo": "Abogado de inmigración sobre suspensión del Seguro Social a latinos: “Pueden pedir una revisión y presentar pruebas de su TPS vigente”",
-        "resumen": "Un abogado de inmigración explica qué pueden hacer los salvadoreños con TPS si reciben cartas que suspenden su Seguro Social y cómo solicitar una revisión",
-        "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/abogado-de-inmigracion-sobre-suspension-del-seguro-social-a-salvadorenos-pueden-pedir-una-revision-y-nid16112026/",
-        "fecha": "2026-11-18T03:15:00-03:00"
+        "titulo": "Qué son las colectoras, el sistema de votación que evaluó el Gobierno para las elecciones 2027",
+        "resumen": "Lo incluyó en el borrador de la reforma política para permitir que más de una lista de legisladores pueda acompañar en la boleta única a un mismo candidato a presidente",
+        "url": "https://www.lanacion.com.ar/politica/que-son-las-colectoras-el-sistema-que-de-votacion-que-analiza-el-gobierno-para-las-elecciones-2027-nid16112026/",
+        "fecha": "2026-11-18T13:31:41-03:00"
       },
       {
-        "titulo": "La ley AB 1655 es clara: Newsom deja firmada una regla que protege a familias de inmigrantes detenidos en California",
-        "resumen": "La nueva regla suma la detención en una instalación federal de inmigración a las ausencias temporales que no recortan la asistencia del hogar",
-        "url": "https://www.lanacion.com.ar/estados-unidos/california/la-ley-ab-1655-es-clara-newsom-deja-firmada-una-regla-que-protege-a-familias-de-inmigrantes-nid18112026/",
-        "fecha": "2026-11-18T03:11:00-03:00"
+        "titulo": "Mauricio Macri, 67 años, sobre su rutina de entrenamiento: “Descubrí algo increíble haciendo pilates”",
+        "resumen": "Mauricio Macri compartió su rutina, sus cuidados y qué busca en una pareja en una entrevista que le hicieron por streaming",
+        "url": "https://www.lanacion.com.ar/salud/vida_sana/mauricio-macri-67-anos-sobre-su-rutina-de-entrenamiento-descubri-algo-increible-haciendo-pilates-nid18112026/",
+        "fecha": "2026-11-18T13:26:34-03:00"
       },
       {
-        "titulo": "Cambió Argentina por un lugar perfecto en Países Bajos, pero ser madre evidenció una carencia: “Una necesidad de muchos”",
-        "resumen": "Dice que tiene una vida casi perfecta, pero hace un tiempo descubrió el lado más costoso de emigrar",
-        "url": "https://www.lanacion.com.ar/lifestyle/cambio-argentina-por-un-lugar-perfecto-en-paises-bajos-pero-ser-madre-evidencio-una-carencia-una-nid18112026/",
-        "fecha": "2026-11-18T03:00:00-03:00"
+        "titulo": "Advierten a la Casa Blanca que las defensas del país “no están a la altura” de los ciberataques impulsados por IA",
+        "resumen": "Los incidentes de agentes de IA preocupan y algunos senadores de Estados Unidos instan a tomar medidas inmediatas para proteger",
+        "url": "https://www.lanacion.com.ar/tecnologia/advierten-a-la-casa-blanca-que-las-defensas-del-pais-no-estan-a-la-altura-de-los-ciberataques-nid18112026/",
+        "fecha": "2026-11-18T13:18:52-03:00"
       },
       {
-        "titulo": "Antonio y Cruz Heguy. Tienen 23 años, forman parte de una dinastía de polistas campeones y posan junto a sus novias",
-        "resumen": "Primos y confidentes, juegan juntos la Triple Corona defendiendo los colores de Ellerstina-Indios Chapaleufú y posan en exclusiva para ¡HOLA!",
-        "url": "https://www.lanacion.com.ar/revista-hola/antonio-y-cruz-heguy-tienen-23-anos-forman-parte-de-una-dinastia-de-polistas-campeones-y-posan-junto-nid18112026/",
-        "fecha": "2026-11-18T03:00:00-03:00"
+        "titulo": "Qué ver en Netflix si te gustó Gordon: cuatro series y películas sobre crímenes reales y poder",
+        "resumen": "Tras el estreno de la serie dirigida por Pablo Trapero y Pablo Fendrik, te recomendamos producciones que son ideales para quienes buscan historias atrapantes y no te podés perder",
+        "url": "https://www.lanacion.com.ar/espectaculos/que-ver-en-netflix-si-te-gusto-gordon-cuatro-series-y-peliculas-sobre-crimenes-reales-y-poder-nid18112026/",
+        "fecha": "2026-11-18T13:18:29-03:00"
       },
       {
-        "titulo": "Gabriel Rolón, sobre las decisiones: “Muchas veces estamos solo cumpliendo un mandato inconsciente”",
-        "resumen": "En una entrevista exclusiva para LN+, el psicoanalista y escritor reflexionó sobre la naturaleza humana y propuso una mirada cruda sobre el amor, la muerte y la persistencia de los mandatos sociales",
-        "url": "https://www.lanacion.com.ar/sociedad/gabriel-rolon-sobre-las-decisiones-muchas-veces-estamos-solo-cumpliendo-un-mandato-inconsciente-nid18112026/",
-        "fecha": "2026-11-18T03:00:00-03:00"
-      },
-      {
-        "titulo": "Donald Trump, sobre la reforma migratoria: “Estoy dispuesto a considerarla. Sería estricta y sin amnistía”",
-        "resumen": "El mandatario abre la puerta a un pacto con el nuevo Congreso de mayoría demócrata, aunque condiciona el debate y mantiene a los sectores duros en el control del Ejecutivo",
-        "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/donald-trump-sobre-la-reforma-migratoria-estoy-dispuesto-a-considerarla-seria-estricta-y-sin-nid17112026/",
-        "fecha": "2026-11-18T03:00:00-03:00"
-      },
-      {
-        "titulo": "El palacete francés, un lujoso restaurante, su balcón y “el lugar al que casi nadie tuvo acceso” de la estación Retiro",
-        "resumen": "Recorridas quincenales para visitar la terminal de Retiro, una experiencia imperdible para los amantes de las joyas incunables de la Buenos Aires",
-        "url": "https://www.lanacion.com.ar/lifestyle/el-palacete-frances-un-lujoso-restaurante-su-balcon-y-el-lugar-al-que-casi-nadie-tuvo-acceso-en-la-nid18112026/",
-        "fecha": "2026-11-18T03:00:00-03:00"
-      },
-      {
-        "titulo": "Mamdani anunció que eliminará una controvertida unidad de la Policía de Nueva York: “Hoy estamos cumpliendo esa promesa”",
-        "resumen": "Mamdani anunció el fin de una controvertida unidad de la Policía de Nueva York y aseguró que cumple una promesa de campaña con nuevos equipos de diálogo y patrullaje",
-        "url": "https://www.lanacion.com.ar/estados-unidos/nueva-york/mamdani-anuncio-que-eliminara-una-controvertida-unidad-de-la-policia-de-nueva-york-hoy-estamos-nid16112026/",
-        "fecha": "2026-11-18T02:50:00-03:00"
-      },
-      {
-        "titulo": "Jefe del DHS, sobre posible reforma migratoria: “Estaré abierto a hablar de cualquier cosa, pero la amnistía nunca estará sobre la mesa”",
-        "resumen": "Markwayne Mullin declaró que la amnistía para inmigrantes en EE.UU. nunca estará sobre la mesa",
-        "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/jefe-del-dhs-sobre-posible-reforma-migratoria-estare-abierto-a-hablar-de-cualquier-cosa-pero-la-nid17112026/",
-        "fecha": "2026-11-18T02:43:00-03:00"
-      },
-      {
-        "titulo": "Tiene 55 años, es artista callejero en Nueva York y revela cuánto gana por su trabajo: “He llegado hasta US$250.000”",
-        "resumen": "Conoce la historia y cuánto gana el \"Naked Cowboy\" de Times Square: Robert Burck detalla propinas, Cameo, ostras y gastos, y qué dice el IRS sobre propinas de artistas",
-        "url": "https://www.lanacion.com.ar/estados-unidos/nueva-york/tiene-55-anos-es-artista-callejero-en-nueva-york-y-revela-cuanto-gana-por-su-trabajo-he-llegado-nid17112026/",
-        "fecha": "2026-11-18T02:37:00-03:00"
-      },
-      {
-        "titulo": "Xi Jinping y Vladimir Putin se reúnen en China en la antesala del encuentro trilateral con Donald Trump",
-        "resumen": "Los líderes se congregan en el marco de la cumbre del foro de Cooperación Asia-Pacífico (APEC); el presidente de Estados Unidos se encuentra en Filipinas y viajará este miércoles a Shenzhen",
-        "url": "https://www.lanacion.com.ar/el-mundo/xi-jinping-y-vladimir-putin-se-reunen-en-china-en-la-antesala-del-encuentro-trilateral-con-donald-nid18112026/",
-        "fecha": "2026-11-18T02:14:39-03:00"
-      },
-      {
-        "titulo": "Un intendente bonaerense caminará 350 kilómetros hasta La Plata como propuesta de campaña para ser gobernador",
-        "resumen": "Se trata de Franco Flexas, alcalde de Los Toldos, un municipio de 20.000 habitantes; la iniciativa le demandará 22 días",
-        "url": "https://www.lanacion.com.ar/politica/un-intendente-bonaerense-caminara-350-kilometros-hasta-la-plata-como-propuesta-de-campana-para-ser-nid18112026/",
-        "fecha": "2026-11-18T01:35:32-03:00"
-      },
-      {
-        "titulo": "Colegiales: tras un reclamo vecinal y cuatro incendios, comenzaron a retirar los vagones abandonados del playón ferroviario",
-        "resumen": "Esta semana se inició el traslado de 17 coches y una locomotora, que fueron vendidos en subasta pública; los vecinos denunciantes contabilizaron cuatro incendios entre diciembre de 2025 y julio de 2026",
-        "url": "https://www.lanacion.com.ar/sociedad/colegiales-tras-el-reclamo-vecinal-y-cuatro-incendios-comenzaron-a-retirar-los-vagones-abandonados-nid17112026/",
-        "fecha": "2026-11-18T01:33:32-03:00"
+        "titulo": "Cumbre de EEUU, China y Rusia: qué se sabe del histórico encuentro entre Trump, Xi Jinping y Putin",
+        "resumen": "Los mandatarios se reunirán el jueves en Shenzhen para abordar el desarme nuclear, las guerras y las tensiones comerciales; la cita genera inquietud en Ucrania y Europa por el alcance de las negociaciones",
+        "url": "https://www.lanacion.com.ar/el-mundo/cumbre-de-eeuu-china-y-rusia-que-se-sabe-del-historico-encuentro-entre-trump-xi-jinping-y-putin-nid18112026/",
+        "fecha": "2026-11-18T13:17:52-03:00"
       }
     ],
     "pagina12": [
       {
-        "titulo": "La caída de los sistemas expone la fragilidad tecnológica en Estados Unidos",
-        "resumen": "Legisladores demócratas y republicanos exigen mayor transparencia y explicaciones al gobierno de Donald Trump sobre el alcance y las causas de los incidentes.",
-        "url": "https://www.pagina12.com.ar/2026/11/18/la-caida-de-los-sistemas-expone-la-fragilidad-tecnologica-en-estados-unidos/",
-        "fecha": "2026-11-18T00:01:00-03:00"
+        "titulo": "Desesperado por los votos, el oficialismo da marcha atrás con las colectoras",
+        "resumen": "Patricia Bullrich anunció en la Comisión de Asuntos Constitucionales la decisión de eliminar el artículo que generaba resistencias en algunos aliados. Por la tarde los libertarios esperan lograr las firmas para el dictamen y avanzar con la suspensión de las PASO.",
+        "url": "https://www.pagina12.com.ar/2026/11/18/desesperado-por-los-votos-el-oficialismo-da-marcha-atras-con-las-colectoras/",
+        "fecha": "2026-11-18T13:54:58-03:00"
       },
       {
-        "titulo": "El peronismo se organiza y crece la competencia interna",
-        "resumen": "El acto selló una alianza entre el Frente Renovador y el Peronismo Federal. Participaron referentes del kirchnerismo y figuras nacionales como Uñac y Zamora. Kicillof no fue invitado.",
-        "url": "https://www.pagina12.com.ar/2026/11/18/el-peronismo-se-organiza-y-crece-la-competencia-interna/",
-        "fecha": "2026-11-18T00:01:00-03:00"
+        "titulo": "El Gobierno se quedó sin quorum en Diputados y fracasó la sesión",
+        "resumen": "El oficialismo no logró reunir los 129 diputados necesarios y Martín Menem se vio obligado a dar por caída la sesión especial. La intención de la Casa Rosada era que se avanzara con Ley de Soberanía Nacional y la reforma de la Carta Orgánica del Banco Central.",
+        "url": "https://www.pagina12.com.ar/2026/11/18/el-gobierno-se-quedo-sin-quorum-en-diputados-y-fracaso-la-sesion/",
+        "fecha": "2026-11-18T13:32:35-03:00"
       },
       {
-        "titulo": "Un presupuesto en clave electoral",
-        "resumen": "Mirando las elecciones del próximo año, el bloque libertario suprimió los artículos que derogaban beneficios en discapacidad. Repusieron la actualización automática de la AUH y las asignaciones familiares. El peronismo presentó su propio proyecto.",
-        "url": "https://www.pagina12.com.ar/2026/11/18/un-presupuesto-en-clave-electoral-2/",
-        "fecha": "2026-11-18T00:01:00-03:00"
+        "titulo": "Reforma política: el proyecto de Milei podría abrir las puertas al narcotráfico y el crimen organizado",
+        "resumen": "Además de la suspensión de las PASO, la iniciativa que impulsa La Libertad Avanza elimina los aportes del Estado para que los partidos financien las campañas electorales y habilita la intervención de grandes capitales privados. Según expertos, podría ser una vía de penetración de dinero de origen dudoso o delictivo.",
+        "url": "https://www.pagina12.com.ar/2026/11/18/reforma-politica-el-proyecto-de-milei-podria-abrir-las-puertas-al-narcotrafico-y-el-crimen-organizado/",
+        "fecha": "2026-11-18T12:28:24-03:00"
       },
       {
-        "titulo": "Las colectoras hicieron fracasar, por ahora, la reforma electoral",
-        "resumen": "El oficialismo no logró las firmas necesarias para el dictamen que suspende las primarias y resucita a las colectoras. Este tema generó rechazo en algunos senadores aliados. Este miércoles intentarán conseguir las firmas de tres peronistas aliados.",
-        "url": "https://www.pagina12.com.ar/2026/11/18/las-colectoras-hicieron-fracasar-por-ahora-la-reforma-electoral/",
-        "fecha": "2026-11-18T00:01:00-03:00"
+        "titulo": "Milei se olvidó del mensaje del Papa y volvió a atacar a la justicia social",
+        "resumen": "El Presidente recibió un doctorado honoris causa en la Universidad de Belgrano y reivindicó el brutal recorte de planes sociales. Mientras tanto, León XIV reveló que le pidió al mandatario que trabaje “por los más necesitados”.",
+        "url": "https://www.pagina12.com.ar/2026/11/18/milei-se-olvido-del-mensaje-del-papa-y-volvio-a-atacar-a-la-justicia-social/",
+        "fecha": "2026-11-18T12:04:32-03:00"
+      },
+      {
+        "titulo": "Trump, Xi Jinping y Putin y un primer saludo antes de la cumbre de Shenzen",
+        "resumen": "Los presidentes de EE:UU., China y Rusia mantendrán este jueves un encuentro tripartido. Los gestos previos a esa reunión.",
+        "url": "https://www.pagina12.com.ar/2026/11/18/trump-xi-jinping-y-putin-y-un-primer-saludo-antes-de-la-cumbre-de-shenzen/",
+        "fecha": "2026-11-18T12:02:16-03:00"
+      },
+      {
+        "titulo": "Argentina se negó a condenar la violencia contra mujeres y niñas en la ONU",
+        "resumen": "El Gobierno vuelve a alinearse con Estados Unidos en la Asamblea General de Naciones Unidas y se abstuvo de votar la propuesta de la Relatoría Especial sobre violencia contra mujeres y niñas.",
+        "url": "https://www.pagina12.com.ar/2026/11/18/argentina-se-nego-a-condenar-la-violencia-contra-mujeres-y-ninas-en-la-onu/",
+        "fecha": "2026-11-18T10:03:25-03:00"
       }
     ],
     "clarin": [
       {
-        "titulo": "Manuel Armando, albañil con más de 30 años de experiencia: \"Mano de obra hay más que nunca, pero no está cualificada\"",
-        "resumen": "Es conocido en redes sociales como \"Bricomandy\" y un experto en la materia. Asegura que es difícil conseguir alguien a quien contratar por la falta de aprendizajes.",
-        "url": "https://www.clarin.com/internacional/manuel-armando-albanil-30-anos-experiencia-mano-obra-cualificada_0_l8gWpqtnuO.html",
-        "fecha": "2026-11-18T03:21:51-03:00"
+        "titulo": "Los demócratas eligen a su candidato para presidir la Cámara de Representantes y buscan hacer historia",
+        "resumen": "Hakeem Jeffries se impuso y está en camino de convertirse en el primer legislador negro del país en presidir la Cámara. Neoyorquino, de 56 años, obtuvo 251 votos a favor y 11 en contra de su nominación. Ahora deberá ratificarlo el pleno.",
+        "url": "https://www.clarin.com/mundo/democratas-eligen-candidato-presidir-camara-representantes-buscan-hacer-historia_0_GQxwc2U9mH.html",
+        "fecha": "2026-11-18T13:10:57-03:00"
       },
       {
-        "titulo": "Policía filipina pide imputar al padre de Meghan Markle",
-        "resumen": "La policía en Filipinas ha solicitado imputar al padre de Meghan Markle por presunta posesión y distribución de material ilícito. Las denuncias se someterán a evaluación preliminar. Thomas Markle enfrenta cargos en Estados Unidos y Filipinas, con investigaciones también en México. Niega las acusaciones, mientras se espera una respuesta legal adecua",
-        "url": "https://www.clarin.com/estados-unidos/policia-filipina-pide-imputar-al-padre-de-meghan-markle_0_1UmEIfaYGF.html",
-        "fecha": "2026-11-18T03:10:11-03:00"
+        "titulo": "Nadie se queda afuera: el Vasco Arruabarrena citó a todos los jugadores del plantel de Boca para la final de la Copa Sudamericana",
+        "resumen": "El Xeneize viajará este miércoles rumbo a Colombia para disputar la final de la Copa Sudamericana. El Vasco citó a los 33 futbolistas de Boca, incluyendo a los lesionados, en busca de la \"gran conquista\". El sábado se medirá ante Atlético Mineiro de Brasil en la gran final.",
+        "url": "https://www.clarin.com/deportes/nadie-queda-afuera-vasco-arruabarrena-cito-jugadores-plantel-boca-final-copa-sudamericana_0_cyiwDdSCKn.html",
+        "fecha": "2026-11-18T13:09:18-03:00"
       },
       {
-        "titulo": "En 1940, una familia de Texas adquirió el rancho donde generaciones cultivaron nogales y pasaron las vacaciones; 86 años después, vendieron sus 650 acres frente al lago por más de 10 millones de dólares para que el terreno se conv",
-        "resumen": "Está previsto que para fines de 2027, la propiedad sea transferida al gobierno de Texas. Entonces, comenzarán las tareas para convertirla en una reserva natural.",
-        "url": "https://www.clarin.com/estados-unidos/1940-familia-texas-adquirio-rancho-generaciones-cultivaron-nogales-pasaron-vacaciones-86-anos-despues-vendieron-650-acres-frente-lago-10-millones-dolares-terreno-convierta-parque-estatal_0_VU9QieYZ5h.html",
-        "fecha": "2026-11-18T03:05:51-03:00"
+        "titulo": "Un volcán en Alaska y el planeta Venus permiten fechar con exactitud la caída y destrucción de Babilonia",
+        "resumen": "La técnica consiste en analizar los anillos de crecimiento de árboles antiguos y combinar esta información con pruebas de erupciones volcánicas preservadas en núcleos de hielo de Groenlandia. También se tuvieron en cuenta registros babilonios de observaciones del planeta Venus.",
+        "url": "https://www.clarin.com/internacional/volcan-alaska-planeta-venus-permiten-fechar-exactitud-caida-destruccion-babilonia_0_A4St9hUcdu.html",
+        "fecha": "2026-11-18T13:05:53-03:00"
       },
       {
-        "titulo": "La ANMAT prohibió un gel usado en ecografías y frenó la actividad de la planta que lo fabricaba",
-        "resumen": "La medida fue oficializada mediante la Disposición 7368/2026 publicada este viernes en el Boletín Oficial. El motivo de la decisión.",
-        "url": "https://www.clarin.com/sociedad/anmat-prohibio-gel-usado-ecografias-freno-actividad-planta-fabricaba_0_QaeotqBbOW.html",
-        "fecha": "2026-11-18T02:44:31-03:00"
+        "titulo": "Quién es Airam Concepción, el joven buscado por su familia hace nueve meses en la isla de La Palma",
+        "resumen": "El español, diagnosticado con Trastorno del Espectro Autista (TEA) y el síndrome PANDAS en su niñez, se encuentra desaparecido desde el pasado 16 de febrero. Cuál fue el episodio anterior en un país extranjero, destacado por sus padres como detonante de “un colapso de autismo”.",
+        "url": "https://www.clarin.com/internacional/airam-concepcion-joven-buscado-familia-hace-meses-isla-palma_0_pUiXkAn7iY.html",
+        "fecha": "2026-11-18T13:05:30-03:00"
       },
       {
-        "titulo": "Marcos Jr. dice que no habrá \"ninguna firma\" sobre Pax Silica durante visita de Trump",
-        "resumen": "El líder filipino descartó firmar el plan de Washington durante la visita del mandatario estadounidense, pese a la presión internacional. Protestas masivas en Manila contra el proyecto de seguridad económica culminaron con cientos de arrestos y denuncias de violaciones a derechos.",
-        "url": "https://www.clarin.com/estados-unidos/marcos-jr-dice-que-no-habra-ninguna-firma-sobre-pax-silica-durante-visita-de-trump_0_U1Q7wj6hwt.html",
-        "fecha": "2026-11-18T02:30:09-03:00"
+        "titulo": "El Gobierno dio marcha atrás con las colectoras y se encamina a conseguir los votos para suspender las PASO",
+        "resumen": "Lo anunció Patricia Bullrich. Fue en el arranque de la segunda cita de la comisión donde se firmará el dictamen.",
+        "url": "https://www.clarin.com/politica/gobierno-dio-marcha-colectoras-encamina-conseguir-votos-suspender-paso_0_QIA4csutga.html",
+        "fecha": "2026-11-18T12:54:55-03:00"
       },
       {
-        "titulo": "Es oficial: Florida suma 50.000 acres más a su programa estatal de conservación de tierras para frenar desarrollos inmobiliarios",
-        "resumen": "Las propiedades incluyen establecimientos ganaderos, explotaciones agrícolas y terrenos destinados a la producción forestal. Los dueños pueden continuar trabajando las tierras.",
-        "url": "https://www.clarin.com/estados-unidos/oficial-florida-suma-50000-acres-programa-estatal-conservacion-tierras-frenar-desarrollos-inmobiliarios_0_qdzO0L2Ldj.html",
-        "fecha": "2026-11-18T02:25:51-03:00"
+        "titulo": "Demócratas del Congreso preparan investigación por presunta corrupción en entorno de Trump",
+        "resumen": "El Comité de Supervisión, liderado por García, inicia indagación sobre presunta corrupción en la administración previa, solicitando conservar documentos. Se envían notificaciones a allegados de Trump, incluyendo a sus hijos y altos cargos, para investigar lucro indebido y conducta migratoria cuestionable.",
+        "url": "https://www.clarin.com/estados-unidos/democratas-del-congreso-preparan-investigacion-por-presunta-corrupcion-en-entorno-de-trump_0_R9US3RIxHK.html",
+        "fecha": "2026-11-18T12:50:11-03:00"
       },
       {
-        "titulo": "Fue padre después de los 50 años y ahora teme no llegar a ver crecer a su hija: “Cuando ella tenga 20, yo tendré 70”",
-        "resumen": "El actor italiano Massimiliano Gallo tiene 58 años y tuvo una nena de dos años y ocho meses junto a la actriz Shalana Santana. En una entrevista, habló sobre la diferencia de edad, el temor a no acompañarla durante toda su vida y el desafío de equilibrar la paternidad con su carrera artística.",
-        "url": "https://www.clarin.com/internacional/padre-despues-50-anos-ahora-teme-llegar-ver-crecer-hija-20-70_0_K3zzVjqtdY.html",
-        "fecha": "2026-11-18T02:19:51-03:00"
+        "titulo": "Trump se reunirá por separado con Putin en China, aparte de reunión tripartita EEUU-Rusia-China",
+        "resumen": "Trump se reúne con líderes en China buscando avances en armas nucleares y Ucrania, mientras enfrenta interrupciones tecnológicas en EE.UU. La visita de Trump a Shenzhen destaca su enfoque diplomático personal, aunque persisten tensiones comerciales y de seguridad con China.",
+        "url": "https://www.clarin.com/estados-unidos/trump-se-reunira-por-separado-con-putin-en-china-aparte-de-reunion-tripartita-eeuu-rusia-china_0_12UFOAFoPq.html",
+        "fecha": "2026-11-18T12:50:07-03:00"
       },
       {
-        "titulo": "¿A qué hora sale GTA 6 en PS5 y Xbox Series X|S? Fecha de lanzamiento, horarios confirmados y cómo hacer la predescarga",
-        "resumen": "El lanzamiento del videojuego más esperado de la década ya está aquí. Grand Theft Auto VI (GTA 6) aterrizará oficialmente el jueves 19 de noviembre de 2026 para PlayStation 5 y Xbox Series X|S. En lugar de un lanzamiento global simultáneo, Rockstar Games confirmó un desbloqueo a la medianoche local en cada región. Aquí tienes todos los horarios por",
-        "url": "https://www.clarin.com/estados-unidos/hora-sale-gta-6-ps5-xbox-series-xs-fecha-lanzamiento-horarios-confirmados-hacer-predescarga_0_EnF7MFyzNa.html",
-        "fecha": "2026-11-18T02:01:51-03:00"
+        "titulo": "Papa León, el perfil de un pastor misionero",
+        "resumen": "Hacer comunidad, encontrarse juntos para construir un país en los gestos sencillos y verdaderos de la cotidianeidad. Un mensaje sencillo, y a la vez poderoso.",
+        "url": "https://www.clarin.com/opinion/papa-leon-perfil-pastor-misionero_0_qgK7YeC8t6.html",
+        "fecha": "2026-11-18T12:49:12-03:00"
       },
       {
-        "titulo": "Christina Koch, astronauta del Artemis II: “La gente se preocupa por si cambiaremos la Luna igual que hemos cambiado la Tierra; esa es nuestra elección”",
-        "resumen": "La experiencia de observar el planeta desde el espacio la llevó a reflexionar sobre el futuro de la investigación lunar. La astronauta de la NASA también compartió las dificultades físicas que enfrentó luego de regresar de la misión.",
-        "url": "https://www.clarin.com/estados-unidos/christina-koch-astronauta-artemis-ii-gente-preocupa-cambiaremos-luna-igual-cambiado-tierra-eleccion_0_LIcdI1wsFK.html",
-        "fecha": "2026-11-18T01:57:51-03:00"
+        "titulo": "¿Cuánto dura GTA 6? Horas para terminar la historia principal y alcanzar el 100%",
+        "resumen": "El lanzamiento de Grand Theft Auto 6 marca la llegada del juego más grande y denso jamás creado por Rockstar Games, lo que significa que deberás reservar una gran cantidad de tiempo si quieres descubrir todos los secretos del estado de Leonida. Basado en los reportes de periodistas y críticos que ya completaron la campaña, aquí tienes un desglose e",
+        "url": "https://www.clarin.com/estados-unidos/dura-gta-6-horas-terminar-historia-principal-alcanzar-100_0_1OGiKq8qhf.html",
+        "fecha": "2026-11-18T12:48:01-03:00"
       },
       {
-        "titulo": "Trump habla de defensa y energía con Marcos: \"Tenemos más energía que nadie en el mundo\"",
-        "resumen": "Los líderes de EE. UU. y Filipinas estrechan lazos, apostando por expandir acuerdos de defensa y cooperación energética, en un contexto de tensiones regionales. Trump destaca a EE. UU. como líder energético, proponiendo proyectos conjuntos, mientras Marcos Jr. busca ampliar la colaboración en tecnología y superinteligencia.",
-        "url": "https://www.clarin.com/estados-unidos/trump-habla-de-defensa-y-energia-con-marcos-tenemos-mas-energia-que-nadie-en-el-mundo_0_CsGxPGbbcx.html",
-        "fecha": "2026-11-18T01:50:08-03:00"
+        "titulo": "\"Mi hija de 16 años todavía se acuesta a las 9 de la noche. Es estupendo para toda la familia\"",
+        "resumen": "Una adolescente mantiene una hora fija para dormir, incluso ya cerca de terminar la secundaria. Mientras otros jóvenes alargan sus noches, su familia decidió proteger el sueño y encontró grandes beneficios.",
+        "url": "https://www.clarin.com/estados-unidos/hija-16-anos-todavia-acuesta-9-noche-estupendo-toda-familia_0_lxsLt6RbYO.html",
+        "fecha": "2026-11-18T12:37:45-03:00"
       }
     ],
     "eldestape": [
       {
-        "titulo": "Milei delira: \"No acepten que al pagador de impuestos le digan contribuyente, es violencia\"",
-        "resumen": "Milei delira: \"No acepten que al pagador de impuestos le digan contribuyente, es violencia\" El Destape",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQengwRVFyT1QtS3FMTVdBX2FyVlZSazZPaE81SDBQdHplQVNOUlE1WmpKLV9MVVNrdmhId09nempSdFduZzBOa2dZb0dTQUNpZHpOUENycldpMGRDZ194TE85MVIzVXUtSGo2NW1hYTVlREhwMExJdzJfSXV4aUh4WHQ2c3ZkWVlMRUV4bDJoWjlMWjdyMElYY2FlX2hXbW9IakRlNWg5MzZySkR5VnJzYURyYUJIaFlFMjhPUmVOWkh2VEdvdVd3ZVhTNXZhdlo1OWprTHdR?oc=5",
-        "fecha": "2026-11-18T03:30:35-03:00"
+        "titulo": "Cuenta DNI: descuentos del 30% y ahorro de $15.000 en marcas destacadas en noviembre 2026 y qué días comprar",
+        "resumen": "Cuenta DNI: descuentos del 30% y ahorro de $15.000 en marcas destacadas en noviembre 2026 y qué días comprar El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPQ3lmalZPUzh6S1dONUpBVFdzZ2tIMnd0QUtpcmFnRGE3TXlqWEdYVGhBdDZVa3BXX29ydE5mTmM3M0tJSVJreG5WZDVqeTJpb3diRVRoSHFUQ1V0OFpFN2F6WHJMNlluQzBsa1p1WU15VVdLalBNaDFNQ3JoSVYyR3NyZFk0cUNQMklSU3JaWndkNDBNRFQxSW5Pa2VjQTRPWmVxMHdoczUydlR6TTAyQ0NQRmVXMVNYTzFHakRQRHlmUTFCS2o2czB4djNqWXpoZllR0gHnAUFVX3lxTFBpZEhWMkFLRFVvTUtjcFFucXBaUXI5Q2NGRWNlWHNGb2dETkJtSm1yR1NVdUprTVZSWG1TY0xoQVM2SjNnWlJiTVRibnd6dktuTFRoZjA2NnlNVUhUOGtPVmthMjBiOXVJNnhOWUVTcUswbHJJaV9VTXlES3VOZC0wMEdDblVuYTFtUzZya2NDalI3c0xuUkJxdm82SGVIVnpybWs1alp3MlpwOGs4dGJzMDNIbEdxRVdwc2s0ckRmamdsTi1LYjhOOGRGWGRWRV9GcVluRlloVTlhbHk1UDh2bnVoRHFHcw?oc=5",
+        "fecha": "2026-11-18T14:14:48-03:00"
       },
       {
-        "titulo": "El momento gracioso de León XIV en Perú: \"Me tiraron un rosario\"",
-        "resumen": "El momento gracioso de León XIV en Perú: \"Me tiraron un rosario\" El Destape",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNODFQUzB5RU1vcDdjTlNwRVQwT0pfOURRQ0duR0c5NEdnMTE2bUhjSmFEZGNuQTVfY3VOYkVpLVVfaEZ5QzdWNnRRTU9lWG9DQnJqV2s4YWZZMzNtRFQ2aTg4OUxYSFpBTThVeHVFcHcxMnBfYXcyM0h1eUVGdUU1ZlNGX0Vkc3RON3ZCMERSVkRUMmswc0hNdFlKU3RQUzVnN2pwNUx0SVAtV3RMV0lnN3VkMA?oc=5",
-        "fecha": "2026-11-18T00:30:04-03:00"
+        "titulo": "Quién es la novia de Hernán Coronel de Mala Fama: así es Berenice",
+        "resumen": "Quién es la novia de Hernán Coronel de Mala Fama: así es Berenice El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS01VSzhiQVZqMlM5czJjeXMxQWtyalN0bGd5QnRWRGJmcV9Wc0JPQlY1WjJNV05PbS0xNExjMmxleVJxQVVJWFcwZnYzVHh6QW9QT2RDU01JTU1COTMxdDZwM01TT295NEdvX2FCV0J1bmxwUFJoa2FrVTE4Um5aMjhrd1RMcHZTUnhtZVJGQ01KcDRkRWdxQjJPQ2VGSDlHaVpZWmo4Y0RqZ9IBvgFBVV95cUxQUVBGc2IxXzlOcnhiaU5vOFhvZlk1LWNpZzc2RTBlMWhrdTlfZDJDeWhmaWJPYkZ6UzZiT2d5Yi1MbjBIa2NsZkdrLVpWZHEwX3J2NUhpWUFrWjljWExVejRXb1pFcldfUHkyZjlFMmdiYmV1cll5ZkhKd0tvNzltcmVsbGNTV3pqelI0WnJkU2M0ZDhuTEFFdEl6LWtENU9HZW1RNDN1S0owTm5CMHEzaVRCTHZtOWdXR0lnMFRn?oc=5",
+        "fecha": "2026-11-18T14:14:47-03:00"
       },
       {
-        "titulo": "Pablo Migliore emocionó a todos en MasterChef Celebrity: \"Daría mi vida por volver el tiempo atrás y...\"",
-        "resumen": "Pablo Migliore emocionó a todos en MasterChef Celebrity: \"Daría mi vida por volver el tiempo atrás y...\" El Destape",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTXNkaHI3aG1LeHRENjJudGVoVzU5djBDa3NnZ1hDU3hNNDl6cjBlN29mZEpzNW93eEd0d2pybkh5OWpGM0xjeTBmWi1SS1ZOS1NJaHdNcENYLVY4M1ZCbUFUZjg2RnVKX3BjV2hha2V6bXNCQ1hoRjJYWGJGQzJMWFZ5enBId0Jsd01GN3dtSzJqNm1ZbGwzaUxmVExCZzkyZW9IZTVoXzdhSTMxTGVTc3NtOWFrYVZZMU8ya29wY1dJSzhkRWRhaWhiTFNUZGlBM1NB0gHnAUFVX3lxTE1iUHVNQUV2N3U3WnhFdy1fSkkwZlJ6b0lablFqbnFPMi1EMTBJUk9sQTRubzVtS25iZDl0R3MtcTJncWotVVJnSFlTZEU4VE05UVhYdGJRVzYtbnk1Z1JpNTFaeTZ6ejlZa25naXV3UlpmemtTMlViRkM4NEtMaVdZcEdUTmlEYW8tZGV4QjRqNFBEZXMtUW43b0prTmtuTnBNb2tWVGp0LWo2Q25vaDNBZDVpZWVxam1KeTF3TU1nOTdmdks2WkZPWG5vUkxoZEFlYU5OSC0wUmEzWkc0QUFxUmE2R3VjSQ?oc=5",
-        "fecha": "2026-11-18T00:21:50-03:00"
+        "titulo": "Teresa Parodi, folklorista: “Esta canción de Atahualpa fue la primera con la que sentí un nudo en la garganta”",
+        "resumen": "Teresa Parodi, folklorista: “Esta canción de Atahualpa fue la primera con la que sentí un nudo en la garganta” El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOak5iUzNvTmhtSmlCMHVxT195akFmYVoxZmhGUk9lcmtPV1NNX1g0WEo3eWtqZDR5elgtOHhjVVp1d2FTek41ejQ0ZFVod1hpaVNucVg2TXN4OTRtb1BzOXdRQi1RaTg3RXkyTkxBeFVUTnRBcVZUdk53QkdkSDNRbUEyWUlZWE9KWjBhalVYaGE0Rm9wZTEtaWw0eXhJZDJ3UFI5RndCM2RrbDBZWEhpMUNEZU5tRnlMWnhGY19mYVd0Vk9sY1F4NHVud9IB3wFBVV95cUxQUDBQRzZnQlktYTEwQkZ4c1AxbGVjdlV5U09WMERNYnl1RHV3akllX212Y1VyVFk5WjBnb1dKWGptRV93Skh6V1pxQnVGdlI3UWdycFlHQkY4bGpqajdULVM2cmwxZWFqM3RHQUZMa1RJalUyZnZZLWI3RjdoY1RWdzYxaFpJQVF1bWtldVRUaXprRy1VOFZ1YTFPVGc2V3JUR2FmZXdqRDNteEc2aFg2bzRmY1M4S3d1dVZadURWX3JTMWR1VjR1YVRHbHFHZThpeDZaODkyMTY4bnFhN0Vj?oc=5",
+        "fecha": "2026-11-18T14:04:53-03:00"
+      },
+      {
+        "titulo": "Coti Sorokin habló sin tapujos y no perdonó a Javier Milei: \"De panelista a Presidente\"",
+        "resumen": "Coti Sorokin habló sin tapujos y no perdonó a Javier Milei: \"De panelista a Presidente\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUnpKbTljTE02dG1KdzhNelo1bDZHemRPQVlJbnNueHowMFBubzBUb0Y3eDJ0TVVLWW1ITml1YjhGLURmWWd2U2xGd0w1VFV6X2JfMG9wMzMwTUNHQUtwY0JkeEFtdWVMd1hpbzJQZHRCRjVrMEEwZUFyWFB6bmJUR1IzX0xJOElVNHpKemRpcmx4RmNnZ0tQUElnMG1IenRkczZXY0pYUHAwdFd2VGZJWTY0TTlkbk80YkZvS0o2TVnSAdQBQVVfeXFMTXRfYWhlSTJaSWdUal9pTWJIdFBpd2pzNkRzbmJYaXRjN25hR0I5bTRldG56UEptaWRaMlhjR0t6ZVVMTTFOSGV3aF9QWFd1YW5keTJtQUlOVjNLcVhtYlpjSExNNzNTdGFkN1lFN1BDTWc2Y202bWRYSVktUUczVzJLOWVwTnd3cHA5Y2RNbTdTaHp6QVQ0aHpHM29lWnFKNjh6RzNrc2RReTlETWdfTXdITVQwaTFqaEdIcmZUaFVmRVVPc2VodXJkUzItNU9OSWRyRjM?oc=5",
+        "fecha": "2026-11-18T13:58:25-03:00"
+      },
+      {
+        "titulo": "Animal print, texturas y muchos colores: los looks de las Governors Awards 2026 que adelantan las tendencias para este 2027",
+        "resumen": "Animal print, texturas y muchos colores: los looks de las Governors Awards 2026 que adelantan las tendencias para este 2027 El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVmhnLW9abjRSUXlKd1RiWG9DVC1TVFZVNmdoWDRtd0ZBWkxPSHFHaGVxSTdZek5rNTA4N1piam5CUW9YZGxfd1UxSk9LVVZJQnFueDd4VUdtQWw4VS1qcUU5NFlwMXpESlRIaVlNRkFNQ2daLS1SZWs0cEVmeHhIUGdYUy01cnNQU29sajNaUVJHZzBLUzFyQU5zSjRwNl9BMjdRd3RjbkpLQXMycDNueV9vdXlzUTcwWjRFWHFkY2VWNHdOWjNPdDYxVktpS3Y3VGJVT1RIRVpmb2_SAe8BQVVfeXFMTVpYR3hvYlM5RU5aMFZaY1VNenR3cmluVkZtYjZxNjhXbG0zSHAteGNZWmtzS0JmeHFxZF9iNVlsa1NDYzhEZTZyZUczQ0YtdFZGbVY5TUZzVUFRYWJ0UnMtWDdXbHlJM2pxZE0wQWNvMDJOaDV5aEo2c3BYcXk4OTdSWElaZGh5OEdTVHI2ZEVRLXlGcFJTV0pTelhnZmRvT2NQNTRhcjRGVXA1UU5qMUhxbnpxN19YX0dielh2cWg3MklPdXdPYTRlVlJrQmZUNDR6dXgyNVdkaDk2QUllQTh4eUliZUVPWTRtVnlxUzg?oc=5",
+        "fecha": "2026-11-18T13:48:15-03:00"
+      },
+      {
+        "titulo": "Funcionaba desde 1905, pero no resistió a Milei: cerró una planta de Durlock en Río Negro",
+        "resumen": "Funcionaba desde 1905, pero no resistió a Milei: cerró una planta de Durlock en Río Negro El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUm9xb3dTSVRpM3A0ZmY4aHk1NEdkdC0xSzJTRTExQU52TlY1bnQzREoxcWx6dWhNMnMwLUgtZ1NTTnR6MWYtcndEWlFXQ0V1WEctN1VvLW1iVzRkZFNfbTNXZXU1TDc5dmI4elp4S1ZITmZsRHVqOWVydlBmZURqVjA3SVhSdjF2cnVXbzFiNTNIY2FKNGE0RG9XMzVRaTVMRmt1QTNwT01hRVNWR01kWWVlMlI0SEMt0gHMAUFVX3lxTE42S0xoaFp3REluVzRyX0F6bXotSEJaOHVRcnFqNXJoVGZ4R0xzbkcxUndsVnBueUktc0tXOHZOWEhSdjZ4bUMtLTZ2dXdsUDNCdjlPR2k3YnlqaUV5elJGOUNBazhqT0VpMXV4QTlsZzlkVkFCWkM1bnpkTHU1UENuQmVHcG4wN3dJSU9PWHYyNmRFbmZ6dFo3akxWaFQ4ZkpFN3hlR3hlVnFRZGJObXBoSlJ3b2U2c1hMQ2Vna1Fva0psX05qQ0NHZ2FQbw?oc=5",
+        "fecha": "2026-11-18T13:30:00-03:00"
+      },
+      {
+        "titulo": "El tío de Nico Paz ventiló qué le dijo la madre de Messi tras el retiro de Leo: \"Estaba shockeado\"",
+        "resumen": "El tío de Nico Paz ventiló qué le dijo la madre de Messi tras el retiro de Leo: \"Estaba shockeado\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdENlYjRKZ2lUb21mUzlBb3dJRFNybXVmdkEyeFZNLVFBRmZyeXRzSUFjUVVlUFdVTUt2QkFjVzg0TXNyNGVCSWZ0R1Fhc19MMDJvQlpHeEs1UzJFTEpPWF92OXBjd0lZa3E5c1JCVDNuSGR3VWJBeHMwaV9oTG90M2ZRM2tjeGFJa2dQMUZic3NQWmlhVGJNZWM1MWI3VlZ6V0pSRDlleVpZN2lUUU9PR2FWeVR5N1RfUDQxSEt30gHSAUFVX3lxTE9YMEl5WkJrTEhLdXZOWjRzdzFRVTUzcmhTR2RINy1iQUpGdkZfRy1tbFB0WjlZR1g3WWpJYjhsN0dEeFNyUzNFSVdidWE2aFExaDYwR1ZMcjFLcUxabjRGMWU1ODY1aWJaVWNLSHpPQWpMSHlxaDE4eWIzSmxEXzZ0U0VaaTFDRkx0dmd4TVhFTEVaeGx6TW51clUwTGk4cFdKTGE5N2FfTkVEOHJzWG5FbXFVWVdrVnFxWElaUE9JVUE3dlFFTWpKNzFnY2RmVUVpUQ?oc=5",
+        "fecha": "2026-11-18T13:13:15-03:00"
+      },
+      {
+        "titulo": "Misiones busca mercados internacionales con apoyo del Gobierno provincial en la Argentina Alimenta 2026",
+        "resumen": "Misiones busca mercados internacionales con apoyo del Gobierno provincial en la Argentina Alimenta 2026 El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNdkRFWlRtODFoaGZiMFBKNmxtRDExWmNfcFVRLUZKVUk0VVlwbkZQSDlLS2J6ckxSdHgya0VOQUFmWVF4VXA1Y1dfTWlsYklTbmV2eWNJSWQ4VXNtWWZtcTd5cXFpYTMxeUlDaWtxcUFoQ3hrVVRqUzBET29Jc054cWUySFZMSmtoUDhjQVpBS08yRXR4cV9yaXdTMlVBcHpsWFQzRG1JQ3pJVDFCN0tDM1ZrSDV2WWRWb3R6bkNzS0RIeFdzNlU5WUZkVVlPS3FnMnlFSXlxcFpyYWxYbmEyZmlZVjhmNl9P0gH8AUFVX3lxTE5aTUVHOWg2SzRMUEVMc3dNM3ROYVVsZ1Z3M2NpLWFYWjVzODhfT3dTLXpTcEhUQm1HQzVBY01ybktSNy0zWXZJRm1XcEFxMUpyQ1lDay1sajJ4XzVSWDZ2SFBPWWJVUU1OMDZLSG92SFBBX3BBeVJZZGhRS3pLd1k2YnZmS0E2Q0ZLYjFSQkVFUzYwOXAzaXl5aTM2TDlMN3F5RGVmb0Z3eU44MFJGS0d4Qlp5am02bGNRZ2JUOGtrUGJlcE1XeTZocEVMSjVDT1RMSmpKd2lpTHRkSmRfV3Z6bDhxM1hVZWxzc0VNZXRlMm9IY3pGRDRJc3Q0aQ?oc=5",
+        "fecha": "2026-11-18T12:53:28-03:00"
+      },
+      {
+        "titulo": "Cambio en Cuenta DNI de Banco Provincia: el nuevo horario para comprar y vender dólares",
+        "resumen": "Cambio en Cuenta DNI de Banco Provincia: el nuevo horario para comprar y vender dólares El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTFc0QzMxTjZoQUV6WjEyWlpKV2dNWXpaeVBJUVY2WTEyYlRwZTdGSTdvclJ2YVgydzRkS25mS0I5Z21RVS1YSVRJLUJKSlYxU1ZNb1M5ZHlmNXRoTGptZC1ZLVhJX0V3a3dFbTFKLU5DYUNTSGxWUVNCYXRuUExhclRLWjhzYUF2UGc1ZFZGdGFKWGhNaDlPUHRnYzJ2ZUV1RFVNZEJxaVNTNkVGQmVhRGd4WTZKcUZHOWM5OHBZY2fSAdQBQVVfeXFMTm1LQm5NaElXTXJCMEJ3VG13ZU1heDRVUEVfMUYtV1otdHp5ZmtJNjhxdGVmTzNzenpRUU42Tkl2X1BpS29GS3pOeV9oMEpWWWpZTzB0NUhGbTQtd2FxcFpLM05FZm9DeXFTN2hFaWVxUlE4UTEtTEZ0Sm05di1sMmM2OVdnWTFRVlR2aHk3ZmVPZ2FCVHp0V0dfbTRZVkNoNW5NRVI1TkI4WUFqNHFxRElhNjNITnRBbDJVMUdzRk4telphSjh2MnhxOVJfb1p0TS1TeUk?oc=5",
+        "fecha": "2026-11-18T12:35:20-03:00"
+      },
+      {
+        "titulo": "Los 5 jugadores de la Selección Argentina que no sumaron minutos en noviembre de 2026",
+        "resumen": "Los 5 jugadores de la Selección Argentina que no sumaron minutos en noviembre de 2026 El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNdHZ1aXk0NzFJcS1oSGJWZjBYb2UtSUNnS2owMUh2VEJfaEpObFZDNFktdTBqcjc5Z2swYmVtcHFHNnhteFNlRVlhNHBrdFZvMTNsVmtuczFzYjVkTkI3RzBTMGI2RXVGcWhsTW5VdGFpUlRYb2dpbzYzaEQzcFYzNGFXYlJQbkFOYTV5N1k0ZXNQTWE1TUJoRkVwTldKdWpQZm1vOWhqUDl2U2swYzBKcXVDUm5OR0ZZakHSAc4BQVVfeXFMT3hGS3pZQV9mQ0dwcjlWSnhpT3FzMjFDbmt6a1BjRVg3YkxkT0VYd1pVNlpteURlek5hZUVFNXB5Z0dVREU1X3ZQMWJKSHNBUlkzVHVfOG4wZEt4X3hZcUFzekNjM19aQ1dYbzVOTVN5TkxpRzQ4azZYNkwwYk56RjZQdm9kMzJUdHRhLXFfM3hVbVlsOHNCVHBUZ0o5cHhxYk1JM0RidXh5Vk1PM3ZFTXdlbUF5YzlaNVZoNHhNUy13bldiMDRqLTZINkNqM1E?oc=5",
+        "fecha": "2026-11-18T12:22:09-03:00"
+      },
+      {
+        "titulo": "Inclusión y calidad: Formosa participa del Operativo Aprender 2026 con más de 11.000 alumnos de tercer grado",
+        "resumen": "Inclusión y calidad: Formosa participa del Operativo Aprender 2026 con más de 11.000 alumnos de tercer grado El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQb1VhbzZHREpDZUk2OTNCeXZNRjY5V0RrTUwwSThuSkZwdzhveHRpVDhaRHhNcFFid3dTWVVyeklyYUZCcTE1Z0RRcUdqb1dDNXlBY3l0eFVJTUlBN3p5NHJrVFlmQkpIcDBsRDNZTFhMbjVCRUViMjh2YXg4TGNKZkU2UHh6TV9WNWg4VDBpQUVmdXJleGdjMVl4cUlVVTVKakcyR2tFRnltR2FpTEJjTjY2M3F2SE1FUm5CbzdvS2NZb1VrYnZMYmVrVENZanJCOXlFZ2RjbHJzcUZxcDc1QzQwem9XZ9IB-gFBVV95cUxQbVRwc1F1YXM1STE3VkRaZnBxaFZQcUFCYnZnY1ZkS0xzZ2FoM2ZQaGFaZ2hScWZtYnBjVHNNTlRxZnFUSHdUcWVfdEpoN0VPNUh1QjZsTExTWlptOVItUXhXcXM1UG85T1dNRmhSYmJVTDJZRE9ELUtod2RsbEpwT3VtcUcxTFV0U0pPeEM1MXJzOTdWVVlXbnh6MU1ZMFBSSmkyVEtXbE1hejdlRjhMekFEcWkzRmVLczFWNFlyZlpieXo3Ni16NFRZVEhxNGpqSUxwS3dDZXJ5VnBVTmZKWUd4RzRDY3FEaXI5Z0IyMFlGRHZaeXBuZnFn?oc=5",
+        "fecha": "2026-11-18T12:13:07-03:00"
+      },
+      {
+        "titulo": "Primer saludo entre TRUMP, XI JINPING y PUTIN: histórico encuentro en la Cumbre APEC",
+        "resumen": "Primer saludo entre TRUMP, XI JINPING y PUTIN: histórico encuentro en la Cumbre APEC El Destape",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQTE4yNVhrZ29XRWF3OUdHTkpobmJqQk1TZXppOG5VdjZZZ3VfSGhMYWFWTHVtQjVDYW40MlpYcjhXV2lWY3JLd3E2RjZIMWc1NFpYVTNybHpUU0Myek11MkpKVTd1NEQyZzdENFJpdUIwNnBRbHRXRUx4UDlHSi1GVW93bEJ3TnJra3YwcHktMWxfREI3WEVJWUdiV1l6Q0VHem1uTG5rbUc1SkhwX2RVcmdsSlQ3M2M1UU03UFBsNWFyM0xCeDE40gHbAUFVX3lxTE5uMFluaTgwenBDekdkYmJRQk4zMmZ6cXVLYTZhUFk5RTg0bXVtTGF1M3MyaUFZWDRVZ0lGLTBna0ZHVDY2VkdNWlZuZXkwM2lWd1lpb3BDdG81TkIxV0t4cmNuMktSV0NlN0d3RmZYRXBpazN0NUJXMFEwNGVUUGlSdEhPSTBheEZITXBDckRjNXBrc2Q1QzlhUDNJS2JSbF9PZ1J0WjdzRl91d1BLaVgxTUppcUE2VHpQem5ieGYtN3hWejZGSkl2dW9JSEpYWEtBeUhfMmVzT2hGYw?oc=5",
+        "fecha": "2026-11-18T12:11:15-03:00"
+      },
+      {
+        "titulo": "Neuquén sumará 1,5 kilómetros de paseo junto al río Limay: dónde estará y cuándo abrirá",
+        "resumen": "Neuquén sumará 1,5 kilómetros de paseo junto al río Limay: dónde estará y cuándo abrirá El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTDl3N1FiUy10c3ZfeUlQRjljbFkyR1p2YlZXaVV3V2RQN0JnZGJ1b21SOV9PWFY3ckRkOTdIU2RSUzFJdTFQNDRQQjU4Ym9xX0M4aUkwbHRlZXEzX1BRX2xkUE5aVW1yRG5XSjlQVzZNUlZENGNsOVJjRVppVUZvOWRYa29DeEpGNEZJSC11X1JKX0dfTHIyNmkwSlpBT0gwbEhKZFVDZDU0b1ozazYyVmJEQjlldkNEU0lQaVhDWHBGamZFYkFfSFlB0gHeAUFVX3lxTFB2WDQzdDlwR1hQQ1pUcG1nT2Q3dHZ3MjZ2akNSeWNaMDYtOEdzbjREa3Vna3VjYmpoSGpjbGFnbTlJLXA2Qmc2MmdnaUJ5dGc3Z05Ud2pzYkdlYXd5anBhZ2dDUVdDQThIRW1vYjBqMkFNN2ZmZGpwYlJlUDdwTVFMTEZ2OC04VDdGWFFxcXUxR0xqcWFuZVMwdl96alB1RkhYOVA3MEJfRFMzQWtrZnA1Y3NleTBKWjR2QldzT2dzb0x2ZlNCWlBMWGdJeWN0UWFlNjlKS1hjT0Z3UU90UQ?oc=5",
+        "fecha": "2026-11-18T12:02:19-03:00"
+      },
+      {
+        "titulo": "\"24 horas por el Cine Argentino”: una MARATÓN FEDERAL reúne PELÍCULAS GRATIS y actividades en todo el país",
+        "resumen": "\"24 horas por el Cine Argentino”: una MARATÓN FEDERAL reúne PELÍCULAS GRATIS y actividades en todo el país El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOY2pNZEVQRUtPczlLVTBkSlI2TTRvOHRQVi1hUDdOdEVZR3NidlIzbUZCMGU2TExyY3lxYnFEYTE0Wm82eFBFejVHYk5aaDNoQ2xFbWdadTdZWE5zMmNfRENGeHBWNlFNMGtfZjFXR0JSS3RkUlZBaXFFVU4yUVltd1IwVTFkR01mdzlDOWVmMEVoaDFhTDMxX1B3UzNrekxLREk5VnBZUk1YODhRSWtkcmptTEZoazJWYkJkZlNKSnpsaDlBV190RE91SzIzWlpjZEJadXk1QXPSAewBQVVfeXFMUFFxR29JUnJlY0VjMzYycDczVFpwc2pyYnVsYzdmRlA1MUJmZHg3OC1VREU0dVpHUUhKNXpjaTNRUmtlWHlIdFFCdFoyeHEtYWtybzFnM05LbFBjZUJhRV9NOGQ2a0tNRVMxaW1CX3dnWTVNR2VXdVZDVTQ4MVZ1b2RFX1M4TlVlSktsaFE0SU1wSFNWZmtBLWt6a2dfNVlhcHNpZW45N2s4Y2REVWswOUxibVEwbnltczBHZlctSnV1dEZNanZMbGV6TEp2UEhvSHprb1pua2phS202TkdZSWdtSWI2b3E5N3N0VDE?oc=5",
+        "fecha": "2026-11-18T12:00:00-03:00"
+      },
+      {
+        "titulo": "Con financiamiento del CFI, La Rioja promueve la inversión y el crecimiento de empresas afines a la minería y energía",
+        "resumen": "Con financiamiento del CFI, La Rioja promueve la inversión y el crecimiento de empresas afines a la minería y energía El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNMk45bUxDeXR6Y1dfemtwaEpyWnh5dElYRWhRTjBGUml3UHE5a1VzZEVVVTB5Y0NfRTN4VV9uTm9SODU5MGh1Y2xhRnZfdGJ1OUkxT2FMdU04YkppYmhWN2FtUml3SG9RSWpaeEtFd2pYU2pmRFd0RENHTTAtb0V2RzJnNXNNSXk4N3JrZTJ4R2FnbDlpdVdQa0VzeE5rVXV2NkhZbUxUT0xYMjRyeGQybGdULUtqemtkMnFHMU9VRzdhaVNwWVJCWlBEUmpTc0JBTFhzTllOdnVmYUkyXzRqSUltOGJGZ9IB-gFBVV95cUxOWmlVSVhLSFRaSnJETmZ1WE1mUjN5M0R6R2JESzV0RG9wdml4RFFXMHJINFhwd1RxMWMtTV9VNWNmeHFEdWpnLWthTHBYM3Jpd0RpWTkwdU55TjBLdlBvYmpmRW5jUWlEcEtTZnc5aUJwTVVndHVxRDZWN052THFsMEtpcU1kTG11c28zM0djQ3RpdTc1aHdfVGpNYTItdmdKMVY4blhLV25seEdlWExLaTBsRXhmWFlwYlk5LW9Ud2hlRjJWcHFkRldRdjFWRlR2d0p2MlFKN3Ywc1UxQmFzbmpidDlESzBicDI1V1JRbWlndVdQVW5kWUdB?oc=5",
+        "fecha": "2026-11-18T11:48:54-03:00"
+      },
+      {
+        "titulo": "Invasión de hormigas voladoras en el AMBA: el fenómeno que se esconde detrás de la plaga y el rol del clima",
+        "resumen": "Invasión de hormigas voladoras en el AMBA: el fenómeno que se esconde detrás de la plaga y el rol del clima El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPeXI3YUhjRHVnTmUyUXBzT3JFa0xhN3MzLU1mOUltMmdIWlFXZnM1TW96MjJobW05R1RzcHhLVl81dXhIWkhGS2RMXzFmc2tmcUZkczlPNTJkQVpoT1luMTRsZ3JHeldiQmE4cXV2S0pCVGctaGFxN3p2ME5qRHJBblZiYkd2cW9qOTZIblN1TmprbWQtdHEyaS1sRFY1ODRncC1hcG5PNmdRS2gwLUlhYVdjMVZsRVVGV0hLelVGSVlVNTTSAdcBQVVfeXFMUG9Gc2x5OVVLa0VEM1liRFMta3EtWEt1eHZWNEZXTm4zMmNXdDctUjR1bXpOVjlaanZCcGJLS1JTdGhFc1dtemtMNWRKLVBrZURmRU9NTG1kcUZMVXZjLVhYRTlDS19QQ1RBUVhFUm1vSUMzRWk1b3pPekNNQk5lQWJBdVZ2YkItOWI2OERkeGQ0YzBxZmxyYUtPZ3BSZ24tT29RWkpVR1pEbDh6eV95bng3Yzc1VHBReGExVkg2bzI1RGVZTGF4NHd0SHhhYVJoX3I3Zk9kdVE?oc=5",
+        "fecha": "2026-11-18T11:44:01-03:00"
+      },
+      {
+        "titulo": "¿El gobierno piensa que si hay PASO ya perdieron? | LA PREVIA con Ari Lijalad y Roberto Navarro",
+        "resumen": "¿El gobierno piensa que si hay PASO ya perdieron? | LA PREVIA con Ari Lijalad y Roberto Navarro El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPcTBNQ2dOaGZPT1EyMnlzNkhXTHRjRHJuLTg3RVBGYTN5TkJQbUlYS2xTcjNaUTdad1RLd0xWSk1IblpNWmlTVzk5MFVsbmxvYTNRVkYwai1DQlRXMk9PTzNCM1VRWFJ6SWdiM2cyMFZzX1dfWXZYQnhsV3pFeTh0eVRGay1HbTlEUFc2MjMxM21ocGQ4ay1RY1RRZGgtbWZJa2tnYUJXSHNmbV9qaGpERFZJaHpmYlV6a3p5VkEzYnFRNG5LM3R6NUFFSGk4Nl82Q3c5MUlkeUZaNHdG?oc=5",
+        "fecha": "2026-11-18T11:30:00-03:00"
+      },
+      {
+        "titulo": "Milei: \"La idea de la justicia social nos hunde\"",
+        "resumen": "Milei: \"La idea de la justicia social nos hunde\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdjkzTTFpVTNKcjFwU2lHVlZERHJNczhaalZHMWNjWG5odnh1aXdDUVd2MDZnLVQ1dURNYjhMR1RST0pxRXloYTRrQng5dGtQeTAwOTRiWU5OYk1jM0NWanhlTHY3QUlSVGlCT015WkxScnNhakNmdU93UUZsU0RBYnIxb3FJN0twS3dTMXBIWWJmQdIBpgFBVV95cUxOSEx6R05hRWVYU0NWS1pBdFFPZGNBMWtNVDRuWElZSl9OUVNNX3VheWRMam5yRlNLdXo5WjNWSGNKT1plTEFJaVNwcm9NUU9teDFtTnd4RUVEb2RwWHRVeENBOFB5MmhDNzZzeXZZZEpqZnZyclRCU25XUmhvX0s4eXhfcElVYm9IdmFIeGtKZ0FkVjlLUERUSFQyMDRQcmJYR3hjTWtB?oc=5",
+        "fecha": "2026-11-18T11:15:00-03:00"
+      },
+      {
+        "titulo": "El brutal thriller de acción que arrasa en Netfix y ya es número 1 en 63 países",
+        "resumen": "El brutal thriller de acción que arrasa en Netfix y ya es número 1 en 63 países El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUS1zbG40ZklqYU9valBLRGdXUUxSVVFlaGtmWnpVU1RmQVIxNFR1aGFPRkNYbFN4aHY0cXktQ1IwYmtfRVJpQlhRQ2Yta191d1UwWWdCNUVFd3Q3aDJpQVpOWGlWOEx4NHd5eXJ2V1BsV1hUMXAyVUhFd2hyTkVVN0JKS0piNWlJakJwemJVLUliNm1ZNngza0Q5ZlAwY3h0aE9kaml0OHR3UdIBvgFBVV95cUxQcGlZTU1IdWNjMEc4cGFzWjZMTnMtTzcyd1QxVGcwelVYRXd2RWVRdXM4UHEtR3RhQ2EyYlEyM3lHU2YwYmZNMVM1anAyNVRxQ05pRUx5MFBvVzVEcVFTRi1oSGpGTzdWRjVVcGhUak1fSThPS2V5RUJfdXZUdC1XcTY3Z0wzeXdrN1VmWGNjRExtWEVkQUVQZzdRcGNzcUtpT0hfc3JVUjRxMnhnNmd0OWF6QVdNd0VpTUhnUVN3?oc=5",
+        "fecha": "2026-11-18T11:15:00-03:00"
+      },
+      {
+        "titulo": "Cuántas marcas de autos japonesas hay y cuáles son",
+        "resumen": "Cuántas marcas de autos japonesas hay y cuáles son El Destape",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUWhiTmhrSXU4SWplbUtITFNGRzExc1B3dmYzVWhZNllKV0JSdWJPRXB6RFRRUzVsMHAyaWUwVk1XZ3FLMGxodjdqLXh2VE5ub0dJcGZScnNiWGdKU2FBUmg1QWpzMnlQSUIwTUhVbzVpZzN2aE45R2VDVWItQ3BxVjlIN3FJX2JPSWh5ZlU5Z1JZYjRM0gGoAUFVX3lxTE5nNno4a05NMlVwRTZFWFl5bGY5THVtanl1aTZtTEowekNzM1JUZktkVzVzMURBTEdmdWkyM1g2ZTVDekN4ZnZVYnE1bW5CM29ZYTB6NThPRWtIdTZ5TXd6ZkJmWXdHX2RNWTNRZE55NU94ektsQ3k1dTAzNkFDdDl1eFJmYXdmVVdFOUQySHRjQTU1eG9ZczFpOW4yZlhFM0NzRld1M3docg?oc=5",
+        "fecha": "2026-11-18T11:04:05-03:00"
+      },
+      {
+        "titulo": "Monotributo de ARCA en diciembre: cuánto se paga por mes en cada categoría",
+        "resumen": "Monotributo de ARCA en diciembre: cuánto se paga por mes en cada categoría El Destape",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOWlNDcXM3YXJVVjRHRVdicHlYYXJBRXV4ZGJicC1Pd3ZMVzdHLUhhM05vSFFoampqZnZlNWVGc2dsUDQzVDdsWjFnS21hWkZxLXZxcWQ3Z3BJS2FsSmRiZWNNNG03UlFGa1h1ci1Wb1BWdUsyNHVVd3ZHbzN5RG0zVThteWlzNjdtQ19oSmVHUmptYWpkNU5QTXhGLVJiSFFnbGxPTVdkeGVxZklaMDUw0gHDAUFVX3lxTE9vX0VJaGJOQXFDeVc4cG1qNFlEMzB0YlJVbHJWWmRGYTZBSUdBSGJHWWN1bGJIM3VYMjdNdWxuYjg5aXlDV3l1ZzlqcWcwX0JTQkp2NE9TVHBMeEU5cU02N0Q5b1ZjWWJkZDhtc1B6UHZwMnZjNHFoQlB5bVBucjRJNXdwYzVId3l6SmUxN0RNR1lvT3dyM1pNbUpqYlNaNGdNSEE0MENpQ0cxQnFCZWF4UUFncGJhVlFFOXpEUnBsM0R3RQ?oc=5",
+        "fecha": "2026-11-18T10:52:30-03:00"
+      },
+      {
+        "titulo": "Jon Heguier y el miedo de Milei: \"En el Gobierno nadie quiere hacerse cargo del fracaso\"",
+        "resumen": "Jon Heguier y el miedo de Milei: \"En el Gobierno nadie quiere hacerse cargo del fracaso\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOZzRCRGdnX19GTUczSmhVaGotOVd5QS0wVG9vUzkxU283RHlDdWJRbWYtU2t1R20zZERSSmQ2aWRVekhCeF9RcmQ2SGQwc2ZKajdVcmJnWDI1N3d3NENHMFd6V081Z25sdGRPemlFU1BHNjFkYUVFOHFBM0lDS1dHRkhhYW15UjR1SGZsTTFpUWdOMTRWUzdENzBzbTJtNVNtWTJsWE9BX2c5VXJkMVdqUE5aRVJhY0x6OXRqRXI5ZVpnTkEwYVc2bjNLRVAwRnhkR05J?oc=5",
+        "fecha": "2026-11-18T10:30:34-03:00"
+      },
+      {
+        "titulo": "Orgullo nacional: es argentina y descendió a casi 5.000 metros en Alaska para descubrir una medusa gigante",
+        "resumen": "Orgullo nacional: es argentina y descendió a casi 5.000 metros en Alaska para descubrir una medusa gigante El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOU0QtaHBEOGk2NVhHYVQwTmVFckZSU1ltU1R0VFJwdy04MkNYNHVqM0FaMl9faVZ4ZGdXWWpBbjdxdmRvTmdJUDhzb0VmVkw4RUcyanBCbjRTc1RjRFV3WXlFa1JlTGV2LUlkZ3AzaUhRd0JyOVdjanV0Tm1rNVN6aUFHUlRLUGpTeEU0aTdoc2p1VnZOZ01iT2NVMzdwejJnZmw4WWVVRDNYcmxMbVJ0VXNhcF82LXpfY0prY0VjcDVHajhaZVJtZnJMT2hsRFJXNG1MSjVR?oc=5",
+        "fecha": "2026-11-18T10:28:34-03:00"
+      },
+      {
+        "titulo": "Carlos Bianco lanzó una FUERTE advertencia por el plan de Javier Milei para ELIMINAR las PASO",
+        "resumen": "Carlos Bianco lanzó una FUERTE advertencia por el plan de Javier Milei para ELIMINAR las PASO El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOLVRUY29KVTNTQWM4RFh4MzA2NVAtQ3U5ODk4Sk16RmYxQTJKRUlHNUdFaE1aSzVHZ2UyaHpRZ3ZHWmhQQ1NiWTNVdWRFRjd3SnhQaEVFTlo3NXhjeExVcnZScWNJOF9TUlliMW5OOGd0YjhhazhMbUN1Q1dmdks4OWI2OXdjaEloZDBPV3pVLVlhWXU5ZkNvbnJBUlYtZHlwTzNLbTM4NldENzhZdVRWMG9qVVFjT2dCTl9wdVlrNXbSAdQBQVVfeXFMTkR0bGJURm5pTEpCekRFZzR3TlhjbDJiX2t6UG1zMThWOTlGaW45M0djb0c1a2pDNW9JMmFiWlRTcE9KTC1ubTRidk1iZm1ldTZnb05vWTYzU29UZFdvRnN6WjJoTmRRTHE3czRITVlpbk03WVdPQ2dIUjdLdWZ5TS1Gcmp2Q0JaS2kxYlV0ZHllazR5YkNGTXpzMnI5Unk1S2hHRE5sb3VlazdnaUZJZ0gtNkNNdEJkM20yU3hyRWdQZ0FlS0k2Tzd0cnl3UnBWUUdmS1M?oc=5",
+        "fecha": "2026-11-18T10:22:01-03:00"
       }
     ]
   },
