@@ -122,6 +122,38 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 @keyframes scratch-appear{from{transform:translateY(15px);opacity:0}to{transform:translateY(0);opacity:1}}
 @media(max-width:680px){.scratch-grid{grid-template-columns:1fr}.scratch-surface{height:125px}.scratch-answer{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.scratch-final{animation:none}.scratch-surface canvas{transition:none}}
+</style><style>
+/* Camino 3: arcade jugable, controles táctiles y recompensa de dinámica. */
+.arcade-panel{margin-top:27px;padding:clamp(15px,3vw,28px);border-radius:29px;background:#eff6ff;border:2px solid #d6e4fb}
+.arcade-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;color:#254f92;font-size:12px;font-weight:900;letter-spacing:.06em;margin-bottom:14px}
+.arcade-state{color:#7864aa}.arcade-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:13px}
+.arcade-stats>div{background:white;border-radius:13px;padding:11px 5px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.arcade-stats small{font-size:clamp(8px,1vw,10px);font-weight:900;color:#6f86a4;text-align:center}
+.arcade-stats strong{color:#214995;font-size:21px}
+.arcade-stats>div:nth-child(3) strong{color:#168cbd}.arcade-stats>div:nth-child(4) strong{color:#9163b9}.arcade-stats>div:nth-child(5) strong{color:#df8e26}
+.arcade-shell{position:relative;max-width:760px;margin:auto;border-radius:20px;overflow:hidden;box-shadow:0 14px 30px #19366833;background:#123479}
+#arcade-canvas{display:block;width:100%;height:auto;aspect-ratio:760/390;touch-action:none}
+.arcade-overlay[hidden],.arcade-result[hidden]{display:none}
+.arcade-overlay{position:absolute;inset:0;background:#102858c9;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;color:white}
+.arcade-overlay>span{font-size:35px;line-height:1}
+.arcade-overlay strong{font-size:clamp(20px,4vw,35px);margin:8px 0 0}
+.arcade-overlay p{max-width:400px;color:#ecf7ff;font-size:clamp(11px,1.7vw,14px);line-height:1.5}
+.arcade-start,.arcade-again{border:0;border-radius:999px;background:#ffcb69;color:#1a376b;font:900 14px Montserrat,Arial,sans-serif;padding:15px 27px;cursor:pointer;box-shadow:0 5px 0 #bc8e3b}
+.arcade-controls{display:flex;gap:13px;align-items:center;justify-content:center;margin:16px auto}
+.arcade-controls span{font-size:12px;max-width:230px;text-align:center;color:#627da0;line-height:1.5}
+.arcade-arrow{width:70px;height:54px;flex-shrink:0;border:2px solid #bfd3f2;border-radius:17px;background:#fff;color:#214995;font-size:24px;touch-action:none;cursor:pointer;user-select:none}
+.arcade-arrow:active{background:#dcecff}
+.arcade-result{padding:clamp(20px,4vw,32px);margin-top:20px;border:2px solid #bcd5f4;border-radius:24px;background:linear-gradient(140deg,#ffffff,#f7f1ff);animation:arcade-pop .5s ease}
+.arcade-result-tag{font-size:11px;letter-spacing:.09em;color:#8660b3;font-weight:900}
+.arcade-result h3{font-size:clamp(26px,4vw,42px);color:#214995;margin:13px 0 6px;line-height:1.22;font-weight:900}
+.arcade-result p{font-size:14px}
+.arcade-result-how{background:white;border:2px solid #e1e8f6;border-radius:17px;padding:20px;margin:18px 0}
+.arcade-result-how strong{color:#214995;font-size:14px}
+.arcade-result-how ol{color:#49658a;font-size:14px;line-height:1.8;padding-left:22px;margin-bottom:0}
+.arcade-result .arcade-again{margin-top:8px}
+@keyframes arcade-pop{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:650px){.arcade-stats{gap:4px}.arcade-stats>div{padding:10px 3px}.arcade-stats strong{font-size:17px}.arcade-controls{gap:8px}.arcade-arrow{width:66px;height:54px}.arcade-overlay{padding:9px}.arcade-overlay p{margin:6px 0 11px}.arcade-start{padding:11px 20px}}
+@media(prefers-reduced-motion:reduce){.arcade-result{animation:none}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas</h1><div class="divider"></div>
@@ -131,7 +163,7 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
 <div class="path-grid">
 <button class="path-card" data-open="0" type="button"><span class="path-number">CAMINO 01</span><strong>🎨 La paleta de dinámicas</strong><span>Elegí un color del cuadrado degradado y descubrí una dinámica sorpresa. Para cambiarla, tocá otro color.</span><b>Explorar este camino →</b></button>
 <button class="path-card" data-open="1" type="button"><span class="path-number">CAMINO 02</span><strong>✨ Raspá y creá</strong><span>Raspá tres casilleros para descubrir qué cambia, cómo y cuándo. Inventá una dinámica con tu dupla a partir de las pistas.</span><b>Explorar este camino →</b></button>
-<button class="path-card" data-open="2" type="button"><span class="path-number">CAMINO 03</span><strong>🤝 Bingo de vínculos</strong><span>Un tablero de 16 mini misiones para conocerse, escucharse y descubrir conexiones dentro del grupo.</span><b>Explorar este camino →</b></button>
+<button class="path-card" data-open="2" type="button"><span class="path-number">CAMINO 03</span><strong>🕹️ Cazá una dinámica</strong><span>Jugá un minijuego estilo arcade: atrapá chispas de colores y desbloqueá una dinámica sorpresa para tu peulá.</span><b>Explorar este camino →</b></button>
 </div></section>
 <section id="tool0" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
 <div class="kicker">CAMINO 01 · LA PALETA DE DINÁMICAS</div><h2>🎨 Elegí un color, descubrí una dinámica</h2>
@@ -168,13 +200,28 @@ p{line-height:1.7;color:#627392}.divider{height:5px;width:100px;background:linea
  <button type="button" id="scratch-restart" class="action">🎫 Nueva raspadita</button>
  <p class="tip">No hay respuestas correctas: estas condiciones son disparadores para imaginar dinámicas nuevas. Pueden adaptar cualquier pista a la edad del grupo.</p>
 </div></section>
-<section id="tool2" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button>
-<div class="kicker">CAMINO 03 · HACER Y DESCUBRIR</div><h2>🤝 Bingo de vínculos</h2>
-<p class="tool-lead">Un tablero de pequeñas misiones. Lean una casilla, cumplan la consigna y márquenla. Intenten completar una línea, columna o diagonal.</p>
-<div class="panel"><div class="bingo-top"><span class="bingo-count" id="bingo-count" aria-live="polite">0 de 16 misiones completadas</span><button class="ghost" id="new-bingo" type="button">↻ Nuevo tablero</button></div>
-<div class="bingo-board" id="bingo-board" role="group" aria-label="Tablero de dieciséis dinámicas para conectar"></div>
-<div class="bingo-end" id="bingo-end" hidden><strong>🌟 ¡Bingo de vínculos!</strong><p>Completaron una línea. ¿Qué descubrieron sobre el grupo? Pueden seguir hasta completar todo el tablero.</p></div>
-<p class="tip">Cada persona elige cómo participar. Las misiones se pueden adaptar por edad; no fuerzan confidencias, contacto físico ni exposición personal.</p></div></section>
+<section id="tool2" class="tool" hidden>
+<button class="tool-back" data-back type="button">← Elegir otro camino</button>
+<div class="kicker">CAMINO 03 · MINIJUEGO SORPRESA</div><h2>🕹️ Cazá una dinámica</h2>
+<p class="tool-lead">¡Un minijuego para desbloquear ideas! Mové la canastita y atrapá las chispas de colores. Cada color representa una forma de transformar una peulá. Cuando termine el tiempo, vas a descubrir <strong>una dinámica sorpresa</strong>.</p>
+<div class="arcade-panel">
+ <div class="arcade-heading"><span>✦ ARCADE DE DINÁMICAS</span><span class="arcade-state" id="arcade-state" aria-live="polite">¿Preparados?</span></div>
+ <div class="arcade-stats">
+  <div><small>TIEMPO</small><strong id="arcade-time">20</strong></div>
+  <div><small>CHISPAS</small><strong id="arcade-score">0</strong></div>
+  <div><small>COMUNICACIÓN</small><strong id="arcade-c-blue">0</strong></div>
+  <div><small>ESTRUCTURA</small><strong id="arcade-c-purple">0</strong></div>
+  <div><small>PARTICIPACIÓN</small><strong id="arcade-c-orange">0</strong></div>
+ </div>
+ <div class="arcade-shell">
+  <canvas id="arcade-canvas" width="760" height="390" role="img" aria-label="Minijuego: mové la canastita para atrapar chispas de colores y descubrir una dinámica"></canvas>
+  <div class="arcade-overlay" id="arcade-overlay"><span>✨</span><strong>¿QUÉ DINÁMICA TE TOCA?</strong><p>Juntá chispas de colores para descubrir una manera inesperada de hacer una peulá.</p><button class="arcade-start" type="button" id="arcade-start">▶ ¡JUGAR!</button></div>
+ </div>
+ <div class="arcade-controls"><button id="arcade-left" class="arcade-arrow" type="button" aria-label="Mover canastita a la izquierda">◀</button><span>Arrastrá la canastita, usá las flechas o estos botones</span><button id="arcade-right" class="arcade-arrow" type="button" aria-label="Mover canastita a la derecha">▶</button></div>
+ <div class="arcade-result" id="arcade-result" hidden aria-live="polite"><span class="arcade-result-tag">🏆 DINÁMICA DESBLOQUEADA</span><h3 id="arcade-result-title"></h3><p id="arcade-result-intro"></p><div class="arcade-result-how"><strong>¿Cómo aplicarla a cualquier peulá?</strong><ol id="arcade-result-steps"></ol></div><p id="arcade-result-tip"></p><button class="arcade-again" id="arcade-again" type="button">↻ ¡Jugar para descubrir otra!</button></div>
+ <p class="tip">Acá el juego es solo para inspirarse. La propuesta que se desbloquea cambia el formato de la peulá, no su juego, tema ni hilo. No importa el puntaje: siempre se desbloquea una dinámica.</p>
+</div>
+</section>
 </main></div>
 <script>
 const $=id=>document.getElementById(id);
@@ -192,7 +239,7 @@ for(const [id,label] of [['racional','Racional'],['tema','Tema'],['hilo','Hilo']
  link.href=id==='racional'?'racional.html'+q:id==='hilo'?'hilo.html'+q:id==='juegos'?'juegos.html'+q:id==='dinamicas'?'dinamicas.html'+q:'planificacion.html?seccion='+id+extra;
  link.textContent=label;if(id==='dinamicas')link.setAttribute('aria-current','page');$('nav').appendChild(link);
 }
-document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{$('paths').hidden=true;document.querySelectorAll('.tool').forEach((t,i)=>t.hidden=i!==Number(b.dataset.open));if(b.dataset.open==='2'&&!bingoInitialized)renderBingo()}));
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{$('paths').hidden=true;document.querySelectorAll('.tool').forEach((t,i)=>t.hidden=i!==Number(b.dataset.open));if(b.dataset.open==='2')arcadePaint(0)}));
 document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tool').forEach(t=>t.hidden=true);$('paths').hidden=false}));
 const pick=arr=>arr[Math.floor(Math.random()*arr.length)];
 const age=group?(['Jaza','Mega','Nifla'].includes(group)?'peques':['Leitza','Mabri','Kasu','Mebu'].includes(group)?'infancia':['Shingsha','Jamu'].includes(group)?'preadolescentes':'adolescentes'):'infancia';
@@ -307,48 +354,118 @@ function scratchNewRound(){
 document.querySelectorAll('[data-reveal]').forEach(button=>button.addEventListener('click',()=>scratchReveal(Number(button.dataset.reveal))));
 document.getElementById('scratch-restart').addEventListener('click',scratchNewRound);
 scratchNewRound();
-const bingoPool=[
- 'Encontrar algo que dos personas tengan en común','Inventar un saludo grupal',
- 'Escuchar una idea sin interrumpir','Hacer una pregunta abierta a alguien distinto',
- 'Construir una historia entre tres','Dejar que otra persona elija la siguiente consigna',
- 'Descubrir dos formas distintas de resolver algo','Crear un nombre para una misión compartida',
- 'Dibujar cómo se ve un buen equipo','Inventar una regla que incluya a todos',
- 'Compartir una propuesta de ayuda ficticia','Cambiar de compañero para una mini misión',
- 'Pensar una respuesta en equipo','Crear un símbolo que represente al grupo',
- 'Resolver un acertijo entre varios','Hacer una ronda de agradecimientos ficticios',
- 'Inventar un desafío que nadie pueda resolver solo','Encontrar una coincidencia inesperada',
- 'Imaginar un grupo que escucha a todos','Crear una escena breve con un final cooperativo',
- 'Proponer otra forma de participar','Hacer un dibujo colectivo sin hablar',
- 'Elegir una cualidad para un equipo imaginario','Sumar una idea a la propuesta de otra persona',
- 'Armar una lista de tres soluciones','Dibujar una situación desde dos perspectivas',
- 'Crear una pista que otro equipo pueda entender','Inventar un código de gestos sencillo',
- 'Resolver una misión con roles rotativos','Elegir un objeto que represente la cooperación',
- 'Contar una historia inventada de colaboración','Crear un pequeño acuerdo para trabajar juntos'
-];
-let bingoDone=[],bingoInitialized=false;
-function renderBingo(){
- bingoInitialized=true;
- const arr=bingoPool.slice();
- for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}
- bingoDone=Array(16).fill(false);$('bingo-board').replaceChildren();$('bingo-end').hidden=true;
- arr.slice(0,16).forEach((text,i)=>{
-  const button=document.createElement('button');button.type='button';button.className='bingo-cell';button.setAttribute('aria-pressed','false');
-  const name=document.createElement('strong');name.textContent=text;
-  const status=document.createElement('small');status.textContent='TOCÁ AL COMPLETAR';
-  button.append(name,status);
-  button.addEventListener('click',()=>{
-   bingoDone[i]=!bingoDone[i];button.classList.toggle('done',bingoDone[i]);button.setAttribute('aria-pressed',String(bingoDone[i]));
-   status.textContent=bingoDone[i]?'✓ ¡HECHO!':'TOCÁ AL COMPLETAR';
-   const count=bingoDone.filter(Boolean).length;$('bingo-count').textContent=count+' de 16 misiones completadas';
-   const lines=[];
-   for(let r=0;r<4;r++)lines.push([0,1,2,3].map(x=>4*r+x));
-   for(let c=0;c<4;c++)lines.push([0,1,2,3].map(x=>4*x+c));
-   lines.push([0,5,10,15],[3,6,9,12]);
-   $('bingo-end').hidden=!lines.some(line=>line.every(x=>bingoDone[x]));
-  });
-  $('bingo-board').appendChild(button);
- });
- $('bingo-count').textContent='0 de 16 misiones completadas';
+const arcadeDynamics=[["Comunicación",[["Peulá sin palabras","Durante una etapa, las consignas y respuestas se transmiten sin hablar.",["Anticipen qué momento van a transformar.","Usen gestos, dibujos o tarjetas para comunicar las consignas.","Después retomen el habla y comparen cómo cambió la participación."],"Siempre debe haber una manera accesible de pedir ayuda."],["Consignas por fragmentos","Nadie recibe toda la explicación al mismo tiempo.",["Dividan las indicaciones de una etapa en varios fragmentos.","Entreguen una parte diferente a cada subgrupo.","La peulá continúa cuando logran compartir la información."],"No se trata de inventar otro juego, sino de cambiar cómo se explica."],["Un idioma distinto","Las respuestas cambian de canal de comunicación.",["Elijan un tramo de la peulá en el que normalmente hablan.","Respondan mediante dibujos, símbolos o movimientos simples.","Cambien otra vez el medio de expresión en el siguiente momento."],"No obliguen a nadie a hablar o exponerse."],["La consigna pasa de mano en mano","Los janijimot transmiten entre sí las instrucciones.",["Den la primera consigna a un grupo pequeño.","Ese grupo debe transmitirla a otro usando sus palabras o dibujos.","Antes de empezar, reúnan a todos y aclaren qué entendieron."],"Mantengan las consignas simples y adecuadas a la edad."],["Una sola voz por vez","Cambiar los turnos transforma la peulá.",["Elijan un símbolo de turno de palabra.","En una parte, solo habla quien tiene el turno, pero puede pasarlo.","En otra parte, cambien quién empieza y quién cierra."],"También se puede participar sin hablar."],["Primero se dibuja","La idea aparece antes que la explicación oral.",["Presenten la consigna o pregunta habitual.","Antes de hablar, cada uno la representa con un dibujo.","Pongan en común algunas interpretaciones y continúen."],"Sirve para variar el acceso a las consignas."]]],["Estructura",[["La peulá al revés","Empezar por el final cambia todo el recorrido.",["Presenten primero la instancia que normalmente sería el cierre.","Vayan retrocediendo por las etapas previstas.","Terminen en lo que habría sido la introducción."],"Adapten la secuencia para no alterar condiciones de seguridad."],["El dado decide","El azar define cómo continuar.",["Asignen seis cambios de formato a las caras de un dado.","Antes de pasar a otra etapa, tiren el dado.","Realicen la siguiente parte con la condición sorteada."],"No hace falta cambiar el contenido de la peulá."],["Los objetivos primero","La peulá se organiza como lista de metas.",["Escriban una lista de objetivos de la peulá y muéstrenla.","Dejen que el grupo decida cuáles completar primero.","Vayan marcando las metas alcanzadas."],"La dinámica está en la organización de las etapas."],["Cambio de ritmo","El tiempo pasa a ser la variable sorpresa.",["Dividan la peulá en tramos flexibles.","Antes de cada tramo, revelen un tiempo distinto.","Ajusten el ritmo de la participación y sigan adelante."],"Conserven los tiempos necesarios para explicar y cuidar al grupo."],["El orden está en tarjetas","La secuencia de la peulá se sortea.",["Escriban las etapas de la peulá en tarjetas separadas.","Den vuelta una tarjeta para decidir qué ocurre a continuación.","Conecten las etapas en el orden en que aparezcan."],"Solo para etapas cuyo orden pueda cambiarse."],["Una etapa, una sorpresa","Cada momento cambia de formato.",["Preparen tarjetas con modificaciones simples: parejas, votación, silencio o roles.","Antes de cada etapa, revelen una tarjeta.","Apliquen la condición a lo que ya tenían planificado."],"La sorpresa afecta el formato, no impone un nuevo juego."]]],["Participación",[["Ganar para el otro","Cada logro se lo regalás a otra persona.",["Asignen a cada janij alguien a quien beneficiar con sus avances.","Mantengan las actividades previstas, pero el resultado de cada uno favorece al otro.","Al terminar, reconozcan cómo las decisiones cambiaron al jugar para alguien más."],"No hace falta generar ganadores y perdedores."],["Los janijimot deciden","El recorrido deja de estar completamente en manos de los madrijim.",["Preparen dos o tres alternativas viables para continuar.","En cada transición, permitan que los janijimot elijan.","Sigan la alternativa elegida manteniendo los límites de seguridad."],"La clave es ceder decisiones reales."],["Grupos por gustos","Los grupos se arman según coincidencias.",["Propongan criterios livianos como color, comida o música preferida.","Reorganicen a los janijimot según sus elecciones.","Repitan el proceso con otro criterio durante la peulá."],"Que nadie quede afuera ni obligado a revelar algo personal."],["El rol va rotando","Cada persona asume distintas responsabilidades.",["Repartan roles sencillos de participación.","A una señal, todos cambian de rol.","Repitan la rotación para que no decidan siempre los mismos."],"Permitan adaptar roles a cada persona."],["Cada etapa tiene otra voz","La coordinación pasa entre participantes.",["Inviten a alguien diferente a explicar o elegir cómo seguir.","En la próxima etapa, cambien quién tiene esa función.","Cierren con decisiones compartidas."],"Las responsabilidades de cuidado siguen siendo de los madrijim."],["Todo suma al equipo","El objetivo personal se transforma en colectivo.",["Conserven las acciones previstas.","Cada avance individual cuenta también para una meta común.","La peulá termina celebrando lo que lograron como grupo."],"La dinámica puede aplicarse a actividades sin competencia."]]]];
+const arcadeCanvas=document.getElementById('arcade-canvas'),arcadeContext=arcadeCanvas.getContext('2d');
+const AR_W=760,AR_H=390;
+const arcadeColors=['#55c9ff','#c997ff','#ffba66'];
+let arcadeRunning=false,arcadeFrame=0,arcadeLast=0,arcadeElapsed=0,arcadeSpawn=0,arcadeBasket=AR_W/2,arcadeTargets=[],arcadeScores=[0,0,0],arcadeTotal=0,arcadePrevious='',arcadeKeys={left:false,right:false};
+let arcadePointerX=null,arcadeDrawn=false;
+function arcadeClamp(x,min,max){return Math.max(min,Math.min(max,x))}
+function arcadeText(txt,x,y,size,color){
+ arcadeContext.fillStyle=color;arcadeContext.textAlign='center';arcadeContext.font='900 '+size+'px Montserrat,Arial,sans-serif';arcadeContext.fillText(txt,x,y);
 }
-$('new-bingo').addEventListener('click',renderBingo);
+function arcadePaint(timestamp=0){
+ const ctx=arcadeContext;ctx.clearRect(0,0,AR_W,AR_H);
+ const sky=ctx.createLinearGradient(0,0,0,AR_H);sky.addColorStop(0,'#112c72');sky.addColorStop(1,'#274f9f');
+ ctx.fillStyle=sky;ctx.fillRect(0,0,AR_W,AR_H);
+ for(let i=0;i<42;i++){
+  const x=((i*173+67)%AR_W),y=(i*97+41)%310;
+  ctx.fillStyle='rgba(255,255,255,'+(0.15+(Math.sin(timestamp/850+i)*.5+.5)*.35)+')';
+  ctx.beginPath();ctx.arc(x,y,1+(i%3),0,Math.PI*2);ctx.fill();
+ }
+ ctx.fillStyle='#ffffff12';for(let i=0;i<5;i++){ctx.beginPath();ctx.arc(i*178+45,AR_H+35,115,Math.PI,Math.PI*2);ctx.fill()}
+ arcadeTargets.forEach(t=>{
+  ctx.shadowColor=arcadeColors[t.kind];ctx.shadowBlur=17;ctx.fillStyle=arcadeColors[t.kind];
+  ctx.beginPath();ctx.arc(t.x,t.y,17,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+  arcadeText('✦',t.x,t.y+9,26,'#fff');
+ });
+ const b=arcadeBasket;
+ ctx.shadowColor='#79d7ff';ctx.shadowBlur=13;
+ ctx.fillStyle='#dceeff';ctx.beginPath();ctx.roundRect(b-47,AR_H-57,94,26,12);ctx.fill();
+ ctx.fillStyle='#3787dc';ctx.beginPath();ctx.roundRect(b-41,AR_H-43,82,29,[2,2,19,19]);ctx.fill();ctx.shadowBlur=0;
+ arcadeText('✦',b,AR_H-25,22,'#ffffff');
+ ctx.fillStyle='#dceeff';ctx.fillRect(0,AR_H-7,AR_W,7);
+}
+function arcadeSync(){
+ document.getElementById('arcade-score').textContent=String(arcadeTotal);
+ ['blue','purple','orange'].forEach((c,i)=>document.getElementById('arcade-c-'+c).textContent=String(arcadeScores[i]));
+ document.getElementById('arcade-time').textContent=String(Math.max(0,Math.ceil(20-arcadeElapsed)));
+}
+function arcadeDrop(){
+ const kind=Math.floor(Math.random()*3);
+ arcadeTargets.push({x:35+Math.random()*(AR_W-70),y:-24,kind,speed:155+Math.random()*95+arcadeElapsed*2});
+}
+function arcadeLoop(now){
+ if(!arcadeRunning)return;
+ if(!arcadeLast)arcadeLast=now;
+ const dt=Math.min((now-arcadeLast)/1000,.06);arcadeLast=now;arcadeElapsed+=dt;arcadeSpawn+=dt;
+ if(arcadePointerX!==null)arcadeBasket=arcadeClamp(arcadePointerX,49,AR_W-49);
+ else if(arcadeKeys.left!==arcadeKeys.right)arcadeBasket=arcadeClamp(arcadeBasket+(arcadeKeys.right?1:-1)*420*dt,49,AR_W-49);
+ if(arcadeSpawn>.45){arcadeSpawn=0;arcadeDrop();}
+ arcadeTargets=arcadeTargets.filter(t=>{
+  t.y+=t.speed*dt;
+  if(t.y>AR_H-61&&t.y<AR_H-23&&Math.abs(t.x-arcadeBasket)<58){
+   arcadeScores[t.kind]++;arcadeTotal++;return false;
+  }
+  return t.y<AR_H+25;
+ });
+ arcadePaint(now);arcadeSync();
+ if(arcadeElapsed>=20){arcadeFinish();return}
+ arcadeFrame=requestAnimationFrame(arcadeLoop);
+}
+function arcadeFinish(){
+ arcadeRunning=false;cancelAnimationFrame(arcadeFrame);
+ arcadeKeys.left=false;arcadeKeys.right=false;arcadePointerX=null;
+ const maxScore=Math.max(...arcadeScores);
+ const leaders=arcadeScores.map((x,i)=>x===maxScore?i:-1).filter(i=>i>=0);
+ const category=leaders[Math.floor(Math.random()*leaders.length)];
+ const options=arcadeDynamics[category][1];
+ const pool=options.filter(item=>item[0]!==arcadePrevious);
+ const dynamic=pool[Math.floor(Math.random()*pool.length)];
+ arcadePrevious=dynamic[0];
+ document.getElementById('arcade-state').textContent='¡Dinámica desbloqueada!';
+ document.getElementById('arcade-result-title').textContent=dynamic[0];
+ document.getElementById('arcade-result-intro').textContent=dynamic[1];
+ const steps=document.getElementById('arcade-result-steps');steps.replaceChildren();
+ dynamic[2].forEach(step=>{const li=document.createElement('li');li.textContent=step;steps.appendChild(li)});
+ document.getElementById('arcade-result-tip').textContent=dynamic[3];
+ document.querySelector('.arcade-result-tag').textContent='🏆 DINÁMICA DESBLOQUEADA · '+arcadeDynamics[category][0].toUpperCase();
+ document.getElementById('arcade-result').hidden=false;
+ document.getElementById('arcade-overlay').hidden=false;
+ document.getElementById('arcade-overlay').querySelector('strong').textContent='¡MISIÓN CUMPLIDA!';
+ document.getElementById('arcade-overlay').querySelector('p').textContent='Atrapaste '+arcadeTotal+' chispas. ¡Abajo está tu dinámica sorpresa!';
+ document.getElementById('arcade-start').textContent='▶ VOLVER A JUGAR';
+ document.getElementById('arcade-start').disabled=false;
+ document.getElementById('arcade-result').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function arcadeStart(){
+ cancelAnimationFrame(arcadeFrame);arcadeRunning=true;arcadeLast=0;arcadeElapsed=0;arcadeSpawn=0;arcadeBasket=AR_W/2;arcadeTargets=[];arcadeScores=[0,0,0];arcadeTotal=0;arcadePointerX=null;
+ document.getElementById('arcade-overlay').hidden=true;
+ document.getElementById('arcade-result').hidden=true;
+ document.getElementById('arcade-state').textContent='¡Atrápalas!';
+ arcadeSync();arcadeFrame=requestAnimationFrame(arcadeLoop);
+}
+document.getElementById('arcade-start').addEventListener('click',arcadeStart);
+document.getElementById('arcade-again').addEventListener('click',arcadeStart);
+function arcadePointer(event){
+ const rect=arcadeCanvas.getBoundingClientRect();
+ arcadePointerX=arcadeClamp((event.clientX-rect.left)/rect.width*AR_W,49,AR_W-49);
+}
+arcadeCanvas.addEventListener('pointerdown',event=>{arcadePointer(event);arcadeCanvas.setPointerCapture(event.pointerId)});
+arcadeCanvas.addEventListener('pointermove',event=>{if(arcadeRunning&&(event.pointerType==='mouse'||event.buttons))arcadePointer(event)});
+arcadeCanvas.addEventListener('pointerup',()=>{arcadePointerX=null});
+arcadeCanvas.addEventListener('pointercancel',()=>{arcadePointerX=null});
+function arcadeButton(id,dir){
+ const b=document.getElementById(id);
+ b.addEventListener('pointerdown',event=>{event.preventDefault();arcadePointerX=null;arcadeKeys[dir]=true;b.setPointerCapture(event.pointerId)});
+ for(const event of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(event,()=>{arcadeKeys[dir]=false});
+}
+arcadeButton('arcade-left','left');arcadeButton('arcade-right','right');
+document.addEventListener('keydown',event=>{
+ if(!arcadeRunning||document.activeElement?.matches('input,textarea,select'))return;
+ if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();arcadePointerX=null;arcadeKeys[event.key==='ArrowLeft'?'left':'right']=true;}
+});
+document.addEventListener('keyup',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight')arcadeKeys[event.key==='ArrowLeft'?'left':'right']=false});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){arcadeLast=0;arcadeKeys.left=false;arcadeKeys.right=false;}});
+arcadePaint(0);
 </script></body></html>
