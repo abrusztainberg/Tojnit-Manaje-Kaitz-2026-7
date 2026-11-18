@@ -48,7 +48,7 @@ body.wheel-modal-open{overflow:hidden}
 .idea-card{margin:19px auto 2px;padding:25px 24px;max-width:590px;background:linear-gradient(140deg,#f4f8ff,#fff);border:2px solid #c8dcfc;border-radius:22px;text-align:left}
 .idea-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .idea-kind{display:inline-block;background:#e7f0ff;border-radius:100px;padding:7px 13px;font-size:12px;font-weight:900;color:#285c9e}
-.idea-age{color:#7786a5;font-size:12px;font-weight:700}
+
 .idea-text{font-size:clamp(17px,2.5vw,23px)!important;font-weight:800!important;line-height:1.55!important;margin:17px 0!important;color:#193e79!important}
 .idea-answer{padding:12px 15px;margin-top:12px;background:#ebf5fa;border-radius:12px;color:#244b75;font-size:14px;line-height:1.5}
 .idea-answer[hidden],.idea-card[hidden]{display:none}
@@ -234,7 +234,7 @@ body.wheel-modal-open{overflow:hidden}
       <strong id="winner-name"></strong>
       <p id="result-intro" class="result-intro">¡Una idea para inspirar la próxima peulá!</p>
       <div id="idea-card" class="idea-card" hidden>
-        <div class="idea-meta"><span id="idea-kind" class="idea-kind">Pregunta</span><span id="idea-age" class="idea-age"></span></div>
+        <div class="idea-meta"><span id="idea-kind" class="idea-kind">Pregunta</span></div>
         <p id="idea-text" class="idea-text"></p>
         <div class="theme-tip" id="theme-tip">
           <span class="theme-tip-label">💡 Tip para encontrar un tema</span>
@@ -441,30 +441,29 @@ if(selected==='tema'){
  });
  svg.appendChild(el('circle',{cx:250,cy:250,r:237,fill:'none',stroke:'#fff','stroke-width':10}));
 
- const ageConfig=window.EDADES_TEMAS?.[group?.toLowerCase()]||{nivel:'secundaria',edad:'12 a 18 años'};
+ const ageConfig=window.EDADES_TEMAS?.[group?.toLowerCase()]||{nivel:'secundaria'};
  const ageFocus={
- jaza:'Para 2 y 3 años, pensá en juego, apego, exploración sensorial y gestos cotidianos.',
- mega:'Para 4 años, pensá en juego simbólico, emociones, primeras reglas y experiencias concretas.',
- nifla:'Para 5 años, pensá en preguntas de los chicos, cooperación, curiosidad y preparación de mayor autonomía.',
- leitza:'Para 6 años, pensá en consignas simples, juego compartido y primeras explicaciones propias.',
- mabri:'Para 7 años, pensá en perspectivas diferentes, vínculos y decisiones dentro de juegos grupales.',
- kasu:'Para 8 años, pensá en argumentar con ejemplos, acuerdos y responsabilidades compartidas.',
- mebu:'Para 9 años, pensá en dilemas, participación real y consecuencias de sus decisiones.',
- shingsha:'Para 10 años, pensá en contradicciones del grupo, pertenencia y autonomía creciente.',
- jamu:'Para 11 años, pensá en presión de pares, pensamiento crítico y construcción de identidad.',
- shoja:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
- metu:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
- shalu:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
- netza:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
- ofna:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
- lojamuza:'Para secundaria, pensá en debates plurales, pensamiento propio y experiencias cercanas.'
+ jaza:'Para el grupo, pensá en juego, apego, exploración sensorial y gestos cotidianos.',
+ mega:'Para el grupo, pensá en juego simbólico, emociones, primeras reglas y experiencias concretas.',
+ nifla:'Para el grupo, pensá en preguntas de los chicos, cooperación, curiosidad y preparación de mayor autonomía.',
+ leitza:'Para el grupo, pensá en consignas simples, juego compartido y primeras explicaciones propias.',
+ mabri:'Para el grupo, pensá en perspectivas diferentes, vínculos y decisiones dentro de juegos grupales.',
+ kasu:'Para el grupo, pensá en argumentar con ejemplos, acuerdos y responsabilidades compartidas.',
+ mebu:'Para el grupo, pensá en dilemas, participación real y consecuencias de sus decisiones.',
+ shingsha:'Para el grupo, pensá en contradicciones del grupo, pertenencia y autonomía creciente.',
+ jamu:'Para el grupo, pensá en presión de pares, pensamiento crítico y construcción de identidad.',
+ shoja:'Para el grupo, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ metu:'Para el grupo, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ shalu:'Para el grupo, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ netza:'Para el grupo, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ ofna:'Para el grupo, pensá en debates plurales, pensamiento propio y experiencias cercanas.',
+ lojamuza:'Para el grupo, pensá en debates plurales, pensamiento propio y experiencias cercanas.'
  };
 
  const allIdeas=window.IDEAS_TEMAS||{};
  const ideaCard=document.getElementById('idea-card');
  const ideaText=document.getElementById('idea-text');
  const ideaKind=document.getElementById('idea-kind');
- const ideaAge=document.getElementById('idea-age');
  const ideaAnswer=document.getElementById('idea-answer');
  const reveal=document.getElementById('idea-reveal');
  const nextIdea=document.getElementById('idea-next');
@@ -493,7 +492,6 @@ if(selected==='tema'){
   const kind=parts[0],body=parts.slice(1).join('|');
   const [text,answer]=body.split('::');
   ideaKind.textContent=kind==='Dato'?'💡 Dato curioso':kind==='Acertijo'?'🧩 Acertijo':'💬 Pregunta disparadora';
-  ideaAge.textContent=(group||'Madrijim')+' · '+ageConfig.edad;
   ideaText.textContent=text;
   document.getElementById('idea-note').textContent=(ageFocus[group?.toLowerCase()]||'Pensá en las necesidades reales de tu grupo.')+' ¿Qué pregunta educativa puede nacer de esto? Podés pedir otra sin volver a girar.';
   ideaAnswer.textContent=answer||'';
