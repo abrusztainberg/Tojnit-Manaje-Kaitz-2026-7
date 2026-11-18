@@ -94,18 +94,29 @@ textarea{min-height:100px;resize:vertical}textarea:focus,input:focus,select:focu
 .paper-btn.is-selected{border-color:#214995;background:#214995;color:#fff}
 .news-status{margin:20px 0;font-size:14px;font-weight:700;color:#667a9d;line-height:1.5}
 .news-article{border:2px solid #d6e4f7;border-radius:22px;padding:24px;background:white;text-align:left;margin:20px 0}
-.news-article[hidden],.news-reflection[hidden]{display:none}
+.news-article[hidden]{display:none}
 .news-source{font-size:12px;color:#4d7cae;text-transform:uppercase;letter-spacing:.07em;font-weight:800}
 .news-article h3{font-size:clamp(20px,3vw,28px);line-height:1.35;margin:12px 0;color:#173d7c}
 .news-summary{color:#425b7f;font-size:15px;line-height:1.75}
 .news-date{font-size:12px;color:#687a99;margin:12px 0}
 .news-link{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:800;color:#245eab;margin:12px 0 16px}
 .news-another{border-radius:100px;border:2px solid #214995;background:#fff;color:#214995;padding:13px 20px;font:800 13px Montserrat,Arial,sans-serif;cursor:pointer}
-.news-reflection{padding:25px;background:#eef4ff;border-radius:20px;margin-top:24px;border:1.5px solid #d6e5fa}
-.news-reflection h3{margin:0 0 12px;font-size:22px;color:#214995}
-.news-reflection p{color:#385a85;font-size:15px;line-height:1.75}
-.news-reflection .field{margin-top:22px}
-.news-warning{font-size:12px;color:#677c9c;margin-top:12px}
+
+/* Identidad editorial aproximada de cada diario (sin usar sus fuentes propietarias). */
+.paper-btn{font-size:clamp(19px,2.8vw,27px);letter-spacing:-.035em;line-height:1.2}
+.paper-lanacion{font-family:Georgia,'Times New Roman',serif;font-weight:800;color:#174b80;border-color:#bacfe3}
+.paper-pagina12{font-family:Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:-.055em;color:#d52531;border-color:#f0b3ba}
+.paper-clarin{font-family:Georgia,'Times New Roman',serif;font-weight:900;color:#cf1e28;border-color:#efb2b7}
+.paper-eldestape{font-family:Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:-.04em;color:#172e49;border-color:#b7d5ed}
+.paper-lanacion.is-selected{background:#174b80;color:#fff;border-color:#174b80}
+.paper-pagina12.is-selected{background:#d52531;color:#fff;border-color:#d52531}
+.paper-clarin.is-selected{background:#cf1e28;color:#fff;border-color:#cf1e28}
+.paper-eldestape.is-selected{background:#172e49;color:#fff;border-color:#172e49}
+.news-lanacion{border-top:6px solid #174b80}.news-lanacion h3{font-family:Georgia,'Times New Roman',serif;color:#153d69}
+.news-pagina12{border-top:6px solid #d52531}.news-pagina12 h3{font-family:Arial,Helvetica,sans-serif;font-weight:900;color:#202020}
+.news-clarin{border-top:6px solid #cf1e28}.news-clarin h3{font-family:Georgia,'Times New Roman',serif;font-weight:800;color:#222}
+.news-eldestape{border-top:6px solid #172e49}.news-eldestape h3{font-family:Arial,Helvetica,sans-serif;font-weight:900;color:#172e49}
+.news-lanacion .news-source{color:#174b80}.news-pagina12 .news-source{color:#d52531}.news-clarin .news-source{color:#cf1e28}.news-eldestape .news-source{color:#172e49}
 @media(max-width:540px){.paper-pick{grid-template-columns:1fr}}
 </style></head>
 <body><div class="shell">
@@ -283,17 +294,10 @@ function newsJourney(){
  const link=document.createElement('a');link.className='news-link';link.target='_blank';link.rel='noopener noreferrer';link.textContent='Leer noticia completa ↗';
  const another=document.createElement('button');another.type='button';another.className='news-another';another.textContent='📰 Otra noticia del mismo diario';
  article.append(source,headline,summary,date,link,another);
- const reflection=document.createElement('div');reflection.className='news-reflection';reflection.hidden=true;
- const title=document.createElement('h3');title.textContent='Del titular a una necesidad del grupo';
- const thinking=document.createElement('p');thinking.textContent='¿Qué tensión aparece en esta noticia? ¿Conocen una situación concreta de su grupo que dialogue con esa tensión? ¿Qué podría pasar si no la trabajan? No hace falta hablar de la actualidad en la peulá: lo importante es encontrar una necesidad educativa.';
- const field=document.createElement('label');field.className='field';field.textContent='¿Qué necesidad del grupo les hizo pensar esta noticia?';
- const input=document.createElement('textarea');input.id='news-group-reflection';input.placeholder='Escriban una idea propia para llevar a su hoja de planificación (opcional)...';field.appendChild(input);
- const disclaimer=document.createElement('p');disclaimer.className='news-warning';disclaimer.textContent='Los artículos y sus fechas pertenecen a cada medio. Una noticia no demuestra por sí sola una necesidad del grupo: contrasten la idea con lo que conocen de sus janijim.';
- reflection.append(title,thinking,field,disclaimer);
  let currentPaper='',lastIndex=-1;
  const buttonsMap=new Map();
  for(const paper of newsPapers){
-  const button=document.createElement('button');button.type='button';button.className='paper-btn';button.textContent=paper.name;buttonsMap.set(paper.key,button);
+  const button=document.createElement('button');button.type='button';button.className='paper-btn paper-'+paper.key;button.textContent=paper.name;buttonsMap.set(paper.key,button);
   button.addEventListener('click',()=>selectPaper(paper));
   buttons.appendChild(button);
  }
@@ -301,7 +305,7 @@ function newsJourney(){
  function anotherArticle(paper){
   const items=newsLoaded?.fuentes?.[paper.key]||[];
   if(!items.length){
-   article.hidden=true;reflection.hidden=true;status.replaceChildren();
+   article.hidden=true;status.replaceChildren();
    const notice=document.createElement('span');notice.textContent='Hoy no hay noticias verificadas de '+paper.name+' disponibles en esta fuente. ';
    const external=document.createElement('a');external.href=paper.url;external.target='_blank';external.rel='noopener noreferrer';external.textContent='Visitar el diario ↗';
    status.append(notice,external);return
@@ -314,13 +318,13 @@ function newsJourney(){
   headline.textContent=item.titulo;
   summary.textContent=item.resumen||'Este canal no ofrece un resumen verificable. Abrí la noticia para leer más.';
   date.textContent='Publicada: '+new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'medium',timeStyle:'short'}).format(new Date(item.fecha));
-  link.href=item.url;article.hidden=false;reflection.hidden=false;status.textContent='Noticia seleccionada de '+paper.name+'.';
-  input.value='';
+  link.href=item.url;article.hidden=false;status.textContent='Noticia seleccionada de '+paper.name+'.';
  }
  async function selectPaper(paper){
   currentPaper=paper.key;lastIndex=-1;
+  article.className='news-article news-'+paper.key;
   for(const [key,button] of buttonsMap)button.classList.toggle('is-selected',key===currentPaper);
-  article.hidden=true;reflection.hidden=true;status.textContent='Buscando noticias de hoy de '+paper.name+'...';
+  article.hidden=true;status.textContent='Buscando noticias de hoy de '+paper.name+'...';
   try{
    if(!newsLoaded)newsLoaded=await getNews();
    if(currentPaper!==paper.key)return;
@@ -333,7 +337,7 @@ function newsJourney(){
   }
  }
  another.addEventListener('click',()=>{const paper=newsPapers.find(p=>p.key===currentPaper);if(paper)anotherArticle(paper)});
- wrap.append(instructions,buttons,status,article,reflection);
+ wrap.append(instructions,buttons,status,article);
  return wrap;
 }
 function begin(id){
@@ -380,14 +384,7 @@ function begin(id){
 function syncPreview(){for(const id of ['finding','importance','goal'])$('preview-'+id).textContent=$(id).value.trim()||'Todavía sin completar.'}
 document.querySelectorAll('[data-path]').forEach(button=>button.addEventListener('click',()=>begin(button.dataset.path)));
 $('choose-again').addEventListener('click',()=>{if(stopBombTimer!==null){clearInterval(stopBombTimer);stopBombTimer=null}show('choose')});
-$('go-final').addEventListener('click',()=>{
- if(selected==='moneda'){
-  const reflection=document.getElementById('news-group-reflection');
-  if(reflection&&reflection.value.trim())$('finding').value=reflection.value.trim();
-  syncPreview();
- }
- show('finish');
-});
+$('go-final').addEventListener('click',()=>show('finish'));
 $('go-activity').addEventListener('click',()=>show('activity'));
 $('start-over').addEventListener('click',()=>show('choose'));
 ['finding','importance','goal'].forEach(id=>$(id).addEventListener('input',syncPreview));
