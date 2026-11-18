@@ -60,6 +60,18 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 #tool0 .modify-idea{border-top:2px solid #e2ebfc}
 #tool0 .modify-idea h4{font-weight:900}
 #tool0 .modify-extra{margin:18px 0}
+</style><style>
+.memory-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}.memory-top strong{color:#3c63a1;font-size:12px;letter-spacing:.05em}
+.memory-reset,.memory-change{background:#fff;border:2px solid #cbdcf5;border-radius:999px;padding:12px 18px;color:#214995;font:800 12px Montserrat,Arial,sans-serif;cursor:pointer}
+.memory-grid{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px}
+.memory-card{aspect-ratio:1/1.18;border:2px solid #799edb;border-radius:15px;background:linear-gradient(140deg,#336dc3,#143a82);box-shadow:0 4px 0 #102e69;color:white;cursor:pointer;display:grid;place-items:center;font:900 28px Montserrat,Arial,sans-serif;transition:transform .2s}
+.memory-card:hover{transform:translateY(-3px)}
+.memory-back{display:none}.memory-card.revealed{background:white;color:#214995;box-shadow:0 4px 0 #abc1e9}.memory-card.revealed .memory-front{display:none}.memory-card.revealed .memory-back{display:block}
+.memory-result{text-align:center}.memory-result[hidden]{display:none}.memory-object{color:#214995;font-weight:900;font-size:clamp(28px,5vw,52px);margin:20px auto;overflow-wrap:anywhere}
+.memory-result p{max-width:550px;margin:0 auto 18px}
+@media(max-width:700px){.memory-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}.memory-card{border-radius:10px}}
+@media(max-width:370px){.memory-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.memory-card{transition:none}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en tu hoja de planificación</div><h1>Juegos</h1><div class="divider"></div>
@@ -94,10 +106,11 @@ p{line-height:1.75;color:#627392}.divider{height:5px;width:100px;background:line
 <div class="result" id="result0" hidden aria-live="polite"></div>
 <p class="tip">Las propuestas se combinan a partir de un banco de ideas y tus elecciones. No usan IA: ajustalas según las reglas reales y las necesidades del grupo.</p>
 </div></section>
-<section id="tool1" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 02 · AGREGAR</span><h2>A · Agregar</h2><p>Agregá una regla, un giro o una misión extra a un juego conocido para generar una experiencia nueva.</p></div>
-<div class="game-panel"><div class="form-grid"><div class="field"><label for="classic-game">Juego que vamos a transformar</label><select id="classic-game"></select></div>
-<div class="field"><label for="remix-goal">¿Qué querés provocar?</label><select id="remix-goal"><option value="equipo">Más cooperación</option><option value="sorpresa">Más sorpresa</option><option value="creatividad">Más creatividad</option><option value="inclusion">Más inclusión</option></select></div></div>
-<button type="button" class="action" id="generate-remix">🔀 Transformar este juego</button><div class="result" id="result1" hidden aria-live="polite"></div></div></section>
+<section id="tool1" class="tool" hidden><button type="button" class="tool-back" data-back>← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 02 · AGREGAR</span><h2>A · Agregar</h2><p>Elegí una carta boca abajo del memotest para descubrir una letra y un objeto que empieza con ella. El desafío es agregar ese objeto al juego.</p></div>
+<div class="game-panel"><div class="memory-top"><strong>🃏 27 LETRAS SORPRESA</strong><button class="memory-reset" id="memory-reset" type="button">↻ Mezclar cartas</button></div>
+<div class="memory-grid" id="letter-memory" role="group" aria-label="Memotest de letras boca abajo"></div>
+<div class="result memory-result" id="result1" hidden aria-live="polite"><div class="result-label" id="memory-label"></div><div class="memory-object" id="memory-object"></div><p>¿Cómo pueden sumar este objeto al juego? Como material, pista, desafío o parte de la historia.</p><button type="button" class="memory-change" id="memory-change">↻ Cambiar objeto sin cambiar de letra</button></div>
+<p class="tip">No hace falta conseguirlo: pueden dibujarlo o usarlo como inspiración. Tocá otra carta para descubrir otra letra.</p></div></section>
 <section id="tool2" class="tool" hidden><button class="tool-back" data-back type="button">← Elegir otro camino</button><div class="tool-heading"><span class="kicker">CAMINO 03 · SACAR</span><h2>S · Sacar</h2><p>Sacá una facilidad del juego: las cartas te proponen una misión y una restricción que obliga a buscar otra forma de resolverla.</p></div>
 <div class="game-panel"><div class="triple"><div class="reel"><small>🎯 MISIÓN</small><strong id="mission">¿Qué hay que lograr?</strong></div><div class="reel"><small>🔒 QUÉ SACAMOS</small><strong id="constraint">¿Qué facilidad vamos a sacar?</strong></div><div class="reel"><small>🧰 ELEMENTO</small><strong id="prop">¿Qué objeto aparece?</strong></div></div>
 <button type="button" class="action" id="generate-challenge">⚡ Sortear tres cartas</button><div class="result" id="result2" hidden aria-live="polite"></div><p class="tip">No hace falta usar todo literalmente. Si una carta no funciona para la edad o las posibilidades del grupo, volvé a sortear.</p></div></section>
@@ -290,41 +303,41 @@ $('modify-form').addEventListener('submit',event=>{
  status.textContent='¡Tres modificaciones listas! Podés tocar de nuevo para generar otras propuestas.';
  $('generate-game').textContent='↻ Generar otras 3 modificaciones';
 });
-const classics={
-'Mancha':['Para cambiar de perseguidor hay que completar una misión cooperativa.','La persona que persigue solo puede avanzar después de recibir una pista del grupo.','Cuando alguien es tocado, recibe una misión creativa y vuelve al juego sin eliminación.','El equipo tiene que asegurarse de que todos cambien de rol.'],
-'Escondidas':['En vez de encontrar personas, hay que encontrar mensajes que dejaron los demás.','Los escondites guardan pistas para resolver un misterio conjunto.','Cada ronda una persona diseña un escondite seguro y explica su estrategia.','Nadie queda eliminado: cada hallazgo abre una misión compartida.'],
-'Carrera de postas':['Cada posta necesita la habilidad de una persona distinta.','Gana la misión colectiva si todos los equipos llegan antes de un tiempo acordado.','Entre postas deben inventar cómo trasladar una pelota sin usar las manos.','El recorrido cambia cuando los participantes proponen reglas nuevas.'],
-'Búsqueda del tesoro':['El tesoro no se encuentra sin intercambiar mapas entre equipos.','Cada pista conduce a una decisión con dos caminos posibles.','Deben crear el recorrido para otro equipo antes de resolver el propio.','Cada integrante tiene una pista clave que no puede ser reemplazada.'],
-'Pictionary':['La imagen se dibuja entre varias personas, por turnos.','Todos dibujan una parte sin ver el dibujo completo.','Hay que representar emociones y situaciones, no objetos.','Las pistas pueden ser abstractas y aceptan más de una interpretación.'],
-'Dígalo con mímica':['Cada equipo inventa movimientos que se encadenan en una historia.','La misma consigna debe expresarse desde tres perspectivas.','Los demás pueden intervenir para cambiar el final de la escena.','Nadie queda afuera: los roles cambian en cada ronda.'],
-'Quemado (adaptado sin eliminación)':['Quien recibe un toque con pelota blanda pasa a ser ayudante y vuelve enseguida.','El objetivo es completar pases entre todos, no sacar compañeros.','Cada punto exige que la pelota haya pasado por todas las personas.','Al cambiar de ronda, los equipos intercambian jugadores y estrategias.'],
-'Memotest':['Las parejas no son idénticas: deben explicar qué relación existe.','Cada pareja encontrada dispara una pequeña historia compartida.','Las cartas se ordenan por conexiones, no solamente por coincidencia.','Todos ven el tablero y deben debatir juntos antes de dar vuelta.'],
-'Simón dice':['El grupo inventa instrucciones para un Simón colectivo.','Cada ronda las consignas se convierten en movimientos creativos.','Todos deben poder proponer una regla nueva.','Si alguien se equivoca, cambia la consigna y continúa jugando.'],
-'El teléfono descompuesto':['En vez de palabras se transmiten dibujos que se transforman.','El mensaje se transmite con gestos y se compara el resultado final.','Cada vuelta suma una idea hasta crear un cuento.','Después de cada ronda inventan una manera de mejorar la comunicación.'],
-'La silla musical (sin eliminación)':['Cada ronda hay menos lugares, pero todos deben encontrar la manera de incluirse de forma segura.','En vez de sacar sillas se agregan desafíos de coordinación.','Cada pausa musical cambia la manera de ocupar el espacio.','La meta es encontrar una solución donde nadie quede afuera.'],
-'Trivia':['Cada equipo crea preguntas para otros equipos.','Se suman puntos por buenas explicaciones y por escuchar, no solo por acertar.','Las respuestas se defienden con ejemplos creativos.','Cada acierto desbloquea una mini misión compartida.'],
-'Capturar la bandera':['La bandera solo se puede trasladar con un mensaje acordado por el equipo.','El objetivo es conseguir símbolos de ambos equipos para armar uno compartido.','Cada jugador tiene una responsabilidad diferente en el recorrido.','Al alcanzar la bandera deben resolver una consigna conjunta.']
-};
-const boxClassic=$('classic-game');Object.keys(classics).forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;boxClassic.appendChild(o)});
-const remixActions={
-equipo:['La meta es un logro compartido: los equipos deben ayudarse para alcanzarlo.','Nadie gana si alguna persona no pudo tener un rol significativo.','Agreguen una ronda en la que se comparten los recursos y las pistas.'],
-sorpresa:['Cada tres minutos se cambia una regla anunciada con una tarjeta.','Cada ronda revela un giro narrativo que altera la misión.','Un rol secreto aparece a mitad del juego y cambia la estrategia.'],
-creatividad:['Dejen que los jugadores inventen una regla antes del comienzo.','Para avanzar, el grupo debe proponer al menos dos soluciones posibles.','Cada turno permite inventar una herramienta imaginaria para la misión.'],
-inclusion:['Reemplacen la eliminación por cambios de rol o misiones de regreso.','Aseguren una forma de participar que no dependa de correr ni de la velocidad.','Diseñen rondas con roles variados para distintas habilidades e intereses.']
-};
-$('generate-remix').addEventListener('click',()=>{
- const game=boxClassic.value,focus=$('remix-goal').value;
- const candidates=classics[game].flatMap(rule=>remixActions[focus].map(extra=>({rule,extra})));
- const result=noRepeat(candidates,lastRemix);lastRemix=JSON.stringify(result);
- const b=$('result1');b.hidden=false;b.replaceChildren();
- const top=document.createElement('div');top.className='result-label';top.textContent='JUEGO REINVENTADO';
- const title=document.createElement('h3');title.textContent=game+': versión inesperada';
- const intro=document.createElement('p');intro.textContent='Mantené la base del juego que conocen, pero cambiá esta regla:';
- const p=document.createElement('p');p.className='result-prompt';p.textContent=result.rule;
- const p2=document.createElement('p');p2.textContent='Giro extra: '+result.extra;
- const adapt=document.createElement('p');adapt.className='idea-note';adapt.textContent='Para '+(group||'tu grupo')+': '+ages[age];
- b.append(top,title,intro,p,p2,adapt);
-});
+const letterObjects={"A":["Anillo","Antifaz","Almohadón","Abanico","Ancla","Agenda","Avión de papel","Aro"],"B":["Botella","Bandera","Bolsa","Balde","Brújula","Barco de papel","Broche","Burbujero"],"C":["Caja","Candado","Carta","Cuerda","Corona","Campana","Cubo","Cinta"],"D":["Dado","Disfraz","Diario","Dominó","Disco","Dibujo","Diana","Diploma"],"E":["Espejo","Escoba","Estrella","Esponja","Estuche","Etiqueta","Escudo de cartón","Espada de cartón"],"F":["Ficha","Flor","Faro","Foto","Frasco","Flauta","Flecha","Figura"],"G":["Globo","Gorro","Guitarra","Guante","Goma","Gancho","Gafas","Guirnalda"],"H":["Hoja","Hilo","Huevo de plástico","Helicóptero de papel","Herradura","Hucha","Hélice","Hongo de cartón"],"I":["Imán","Insignia","Instrumento","Isla de cartón","Imagen","Invitación","Ícono","Insecto de juguete"],"J":["Jarra","Jabón","Juguete","Joya de plástico","Jirafa de juguete","Jarrón","Jenga","Joystick"],"K":["Kart de juguete","Kimono","Kiwi","Kétchup","Kayak de juguete","Kit de pistas","Koala de peluche","Kiosco de cartón"],"L":["Linterna","Lápiz","Libro","Llave","Lupa","Lana","Lata","Lazo"],"M":["Mapa","Máscara","Moneda","Mochila","Micrófono","Mantel","Muñeco","Medalla"],"N":["Naipes","Nariz de payaso","Nube de algodón","Nudo","Número de cartón","Nido de juguete","Nota","Nave de papel"],"Ñ":["Ñandú de juguete","Ñoqui","Ñandutí tejido","Ñame","Ñandú de cartón","Ñandubay de cartón"],"O":["Olla","Ojo de cartón","Ovillo","Oso de peluche","Oreja de cartón","Obelisco de juguete","Ornamento","Origami"],"P":["Pelota","Papel","Pañuelo","Paraguas","Pincel","Piedra","Plato","Pirámide"],"Q":["Queso de juguete","Quena","Quinqué de utilería","Quipu","Quimono","Quilla de cartón","Quitasol","Quesera"],"R":["Reloj","Regla","Radio","Ramo","Rompecabezas","Remo","Rueda","Robot"],"S":["Soga","Sombrero","Sobre","Silbato","Silla","Semilla","Sello","Señal"],"T":["Tarjeta","Taza","Teléfono","Tambor","Tiza","Títere","Tubo","Trofeo"],"U":["Uniforme","Ukelele","Urna de cartón","Unicornio de peluche","Uva de plástico","Utensilio","Ubre de juguete"],"V":["Valija","Vaso","Vela LED","Ventana de cartón","Varita","Vincha","Volante","Vestido"],"W":["Walkie-talkie","Waffle de juguete","Wok","Webcam de cartón","Wifi de cartón","Windsurf de juguete","Walkman"],"X":["Xilófono","Xilografía","Xilófono de juguete","Xerografía","Xilófono de cartón"],"Y":["Yo-yo","Yate de juguete","Yunque de cartón","Yogur","Yacaré de juguete","Yerbatera","Yema de plástico"],"Z":["Zapato","Zanahoria","Zapatilla","Zorro de peluche","Zuncho","Zócalo de cartón","Zaranda","Zafiro de juguete"]};
+const letterGrid=document.getElementById('letter-memory');
+const letterResult=document.getElementById('result1');
+let currentMemoryLetter='',memorySeen={};
+function resetMemory(){
+ const letters=Object.keys(letterObjects);
+ for(let i=letters.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const tmp=letters[i];letters[i]=letters[j];letters[j]=tmp;}
+ letterGrid.replaceChildren();currentMemoryLetter='';letterResult.hidden=true;
+ for(const letter of letters){
+  const card=document.createElement('button');card.type='button';card.className='memory-card';card.setAttribute('aria-label','Descubrir una letra');
+  const front=document.createElement('span');front.textContent='?';front.className='memory-front';
+  const back=document.createElement('span');back.textContent=letter;back.className='memory-back';
+  card.append(front,back);
+  card.addEventListener('click',()=>{
+   letterGrid.querySelectorAll('.memory-card').forEach(v=>v.classList.remove('revealed'));
+   card.classList.add('revealed');card.setAttribute('aria-label','Letra '+letter);
+   currentMemoryLetter=letter;drawObject();
+  });
+  letterGrid.appendChild(card);
+ }
+}
+function drawObject(){
+ if(!currentMemoryLetter)return;
+ const all=letterObjects[currentMemoryLetter],used=memorySeen[currentMemoryLetter]||[];
+ let available=all.filter(item=>!used.includes(item));
+ if(!available.length){const previous=used[used.length-1];memorySeen[currentMemoryLetter]=[];available=all.filter(item=>item!==previous);}
+ const object=available[Math.floor(Math.random()*available.length)];
+ memorySeen[currentMemoryLetter].push(object);
+ document.getElementById('memory-label').textContent='LETRA '+currentMemoryLetter+' · OBJETO SORTEADO';
+ document.getElementById('memory-object').textContent=object;
+ letterResult.hidden=false;
+}
+document.getElementById('memory-change').addEventListener('click',drawObject);
+document.getElementById('memory-reset').addEventListener('click',resetMemory);
+resetMemory();
 const challengeData={
 missions:['Transportar un mensaje entre tres bases','Construir una torre entre todos','Descubrir un código secreto','Ordenar pistas para abrir una misión','Rescatar un objeto simbólico','Diseñar un mapa colectivo','Representar una historia sin hablar','Encontrar cuatro conexiones inesperadas','Resolver un misterio con pistas parciales','Inventar una máquina imaginaria','Cruzar un laberinto marcado en el piso','Repartir recursos para lograr una meta','Crear una secuencia de sonidos','Reconstruir un mensaje dividido','Guiar a un compañero por indicaciones verbales','Encontrar una solución que incluya a todos'],
 rules:['Sin hablar durante la primera ronda','Sin usar las manos para mover los objetos (siempre de forma segura)','Sin que una sola persona decida por todos','Sin repetir el mismo rol dos veces seguidas','Sin consultar las pistas más de una vez','Sin poder competir contra otro equipo','Sin correr, solo con estrategia','Sin ver todas las pistas al mismo tiempo','Sin usar las palabras más obvias','Sin turnarse de la manera habitual','Sin materiales extra: solo los asignados','Sin eliminar a ninguna persona','Sin depender de la velocidad para ganar','Sin poder resolver la prueba en solitario','Sin conocer el final de la misión de antemano'],
