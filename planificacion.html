@@ -255,7 +255,7 @@ body.wheel-modal-open{overflow:hidden}
 <script src="ideas-temas.js?v=3"></script>
 <script src="maquina-temas.js?v=1"></script>
 <script>
-const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre'],['momentos','Momentos']];
+const topics=[['racional','Racional'],['tema','Tema'],['hilo','Hilo'],['juegos','Juegos'],['dinamicas','Dinámicas'],['dinamicas-de-cierre','Dinámicas de cierre']];
 const params=new URLSearchParams(location.search);
 const selected=params.get('seccion')||'tema';
 const validGroups=['Jaza','Mega','Nifla','Leitza','Mabri','Kasu','Mebu','Shingsha','Jamu','Shoja','Metu','Shalu','Netza','Ofna','LojaMuza'];
@@ -270,6 +270,7 @@ if(selected==='racional'){location.replace('racional.html'+(group?'?grupo='+enco
 if(selected==='hilo'){location.replace('hilo.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
 if(selected==='juegos'){location.replace('juegos.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
 if(selected==='dinamicas'){location.replace('dinamicas.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
+if(selected==='dinamicas-de-cierre'){location.replace('dinamicas-de-cierre.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''))}
 if(!current){location.replace(group?'grupo.html?grupo='+encodeURIComponent(group.toLowerCase())+'#innova':'grupos.html')}else{
 document.getElementById('topic-title').textContent=current[1];
 document.title=current[1]+(group?' · '+group:'')+' · Tojnit Majané Kaitz 2026';
@@ -308,7 +309,7 @@ if(selected==='tema'){
  });
 }
 const nav=document.getElementById('topic-links');
-topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='hilo'?'hilo.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='juegos'?'juegos.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='dinamicas'?'dinamicas.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
+topics.forEach(([id,label])=>{const a=document.createElement('a');a.href=id==='racional'?'racional.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='hilo'?'hilo.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='juegos'?'juegos.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='dinamicas'?'dinamicas.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):id==='dinamicas-de-cierre'?'dinamicas-de-cierre.html'+(group?'?grupo='+encodeURIComponent(group.toLowerCase()):''):'planificacion.html?seccion='+id+groupParam;a.textContent=label;if(id===selected)a.setAttribute('aria-current','page');nav.appendChild(a);});
 }
 
 
