@@ -113,6 +113,40 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 .movie-front.movie-has-cover .movie-poster-icon{display:none}
 .movie-front.movie-has-cover .movie-front-text{padding-top:55px}
 .movie-front.movie-has-cover:before{background:linear-gradient(180deg,#0000000c 0%,#00000012 46%,#050b1ded 100%)}
+</style><style>
+/* Explorador de cierres integrado en el estilo del Tojnit */
+.explore-panel{margin-top:24px;padding:clamp(17px,3.8vw,32px);border:2px solid #dce6f8;border-radius:27px;background:linear-gradient(140deg,#f3f8ff,#f9f5ff)}
+.explore-step{padding:15px 0 24px;border-bottom:2px solid #e0e9f7;margin-bottom:22px}
+.explore-step[hidden],.explore-result[hidden]{display:none}
+.explore-step>span{font-size:11px;color:#9574ba;font-weight:900;letter-spacing:.12em}
+.explore-step h3{font-weight:900;font-size:clamp(20px,3vw,27px);margin:9px 0 18px;color:#214995}
+.explore-step h4{font-size:17px;font-weight:900;color:#214995;margin:22px 0 13px}
+.explore-authors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.explore-author{appearance:none;min-width:0;border:2px solid #d5e1f7;background:#fff;border-radius:20px;padding:19px 12px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;font:inherit;color:#214995;text-align:center;cursor:pointer}
+.explore-author img,.explore-initials{height:95px;width:95px;object-fit:cover;border-radius:50%;background:#e4ecff;border:3px solid #c5d7fa}
+.explore-initials{display:none;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:#5279ba}
+.explore-author.no-image .explore-initials{display:flex}
+.explore-author span:last-child{display:flex;flex-direction:column;gap:7px}
+.explore-author strong{font-size:16px;font-weight:900;color:#214995}
+.explore-author small{font-size:12px;color:#62769b;line-height:1.45}
+.explore-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px}
+.explore-choice{appearance:none;background:#fff;color:#214995;border:2px solid #dbe5f7;border-radius:16px;text-align:left;padding:17px 15px;min-height:88px;cursor:pointer;font:inherit}
+.explore-choice strong{display:block;font-size:14px;font-weight:900;margin-bottom:8px}
+.explore-choice small{font-size:12px;color:#7284a3;line-height:1.5}
+.explore-choice.selected,.explore-author.selected{background:#e6efff;border-color:#567fd0;box-shadow:0 6px 17px #21499518}
+.explore-choice:focus-visible,.explore-author:focus-visible{outline:3px solid #9eb9ee;outline-offset:3px}
+.explore-attribution{display:inline-block;padding:8px 12px;border-radius:90px;background:#e5ecff;color:#5b55a4;font-size:11px;font-weight:900}
+.explore-question{padding:14px 18px;border-left:4px solid #6f83dc;background:#fff;border-radius:10px;margin:16px 0}
+.explore-question strong{font-size:12px;color:#214995}
+.explore-question p{margin:8px 0 0;font-size:14px}
+.explore-result{background:linear-gradient(145deg,#fff,#f1f6ff);border:2px solid #c7d9f6;border-radius:20px;padding:clamp(17px,3vw,27px);margin-top:22px}
+.explore-result h3{margin:13px 0;color:#214995}
+.explore-result h4{font-size:16px;margin:19px 0 10px}
+.explore-result ol{line-height:1.85;padding-left:23px;color:#496487;font-size:14px}
+.explore-condition{background:#e9f1ff;border-radius:13px;padding:13px;font-size:13px}
+.explore-actions{display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.explore-actions .outline{margin-top:19px}
+@media(max-width:700px){.explore-authors{grid-template-columns:1fr}.explore-author{flex-direction:row;text-align:left;justify-content:flex-start;gap:17px;padding:15px}.explore-author img,.explore-initials{width:75px;height:75px;flex-shrink:0}.explore-grid{grid-template-columns:1fr}}
 </style></head>
 <body><div class="shell"><header><a class="brand" href="index.html">TOJNIT · MAJANÉ KAITZ 2026</a><a class="back" id="back" href="grupos.html">← Volver al grupo</a></header>
 <main><div class="eyebrow" id="eyebrow">Innová en la planificación</div><h1>Dinámicas de cierre</h1><div class="divider"></div>
@@ -122,7 +156,7 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 <div class="path-grid">
 <button type="button" class="path-card" data-open="0"><span class="path-number">CAMINO 01</span><strong>🧪 Laboratorio de cierres</strong><span>Combiná materiales, movimiento, juego, música o historia con una acción y una forma de participación. Descubrí una de 40 propuestas.</span><b>Explorar este camino →</b></button>
 <button type="button" class="path-card" data-open="1"><span class="path-number">CAMINO 02</span><strong>🎬 Netflix de cierres</strong><span>Elegí una película conocida y descubrí una dinámica de cierre inspirada en su historia. ¡Cambiá el catálogo cuando quieras!</span><b>Explorar este camino →</b></button>
-<button type="button" class="path-card" data-open="2"><span class="path-number">CAMINO 03</span><strong>🌌 El cielo de las estrellas</strong><span>Elegí estrellas sorpresa que esconden consignas breves. Creá un cierre participativo sin repetir siempre la misma ronda.</span><b>Explorar este camino →</b></button>
+<button type="button" class="path-card" data-open="2"><span class="path-number">CAMINO 03</span><strong>🧭 Explorador de cierres</strong><span>Elegí un referente pedagógico, una estrategia y cómo ponerla en práctica. Diseñá un cierre para tu peulá.</span><b>Explorar este camino →</b></button>
 </div></section>
 <section class="tool" id="tool0" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 01 · LABORATORIO DE CIERRES</div><h2>🧪 Laboratorio de cierres</h2>
 <p class="lead">Elegí un recurso, una acción y una forma de participación. El laboratorio combina las elecciones y propone una dinámica concreta para adaptar al objetivo y al hilo conductor de tu peulá.</p>
@@ -143,14 +177,26 @@ p{line-height:1.65;color:#647692}.divider{height:5px;width:105px;background:line
 <div class="movie-grid" id="movie-grid"></div>
 <p class="movie-note">Tocá una película para revelar su dinámica. Cada propuesta puede adaptarse a la edad y a los espacios disponibles. La participación personal siempre es voluntaria.</p>
 </div></section>
-<section class="tool" id="tool2" hidden><button class="tool-back" type="button" data-back>← Elegir otro camino</button><div class="kicker">CAMINO 03 · SORPRESA</div><h2>🌌 El cielo de las estrellas</h2>
-<p class="lead">Cada estrella es una consigna para hacer un cierre distinto. Elijan una estrella, descubran cómo cerrar y, si quieren, sumen otras. El desafío es llevar la propuesta a una peulá real.</p>
-<div class="sky-panel">
-<p>✦ Tocá una estrella para descubrir una forma de cerrar ✦</p><div class="sky-counter" id="sky-counter" aria-live="polite">0 estrellas descubiertas</div>
-<div class="stars" id="stars" role="group" aria-label="Doce estrellas con consignas sorpresa"></div>
-<div class="sky-reveal" id="sky-reveal" hidden aria-live="polite"><small>✨ LA ESTRELLA TE PROPONE…</small><h3 id="sky-title"></h3><p id="sky-description"></p><strong id="sky-mode"></strong></div>
-<div class="sky-footer"><button type="button" id="sky-reset">↻ Mezclar todas las estrellas</button></div>
-</div><p class="tip">Una misma consigna se puede resolver hablando, dibujando, señalando o pasando el turno. Cerrar no tiene que ser una exposición personal.</p></section>
+<section class="tool" id="tool2" hidden>
+<button class="tool-back" type="button" data-back>← Elegir otro camino</button>
+<div class="kicker">CAMINO 03 · EXPLORADOR DE CIERRES</div><h2>🧭 Explorador de cierres</h2>
+<p class="lead">Elegí un referente pedagógico, descubrí una estrategia y diseñá un cierre para tu peulá tocando opciones. No necesitás escribir ni usar inteligencia artificial.</p>
+<div class="explore-panel">
+ <div class="explore-step"><span>PASO 01</span><h3>Elegí un referente pedagógico</h3>
+ <div id="explore-authors" class="explore-authors"></div></div>
+ <div id="explore-strategy-panel" class="explore-step" hidden><span>PASO 02</span><h3 id="explore-strategy-heading">Elegí una estrategia</h3>
+ <p>Cada opción propone una manera diferente de recuperar el objetivo de tu peulá.</p><div id="explore-strategies" class="explore-grid"></div></div>
+ <div id="explore-format-panel" class="explore-step" hidden><span>PASO 03</span><h3 id="explore-chosen-name"></h3>
+ <div id="explore-attribution" class="explore-attribution"></div><p id="explore-description"></p>
+ <div class="explore-question"><strong>Pregunta disparadora:</strong><p id="explore-question"></p></div>
+ <h4>¿Cómo querés que los janijim la pongan en práctica?</h4><div id="explore-formats" class="explore-grid"></div>
+ <div id="explore-result" class="explore-result" hidden aria-live="polite"><div class="result-label">TU PROPUESTA DE CIERRE</div><h3 id="explore-result-title"></h3><p id="explore-result-description"></p>
+ <h4>Para incorporarla a tu planificación</h4><ol><li>Recuperá el objetivo y el hilo conductor de tu peulá.</li><li>Adaptá esta dinámica a la edad y las características de tus janijim.</li><li>Definí qué van a hacer concretamente y qué materiales necesitás.</li><li>Comprobá que el cierre permita recuperar el objetivo, no solo entretener.</li></ol>
+ <p class="explore-condition"><strong>Condición pedagógica:</strong> <span id="explore-condition"></span></p>
+ <div class="explore-actions"><button type="button" class="action" id="explore-copy">📋 Copiar propuesta</button><button type="button" class="outline" id="explore-print">🖨️ Imprimir</button></div>
+ </div></div>
+ <p class="tip">Las rutinas de Project Zero se identifican como tales. Las propuestas vinculadas con Anijovich y Furman son adaptaciones didácticas inspiradas en sus enfoques, no técnicas originales atribuidas literalmente a ellas. Fotos cargadas desde internet cuando estén disponibles.</p>
+</div></section>
 </main></div>
 <script>
 const $=id=>document.getElementById(id);
@@ -365,50 +411,91 @@ function renderMovieCatalog(){
 }
 document.getElementById('movie-refresh').addEventListener('click',renderMovieCatalog);
 renderMovieCatalog();
-const skyIdeas=[
- ['La palabra que queda','Cada persona dice, escribe o dibuja una sola palabra que resuma cómo se va. Junten las palabras en un cierre grupal.','Formato: una palabra o símbolo'],
- ['El gesto final','Cada quien elige un gesto sencillo que represente algo que se lleva. Hagan una secuencia de gestos, sin exigir que todos expliquen.','Formato: movimiento breve'],
- ['Un color de despedida','Ofrezcan varios colores y que cada janij elija cuál representa el día. Pueden mostrarlo o guardárselo.','Formato: elección visual'],
- ['Lo que no esperaba','Inviten a completar: «Hoy me sorprendió…». Puede ser con un ejemplo ficticio, escrito o compartido.','Formato: frase corta'],
- ['El eco del grupo','Elijan una palabra que represente la peulá. En ronda, cada uno puede sumarle otra palabra hasta crear una frase colectiva.','Formato: construcción conjunta'],
- ['Una pregunta pendiente','Cada persona elige una pregunta que quiere llevarse para seguir pensando. No es necesario contestarla.','Formato: pregunta abierta'],
- ['La postal de un instante','Que elijan un momento del día y lo representen como si fuera una postal: una imagen, frase o gesto.','Formato: recuerdo'],
- ['Gracias por algo concreto','Piensen en una acción que haya ayudado a que la peulá salga bien. Agradézcanla sin tener que señalar a alguien.','Formato: reconocimiento'],
- ['Una semilla','Cada janij propone una cosa chiquita que le gustaría repetir o mejorar la próxima vez.','Formato: proyección'],
- ['Semáforo final','Ofrezcan verde, amarillo y rojo para representar el nivel de energía o cómo se van. Cada persona puede elegir sin justificarlo.','Formato: señal de color'],
- ['Dos cosas que me llevo','Propongan elegir dos cosas de la experiencia: una idea y una sensación, reales o imaginarias.','Formato: reflexión breve'],
- ['La última decisión','Dejen que los janijimot decidan entre dos maneras posibles de despedirse, como una frase conjunta o una secuencia de gestos.','Formato: elección grupal'],
- ['Un sonido final','Que cada persona elija un sonido suave que represente el momento. Hagan juntos una secuencia de sonidos o pasen el turno.','Formato: sonido voluntario'],
- ['Un dibujo entre todos','En una hoja grande, cada persona agrega un detalle que le gustaría recordar. Al terminar, miren el dibujo completo.','Formato: producción colectiva'],
- ['Me quedo con…','Que cada uno complete mentalmente, con una palabra o por escrito «Me quedo con…». Compartirlo es opcional.','Formato: frase abierta'],
- ['La frase del día','Que cada subgrupo proponga una frase breve sobre lo vivido. Junten partes de todas para crear una frase final.','Formato: síntesis compartida'],
- ['El antes y el después','Con una palabra o imagen, comparen cómo llegó el grupo y cómo se va, sin pedir historias privadas.','Formato: contraste'],
- ['La huella para mañana','Escriban una acción sencilla que el grupo podría retomar la próxima vez. Guárdenla como recordatorio.','Formato: continuidad'],
- ['La foto que faltó','Imaginen qué foto les hubiera gustado sacar hoy. Descríbanla con una frase o dibújenla.','Formato: imaginación breve'],
- ['Cierre en parejas','En parejas, cada uno comparte algo que quiera recordar; luego eligen una idea para llevar al grupo, si quieren.','Formato: parejas'],
- ['El aplauso compartido','Celebren tres pequeñas cosas que logró el grupo sin elegir a una sola persona como protagonista.','Formato: reconocimiento colectivo'],
- ['El título de hoy','Si la peulá tuviera un título, ¿cuál sería? Cada uno puede proponerlo y elegir entre varias opciones.','Formato: título']
+// Datos y propuestas preservados del Explorador de cierres proporcionado.
+const AUTHORS=[{id:'ritchhart',name:'Ron Ritchhart',desc:'Pensamiento visible · Project Zero',photo:'https://pz.harvard.edu/sites/default/files/ritchhart-sparks.png'},{id:'anijovich',name:'Rebeca Anijovich',desc:'Evaluación formativa · retroalimentación',photo:'https://www.rosario3.com/__export/1664917041174/sites/rosario3/img/2022/10/04/rebeca_anijovich.jpg'},{id:'furman',name:'Melina Furman',desc:'Enseñanza activa · preguntas y desafíos',photo:'https://www.fundacionluminis.org.ar/wp-content/uploads/2020/08/Melina-Furman.jpg'}];
+const STRATEGIES=[
+{id:'antes',author:'ritchhart',name:'Antes pensaba, ahora pienso',tag:'Rutina de Project Zero',description:'Los janijim hacen visible cómo cambió su pensamiento a partir de lo vivido.',question:'¿Qué idea sobre el tema podrían haber tenido al empezar y cómo te gustaría que la reconsideraran al terminar?',formats:[['Dos caras del corcho','Prepará dos sectores en el GED: «Antes pensaba» y «Ahora pienso». Cada janij coloca una tarjeta en ambos y pueden volver a mirarlas en otra peulá.'],['Línea de cambio','Marcá dos extremos del espacio. Los janijim se ubican según lo que pensaban al principio y vuelven a posicionarse según lo que piensan ahora.'],['Díptico visual','Cada janij dibuja dos escenas: una que represente su mirada inicial y otra que represente su mirada actual.']]},
+{id:'color',author:'ritchhart',name:'Color, símbolo, imagen',tag:'Rutina de Project Zero',description:'Una idea se representa de tres maneras distintas: un color, un símbolo y una imagen.',question:'¿Qué concepto central de la peulá querés que los janijim puedan representar sin explicarlo en una ronda?',formats:[['Mural de símbolos','Cada janij elige un color, dibuja un símbolo y una imagen relacionados con el tema. Unen sus producciones en un mural.'],['Museo del GED','Armen tres estaciones: colores, símbolos e imágenes. Los janijim dejan sus elecciones y recorren la muestra.'],['Galería en parejas','Cada pareja produce tres tarjetas (color, símbolo e imagen) y las exhibe para que otros descubran su significado.']]},
+{id:'chalk',author:'ritchhart',name:'Conversación en papel',tag:'Rutina Chalk Talk · Project Zero',description:'Los participantes dialogan por escrito sobre una pregunta común, sin necesidad de una ronda oral.',question:'¿Qué pregunta potente sobre el objetivo de la peulá podría generar respuestas diferentes?',formats:[['Afiches que conversan','Colocá una pregunta en el centro de cada afiche. Los janijim escriben ideas y responden a lo que dejaron otros, en silencio.'],['Pared de conexiones','Cada janij agrega una idea y une con flechas las que se relacionan. El afiche queda en el GED.'],['Postas silenciosas','Los grupos circulan entre afiches con preguntas y agregan respuestas o comentarios a los aportes anteriores.']]},
+{id:'titulares',author:'ritchhart',name:'Titulares',tag:'Rutina Headlines · Project Zero',description:'Se sintetiza la idea central de una experiencia en un titular breve.',question:'Si la peulá fuera noticia, ¿qué idea te gustaría que apareciera en el titular?',formats:[['Diario mural','Cada grupo inventa un titular y lo pega en una portada colectiva que queda en el GED.'],['Noticiero en vivo','Cada pareja presenta un titular de diez segundos como si fuera un noticiero.'],['Portadas en movimiento','Los janijim forman equipos, crean titulares y los representan con una imagen congelada.']]},
+{id:'evidencias',author:'anijovich',name:'Buscadores de evidencias',tag:'Adaptación · evaluación formativa',description:'Los janijim recuperan acciones o situaciones concretas que muestran lo trabajado, en lugar de repetir una conclusión.',question:'¿Qué evidencia observable te permitiría reconocer que el objetivo de la peulá empezó a cumplirse?',formats:[['Museo de evidencias','Cada grupo selecciona una situación vivida y la representa con un objeto, dibujo o frase para armar una exposición.'],['Detectives del objetivo','Distribuí tarjetas con situaciones de la peulá. Los janijim eligen cuáles muestran el objetivo y explican sus pistas.'],['Semáforo de acciones','Los janijim clasifican acciones concretas en tres zonas: ayudan, dificultan o dependen del contexto.']]},
+{id:'semaforo',author:'anijovich',name:'Semáforo de aprendizajes',tag:'Adaptación · autoevaluación formativa',description:'Cada janij reconoce qué tiene claro, qué está elaborando y qué necesita seguir trabajando.',question:'¿Qué aspecto del objetivo querés que puedan reconocer en sí mismos, sin calificarlos ni compararlos?',formats:[['Semáforo de tarjetas','Cada janij coloca una tarjeta en verde, amarillo o rojo para indicar cómo se siente respecto de una idea o habilidad trabajada.'],['Semáforo corporal','Marcá tres espacios y proponé situaciones vinculadas con el tema. Los janijim se posicionan según su nivel de seguridad.'],['Semáforo para volver','Armen un panel con aspectos que el grupo quiere seguir trabajando y retómenlo en una próxima peulá.']]},
+{id:'proximo',author:'anijovich',name:'Un próximo paso',tag:'Adaptación · retroalimentación para avanzar',description:'El cierre permite identificar una acción concreta para seguir mejorando.',question:'¿Qué pequeño cambio realista podrían poner en práctica los janijim después de esta peulá?',formats:[['Corcho de compromisos','Cada janij deja una acción concreta para el próximo encuentro. El corcho queda en el GED y luego lo revisan.'],['Parejas de seguimiento','Cada pareja acuerda un pequeño desafío y cómo se ayudarán a cumplirlo durante el mes.'],['Tarjeta para el futuro','Cada janij elige una acción para probar y guarda una tarjeta que se recuperará en otra peulá.']]},
+{id:'desafio',author:'furman',name:'Desafío final',tag:'Adaptación · aprendizaje activo',description:'El cierre es un problema o desafío que requiere usar lo que se trabajó durante la peulá.',question:'¿Qué situación concreta permitiría a los janijim poner en juego el objetivo sin que el madrij se lo explique?',formats:[['Misión cooperativa','Diseñá un desafío breve que solo puedan resolver si ponen en práctica la habilidad o idea central.'],['Problema con opciones','Presentá un dilema y tres posibles decisiones. Los grupos prueban consecuencias y eligen una salida.'],['Reto de transferencia','Planteá una situación nueva, fuera del contexto de la peulá, donde tengan que aplicar lo vivido.']]},
+{id:'pregunta',author:'furman',name:'La pregunta que queda abierta',tag:'Adaptación · indagación',description:'El cierre deja una pregunta auténtica que despierta curiosidad y puede continuar en otro encuentro.',question:'¿Qué interrogante sobre el tema podría hacer que los janijim sigan pensando después de irse?',formats:[['Caja de preguntas','Cada janij aporta una pregunta que le quedó. Eligen una para investigar o retomar la semana siguiente.'],['Hipótesis en el GED','El grupo elige una pregunta y deja hipótesis en un corcho para revisarlas en otro encuentro.'],['Pista para la próxima','El madrij presenta un objeto o pista inesperada que abre una nueva pregunta relacionada con la peulá.']]},
+{id:'prototipo',author:'furman',name:'Crear y probar una solución',tag:'Adaptación · aprendizaje activo',description:'Los janijim convierten una idea en una propuesta o solución que puedan poner a prueba.',question:'¿Qué problema relacionado con el objetivo podrían intentar resolver los janijim con una creación concreta?',formats:[['Prototipo rápido','En pequeños grupos crean una solución sencilla con materiales disponibles y muestran cómo funcionaría.'],['Campaña del grupo','Diseñan un afiche, lema o intervención que proponga una acción vinculada con el objetivo.'],['Acuerdo en acción','El grupo construye una regla o iniciativa y acuerda cuándo probarla en la vida del GED.']]}
 ];
-let skyBuilt=false,skyDeck=[],skySeen=new Set(),skyCurrent=-1;
-function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
-function buildStars(){
- skyBuilt=true;skySeen=new Set();skyCurrent=-1;skyDeck=shuffle(skyIdeas.map((_,i)=>i)).slice(0,12);
- $('sky-reveal').hidden=true;
- const board=$('stars');board.replaceChildren();$('sky-counter').textContent='0 estrellas descubiertas';
- skyDeck.forEach((index,i)=>{
-  const button=document.createElement('button');button.type='button';button.className='star';button.setAttribute('aria-label','Descubrir estrella '+(i+1));
-  const emoji=document.createElement('span');emoji.className='star-symbol';emoji.textContent=['✦','✧','★','✶'][i%4];
-  const label=document.createElement('span');label.textContent='ESTRELLA '+(i+1);
-  button.append(emoji,label);
-  button.addEventListener('click',()=>{
-   skyCurrent=i;skySeen.add(i);
-   board.querySelectorAll('button').forEach((other,k)=>{other.classList.toggle('active',k===i);other.classList.toggle('used',skySeen.has(k)&&k!==i)});
-   const idea=skyIdeas[index];$('sky-title').textContent=idea[0];$('sky-description').textContent=idea[1];$('sky-mode').textContent=idea[2];
-   $('sky-reveal').hidden=false;$('sky-counter').textContent=skySeen.size+' de 12 estrellas descubiertas';
-   $('sky-reveal').scrollIntoView({behavior:'smooth',block:'nearest'});
-  });
+let exploreAuthor=null,exploreStrategy=null,exploreFormat=null,exploreCopyText='';
+const ex=id=>document.getElementById(id);
+function exploreRenderAuthors(){
+ const board=ex('explore-authors');board.replaceChildren();
+ AUTHORS.forEach(author=>{
+  const button=document.createElement('button');button.type='button';button.className='explore-author';
+  const chosen=exploreAuthor===author.id;button.classList.toggle('selected',chosen);button.setAttribute('aria-pressed',String(chosen));
+  const picture=document.createElement('img');picture.src=author.photo;picture.alt='Foto de '+author.name;picture.loading='lazy';
+  picture.addEventListener('error',()=>{picture.hidden=true;button.classList.add('no-image')});
+  const placeholder=document.createElement('span');placeholder.className='explore-initials';placeholder.textContent=author.name.split(' ').map(w=>w[0]).join('');
+  const wrap=document.createElement('span');
+  const title=document.createElement('strong');title.textContent=author.name;
+  const subtitle=document.createElement('small');subtitle.textContent=author.desc;
+  wrap.append(title,subtitle);button.append(picture,placeholder,wrap);
+  button.addEventListener('click',()=>exploreSelectAuthor(author.id));
   board.appendChild(button);
  });
 }
-$('sky-reset').addEventListener('click',buildStars);
+function exploreSelectAuthor(id){
+ exploreAuthor=id;exploreStrategy=null;exploreFormat=null;
+ exploreRenderAuthors();
+ ex('explore-strategy-panel').hidden=false;ex('explore-format-panel').hidden=true;ex('explore-result').hidden=true;
+ ex('explore-strategy-heading').textContent='Elegí una propuesta de '+AUTHORS.find(a=>a.id===id).name;
+ const board=ex('explore-strategies');board.replaceChildren();
+ STRATEGIES.filter(strategy=>strategy.author===id).forEach(strategy=>{
+  const button=document.createElement('button');button.type='button';button.className='explore-choice';
+  const title=document.createElement('strong');title.textContent=strategy.name;
+  const tag=document.createElement('small');tag.textContent=strategy.tag;
+  button.append(title,tag);button.addEventListener('click',()=>exploreSelectStrategy(strategy.id));
+  board.appendChild(button);
+ });
+ ex('explore-strategy-panel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function exploreSelectStrategy(id){
+ exploreStrategy=STRATEGIES.find(strategy=>strategy.id===id);exploreFormat=null;
+ ex('explore-strategies').querySelectorAll('button').forEach((button,index)=>{
+  const selected=STRATEGIES.filter(strategy=>strategy.author===exploreAuthor)[index].id===id;
+  button.classList.toggle('selected',selected);button.setAttribute('aria-pressed',String(selected));
+ });
+ ex('explore-format-panel').hidden=false;ex('explore-result').hidden=true;
+ ex('explore-chosen-name').textContent=exploreStrategy.name;
+ ex('explore-attribution').textContent=exploreStrategy.tag;
+ ex('explore-description').textContent=exploreStrategy.description;
+ ex('explore-question').textContent=exploreStrategy.question;
+ const board=ex('explore-formats');board.replaceChildren();
+ exploreStrategy.formats.forEach((format,index)=>{
+  const button=document.createElement('button');button.className='explore-choice';button.type='button';
+  const title=document.createElement('strong');title.textContent=format[0];
+  const subtitle=document.createElement('small');subtitle.textContent='Elegir esta forma de cierre';
+  button.append(title,subtitle);button.addEventListener('click',()=>exploreSelectFormat(index));
+  board.appendChild(button);
+ });
+ ex('explore-format-panel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function exploreSelectFormat(index){
+ exploreFormat=index;
+ ex('explore-formats').querySelectorAll('button').forEach((button,i)=>{
+  const selected=i===index;button.classList.toggle('selected',selected);button.setAttribute('aria-pressed',String(selected));
+ });
+ const [title,description]=exploreStrategy.formats[index];
+ ex('explore-result-title').textContent=title;
+ ex('explore-result-description').textContent=description;
+ ex('explore-condition').textContent=exploreStrategy.description;
+ exploreCopyText=[exploreStrategy.name,title,description,'Pregunta disparadora: '+exploreStrategy.question,'Adaptar al objetivo y al hilo conductor de la peulá.'].join(String.fromCharCode(10));
+ ex('explore-result').hidden=false;
+ ex('explore-result').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+ex('explore-copy').addEventListener('click',()=>{
+ if(navigator.clipboard?.writeText)navigator.clipboard.writeText(exploreCopyText).then(()=>{ex('explore-copy').textContent='✓ Copiado'}).catch(()=>window.prompt('Copiá esta propuesta:',exploreCopyText));
+ else window.prompt('Copiá esta propuesta:',exploreCopyText);
+});
+ex('explore-print').addEventListener('click',()=>window.print());
+exploreRenderAuthors();
 </script></body></html>
