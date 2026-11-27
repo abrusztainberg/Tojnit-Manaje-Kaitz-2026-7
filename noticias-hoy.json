@@ -1,247 +1,385 @@
 {
   "fecha": "2026-11-27",
-  "actualizado": "2026-11-27T06:44:29.335254-03:00",
+  "actualizado": "2026-11-27T16:31:40.653130-03:00",
   "fuentes": {
     "lanacion": [
       {
-        "titulo": "Trabajar después de los 100 años: en Japón hay personas que nunca se jubilan y siguen activas",
-        "resumen": "Impulsados por la necesidad económica y el concepto de ikigai (propósito vital), centenarios de diversos oficios demuestran que la vejez puede ser una etapa de plena actividad productiva",
-        "url": "https://www.lanacion.com.ar/lifestyle/trabajar-despues-de-los-100-anos-en-japon-hay-personas-que-nunca-se-jubilan-y-siguen-activas-nid26112026/",
-        "fecha": "2026-11-27T06:36:33-03:00"
+        "titulo": "Causa ANDIS: advierten que la Suizo Argentina siguió ganando licitaciones tras el estallido del escándalo",
+        "resumen": "Dos dirigentes de la Coalición Cívica presentaron un escrito ante el fiscal Franco Picardi alertando sobre la continuidad de los negocios de la empresa con el Estado",
+        "url": "https://www.lanacion.com.ar/politica/causa-andis-advierten-que-la-suizo-argentina-siguio-ganando-licitaciones-tras-el-estallido-del-nid27112026/",
+        "fecha": "2026-11-27T16:26:01-03:00"
       },
       {
-        "titulo": "Aristóteles, filósofo griego: “No te fíes de alguien que no tiene amigos, porque alguien que no tiene amigos es imposible que sea feliz”",
-        "resumen": "Retomada en clave contemporánea por el filósofo David Pastor Vico, la célebre advertencia invita a repensar la profundidad de los afectos en tiempos de hiperconexión; los detalles en la nota",
-        "url": "https://www.lanacion.com.ar/lifestyle/aristoteles-filosofo-griego-no-te-fies-de-alguien-que-no-tiene-amigos-porque-alguien-que-no-tiene-nid24112026/",
-        "fecha": "2026-11-27T06:35:35-03:00"
+        "titulo": "Dólar hoy y dólar blue, EN VIVO: a cuánto cotiza el oficial y cuál es el precio del paralelo este viernes 27 de noviembre",
+        "resumen": "La divisa oficial opera a $1625 para la venta, mientras que el dólar informal cotiza a $1710 para la misma operación",
+        "url": "https://www.lanacion.com.ar/economia/dolar/dolar-hoy-y-dolar-blue-en-vivo-a-cuanto-cotiza-el-oficial-y-cual-es-el-precio-del-paralelo-este-nid27112026/",
+        "fecha": "2026-11-27T16:22:30-03:00"
       },
       {
-        "titulo": "Se buscan voluntarios para vivir gratis en El Bolsón en una casa de montaña a cambio de proyectos artísticos, jardinería y cuidado de animales",
-        "resumen": "Descubrí qué requisitos necesitás para ser parte de esta experiencia en la Patagonia y durante cuántos días podés permanecer en el hostel; los detalles en la nota",
-        "url": "https://www.lanacion.com.ar/lifestyle/se-buscan-voluntarios-para-vivir-gratis-en-el-bolson-en-una-casa-de-montana-a-cambio-de-proyectos-nid25112026/",
-        "fecha": "2026-11-27T06:34:15-03:00"
+        "titulo": "La furia del arquero argentino que fue golpeado por un árbitro boliviano: “Es un cagón, que pegue más fuerte”",
+        "resumen": "Cristian Martínez recibió un puñetazo en la cara de parte de Jordy Alemán mientras reclamaba por el arbitraje de la final de la Copa Paceña; el juez fue suspendido",
+        "url": "https://www.lanacion.com.ar/deportes/futbol/la-furia-del-arquero-argentino-que-fue-golpeado-por-un-arbitro-boliviano-es-un-cagon-que-pegue-mas-nid27112026/",
+        "fecha": "2026-11-27T16:22:21-03:00"
       },
       {
-        "titulo": "El vestido de Miss Venezuela que generó polémica en la final de Miss Mundo: “Ahí es donde ella perdió el primer lugar, en el momento en el que salió así”",
-        "resumen": "Clara Vegas Goetz fue criticada duramente por el atuendo que escogió en la final del certamen; la justificación del jurado y a quién votaron",
-        "url": "https://www.lanacion.com.ar/espectaculos/el-vestido-de-miss-venezuela-que-genero-polemica-en-la-final-de-miss-mundo-ahi-es-donde-ella-perdio-nid26112026/",
-        "fecha": "2026-11-27T06:33:38-03:00"
+        "titulo": "Aluvión de dólares: el agro aportaría casi US$40.000 millones en 2027 y lograría el segundo registro de la historia",
+        "resumen": "Según la Bolsa de Comercio de Rosario, 2026 cerraría con un ingreso de US$36.989 millones, un 2,3% más que en 2025; para el próximo año se espera que el aumento de los volúmenes de exportación compense parte de la caída de los precios internacionales",
+        "url": "https://www.lanacion.com.ar/economia/campo/aluvion-de-dolares-el-agro-aportaria-casi-us40000-millones-en-2027-y-lograria-el-segundo-registro-de-nid27112026/",
+        "fecha": "2026-11-27T16:22:13-03:00"
       },
       {
-        "titulo": "El Chato Prada relató el mal momento que vivió cuando intentaron estafarlo haciéndose pasar por su hijo: “Me asusté”",
-        "resumen": "El productor contó que recibió una alarmante llamada telefónica y, aunque reaccionó a tiempo, reconoció que vivió una situación extremadamente difícil",
-        "url": "https://www.lanacion.com.ar/espectaculos/el-chato-prada-relato-el-mal-momento-que-vivio-cuando-intentaron-estafarlo-haciendose-pasar-por-su-nid26112026/",
-        "fecha": "2026-11-27T06:32:56-03:00"
+        "titulo": "“¿Cómo robo una Hilux?“, la pregunta a una aplicación de IA realizada por una banda que buscaba consejos para sus golpes",
+        "resumen": "La captura de un sospechoso y el secuestro de su celular permitieron a los investigadores perfilar a la organización delictiva que se apropiaba de camionetas de alta gama; seis procesados",
+        "url": "https://www.lanacion.com.ar/seguridad/como-robo-una-hilux-la-pregunta-a-una-aplicacion-de-ia-realizada-por-una-banda-que-buscaba-consejos-nid27112026/",
+        "fecha": "2026-11-27T16:17:36-03:00"
       },
       {
-        "titulo": "Tiene 47 años: Alejandra Gribaldo, la mujer detrás de una investigación clave en un gigante de las cervezas",
-        "resumen": "Es ingeniera agrónoma y dirige el área de mejoramiento genético de cebada e Investigación y Desarrollo de Cervecería y Maltería Quilmes en Tres Arroyos, donde lidera un equipo que tarda hasta doce años en lograr cada nueva variedad del cultivo",
-        "url": "https://www.lanacion.com.ar/economia/campo/tiene-47-anos-alejandra-gribaldo-la-mujer-detras-de-una-investigacion-clave-en-un-gigante-de-las-nid27112026/",
-        "fecha": "2026-11-27T06:30:00-03:00"
-      },
-      {
-        "titulo": "Travel Without Fear Act: el proyecto de ley que busca limitar operativos del ICE en aeropuertos de EE.UU.",
-        "resumen": "El proyecto exige avisar por adelantado a aeropuertos y aerolíneas de las acciones y actualizar el localizador de detenidos dentro de las seis horas posteriores a un cambio de custodia.",
-        "url": "https://www.lanacion.com.ar/estados-unidos/california/travel-without-fear-act-el-proyecto-de-ley-que-busca-limitar-operativos-del-ice-en-aeropuertos-de-nid27112026/",
-        "fecha": "2026-11-27T06:22:00-03:00"
+        "titulo": "El Tribunal del Mar define si acepta el reclamo argentino para frenar la explotación petrolera en las Malvinas",
+        "resumen": "Este sábado se conocerá si suspende las actividades del proyecto Sea Lion, objetado por el gobierno de Milei; los escenarios posibles frente al inminente fallo",
+        "url": "https://www.lanacion.com.ar/politica/el-tribunal-del-mar-define-si-acepta-el-reclamo-argentino-para-frenar-la-explotacion-petrolera-en-nid27112026/",
+        "fecha": "2026-11-27T16:14:03-03:00"
       },
       {
         "titulo": "Javier Milei y sus medidas, en vivo: el Gobierno logró la media sanción del Presupuesto 2027 y la suspensión de las PASO",
         "resumen": "El minuto a minuto de las decisiones del Presidente, las reacciones de la oposición y las declaraciones de los funcionarios",
         "url": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-el-gobierno-logro-la-media-sancion-del-presupuesto-2027-y-la-nid27112026/",
-        "fecha": "2026-11-27T06:18:12-03:00"
+        "fecha": "2026-11-27T16:12:27-03:00"
       },
       {
-        "titulo": "Los expertos en psicología coinciden: no querer recibir visitas en casa no es un acto de egoísmo",
-        "resumen": "Lejos de ser un acto de hostilidad, restringir el acceso al propio hogar funciona como una herramienta de autocuidado; los especialistas advierten que priorizar la intimidad mejora la salud mental",
-        "url": "https://www.lanacion.com.ar/lifestyle/los-expertos-en-psicologia-coinciden-no-querer-recibir-visitas-en-casa-no-es-un-acto-de-egoismo-nid26112026/",
-        "fecha": "2026-11-27T06:16:49-03:00"
+        "titulo": "Diego Peretti fue incluido en la denuncia penal contra Hernán Casciari por el financiamiento de La muerte de un comediante",
+        "resumen": "El actor, que protagonizó y codirigió el film rodado en Bruselas, fue incluido esta mañana en la ampliación presentada por presuntas irregularidades en la gestión de los proyectos colaborativos de Orsai",
+        "url": "https://www.lanacion.com.ar/espectaculos/cine/diego-peretti-fue-incluido-en-la-denuncia-penal-contra-hernan-casciari-por-el-financiamiento-de-la-nid27112026/",
+        "fecha": "2026-11-27T16:11:37-03:00"
       },
       {
-        "titulo": "Los tres lugares recomendados por el Feng Shui para que el helecho ahuyente la mala energía del hogar",
-        "resumen": "El helecho es clave para fomentar el equilibrio y la protección en ambientes estratégicos; los expertos detallan sus ubicaciones ideales según esta disciplina milenaria",
-        "url": "https://www.lanacion.com.ar/lifestyle/los-tres-lugares-recomendados-por-el-feng-shui-para-que-el-helecho-ahuyente-la-mala-energia-del-nid26112026/",
-        "fecha": "2026-11-27T06:16:24-03:00"
+        "titulo": "Del chipá y la pastafrola a las catas a ciegas de mate: cómo será el festival gratis en Avenida de Mayo con gastronomía típica y shows de folklore",
+        "resumen": "MATE BA se realizará el domingo 29 de noviembre con entrada gratuita; habrá actividades para toda la familia y será el punto de partida de la primera Semana del Mate, con propuestas en distintos puntos del país",
+        "url": "https://www.lanacion.com.ar/que-sale/del-chipa-y-la-pastafrola-a-las-catas-a-ciegas-de-mate-como-sera-el-festival-gratis-en-avenida-de-nid27112026/",
+        "fecha": "2026-11-27T16:10:34-03:00"
       },
       {
-        "titulo": "Las escalofriantes predicciones de Baba Vanga para 2027: ¿llegan alienígenas y superhumanos?",
-        "resumen": "La vidente búlgara vuelve a captar la atención global con pronósticos sobre avances científicos y conflictos geopolíticos; los expertos advierten sobre la falta de registros documentales",
-        "url": "https://www.lanacion.com.ar/lifestyle/las-escalofriantes-predicciones-de-baba-vanga-para-2027-llegan-alienigenas-y-superhumanos-nid26112026/",
-        "fecha": "2026-11-27T06:16:08-03:00"
+        "titulo": "Argentina Sub 17 vs, México Sub 17: cuándo se juega el partido de 16vos del Mundial 2026",
+        "resumen": "El seleccionado albiceleste avanzó a la etapa de eliminación directa y volverá a verse las caras con el rival que lo eliminó en la edición pasada",
+        "url": "https://www.lanacion.com.ar/deportes/futbol/argentina-sub-17-vs-mexico-sub-17-cuando-se-juega-el-partido-de-16vos-del-mundial-2026-nid27112026/",
+        "fecha": "2026-11-27T16:09:29-03:00"
       },
       {
-        "titulo": "De aferrarse a un peluche a jugar sin parar con otros monos: así está hoy Punch, el macaco que conmovió al mundo",
-        "resumen": "Tras ser rechazado por su madre al nacer y encontrar contención en un peluche, el pequeño primate del zoológico de Ichikawa protagonizó un nuevo video en el que se acerca e interactúa con otros de su especie",
-        "url": "https://www.lanacion.com.ar/lifestyle/de-aferrarse-a-un-peluche-a-jugar-sin-parar-con-otros-monos-asi-esta-hoy-punch-el-macaco-que-nid26112026/",
-        "fecha": "2026-11-27T06:15:48-03:00"
+        "titulo": "Vacunos: cierre de semana con altibajos en el Mercado Agroganadero de Cañuelas",
+        "resumen": "Con una entrada de 6116 cabezas, se pagó $4500 por novillos; el Índice Novillo del Mercado Agroganadero quedó en $4061,440 con un promedio semanal de $4071,338",
+        "url": "https://www.lanacion.com.ar/economia/campo/vacunos-cierre-de-semana-con-altibajos-en-el-mercado-agroganadero-de-canuelas-nid27112026/",
+        "fecha": "2026-11-27T16:05:58-03:00"
       },
       {
-        "titulo": "Investigadores aseguran que podría existir otro Monte Everest debajo del hielo antártico",
-        "resumen": "Geólogos australianos hallaron indicios geológicos de cordilleras masivas bajo el continente blanco; sugieren que estos gigantes montañosos facilitaron el surgimiento de la vida animal",
-        "url": "https://www.lanacion.com.ar/ciencia/investigadores-aseguran-que-podria-existir-otro-monte-everest-debajo-del-hielo-antartico-nid26112026/",
-        "fecha": "2026-11-27T06:15:17-03:00"
+        "titulo": "Murió el empresario Jorge Born, víctima de un secuestro de Montoneros",
+        "resumen": "Fue uno de los herederos de la firma Bunge y Born; en los ‘90 tuvo un rol protagónico en el gobierno de Carlos Menem y luego trazó amistad con Rodolfo Galimberti",
+        "url": "https://www.lanacion.com.ar/economia/murio-el-empresario-jorge-born-victima-de-un-secuestro-de-montoneros-nid27112026/",
+        "fecha": "2026-11-27T16:00:39-03:00"
       },
       {
-        "titulo": "Nora Colosimo apuntó sin filtro contra la China Suárez: “Me parece nefasto todo lo que hace esa mujer”",
-        "resumen": "La madre de Wanda Nara habló en El ejército de la mañana, cuestionó la relación entre el futbolista y la actriz, deslizó un interés económico y aseguró que el delantero rechaza un encuentro para acercar posiciones",
-        "url": "https://www.lanacion.com.ar/espectaculos/nora-colosimo-apunto-sin-filtro-contra-la-china-suarez-me-parece-nefasto-todo-lo-que-hace-esa-mujer-nid26112026/",
-        "fecha": "2026-11-27T06:14:45-03:00"
+        "titulo": "Qué pasa en el cerebro durante la menopausia y cómo se diferencia de otras etapas hormonales",
+        "resumen": "El Centro Médico de la Universidad de Ámsterdam participó en el estudio que la revista científica Nature Communications acaba de publicar",
+        "url": "https://www.lanacion.com.ar/sociedad/que-pasa-en-el-cerebro-durante-la-menopausia-y-como-se-diferencia-de-otras-etapas-hormonales-nid27112026/",
+        "fecha": "2026-11-27T16:00:00-03:00"
       },
       {
-        "titulo": "Julieta Prandi habló sobre la denuncia de su excuñada: “Estoy acostumbrada a la otra parte, a los manotazos de ahogado”",
-        "resumen": "La hermana de Claudio Contardi solicitó el embargo de la vivienda de Martínez alegando el préstamo de una suma millonaria; en diálogo con LAM, la modelo desmintió la acusación",
-        "url": "https://www.lanacion.com.ar/espectaculos/julieta-prandi-hablo-sobre-la-denuncia-de-su-excunada-estoy-acostumbrada-a-la-otra-parte-a-los-nid26112026/",
-        "fecha": "2026-11-27T06:13:17-03:00"
+        "titulo": "Franco Colapinto terminó 12° en la primera práctica del Gran Premio de Qatar de Fórmula 1",
+        "resumen": "El argentino quedó a dos lugares de Gasly, mientras que Antonelli dominó en el Circuito Internacional de Lusail",
+        "url": "https://www.lanacion.com.ar/deportes/automovilismo/franco-colapinto-en-el-gran-premio-de-qatar-de-formula-1-en-vivo-nid27112026/",
+        "fecha": "2026-11-27T15:59:00-03:00"
       },
       {
-        "titulo": "Ciencia extrema: el increíble trabajo de la científica argentina que estudia al depredador más famoso de la Antártida",
-        "resumen": "Desde hace tres décadas, pasa un mes al año entre el hielo y las tormentas para estudiar una de las especies más emblemáticas del continente blanco; cómo son sus expediciones",
-        "url": "https://www.lanacion.com.ar/sociedad/ciencia-extrema-el-increible-trabajo-de-la-cientifica-argentina-que-estudia-al-depredador-mas-famoso-nid27112026/",
-        "fecha": "2026-11-27T06:00:01-03:00"
+        "titulo": "Elecciones España 2026: resumen del debate, las últimas encuestas y las noticias del 29-N",
+        "resumen": "A dos días de la votación, los cuatros candidatos se enfrentaron en la televisión española; los cruces entre los líderes políticos y los momentos más destacados",
+        "url": "https://www.lanacion.com.ar/el-mundo/elecciones-espana-2026-en-vivo-resumen-del-debate-las-ultimas-encuestas-y-las-noticias-del-29-n-nid27112026/",
+        "fecha": "2026-11-27T15:55:59-03:00"
       },
       {
-        "titulo": "Nicki Nicole: lo más difícil después de cumplir su sueño, el amor propio y las canciones que anticipan su nuevo disco",
-        "resumen": "La artista rosarina presentó “Eterna soledad” y “Rayo de sol”, dos adelantos de Jazmines para ti, su próximo álbum; en diálogo con LA NACION, habla del miedo a quedarse sola y de la presión por gustarles a todos",
-        "url": "https://www.lanacion.com.ar/espectaculos/personajes/nicki-nicole-lo-mas-dificil-despues-de-cumplir-su-sueno-el-amor-propio-y-las-canciones-que-anticipan-nid27112026/",
-        "fecha": "2026-11-27T06:00:01-03:00"
+        "titulo": "La fascinante historia detrás de las exóticas cúpulas con forma de “cebolla” de un templo en San Telmo",
+        "resumen": "Inglesia Ortodoxa Rusa; zares, proezas transatlánticas y secretos arquitectónicos unen el círculo imperial de la corte de los Romanov con la Argentina del primer Centenario; abrirá sus puertas este sábado durante la Noche de los Templos",
+        "url": "https://www.lanacion.com.ar/propiedades/construccion-y-diseno/la-fascinante-historia-detras-de-las-exoticas-cupulas-con-forma-de-cebolla-de-un-templo-en-san-telmo-nid27112026/",
+        "fecha": "2026-11-27T15:55:27-03:00"
       },
       {
-        "titulo": "Montecristo: de la sublevación capilar de Pablo Echarri a la obsesión de Nora Cárpena, las perlitas de una telenovela que hizo historia",
-        "resumen": "La ficción protagonizada por Paola Krum, Pablo Echarri y Joaquín Furriel no solo fue un gran éxito, sino que marcó un nuevo camino para el género; su final se emitió desde un Luna Park repleto de fanáticos, luego de 145 episodios",
-        "url": "https://www.lanacion.com.ar/espectaculos/personajes/montecristo-de-la-sublevacion-capilar-de-pablo-echarri-a-la-obsesion-de-nora-carpena-las-perlitas-de-nid27112026/",
-        "fecha": "2026-11-27T06:00:01-03:00"
+        "titulo": "Siguiendo la pista de Alice Huang, hallan los chips prohibidos de Nvidia en un centro de datos de Shanghai",
+        "resumen": "Una investigación de Bloomberg reveló que los procesadores de IA más avanzados de Nvidia aparecieron en China pese a la prohibición de EE.UU.; el caso reaviva tensiones entre Washington y Beijing, involucra a la empresaria Alice Huang y cita al CEO Jensen Huang a declarar ante el Senado",
+        "url": "https://www.lanacion.com.ar/tecnologia/siguiendo-la-pista-de-alice-huang-hallan-los-chips-prohibidos-de-nvidia-en-un-centro-de-datos-de-nid27112026/",
+        "fecha": "2026-11-27T15:53:57-03:00"
       },
       {
-        "titulo": "La versión nórdica de Mafalda que comenzó con caricaturas contra Hitler y terminó en películas de Hollywood",
-        "resumen": "Parecen hipopótamos, pero son trolls y nacieron como una firma que Tove Jansson estampaba junto a su nombre",
-        "url": "https://www.lanacion.com.ar/conversaciones-de-domingo/la-version-nordica-de-mafalda-que-comenzo-con-caricaturas-contra-hitler-y-termino-en-peliculas-de-nid27112026/",
-        "fecha": "2026-11-27T06:00:00-03:00"
+        "titulo": "Franco Colapinto fue 15º en la segunda práctica en Qatar, dominada por los Mercedes",
+        "resumen": "El argentino nunca se sintió cómodo con su Alpine y padeció las dos banderas rojas que interrumpieron la tanda",
+        "url": "https://www.lanacion.com.ar/deportes/automovilismo/franco-colapinto-en-el-gran-premio-de-qatar-de-formula-1-en-vivo-nid27112026-2/",
+        "fecha": "2026-11-27T15:49:12-03:00"
       },
       {
-        "titulo": "Se conocieron los detalles de cómo será el primer proyecto inmobiliario que Costantini realiza con sus socios en una manzana de Bajo Belgrano",
-        "resumen": "Será un emprendimiento de la marca Quartier: solo 90 departamentos que costarán más de un millón de dólares",
-        "url": "https://www.lanacion.com.ar/propiedades/casas-y-departamentos/se-conocieron-los-detalles-de-como-sera-el-primer-proyecto-que-costantini-realiza-con-sus-socios-en-nid25112026/",
-        "fecha": "2026-11-27T06:00:00-03:00"
+        "titulo": "Menores de 5 años: este es el riesgo que puede poner en peligro su vida en segundos",
+        "resumen": "En LN+, Jorge Tartaglione, médico cardiólogo, brindó las claves fundamentales para identificar un atragantamiento y detalló las maniobras de primeros auxilios",
+        "url": "https://www.lanacion.com.ar/sociedad/menores-de-5-anos-este-es-el-riesgo-que-puede-poner-en-peligro-su-vida-en-segundos-nid27112026/",
+        "fecha": "2026-11-27T15:46:40-03:00"
       },
       {
-        "titulo": "Datos",
-        "resumen": "“¿Vamos a estar discutiendo apreciaciones, o sea, sentimientos? Yo no discuto sentimientos, yo discuto datos”. Javier Milei se lo dijo al colega Luis Majul hace poco. Qué datos, es otro cantar . En la misma conversación se ufanó de haber echado del país a “10.000 terroristas el año pasado” y otros “20.000” en lo que va de 2026. Y acusó a la oposici",
-        "url": "https://www.lanacion.com.ar/cultura/datos-nid27112026/",
-        "fecha": "2026-11-27T06:00:00-03:00"
+        "titulo": "La psicología explica por qué cambiamos a lo largo de la vida y qué factores influyen",
+        "resumen": "En una entrevista con LA NACION, Pilar Sordo analizó la transformación de la conducta humana frente a las experiencias de vida y la importancia del discurso interno",
+        "url": "https://www.lanacion.com.ar/sociedad/la-psicologia-explica-por-que-cambiamos-a-lo-largo-de-la-vida-y-que-factores-influyen-nid27112026/",
+        "fecha": "2026-11-27T15:46:37-03:00"
       },
       {
-        "titulo": "Cerati: fuerza artificial",
-        "resumen": "Cada vez que suena Fuerza Natural , el último disco de Gustavo Cerati, me dan ganas de llorar (y lo escucho bastante). Lo primero que canta Cerati, en el tema que le da nombre al disco es: “Puedo equivocarme, tengo todo por delante, nunca me sentí tan bien”. Da mucha bronca que sí, que se haya equivocado, porque le quedaba poco tiempo por delante c",
-        "url": "https://www.lanacion.com.ar/cultura/cerati-fuerza-artificial-nid27112026/",
-        "fecha": "2026-11-27T06:00:00-03:00"
+        "titulo": "Qué se sabe sobre la fibromialgia, la enfermedad que afecta más a las mujeres",
+        "resumen": "Jorge Tartaglione detalló en LN+ el impacto del diagnóstico en la vida diaria de las pacientes; señaló que el abordaje de esta patología debe ser multidisciplinario para mejorar la calidad de vida",
+        "url": "https://www.lanacion.com.ar/sociedad/que-se-sabe-sobre-la-fibromialgia-la-enfermedad-que-afecta-mas-a-las-mujeres-nid27112026/",
+        "fecha": "2026-11-27T15:46:31-03:00"
       },
       {
-        "titulo": "Desalojos exprés ya es ley: la norma que permite recuperar en tiempo récord una propiedad alquilada: ¿a partir de cuántos meses de deuda se puede iniciar el proceso?",
-        "resumen": "El Senado convirtió en ley el proyecto de Inviolabilidad de la Propiedad Privada, una iniciativa que introduce modificaciones en los procedimientos de desalojo",
-        "url": "https://www.lanacion.com.ar/propiedades/casas-y-departamentos/desalojos-expres-los-cambios-de-la-nueva-ley-que-permitirian-recuperar-una-propiedad-en-menos-tiempo-nid24112026/",
-        "fecha": "2026-11-27T06:00:00-03:00"
+        "titulo": "Cómo aprender a decir que no sin sentir culpa, según la psiquiatra Marian Rojas Estapé",
+        "resumen": "La española reflexionó sobre la dificultad para aceptar que no siempre es posible responder a todas las exigencias; cómo elegir qué necesita mayor atención en cada etapa",
+        "url": "https://www.lanacion.com.ar/sociedad/como-aprender-a-decir-que-no-sin-sentir-culpa-segun-la-psiquiatra-marian-rojas-estape-nid27112026/",
+        "fecha": "2026-11-27T15:46:28-03:00"
       },
       {
-        "titulo": "Licencia de conducir por primera vez: qué se necesita para obtener el registro y los simuladores ayudan a practicar",
-        "resumen": "La primera licencia de conducir requiere cumplir distintas instancias teóricas y prácticas antes de obtener el registro, desde un examen psicofísico hasta una prueba de manejo",
-        "url": "https://www.lanacion.com.ar/autos/licencia-de-conducir-por-primera-vez-que-se-necesita-para-obtener-el-registro-y-los-simuladores-nid27112026/",
-        "fecha": "2026-11-27T06:00:00-03:00"
+        "titulo": "Gabriel Rolón explicó en detalle por qué muchas personas permanecen en parejas que no las hacen felices",
+        "resumen": "En una entrevista exclusiva para LN+, el psicoanalista y escritor propuso una mirada cruda sobre el amor, la muerte y el cómo el deseo produce incomodidad",
+        "url": "https://www.lanacion.com.ar/sociedad/gabriel-rolon-explico-en-detalle-por-que-muchas-personas-permanecen-en-parejas-que-no-las-hacen-nid27112026/",
+        "fecha": "2026-11-27T15:46:25-03:00"
+      },
+      {
+        "titulo": "Arthur Brooks, experto en felicidad de Harvard, sobre la segunda mitad de la vida: “Pasar de sumar a restar”",
+        "resumen": "El profesor explica en su libro From Strength to Strength por qué el éxito no garantiza buenas relaciones y cómo ser más feliz con los años",
+        "url": "https://www.lanacion.com.ar/sociedad/arthur-brooks-experto-en-felicidad-de-harvard-sobre-la-segunda-mitad-de-la-vida-pasar-de-sumar-a-nid26112026/",
+        "fecha": "2026-11-27T15:46:16-03:00"
       }
     ],
     "pagina12": [
       {
-        "titulo": "El oro del Central está en Londres",
-        "resumen": "La AGN precisó el destino de los lingotes y ratificó que la entidad monetaria perdió 1.023 millones de dólares. El Deutsche Bank, donde trabajaron Caputo y Bausili, ganó 157,6 millones. El Central ya no tiene barras propias sino un derecho sobre “oro no asignado”, y negó operaciones que figuran en su propia contabilidad.",
-        "url": "https://www.pagina12.com.ar/2026/11/26/el-oro-del-central-esta-en-londres/",
-        "fecha": "2026-11-27T00:01:00-03:00"
+        "titulo": "Milei convoca a extraordinarias para aprobar la suspensión de las PASO y el Presupuesto 2027",
+        "resumen": "La suspensión de las primarias busca complicar la definición de candidaturas del peronismo, mientras el Gobierno intenta evitar otro conflicto político por el financiamiento universitario.",
+        "url": "https://www.pagina12.com.ar/2026/11/27/milei-convoca-a-extraordinarias-para-aprobar-la-suspension-de-las-paso-y-el-presupuesto-2027/",
+        "fecha": "2026-11-27T15:51:30-03:00"
       },
       {
-        "titulo": "El Senado dio media sanción para suspender las PASO en 2027",
-        "resumen": "Un proyecto distinto al inicial seguirá su debate en Diputados, en sesiones extraordinarias. El Gobierno se afloja la soga del cuello tras una turbulenta semana económica.",
-        "url": "https://www.pagina12.com.ar/2026/11/27/el-senado-dio-media-sancion-para-suspender-las-paso-en-2027/",
-        "fecha": "2026-11-27T00:01:00-03:00"
+        "titulo": "Masacre de pingüinos en Punta Tombo: el Superior Tribunal confirmó la condena contra el ganadero",
+        "resumen": "El fallo, considerado el primer caso de ecocidio en la zona protegida por la UNESCO, sentó precedente sobre la responsabilidad penal y los límites de la propiedad privada en daños ambientales.",
+        "url": "https://www.pagina12.com.ar/2026/11/27/masacre-de-pinguinos-en-punta-tombo-el-superior-tribunal-confirmo-la-condena-contra-el-ganadero/",
+        "fecha": "2026-11-27T14:41:02-03:00"
       },
       {
-        "titulo": "El ajuste avanza con el Presupuesto 2027",
-        "resumen": "En medio de negociaciones cruzadas y con desesperación por anotarse una victoria el oficialismo cedió con cambios en temas urgentes ante las críticas de la oposición.",
-        "url": "https://www.pagina12.com.ar/2026/11/27/el-ajuste-avanza-con-el-presupuesto-2027/",
-        "fecha": "2026-11-27T00:01:00-03:00"
+        "titulo": "Murió el empresario Jorge Born",
+        "resumen": "",
+        "url": "https://www.pagina12.com.ar/2026/11/27/murio-el-empresario-jorge-born/",
+        "fecha": "2026-11-27T13:34:02-03:00"
       },
       {
-        "titulo": "El fin de la recesión más loco del mundo",
-        "resumen": "Cemento, escrituras, venta de materiales para la construcción, producción de autos, consumo e industria, con caídas importantes.",
-        "url": "https://www.pagina12.com.ar/2026/11/26/se-freno-la-recesion-es-otro-eslogan-vacio/",
-        "fecha": "2026-11-27T00:01:00-03:00"
+        "titulo": "“A mover el culo”: Patricia Bullrich sigue jugando a la intriga y esquiva definiciones",
+        "resumen": "La senadora libertaria dijo que “es fundamental que este proyecto reelija”, pero evitó mencionar a Milei. Rechazó hablar de candidaturas y se autodefinió como “rebelde”. Luego publicó un video en sus redes en el que se adjudicó los éxitos del oficialismo en la Cámara alta.",
+        "url": "https://www.pagina12.com.ar/2026/11/27/a-mover-el-culo-patricia-bullrich-sigue-jugando-a-la-intriga-y-esquiva-definiciones/",
+        "fecha": "2026-11-27T11:39:48-03:00"
       }
     ],
     "clarin": [
       {
-        "titulo": "Llega otra aerolínea a la Argentina: El Al volará entre Ezeiza y Tel Aviv sin escalas por primera vez",
-        "resumen": "La ruta inédita de la aerolínea de bandera israelí tendrá dos frecuencias semanales desde la semana próxima. Será el vuelo más largo de su red y durará más de 15 horas. Se estima que 50.000 argentinos viajan a Israel cada año.",
-        "url": "https://www.clarin.com/economia/llega-aerolinea-argentina-volara-ezeiza-tel-aviv-escalas-primera-vez_0_vtpxIHpTb4.html",
-        "fecha": "2026-11-27T06:00:27-03:00"
+        "titulo": "Quiniela de Santa Fe: resultado del sorteo de la Matutina de hoy, viernes 27 de noviembre",
+        "resumen": "Conocé los números ganadores, cuáles salieron hoy a la cabeza y todo lo que necesitás saber.",
+        "url": "https://www.clarin.com/loterias-y-quinielas/quiniela-santa-fe-resultado-sorteo-matutina-hoy-viernes-27-noviembre_0_bq6nkKnTZR.html",
+        "fecha": "2026-11-27T15:45:19-03:00"
       },
       {
-        "titulo": "Panorama Internacional: Todos los rostros feroces de la España que vota el domingo",
-        "resumen": "Los españoles van a las urnas con la percepción de que la economía del país, considerada modelo por algunos bancos como el neerlandés ING, los desampara. Al PSOE, como hace unos días en el otro extremo del abanico, al republicano Donald Trump y antes en la primera vuelta brasileña a Lula da Silva, le sucede que los electores confrontan a los oficia",
-        "url": "https://www.clarin.com/mundo/europa/panorama-internacional-rostros-feroces-espana-vota-domingo_0_0ZutILymUz.html",
-        "fecha": "2026-11-27T06:00:27-03:00"
+        "titulo": "Quiniela de Córdoba: resultado del sorteo de la Matutina de hoy, viernes 27 de noviembre",
+        "resumen": "Conocé los números ganadores, cuáles salieron hoy a la cabeza y todo lo que necesitás saber.",
+        "url": "https://www.clarin.com/loterias-y-quinielas/quiniela-cordoba-resultado-sorteo-matutina-hoy-viernes-27-noviembre_0_8gGc3dbXzN.html",
+        "fecha": "2026-11-27T15:40:14-03:00"
       },
       {
-        "titulo": "¿Otra vez la sombra del poder en el Chaco? Un periodista atropelló y mató a un policía, pero culpó a otro conductor",
-        "resumen": "Se trata de Romildo Ramón Lavia Rachz, de 41 años, muy conocido en El Impenetrable Chaqueño y ganador de seis Martín Fierro Federal. Luego de entrevistar al gobernador Leandro Zdero y otras personalidades, se quedó comiendo un asado. A eso de las 4 de la madrugada del domingo 22 de noviembre, embistió al policía Juan José Sandoval (37) en un contro",
-        "url": "https://www.clarin.com/policiales/vez-sombra-poder-chaco-periodista-atropello-mato-policia-culpo-conductor_0_RJ1wdjiLG6.html",
-        "fecha": "2026-11-27T06:00:27-03:00"
+        "titulo": "Quiniela Nacional: resultado del sorteo de la Matutina de hoy, viernes 27 de noviembre",
+        "resumen": "Conocé los números ganadores, cuáles salieron hoy a la cabeza y todo lo que necesitás saber.",
+        "url": "https://www.clarin.com/loterias-y-quinielas/quiniela-nacional-resultado-sorteo-matutina-hoy-viernes-27-noviembre_0_QhrgsLEi31.html",
+        "fecha": "2026-11-27T15:40:13-03:00"
       },
       {
-        "titulo": "Yo estuve ahí: a diez años de la conquista de la Copa Davis, el recuerdo en primera persona del día más glorioso del tenis argentino",
-        "resumen": "De una Zagreb que parecía ajena a la final a la irrupción de Maradona y los 3.500 argentinos que coparon el estadio. Las historias, las emociones y los recuerdos de un enviado especial de Clarín que fue testigo privilegiado de una hazaña inolvidable.",
-        "url": "https://www.clarin.com/deportes/ahi-anos-conquista-copa-davis-recuerdo-primera-persona-dia-glorioso-tenis-argentino_0_CODs0r8qPW.html",
-        "fecha": "2026-11-27T06:00:26-03:00"
+        "titulo": "Quiniela de la Provincia: resultado del sorteo de la Matutina de hoy, viernes 27 de noviembre",
+        "resumen": "Conocé qué números salieron hoy a la cabeza y todo lo que necesitás saber. A cruzar los dedos.",
+        "url": "https://www.clarin.com/loterias-y-quinielas/quiniela-provincia-resultado-sorteo-matutina-hoy-viernes-27-noviembre_0_oC9LROCnMf.html",
+        "fecha": "2026-11-27T15:24:26-03:00"
       },
       {
-        "titulo": "El \"Operativo Maradona\", a diez años de Argentina campeón de la Copa Davis: cómo fue su llegada a Zagreb y la arenga el día previo a la definición",
-        "resumen": "Habla Diego Gutiérrez, quien tuvo trato directo con el 10 aquellos días. \"Quería estar sentado con la gente en la tribuna, una locura\", reveló en diálogo con Clarín. ¿Qué les dijo a los jugadores cuando terminó la serie? \"Ahí le salió el hincha de adentro. Recuerdo todo eso y se me pone la piel de gallina\".",
-        "url": "https://www.clarin.com/deportes/operativo-maradona-anos-argentina-campeon-copa-davis-llegada-zagreb-arenga-dia-previo-definicion_0_ki7fn2rHO1.html",
-        "fecha": "2026-11-27T06:00:26-03:00"
+        "titulo": "Indignación en el juicio al motociclista que mató a un nene y escapó: cambian la acusación por una más leve",
+        "resumen": "El fiscal pidió 6 años de prisión para Mauro Ezequiel Silva (32) por \"homicidio culposo\" en vez de “homicidio con dolo eventual”, delito por el que se inició el debate y que prevé penas más altas. Para la familia de la víctima, Gonzalo Ian Naveiro Siquier (7), esa condena sería \"nada\". La querella sí mantuvo la imputación inicial y solicitó 15 años",
+        "url": "https://www.clarin.com/policiales/indignacion-juicio-motociclista-mato-nene-escapo-cambian-acusacion-leve_0_UA1l5ruT5p.html",
+        "fecha": "2026-11-27T15:23:39-03:00"
       },
       {
-        "titulo": "El taller de autos más famoso de California convirtió un Chevrolet Bel Air de 1950 en un potente auto eléctrico: cómo lo renovaron y qué conservaron del modelo original",
-        "resumen": "Los mecánicos de West Coast Custom se dieron a la tarde de combinar el icónico modelo de los años 50 con un Tesla. El resultado sorprendió a los aficionados, pues conserva la apariencia clásica, pero funciona como un vehículo moderno.",
-        "url": "https://www.clarin.com/estados-unidos/taller-autos-famoso-california-convirtio-chevrolet-bel-air-1950-potente-auto-electrico-renovaron-conservaron-modelo-original_0_Fp4QYuwdw4.html",
-        "fecha": "2026-11-27T06:00:26-03:00"
+        "titulo": "Desapareció en 2008 y el caso está a punto de cerrarse: la historia de Amy Fitzpatrick, la joven irlandesa olvidada en España",
+        "resumen": "Amy Fitzpatrick tenía 15 años cuando desapareció en Mijas en la madrugada del 1 de enero de 2008. En menos de dos años, la justicia española podría archivar el caso para siempre.",
+        "url": "https://www.clarin.com/internacional/desaparecio-2008-caso-punto-cerrarse-historia-amy-fitzpatrick-joven-irlandesa-olvidada-espana_0_pMChVrEsL3.html",
+        "fecha": "2026-11-27T15:15:22-03:00"
       },
       {
-        "titulo": "Agustín Giay, Flaco López y Alexander Barboza, los argentinos que desafían a Estudiantes: ¿a quién prefieren los hinchas de Palmeiras?",
-        "resumen": "El delantero es el que más tiempo lleva en el Verdao, que va por su cuarta Copa Libertadores. Mirá el video.",
-        "url": "https://www.clarin.com/deportes/agustin-giay-flaco-lopez-alexander-barboza-argentinos-desafian-estudiantes-prefieren-hinchas-palmeiras_0_wQBBpxmV5o.html",
-        "fecha": "2026-11-27T06:00:26-03:00"
+        "titulo": "Llegó el Black Friday 2026: los aires acondicionados más baratos para comprar antes del verano",
+        "resumen": "Las principales cadenas y plataformas de venta online ofrecen descuentos en equipos portátiles y split frío-calor. Cuáles son los modelos más económicos, cuánto cuestan y qué opciones de financiación tienen.",
+        "url": "https://www.clarin.com/informacion-general/llego-black-friday-2026-aires-acondicionados-baratos-comprar-verano_0_n1oZLe646Y.html",
+        "fecha": "2026-11-27T15:15:21-03:00"
       },
       {
-        "titulo": "F1 GP de Qatar con Franco Colapinto, EN VIVO: horarios de la FP1 y FP2 y cómo ver la Fórmula 1",
-        "resumen": "El piloto argentino viene de su mejor actuación en la temporada: 6° en Las Vegas. Alpine volvió a sumar con sus dos autos y está a 27 puntos de Racing Bulls por el quinto lugar. Es la penúltima fecha de la temporada.",
-        "url": "https://www.clarin.com/deportes/f1-gp-qatar-franco-colapinto-vivo-horarios-fp1-fp2-ver-formula-1_0_ciA1FXmm4r.html",
-        "fecha": "2026-11-27T06:00:25-03:00"
+        "titulo": "De Arnold Schwarzenegger a Jennifer Garner: las estrellas que sirvieron comida gratis por el Día de Acción de Gracias este 2026",
+        "resumen": "La lista con las celebridades que se sumaron como voluntarios a comedores y organizaciones benéficas durante la semana festiva.",
+        "url": "https://www.clarin.com/estados-unidos/arnold-schwarzenegger-jennifer-garner-estrellas-sirvieron-comida-gratis-dia-accion-gracias-2026_0_TgYyVKJhoC.html",
+        "fecha": "2026-11-27T15:13:15-03:00"
       },
       {
-        "titulo": "Nueva encuesta: sorpresa con los datos de Cristina Kirchner, Mauricio Macri y Victoria Villarruel",
-        "resumen": "Es el último estudio nacional de la consultora Pulso Resarch. Midió las imágenes de 12 dirigentes del oficialismo y la oposición. También le preguntó a la gente si hay que eliminar las PASO.",
-        "url": "https://www.clarin.com/politica/nueva-encuesta-sorpresa-datos-cristina-kirchner-mauricio-macri-victoria-villarruel_0_mShPWoaJKk.html",
-        "fecha": "2026-11-27T06:00:25-03:00"
+        "titulo": "¿De qué tamaño es realmente el mundo? La ONU respalda un nuevo mapa que corrige el famoso Mercator de 1569",
+        "resumen": "La ONU aprobó una resolución para promover el uso de Equal Earth, un planisferio que corrige las desproporciones del mapa tradicional y reubica a los continentes en su, tal vez, justa escala geográfica y política.",
+        "url": "https://www.clarin.com/revista-n/tamano-realmente-mundo-onu-respalda-nuevo-mapa-corrige-famoso-mercator-1569_0_2YYpKEbLfU.html",
+        "fecha": "2026-11-27T15:10:57-03:00"
       },
       {
-        "titulo": "Daniel Orsanic, a diez años de la gloria en la Copa Davis: la promesa a Del Potro y los secretos de una hazaña inolvidable en Zagreb",
-        "resumen": "El capitán de la Argentina revive en una entrevista con Clarín la conquista de la Ensaladera de Plata, el 27 de noviembre de 2016. La intimidad de aquel domingo inolvidable y las claves de una conducción que priorizó la armonía y el respeto por encima de los resultados.",
-        "url": "https://www.clarin.com/deportes/daniel-orsanic-anos-gloria-copa-davis-promesa-potro-secretos-hazana-inolvidable-zagreb_0_X0Dq1mYYOX.html",
-        "fecha": "2026-11-27T06:00:25-03:00"
+        "titulo": "Relatora de ONU dice que gobierno de Costa Rica debe responder por falsas acusaciones de terrorismo",
+        "resumen": "La experta de la ONU Francesca Albanese denuncia al gobierno costarricense por impedir su entrada con acusaciones de terrorismo. La decisión fue respaldada por Israel. Albanese critica a Costa Rica por su apoyo a Israel, acusando de \"apartheid\" tras un tratado comercial. La ONU y otras figuras piden reconsiderar la prohibición.",
+        "url": "https://www.clarin.com/estados-unidos/relatora-de-onu-dice-que-gobierno-de-costa-rica-debe-responder-por-falsas-acusaciones-de-terrorismo_0_ADXiSZbn4B.html",
+        "fecha": "2026-11-27T15:10:09-03:00"
       }
     ],
     "eldestape": [
       {
-        "titulo": "¡HASTA BULLRICH SE RIO! Imperdible monólogo de Mayans sobre la suspensión de las PASO",
-        "resumen": "¡HASTA BULLRICH SE RIO! Imperdible monólogo de Mayans sobre la suspensión de las PASO El Destape",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcUwxVzVxQUlQVFpvOWpMeGdnakJOOUVhd3M5S3V2N2JXX2NidHdDUzRpRXY3WHpsVllfRXY5cm1WOUtOc0poWERvdTY1cFBTN3ZjZkxBNThsNUd0VUN2YVB5RHFJWDBmNWNHejdKTTRtQmtBTXViaWE2bndLcS1lMWJSWE5CT3lXMTR2VWxEd0FRb3VITDBEX3NaSmxBVGJ3d013d1A1UGFRUndkNUxJeWp2Zjl5WHdVWEduTUtmRWtwb2FaeGVwVkotUnpxN1BzOGc?oc=5",
-        "fecha": "2026-11-27T02:30:38-03:00"
+        "titulo": "Desgarrador: se supo cómo fueron las últimas horas de Roberto Gómez Bolaños antes de morir",
+        "resumen": "Desgarrador: se supo cómo fueron las últimas horas de Roberto Gómez Bolaños antes de morir El Destape",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRjM5TU9BUFJJRXMyZXNWc09DOExLb05ZejV4dE9OZmZmM01yLUxfYzFYTkFEWi1NbGJleV9yc2JwOHhkdUNSQ2xDQVpCeVNfQlpPbFE4RHhyUFo0MUNNdjlLbGYyZkVTRlVkSW9Dd0kzeE5qdTYxaURTWFhDU3FXOXpOVXdGNnFmdktoSlBTOFU3Mmk2TVhUbE8wLU5MdjBQYmtXV2lreHVMSmRoeTdmOGdRUEM2d1lPa2VoUTdrNlpHejF3WXfSAdoBQVVfeXFMT3BHS1JlOUVNVjNPcFZuSWxhWFM1TklVQmRUYVZWWVN1X0hRQ2ExVHJFdndiQ3RHNzVadVNzRlZ5WEJiTTYyZE5LSTJUWHB4Yjk1MU9aN25fSENVRDkwUk5XVTJQbGtjZUo4VVJ3Y1d5TlVLV21DSWhNMzdHdi1NU2w1bDF0NDhOSmc1N0ZwenBlSkw2V1pXUTJCeFF0ZmxmOGtIc2dIeHBvbWZKSm5FQXBFSTlSWXNEUmdxM2JVTERPZ0dueWxnMldPbFhRYXoyeklxLXpwZnU5WFE?oc=5",
+        "fecha": "2026-11-27T16:23:01-03:00"
+      },
+      {
+        "titulo": "Estafas con inteligencia artificial: cómo proteger los datos personales en los chats",
+        "resumen": "Estafas con inteligencia artificial: cómo proteger los datos personales en los chats El Destape",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPb2R6WDRhZkpQVGJKNzRDMkNXLWJWb21IaElYVVZNZ0gyR0hzdzZmTzZ1RVhsWThjNmdEak1hZUx4NlBtMmNjM1p1b0x2NnBKRzBjT2JZbXFSOEw2RGJQWTl1X2x6OHR5NWxWT0tLYVItNDIxZ2g2WXRFa0pkeEs0ajRMRUJLZkYwYWpDSzZRLUw1dVZfcW1SUTE0ZzRpaDJlcFppc1V3UjlHTFUxNVpzQU0tVkVDLVXSAcsBQVVfeXFMT1I5NDNMUDkzSFBrdlVFZ1VORGZqTi0yUjdOalJOZ19QRkh0Ym9Yak9TMnNJenB1MmF0SFFGU2ZVajZzYk9MMktFT1VjRkZ5NDNXbnZwM0R1UTJMNE53Ylc0YzhzTDZURElVNGNwZ0hFNWx2NThQdVRxTXRqSGtyQjI5STJWdUs3bmozbGp2U3NQVVFENXNxWTBXOERKdEk5MmppMVpGOHpWclQ2VHlpMEJaS3EtbV80b2w0UFBCYWpBTHN1dkl1cjR0aGc?oc=5",
+        "fecha": "2026-11-27T16:04:59-03:00"
+      },
+      {
+        "titulo": "Ver Deportivo Morón vs. Colón por Fútbol Libre, Pelota Libre o Xuper TV es un riesgo: dónde hacerlo de manera legal",
+        "resumen": "Ver Deportivo Morón vs. Colón por Fútbol Libre, Pelota Libre o Xuper TV es un riesgo: dónde hacerlo de manera legal El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQdFBLM2l2bWZnQVlZMk1qeEtEY1FvUXJVYnNyMFo3NTc3ajFxZS16QmRoc18zX1dhNVRHYnJmYXBzcW5JNmQ1LUlpWjJwQXQ2RFg2VDhHV2VYaFlPZzBNSnFWNDhUdW9ZVDJybUxqNVdKTE5CR3NIdHYtU1lIYmY4OFNuTFBPN3J0V0VWYVlFdEYzR1lrSFlEQ282MktsYzFmSTJKNGZlTWgyS3dla3BIUXNLVVJ3aWx0dDdYWXlVclN3ZTR6ZUNab1hyN09DU2xKMlR4cVlEbWVqbEVnT195TXliWVJZYnVOYjQ3enA2c9IBgwJBVV95cUxOX3NqblFvYTlUcDlFLXNyb1BNeG90cENxSDNJNHlydWRXZjdiRDZRdWpkMm5nbUhzdXpjRzBDamZRak5MankwSjFIRUlSUHAzTVNudkZwTkdwS0tXdjc0VjRSU2dCMUZSdU5NdDZlci1kQlpOVzJGYks5LUJLRXJtRkgxdkt5cEQyaVlNWUtTTW9rSWVSeHJ0cVJ0SDI4dkV5UzNDOTJzQl9oZWNPTmZKWWxPNWVGV1llSC1kanlNT0VFN3JGemdWVFRjUHpwX25LSkZJTFNsVE1iRGYwclo0UHkyYUJ3Q2s4SjZCQldiX0lxN0ZPSkE1MmRGM1JPTExSYnpB?oc=5",
+        "fecha": "2026-11-27T16:00:58-03:00"
+      },
+      {
+        "titulo": "Galaxy Watch8: qué funciones de salud suma la actualización One UI 9 Watch",
+        "resumen": "Galaxy Watch8: qué funciones de salud suma la actualización One UI 9 Watch El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ1hzcXZtYWwwNVhUMENXaDFRQ21UazVkb2Y5LTBhcXJ2cHpQQkNVdUFUaVlPQUNrY3hkQmcxNWMyeVFIZEVWU25WUU9jdXRhM1JYZVN5WmEwRml3eDNrU0xjVDNQb0dNQ0FBcTRGVVYzODJ3QWhkNzBHT3I4dzlkM2ZTdzU3dk1GSkVUbnE0cWNMSUczZGdfQWFDYVVvbVZwTXpMcWphQkFDdFIxU2pEWkowbk9lX3J1Q2fSAc4BQVVfeXFMTU56MW4yeU8yazhGZk5odmVvUlVxdEF1QkdyUDdldUR6bTJVWkRPTGJoeHhYSjlRYXJzVExRaXZFNmZxSXR5enJycWtRVUF0RlBlUWxCYlktRkM3S0VnbE1SZU5qS19aWlpndVdIUUV6eG1USkNhdHp3RUVHTm9lSnQwRzd4bTdhd1hhSHhIeGNMUFhVN0hZRzh1OTV4d3RvQmliM1pzZF90YmxBYjZkYzhBa2ZTMXJWM25ZdDFOR3dvUFh4UE5uaXQ1NXhPSXc?oc=5",
+        "fecha": "2026-11-27T16:00:58-03:00"
+      },
+      {
+        "titulo": "Independiente vendió a una sus mayores promesas a días de que la dirigencia se marche: cuánta plata le ingresa",
+        "resumen": "Independiente vendió a una sus mayores promesas a días de que la dirigencia se marche: cuánta plata le ingresa El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQRG9SZHl4YjRXNG9CN05VWnc2a2w4SGZSTjEzTGhDWGFRS2hiU0RCc2tVQUpoSEhLQ3BIYXdHMHlNUEw0eXpMVUl4eUp5YklYZkNvNjFvSWNNSWVkTlU1UzRQbWl2WUdxTHRodnA3c09od2lrRk10endKX3lJUHZ6eF9yN1g2VnU1VzlLX0huWkFlWW9wSEpiSHVqS1JFcUVwa2xObXdBOHo3MS15YnpHcmQ2dDZoWE1HNTFpRWIzd25ZWnVwSUZRY080aEVPalFTQzNyR1I4MEE0cmN2eElB0gHzAUFVX3lxTE5uc0MwbVVMeDdacmdWbHVvQlRaVVFiUDc5RFRfLWl6Ty1ReHNwbHh6XzFSbXRXTEp6S1dPSFFTOUMxc0g1RUstbVdia1ZzUXVXV2RLWVhUVG1ReTdqSjhHMEFRUE1HQ09mOTNVQzZGSl9ENkZSa3Nnb25sNE9SNnlNTUNFUl9DVTROOUs3SXdyNUZrcWFhSTViZFhCNFhDQjZROFN4Mmc5YW5lNnUyNXI1dW40ZHljNG9SWXExdy03MDkyazNFdXBuWTNGQTJYNWRKV04xNDlad0FVUXFNZzV6V0Zfdm5IWlVZUGdYT2Z6UVJhTQ?oc=5",
+        "fecha": "2026-11-27T16:00:58-03:00"
+      },
+      {
+        "titulo": "La tremenda maniobra de Colapinto para \"vengarse\" de Sainz en el Gran Premio de Qatar de la Fórmula 1",
+        "resumen": "La tremenda maniobra de Colapinto para \"vengarse\" de Sainz en el Gran Premio de Qatar de la Fórmula 1 El Destape",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNUdpMV9tQUtxQ2NaMlp0eVAyVlg5UWlQdTAwbjRKbFhaUnZpaXVSN2IycmNsMkhqTEJXRm9HMUlKNDJET29UYkFSTEJfaXprWHppVi1HOEJmMFlTWnBOZ2JRZXlpNHNtYTd1UVdlYU4zTWtUM0RaTVdKalVNdkw4RWhFU2hOTURVTkJtYXNmMGRhWlF6WThJelE5bnNkcFUyekRhSUlIT1dwOWNCdUFjZ3FlelFMYUZSVldnUWd2d00tZ1YyRDNHZmJHYlLSAeABQVVfeXFMTk95YTgwUW1JWjRuNGtUR0FCck15WnJidDExbU9jTlBWSTFvaWpBLTZnekxGVUdqb3ZvVWVaQlllQWtPNDZ0ZlJqWlczYlJpclZxNFVITTNqdXdKTERBNUQzaU13V29Md2hIN3dhRkdYOUhwWF82N3AyeUJPaTRxRkRHVmFoc2htck5XUFhmVHAtMnJSQkY5ZGZ4ckhVczhta1NlVjZlMXkyWXJtQk1vSHI1YmtMWHdkYVp2QkM4cUM0OWRFUUQ4NDJyU0RTQk9iU3lhcjFod0pjelpweFBMY18?oc=5",
+        "fecha": "2026-11-27T16:00:58-03:00"
+      },
+      {
+        "titulo": "Nuevos recorridos, estaciones renovadas: el proyecto que busca modernizar el Premetro",
+        "resumen": "Nuevos recorridos, estaciones renovadas: el proyecto que busca modernizar el Premetro El Destape",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVkxnUWZ3aWc5RlU2V21uVE9pVlhXNmM2LTNXU0hsVFMtNF9XYkMtLUkwUl9sTm5fYzFCVEpMV1Jpdlo0aWt2OUdWX3RySGdORzFxalhjMjQ1RGQwRkFMeGFNSTJYUTctcXk5ZHo2WGJlOG5VQURrQjNwZlczMHV1NzZvUG80TGROOGlfazhaTTNjZ1dPTnhLd28tUTNuanhxbzNWZ0FmemhzT2JTYnp0a1ozaERJWW80REplZVNhSzh1NWg5eXc?oc=5",
+        "fecha": "2026-11-27T15:49:58-03:00"
+      },
+      {
+        "titulo": "Cuándo está MasterChef Celebrity 2026 y la gala de eliminación: el día que se conoce al nuevo participante eliminado de Telefe",
+        "resumen": "Cuándo está MasterChef Celebrity 2026 y la gala de eliminación: el día que se conoce al nuevo participante eliminado de Telefe El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQT19vV3dFaVNqSWJzTXZfemtOLW13ZFJwcFYtZzI4aVBHXzl2QXVBc09fb1VNaUdzajVzTWVkcld1aVY3TXBQOXJ3UnphNTdaWldleEZYWHJyMy1EeXRnVDNCU0dtMWZTQ213YWVFb3BvXzEzSTlxSU1Genc0MUJXYmZQWDFLR1BOVlRsSXgwR204NEJJQ1hQUDZCc0hZQXI5ZHRTanljWEN2ei10Y3J0OC1xdkV2U0NNVXFQbzdxN09EYkZDalBvWXFoRk5oRi1KaXFUYkFaMFdLbnVrVWI0MTBPV1YyUHh3ZFFFQXZsRQ?oc=5",
+        "fecha": "2026-11-27T15:45:00-03:00"
+      },
+      {
+        "titulo": "Estaban juntos hace 19 años: se terminó el amor entre un famoso futbolista y una reconocida periodista",
+        "resumen": "Estaban juntos hace 19 años: se terminó el amor entre un famoso futbolista y una reconocida periodista El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQOEFMMWRmUlJrR3JUaGpFbGtvdGFadGpZSTJqbzRvTldVYm9JV1Y2dG1tN0ppZjhtWTJ6Qzl5NHhaTXNjYzVaZXdCUE94QVE4emUtUF9SaHYxOWF6YVN0RlJERWlIQkwtNWRmdTlmaDd3SU5lTGo1dTZ2THd0T19scTFkaHpkT1d3cURGU005VDN1b0s4WHhobGY2NUNnTFFCUlZkb09tbXdHZ3FLZUdaTmlNQ2FielZiMEdnWi1HdTFiNnNFMGRGZjNYUmJQNHQ5Ny040gHnAUFVX3lxTE9yMDNqS2h3Y250M3lneTdkX0RnM2U5N010c2hzOUl0RU9xTEdodVU2LXlRRDhHNWtUWU1HdlNwYUFhVThoSEhVV1gyNE5FYTlad0tJdUZ6VF9KaTdrZTNjZlAxWHRtdF9KbWMxd2FqQ0ZXVlBWb3JZUVhWeFlKMnluN09KcWRTamhoTWItUFhtblZjeExlTWQ3V3R5d0xDbGJacVNWV2d5WXdNMFp0c2IyWGV4aGJ3Q0tVYWZmUmY2dDdPVHJkVkdBaEVndkpKeVlnTUZNTE1KSHBKYjZobElTRk9xWXJFQQ?oc=5",
+        "fecha": "2026-11-27T15:34:46-03:00"
+      },
+      {
+        "titulo": "Nelson Castro contó la triste historia de amor que lo marcó para toda su vida: \"Falleció\"",
+        "resumen": "Nelson Castro contó la triste historia de amor que lo marcó para toda su vida: \"Falleció\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNQ1FrLTJRY3pzSHBhNE14ZkI1bE9ZOVNHOVgyc3RJQ1FhVVZTOVdFbFJsc0k1d3FTM196SXkxOVo2dUFxaHVhMmpTdDhyd0UxMzNlV0RVYmNSelhVbVVOUGVjWmNsSFRYbEl3czJMY1BZdzlMR2tUVkhVRnhhV1p5cnNBc1NzYWp3TGdIZklFZnVoMkxvbkZsdF9lLVR4WG1aOHllcG1fWnFtU3ZvN2NKbXlkQkFFbHFsN210T0l6a9IB0wFBVV95cUxPSVlkM1VUMU8wTDlpTkhJTWdEel9KdW9kbUZrbUZGVGZfQXRyTDZfSFBIX1JWY1Ytb01mUHNtc1NpcVVxZDF4dHV3YTljUG53Sm9PMHM0NFNnMkRTaHpXcWFiSTVoVDFfNElzY0tMbVJScThQZ1ZrY0Mzdm0wUmZ0ZmVWRWt2cDQweWFfTG1nNXU1YzBibWhpdWhKdVp0WW5pQ1paZ19OZTJLZ3FDb1hhc3JzaGJmOFlHaXBCZE9XTFlWenRKTExMVVdsa2RzR3JLMDZZ?oc=5",
+        "fecha": "2026-11-27T15:34:46-03:00"
+      },
+      {
+        "titulo": "Quiénes son los invitados de La Peña de Morfi del domingo 29 de noviembre 2026 en Telefe",
+        "resumen": "Quiénes son los invitados de La Peña de Morfi del domingo 29 de noviembre 2026 en Telefe El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaE0yNFIwa2l0WXB5WDJlU0xUTFJMOGc5V0I1SnJ0MFRwZG9CZjdTSW1UWnEyTWZRSXJKOHhSWVVqaF9IUVF5UXRmRGYtSURoTk0zdDR6UkxPdGMzNTlKTjNuQlRoc2JESGRfWmhjREJvMlZTNEI2NmliNFlqWGFZWlgyM0tMYVpNN2F6TFlEOUVzSUF3VlRpTExIelR6VFJBQmplX1N4bVBCa1owRnU4TGV5a2FFd3VE0gHMAUFVX3lxTE9qYXFTWHZ6VUo2UUdkLVhZS1BzcFh0THhfOEJPam04bXBmdVpvaVhRVlRUaEx5VDBYSFpZay0wbzVtQjYwZ1MzdXZLN0o2b3dEbGp4enlrNVh6UndmRDROY0tKR2ozdFBORTd5dTVBbjVmQ2RESXJWTlppRWRGSmhGVDhXMjF1dFN6RGg1Sl95aDhHN3lPY24wRHVjRlFIVDJWUTYxTTZrMDNPcmZ1cUNIRGsxdXVfcnQydUROWnBhVlBFVVphM1BtQUFMUg?oc=5",
+        "fecha": "2026-11-27T15:29:21-03:00"
+      },
+      {
+        "titulo": "Federico D'Elía se metió en el debate por los cinco grandes y dejó una definición sobre Estudiantes: \"Para mí es el número uno\"",
+        "resumen": "Federico D'Elía se metió en el debate por los cinco grandes y dejó una definición sobre Estudiantes: \"Para mí es el número uno\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWGlDOURJVzk3aW5tNUIyUkFHSkhnWU1IemtkMi1ybmJwMEI3aWNvblV4eEdZcDVlb2VmcW45UWVhV1N6Tk5EOGo5R1lzZkpqTVVaVmUxUm1TcjJZM2hYelBSdG92TWZCTml0cV82NkRyRXJTblBsWS1iTXRRYi1JTGtFR0NQM3ZtbmxuSVd3aW90c0Z1Um1Ya0JEamFoelR1Y0NvSFBHZDNlZ2gtb2lDY0pnZ0tva0NGSmpHanAwU0hxVS12dE55VHJfY19LeC1hNU5YLVBRVzlTRW_SAe8BQVVfeXFMTndjZnBmQXZiNEp1M3UySjV3SXFfOG1BS0lCMXJBbDVpamhKRGFXUlBCcE1yT0tFTFFXT3F1WUl6bzVpLWVWUUx6eTE4emU1X1BTTG04RmtrZ0pMbzhYYXFxNTQ0ZW0xTXY2cGpfVjN3X2VHOE8zTWdKYmtRdXMxdHlUOHg4UUxSb2ZSNjdjSGZMNENCTlcyd0E0QVYza3BHQ2ZYQjdKcGVjV1FieVNrbjU3VWJzNmZidzVKd3pSQ0l5ZGE0RVRvcWxzbGZXMVBIMVRrcFhQTVNKS2hJY2ZQa1RPcW11Snl6a1Q1ejJFalE?oc=5",
+        "fecha": "2026-11-27T15:28:35-03:00"
+      },
+      {
+        "titulo": "Cuáles son los 12 clubes argentinos que tendrían que cambiar de sponsor por la aprobación de la Ley contra la ludopatía",
+        "resumen": "Cuáles son los 12 clubes argentinos que tendrían que cambiar de sponsor por la aprobación de la Ley contra la ludopatía El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOSmxHa2EzNjhiMUE3cWE4SWFkbFY4TnF6VHczVWI4amZwRElOM3l0elpuVFNuUGF1cHF0RHhOU1BGeHp1YTU2N2FXU3ZKTE9zZVRieEFtSlBDUzRRZVp0RWJhd25RUHJaSDNlMTdzYXJYcmJrR3NhTHlOOHE1UjhJSlU5RGJQN3ZXYWY1d19tRjM1VEtpX1o0ZVZCOFIxY3liTEJnc0ZrWkVZQlgwUXpOT2psT1Z2WVh2ZTJmRndBUTR5NF9PV3I4RGtQRjZOa2tHZmpqZkNsZ9IB6wFBVV95cUxNek9DZ3VTN3lPaTIwNHNnLVc0aU5LclhMSFNKVk90SkowRTFmYlA1UXAtWEhFNEdLYnlESzRZR2dvZWhuUHo3Um0zN3ktMFhtQVZLZzdzN0VXemk4UV9sU3g5Tl9BcTNlaGE5ZnM2QzRHRjR6Wk9DZGNGakVxbmRTWlk5WUV4UTVhRjhkZUVoZHIyR3gxQjRVLS0yM0lUcWZHVVptOWFldXZxeGZOQjZXVWFfZU9Gd0pOcER2ang2S0F2d1VKNlkyNjJiUDFsSjEzZXJpckx0NFFCWDdhSkFVNFJKcnpycERESklN?oc=5",
+        "fecha": "2026-11-27T15:06:04-03:00"
+      },
+      {
+        "titulo": "El impensado detalle que vincula a Tagliafico con River y lo perfila como refuerzo para 2027",
+        "resumen": "El impensado detalle que vincula a Tagliafico con River y lo perfila como refuerzo para 2027 El Destape",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUV9hS1RsTFI2eEFjX1hwQklKTEE0SFN1N1FORm1la25DM3BBSmV2VUZ6aWVYaUxEblhlR0Jac2VQVUFWV0NqZk1YWmctMjk0X1hwVW14SDVOazV2VzNRUnJlWHJqOUt6RnN4aTM1QkpYZW9OZzFSTTlkczhpZkh2a0VWNGN6TnY5WGh4R0toX3JONzlNd1BSaE1JNlAwS2kydjFuR3otN0h5bGJWNkY2ZHA3VzhlVVkxVEdvRF9CX3VyZjBO0gHYAUFVX3lxTFBSdkZ1dS1wT1ZiLWVoYURMSTU0ZnMtbFAyWkhPbjdwcmtMemYzRlYwb0NwS2lYaGwyckM1MDZtYXgtN2xmTWNQZmdvcDdqNkNuM21CeVFYYW5ZOV9JaTJDUkFiNWx6VHlnMVZJcUJvRmI3VFp4WmNkOVJHaURWMjJNb1dXY1pvMXMtV1U5S2p5X0Y3SHhjeTR3ZXdNVkVmdjhRNzhyaXFlZXREcmxTcnQ4Q1Y4ck00Vi1lbmMxTHhSYWl1RE5ENzNELURGc0tXN0ZFU0tNT0NPNA?oc=5",
+        "fecha": "2026-11-27T15:06:04-03:00"
+      },
+      {
+        "titulo": "Elecciones en España 2026: cómo votar desde Argentina",
+        "resumen": "Elecciones en España 2026: cómo votar desde Argentina El Destape",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQME9xUml4RUxNRmNxNXVaZzlZTFZWbl9xV2FtN0k3akNHS3lTMHdGdXVYbWp2cDRLOEppZjJWNDg3d1pwZDF0YndMenF5WGUxSThnZ01Yc2JyczZrQVlQV0Z1eUZibUhuRHg2aWFaSlBCMXdMNjRhMmZzNmNOV1F4Z0tqbFE1dXczX25iUnpDaWp0SmdPaHN1c1k2ZjbSAbABQVVfeXFMTTU2LTY0Q1BrN1dPbnZsaGNvZHJiYWhUbVUxeWgzX3dGQ0t2RDFhTmFTRHRSY0tlNkY2eWRRNkFSOHlCa1BWQ1VZanY0NXJNalEtcWlLVUJCM0NlaHo2X0RFbU9vTHU2QUhvQjVVeGFnQkp6eHNuNUxDVW5tOW1ndWlZeWNla2JsanNBblBJcjZMUF8xc1VUQVVLbmxzTlQyZnBzUW9ybUwwZ3VXcDBTcUI?oc=5",
+        "fecha": "2026-11-27T15:06:04-03:00"
+      },
+      {
+        "titulo": "Quiénes integran el PP de España: así es el Partido Popular en las elecciones 2026",
+        "resumen": "Quiénes integran el PP de España: así es el Partido Popular en las elecciones 2026 El Destape",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQd1FoRVlyb2p5Wi1reHFLV3NPbG1TMl8yTTBiT3NSNS1ZVlk4X3BCTzRUQXI1SnpMZ2NJdklDSUNycmlKbWR3WFVMSjJMYjdxN2tzLTBRNTVfY0FsX2QxRjN2ZFNkbXZJaGx4TmpXelZVSWFJYXA3UE1uanNFVEc3VVpMX3BxeWpSZWhldm1USFZWSDZPM1E5VnFxOTBmSmRINVo1Q2ZRZDFCT2pNb0k1blZaLUdWQlF4clZfdNIB0AFBVV95cUxQMlVHWVJWWGc3ZDB6WFhGbldIZW1OVDlfN282Wk11TzJUc1hRWWI0d0x5c1l5UVQ1aDdseGZpb0hiM1JoYmpHNGxObEJQLWN6a1lNV1laanpxX1FhNXp1V0xfemZDakFIWVo3WlEyQ0piZXprZlRuY3hKMnZZMEQwUFNQeXBmZ2xySklabmoxSEFpWHdlN1hOTDNnNndEdTNyWjdyTm5zdDEtcUlIMFh6UWxyVmZubFV5NWdIU2ZtSTFpLXFHLWZaRXotbExULUpa?oc=5",
+        "fecha": "2026-11-27T15:04:56-03:00"
+      },
+      {
+        "titulo": "Murió el heredero de Bunge y Born: cercano a Menem y fue secuestrado por Montoneros en 1974",
+        "resumen": "Murió el heredero de Bunge y Born: cercano a Menem y fue secuestrado por Montoneros en 1974 El Destape",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQjBJX21MRldCdWZYVXI0blN5OW9tSUxuNzNMYnh0VjEzS3VwSS1iaWNwUk9FN3VOdHBvSWN6dXh4dWNlWGJWOUFHeEs1RW1uWlBsLTd1YjU0SEI3dXJxS1BOeXljNE1EZEtHRmd5YWdSN25nTXpKQzJzU25lbDZhZUp6ZXJobnJvNGRNREFWaW5NNENkdmVtcnpWdUs0TlprV19sTl9CVjZoTFpEVDNnNExiLVhNZ3E0NV9ZYjBhUHI5QdIB1gFBVV95cUxOdWY0ckx3ZS13dmFPWHJ1RHRsbldSM3VVR29SUEgxb3c3WDQ1dUlxV1R5UDNEbjM3VVdRWExqb2lHd3pMLVp3aEFzUGNiOURSQVBnWXpOOFBWUWNaUlRVaVlTRUV2UERaSkdoOUg2MkJ6MHo0WkJRWnRIMG9PNVFaNnpzN0RwbnlmdEtBMVpjd1VBR0RwSHVRSW9PWmo1eDVEVDNHRVJUSFhaam1iVTYwMjZLTTZ0bWtraUJfN2s4bjYyX3h0Mk9TdDF2SnBoWVVNWWNjbzh3?oc=5",
+        "fecha": "2026-11-27T14:30:34-03:00"
+      },
+      {
+        "titulo": "El enojo de Aldo Leiva con el Gobierno: \"Hablan de moral en la política con la bragueta abierta\"",
+        "resumen": "El enojo de Aldo Leiva con el Gobierno: \"Hablan de moral en la política con la bragueta abierta\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOT1NVaHlHSDJIVTJjbjJUeTFNSzFBZlF1bUxZOXhGUk1FcDI1VHhFSzEyMjZOVWExeF9YMkFWZG5rWk4wc0F5QTRVcDZ6WnI3Zms3R1piZ1JIdkdMWWZELTdhSVQxYmRqdkZ1QnN0V2JXME9CSjFrOVdxNWhQVjZoR3ZlZjJSWEtVSERZTmt3RTJxeWNHSENVZTBVZ0NMdjhIM1doZ1R3bmVqanlNeVVSX0ZzZTN5VFBrUW40VTlwWVI4NHlQQnF5cGRNdjhZR3RNZUZwQ0hkTDJtZnBZR3c?oc=5",
+        "fecha": "2026-11-27T14:30:13-03:00"
+      },
+      {
+        "titulo": "¿CENSURARON A BONELLI en Clarín? Longobardi denunció que el diario no publicó su columna por presión del gobierno de Milei",
+        "resumen": "¿CENSURARON A BONELLI en Clarín? Longobardi denunció que el diario no publicó su columna por presión del gobierno de Milei El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQN0dlQnhGRjlxWWZFZS1PbDRDa0lnWnVieFRuVGNPTjF5aml6b2pLNm1rNDRCXzJ0WWtTazNLdVBfQUpmNUVOallVMTBualpxX1BQS2NYVmZRbDRqbDBUMDlMbGlTWFNTbVRJWm1hNWpmZXlrVVZFclV5bFpmbDhhTm41UmNVY2hEbUtLQU1idmYxcEVUcElUNm5fak9Wd0xTLVhQYTM5M2lseVZfRVlabXdyT3RxcTNTVHBxTjZKRXUtN3R3TnBRemxRb0pJT0h1VVpKY2dBWEJ4V1lnbE5MNNIB9AFBVV95cUxNMUxsSVRQWEZscXlad2xVSElKbXczSDM5b3F0VWlXQkphVHV4Q1JmRlhQallXd1puMUktWFdTbGFEekxxaWlGMjU1QndKc0V3cDVqX2lrbjZtWl9DN2RfMkNjRGpBMUhrVXNsVEFCUkJoU1praFBtXzZuaGFfMzlaXzFsRVZFNUtFMFotbFQ3cXoyQ2MtLXpvTi11RFVfa2VrVW92ZlZtRFdUdEtCblZWa2RTeDZCd2xmdGJXa3NpZm5oNkFaeWliWG1ndVJ3VTBfMEk3VlQwM1pSZWhmTVVyWjF0cFlrQzZWWHJHcXFacXp5TlIy?oc=5",
+        "fecha": "2026-11-27T14:25:05-03:00"
+      },
+      {
+        "titulo": "La increíble historia de la estancia de Córdoba de 350.000 hectáreas que dio origen a una de las ciudades más pobladas de la provincia",
+        "resumen": "La increíble historia de la estancia de Córdoba de 350.000 hectáreas que dio origen a una de las ciudades más pobladas de la provincia El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPMjNYQlhpZGp3RElWUjJEZDdoZ21wQUR6ZXFsTmtHelcwWURfQU9wNnFYcm12WUkwbDZwaGdWNzZnZ1F6UV95Z0ZNWWpYTUVWR2huWDI5WGFRclVoRHRySHJPT010V3kwNzU1YndFUjlma3ZqQXNSenhEcGxWcTM0UEFjcVBDZHRvRWdGV2xoWjVyWnJiZWF3NGEzX1ZCVHJpUnNGZGhrQTZwemlNMDQwZ1FRalJnM29IS2szc2NGN3lqbUlsZnNyVjVtLWc0Z0dpakVDYlhTMVc3NWcy0gHwAUFVX3lxTFBOX1Z0eFc4NWQ1ZmEwTEdBXy1wcU9yRVNRSkVsTzNnREpRbUh5eTE3bVA2NmdoVlNHYWhoeEJIZ3NUcFFfS05xLWZnZTRjdnpxQlRKWF9fY2EzelMtUW1selZjLTJYYkhxLUh4aEtKSW85LUgzVnRVZUg5eW0tUTVtMVhCM0d2YjM4bHd2MzNrT0VrOWNtQjk5Rjg4Y3lWcW0wNkdFandOZHVHVXFEVjFiUUhHY2pYd0Z1cHZxUWJUdXVIUW8zakNUVjV6NFU3RFpfUDlsYjJxLW9ic1hVSG5OR1VkeExabVBhUlotRlJMUw?oc=5",
+        "fecha": "2026-11-27T14:25:05-03:00"
+      },
+      {
+        "titulo": "El dueño de Crostita habló tras la polémica con Robertito Funes y contó qué pasó con Joaquín, el empleado: \"Yo también lo hubiera hecho\"",
+        "resumen": "El dueño de Crostita habló tras la polémica con Robertito Funes y contó qué pasó con Joaquín, el empleado: \"Yo también lo hubiera hecho\" El Destape",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNWU1qaEhQVkRhRzdqRHhQNExSU3Y3ZU8ta29Jdzk4Sm1LVHFWTUEyWHlJU3g3VWhscmoyYV9WTnoxeFEteGUySmg4ZmtiemVWRWVkY1Z1MTRZa0hJSWJlTUpuUVlRb0pYTERmeUxRWmZITUFkWk1MY0ZUenZYWjEwcWZTM1p3cmljT0U0VWRRS0xxUVRDZUxsd0VFSV9aUGE2NjUtNHJyZnRMSW5YZDJ2TGhTcm10NXVQY3hyZkVfSVlvYjRUV2dVWk4xSnZ0SmoyLThPTDZMZDlnSTBRaVHSAfIBQVVfeXFMUG1LSnJrYS0wQnE0aUpodTg5Y1c1OTdKYTZZMXJSN0xOWFhSei1ZcFdxdWtINVJjYW8tRTBEeXhva2xPeG1VV085NzJDNmlMUElUNFE2ZF9aMXVfM0dpUi02ZjBwR25sZE95blRucTFEMXpjbnkzVGxud1BnU2JXUFVOZFk5SFlRdlNwUlVadmM0NUI2YmdwdG10Ui1wWmtKTk9MWm9ycHhEZmZfUFJnTTVrb3JPVWZ0Q2ZpcXhfNVY0MlpoYmhXRDZQX1RQQVZzMHo5dllXWWYyQUptUjBNMnREcUJ4ZmVvdm5oUk5qZ0VjZGc?oc=5",
+        "fecha": "2026-11-27T14:05:34-03:00"
+      },
+      {
+        "titulo": "Un ídolo de River plantó su postura sobre el futuro de Ponzio como DT en medio de la incertidumbre",
+        "resumen": "Un ídolo de River plantó su postura sobre el futuro de Ponzio como DT en medio de la incertidumbre El Destape",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNbkdXbVNDOFowdGNNa3pLWHZaemxwR0FRb3U2bEZrNlV4U3dqWmowUkZKem5UYjU3b3h6cXhYbTNhOVRHYWxQM2g4OFB3OTdOMllNVnBWMm4xck5McGUwTGQ3dUZHT19JczZ6TWZ0amxWRVd2emktQVZTeERVMHlVemEydHNGNlZFYWJEQTM2SzFrZDhQcGV5dHpXUl9sVFNPNk92dU84SE5TeDFrTXRBTVhWbkhHYmZiUnpHdm54RE1XRHdX0gHYAUFVX3lxTFBfUXBYcHYwVDg4cnlSYVF5djZmRWNNQloyaVVnbENBUDB1UlB2dFNuSVV6V3NGRnJaNjJiTjFXS011dmlfZUw0eVRYS0FMV3h1d0Y5Z3N1a0liSm5jUnY0clFSUlg5R0tycFNGa3FKSUlNd204ZlVGb1lLQlBzaktmMmxwVzFvOWZvdWRXX3ppNWlKVzZYMXBlNDdwaGQ4UWpadHdidXJMS1dWQ3pfbjVIcEg1OFFoWV9PcGprcDdxU2Y2YkI5MzE4S05vVl92WmFzYk5FNEl1ZQ?oc=5",
+        "fecha": "2026-11-27T13:59:05-03:00"
+      },
+      {
+        "titulo": "El insólito video de Bullrich con el que se apropió el triunfo libertario en el Senado",
+        "resumen": "El insólito video de Bullrich con el que se apropió el triunfo libertario en el Senado El Destape",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQRXBpZVZLeWpkdG9xakRxeHVTck1jTXE3UUNwRmZsU1dfaTZtS2dibUJELWJyXzF5eklUcXR6WEJKemVQUVl1Zk5RUTFWTEpTZG5fMzNBUWcxUGV6cExzbzR5NENzelVQc3hMa2NFY09UdlBrUkNDcjRReG5HTDJXV21ubTlTb0pPM3lyTHBIbHVydFM1NEJLUmw4WXFXZHZQd1FsNXpPYXJfS25fMGg40gHDAUFVX3lxTE5Rb2wtNjh5N1BpQldZWHZoR0hab3VQdXFteV9XQTdSUkVWbFF6Mk1MbzV2NFo0cWlQeElKV2ltdGdBTFRhd2JSTWJjbXMxZDR3ck95RU5pZG0tZlRXZkQ4T2tLYU1OWm5jbDljRzh4eHMyX3V1ZmVob1RnUXh2Rmg3Yk9pZGpYdzhLME1jcEloRlB1OUFjU2oxelRMdm55d24yNXFRM0p3cFY5UlVkN1YwdkgzMUtnMWxGMFBGbWFPTVFkWQ?oc=5",
+        "fecha": "2026-11-27T13:56:46-03:00"
+      },
+      {
+        "titulo": "Qué se sabe de la muerte de la turista argentina en Uruguay: de qué murió y el comunicado de la familia",
+        "resumen": "Qué se sabe de la muerte de la turista argentina en Uruguay: de qué murió y el comunicado de la familia El Destape",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaGZQbEtJZ2llb2U3YnVqSEEwWk9DVlFpbVpOcGg0YVh0QzJCRm1rb1pQbGFkLWwzWUl4UTBDRVdCWmt3MW5ISmd0Z3NRVFIycWZYa0xiRVhsUC1ySXptSndEczBEd0tsZDVYeVJUWnhENGxoeHQyS1lydWxsVXNLSXBjUlFFOGdLN0RTTnR2NlJheTZuMlJDLXdIVWlRczdsaEgyUDZVOGJRTndUMGpJVF9JV0s1Z9IBygFBVV95cUxQZ2VicHp0a3dXcGxOLXhsWGcxOUtDczktRFFwQXR2aDhhQ1ByV3VRMUJteG90R2tVbGhEcFRUWkdPeUFRUFh0RWJIemVnZUdHUW9kUjB0ZFpHZ1AxVzEyVXZfOW9pUDJsV0NvTDd6V05GbFJ4QnJ2aHJaUGJJcmdVWE40aF9LSHZWT1ltYUd2cnc5UW1iLUZqd0ZsTjNoZ3MtRWhobTkwaGZ5eGN4WVkyUjFrLWxEUGE4N3VxenVJeERMNHpSbGFSV1h3?oc=5",
+        "fecha": "2026-11-27T13:52:30-03:00"
       }
     ]
   },
